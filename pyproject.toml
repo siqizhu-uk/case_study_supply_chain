@@ -1,0 +1,10 @@
+[project]
+name = "supply-chain-signal"
+version = "0.1.0"
+description = "Supply-chain signal model: Nordic Semiconductor <- Logitech / GN <- distributors / Amazon"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "numpy>=1.24", "pyyaml>=6.0", "matplotlib>=3.7", "tabulate>=0.9", "openpyxl>=3.1", "pdfplumber>=0.10"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "pipelines/A_company_financials/src", "pipelines/B_macro_industry/src", "pipelines/C_realtime_channel/src", "steps/step1_filing_confidence/src", "steps/step2_attribution/src", "steps/step4_lag_structure/src", "steps/step6_backtest/src", "steps/step7_forecast/src"]
+testpaths = ["tests"]

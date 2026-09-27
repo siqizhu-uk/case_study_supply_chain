@@ -1,0 +1,927 @@
+<title>Nordic chain analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@600;700&display=swap">
+<style>
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --sunk:#e9edf1; --ink:#16202a; --muted:#5a6573; --line:#d9e0e7;
+  --accent:#1d5d8a; --accent-soft:#e2edf5; --arrow:#8a97a6;
+  --gA:#2c7a4b; --gB:#2d6b9a; --gC:#a86f12; --gD:#6f7b88;
+  --ok:#2c7a4b; --ok-bg:#e1f1e7; --warn:#a86f12; --warn-bg:#f8ecd4; --bad:#b0392e; --bad-bg:#f8e0dd;
+  --figbg:#ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11161c; --surface:#18202a; --sunk:#1f2934; --ink:#e6ebf0; --muted:#98a4b2; --line:#2c3845;
+    --accent:#7fb3da; --accent-soft:#1d3142; --arrow:#6d7b8a;
+    --gA:#6cc28f; --gB:#7fb3da; --gC:#e0ad55; --gD:#9aa6b3;
+    --ok:#6cc28f; --ok-bg:#183626; --warn:#e0ad55; --warn-bg:#3a2d12; --bad:#ec8b80; --bad-bg:#40201c;
+    --figbg:#f4f6f8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11161c; --surface:#18202a; --sunk:#1f2934; --ink:#e6ebf0; --muted:#98a4b2; --line:#2c3845;
+  --accent:#7fb3da; --accent-soft:#1d3142; --arrow:#6d7b8a;
+  --gA:#6cc28f; --gB:#7fb3da; --gC:#e0ad55; --gD:#9aa6b3;
+  --ok:#6cc28f; --ok-bg:#183626; --warn:#e0ad55; --warn-bg:#3a2d12; --bad:#ec8b80; --bad-bg:#40201c;
+  --figbg:#f4f6f8;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.65 "IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);padding-inline:16px}}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:13px}
+@media (max-width:900px){nav.toc{position:static}}
+nav.toc .tab{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:3px 8px;border-left:2px solid var(--line)}
+nav.toc a:hover,nav.toc a:focus-visible{border-left-color:var(--accent);color:var(--accent);outline:none}
+main{min-width:0}
+h1{font:700 30px/1.25 "IBM Plex Serif",Georgia,serif;margin:0 0 8px;text-wrap:balance}
+h2{font:700 22px/1.3 "IBM Plex Serif",Georgia,serif;margin:0 0 8px;text-wrap:balance}
+h2 .en{font:500 12px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
+p{margin:0 0 10px;max-width:78ch}
+.lede{color:var(--muted);max-width:80ch}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.86em}
+code{background:var(--sunk);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+section.mod{padding-block:34px 4px;border-top:2px solid var(--ink);margin-top:34px}
+.ask{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 14px;margin:6px 0 14px;font-size:14px;color:var(--muted);max-width:none}
+.ask b{font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-right:8px}
+.g{display:inline-block;min-width:18px;text-align:center;font:600 11px/18px "IBM Plex Mono",monospace;border-radius:4px;color:var(--surface);margin-right:4px}
+.gA{background:var(--gA)}.gB{background:var(--gB)}.gC{background:var(--gC)}.gD{background:var(--gD)}
+
+/* the seven template blocks */
+.blk{display:grid;grid-template-columns:118px minmax(0,1fr);gap:6px 22px;padding-block:16px;border-top:1px solid var(--line)}
+.blk>.lbl{font:500 11px/1.6 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-top:4px}
+.blk>.body{min-width:0}
+@media (max-width:720px){.blk{grid-template-columns:minmax(0,1fr)}}
+
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:4px 0 6px}
+.kv div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.kv .k{font-size:12px;color:var(--muted)}
+.kv .v{font:500 19px/1.35 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.kv .s{font-size:12px;color:var(--muted)}
+
+.concl{border-left:3px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14.5px;max-width:none}
+.use{border-left:3px solid var(--ok);background:var(--ok-bg);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px;max-width:none}
+.use b{color:var(--ok)}
+.note{border-left:3px solid var(--warn);background:var(--warn-bg);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px;max-width:none}
+.note b{color:var(--warn)}
+
+/* flow diagram */
+.flowbox{overflow-x:auto;margin:8px 0 12px;padding-bottom:4px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(165px,1fr));min-width:720px}
+.flow.c5{grid-template-columns:repeat(5,minmax(150px,1fr));min-width:820px}
+.lane{padding:0 18px 0 0;position:relative}
+.lane:not(:last-child)::after{content:"";position:absolute;right:3px;top:34px;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:9px solid var(--arrow)}
+.lane:not(:last-child)::before{content:"";position:absolute;right:11px;top:40px;width:8px;height:2px;background:var(--arrow)}
+.lane h4{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:13px;line-height:1.5}
+.node b{display:block;font-weight:500}
+.node small{display:block;color:var(--muted);font-size:12px}
+.lane.out .node{border-color:var(--accent);background:var(--accent-soft)}
+.lane.out .node b{color:var(--accent)}
+.flowcap{font-size:12.5px;color:var(--muted);margin:-4px 0 10px}
+
+/* formula cards */
+.fxs{display:grid;gap:10px}
+.fx{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.fx h5{margin:0 0 4px;font:500 12.5px/1.4 "IBM Plex Sans",sans-serif;color:var(--muted)}
+.fx .f{font:500 14px/1.65 "IBM Plex Mono",monospace;overflow-wrap:anywhere}
+.fx .w{font:13px/1.65 "IBM Plex Mono",monospace;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
+.fx .src{font-size:12px;color:var(--muted);margin-top:4px}
+.fx table{margin-top:8px}
+
+/* tables */
+table{border-collapse:collapse;width:100%;font-size:13px}
+.tbl{overflow-x:auto;margin:6px 0 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.tbl table{min-width:640px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:500;color:var(--muted);font-size:12px;background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{font-family:"IBM Plex Mono",monospace;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.g-col{white-space:nowrap}
+td .file{display:block;font:12px/1.5 "IBM Plex Mono",monospace;color:var(--muted);overflow-wrap:anywhere}
+tr.hl td{background:var(--accent-soft)}
+.pill{font:500 11px/1 "IBM Plex Mono",monospace;padding:4px 7px;border-radius:999px;white-space:nowrap;display:inline-block}
+.p-ok{background:var(--ok-bg);color:var(--ok)}.p-warn{background:var(--warn-bg);color:var(--warn)}.p-bad{background:var(--bad-bg);color:var(--bad)}.p-fix{background:var(--sunk);color:var(--muted)}.p-acc{background:var(--accent-soft);color:var(--accent)}
+.types{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
+.bar{display:inline-block;height:9px;background:var(--accent);border-radius:2px;vertical-align:middle;margin-right:8px}
+
+/* figures */
+.figs{display:grid;gap:12px}
+.fig{background:var(--figbg);border:1px solid var(--line);border-radius:10px;padding:10px;overflow-x:auto}
+.fig img{display:block;width:100%;min-width:560px;height:auto}
+.none{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <div class="tab">The six questions</div>
+  <a href="#lag">Lag structure</a>
+  <a href="#mechanism">Mechanism</a>
+  <a href="#attribution">Attribution</a>
+  <a href="#breaks">Structural breaks</a>
+  <a href="#notbuilt">Not built</a>
+  <a href="#limits">Limitations</a>
+  <div class="tab">The three forecasts</div>
+  <a href="#nordic">Nordic Q3 2026</a>
+  <a href="#logitech">Logitech Q2 FY27</a>
+  <a href="#gn">GN Audio Q3 2026</a>
+</nav>
+
+<main>
+<h1>Nordic chain analysis</h1>
+<p class="lede">Nordic ← Logitech / GN ← Ingram / TD Synnex / Amazon. Every section runs in the same order: reasoning → formula → data used → data support → assumption / limit → future work → figures, and names the file behind each number. Numbers are those of the 27 September 2026 run; the headline numbers are checked against the outputs by <code>tests/test_analysis_page.py</code>. Evidence grades: <span class="g gA">A</span>audited <span class="g gB">B</span>company-reported, unaudited <span class="g gC">C</span>verbal or proxy (quote-checked) <span class="g gD">D</span>estimate or undisclosed.</p>
+
+<!-- ======================================================= LAG -->
+<section class="mod" id="lag">
+<h2><span class="en">Lag structure</span>From an Amazon order cut to Nordic's revenue: about 24 weeks</h2>
+<p class="ask"><b>Brief</b>How many weeks or quarters separate a change in Amazon sell-out from a change in Nordic's revenue, and why.</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>Reasoned edge by edge before any data: how long goods sit at each edge (capped by inventory cover), plus how long each tier takes to see a demand change and re-plan. The data test the reasoning; they do not pick the lag.</p>
+<div class="flowbox"><div class="flow c5">
+  <div class="lane"><h4>Edge 1 start · retail / distribution</h4>
+    <div class="node"><b>Amazon cuts orders</b><small>inventory cover 5.2 weeks (36 days) · weekly replenishment 1.5 weeks</small></div>
+    <div class="node"><b>Ingram 5.8 weeks · TD Synnex 9.9 weeks</b><small>inventory cover on the distributor routes</small></div>
+  </div>
+  <div class="lane"><h4>Logitech</h4>
+    <div class="node"><b>Cover 9.5 weeks</b><small>monthly S&amp;OP 3.2 weeks</small></div>
+  </div>
+  <div class="lane"><h4>Edge 2 · ODM</h4>
+    <div class="node"><b>Build 6–9.5 weeks</b><small>component kitting 4–10 weeks · MRP 1.0 week</small></div>
+  </div>
+  <div class="lane"><h4>Nordic's distributors</h4>
+    <div class="node"><b>Arrow / Avnet 8.7 weeks</b><small>reorder 2.2 weeks</small></div>
+  </div>
+  <div class="lane out"><h4>Nordic</h4>
+    <div class="node"><b>Order signal ≈24 weeks</b><small>90% 21–27 weeks, ≈1.8 quarters</small></div>
+    <div class="node"><b>Goods alone ≈17 weeks</b><small>component lead times 12–16 weeks</small></div>
+  </div>
+</div></div>
+<p class="flowcap">Each box: inventory cover in weeks (the cap on how long goods sit) · the delay of the planning step. The two edges add up to the Amazon route's lag; weighting every route by its 10-K share gives the supply graph's lag kernel.</p>
+<p class="concl"><b>Conclusion:</b> the order signal takes about 24 weeks (90% 21–27, about 1.8 quarters); the goods alone about 17.</p>
+<p class="use"><b>In the forecast:</b> component lead times are 12–16 weeks, so the demand behind Nordic's Q3 was ordered before the 6 August guide and is already in it. The chain therefore gets weight 0 in the guided quarter; the graph drives the quarter after (Q4, the GRi model: Logitech's sell-in through the Nordic → ODM → Logitech segment, F26).</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Little's law: time goods sit = stock ÷ flow</h5>
+    <div class="f">cover (weeks) = inventory ÷ (quarterly COGS ÷ 13)</div>
+    <div class="f">each edge's lag ≤ cover × 1.10</div>
+    <div class="src">graph_lag_checks.csv</div></div>
+  <div class="fx"><h5>Planning delay (per planning step)</h5>
+    <div class="f">delay = R/2 + (1 − α)/α × R</div>
+    <div class="w">R = review period (weeks); α = forecast smoothing constant (Brown 1959)</div>
+    <table><tr><th>Planning step</th><th class="num">R (weeks)</th><th class="num">α</th><th class="num">Delay (weeks)</th></tr>
+      <tr><td>Weekly replenishment</td><td class="num">1</td><td class="num">0.5</td><td class="num">1.5</td></tr>
+      <tr><td>Logitech monthly S&amp;OP</td><td class="num">4.33</td><td class="num">0.8</td><td class="num">3.2</td></tr>
+      <tr><td>ODM MRP</td><td class="num">2</td><td class="num">1</td><td class="num">1.0</td></tr>
+      <tr><td>Nordic distributor reorder</td><td class="num">4.33</td><td class="num">1</td><td class="num">2.2</td></tr></table>
+    <div class="src">config/model.yaml · supply_graph.info_delay</div></div>
+  <div class="fx"><h5>Routes weighted into the lag kernel</h5>
+    <div class="f">L_p = Σ edge lags · w_p = brand share × Π edge shares</div>
+    <div class="f">Nordic's response R(t) = Σ_p w_p · D(t − L_p/13)</div>
+    <div class="w">a fractional quarter is split pro rata between the two adjacent quarters</div>
+    <div class="src">supply_graph.py</div></div>
+  <div class="fx"><h5>Uncertainty (Monte Carlo, 300 draws)</h5>
+    <div class="f">each edge's lag and share ~ triangular (low / mid / high)</div>
+    <div class="w">ranges widened at least by evidence grade: <span class="g gA">A</span>±10% <span class="g gB">B</span>±25% <span class="g gC">C</span>±50% <span class="g gD">D</span>±100%</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Inventory and COGS by tier</td><td>Amazon 36 days = 5.2 weeks; Ingram 5.8 weeks; TD Synnex 9.9 weeks; Logitech 9.5 weeks; Arrow / Avnet 8.7 weeks</td><td>SEC XBRL</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Logitech 10-K customer shares FY22–26</td><td>Amazon ~18%, Ingram + TD Synnex ~26% (each effective from its filing date)</td><td>10-K</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Build and planning times</td><td>ODM build 6–9.5 weeks, component kitting 4–10 weeks, four planning steps (see formula)</td><td>industry practice</td><td class="g-col"><span class="g gD">D</span></td></tr>
+<tr><td>Authorized-distributor lead time</td><td>16 weeks</td><td>findchips live snapshot</td><td class="g-col"><span class="g gD">D</span></td></tr>
+<tr><td>For the tests: Logitech radio-category revenue, Nordic Consumer revenue</td><td>quarterly series</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>End-demand proxy</td><td>Logitech sell-in + the sell-through gap disclosed on calls (no free Amazon sell-out data)</td><td>earnings calls</td><td class="g-col"><span class="g gC">C</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Check</th><th>Result</th><th>File</th></tr>
+<tr><td>Prior written before any regression</td><td>inventory cover summed across tiers 22.4 weeks (14.4–35.5); step 4's tier-by-tier reasoning 22 weeks</td><td><span class="file">prior_cover_weeks.csv</span></td></tr>
+<tr><td>Monte Carlo</td><td>mean goods lag 16.6–21.0 weeks (90%); kernel 54% at 1 quarter, 46% at 2, mean 1.46 quarters; signal basis across all routes ≈26 weeks</td><td><span class="file">graph_mean_lag_mc.csv · graph_kernel.csv · graph_signal_lag_mc.csv</span></td></tr>
+<tr><td>Inventory cap</td><td>all 19 edges with an inventory anchor sit within their cover × 1.10</td><td><span class="file">graph_lag_checks.csv</span></td></tr>
+<tr><td>Data test: correlation of Logitech's radio category leading Nordic Consumer</td><td>
+  <div><span class="bar" style="width:78px"></span><span class="mono">1 quarter 0.78</span></div>
+  <div><span class="bar" style="width:90px"></span><span class="mono">2 quarters 0.90</span></div>
+  <div><span class="bar" style="width:84px"></span><span class="mono">3 quarters 0.84</span></div>
+  <div><span class="bar" style="width:59px"></span><span class="mono">4 quarters 0.59</span></div>
+  a plateau, not a spike: the data say "1–3 quarters" and cannot pick one lag</td><td><span class="file">xcorr_all.csv</span></td></tr>
+<tr><td>Continuous lag</td><td>the near-optimal range, 19.5–37 weeks (13 quarters, one cycle), contains 24 weeks: the data do not reject the reasoning</td><td><span class="file">graph_vs_step4_continuous_lag.csv</span></td></tr>
+<tr><td>Back-test: guided quarter (h=1)</td><td>lag models err 3.9–5.9× more than guide + mean beat</td><td><span class="file">walkforward_metrics_h1.csv</span></td></tr>
+<tr><td>Back-test: the quarter after the guide (h=2)</td><td>graph model GRi errs 25.4m, 0.54× the guide extrapolation (47.2m), n 9</td><td><span class="file">walkforward_metrics_h2.csv</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence and handling</th></tr>
+<tr><td>Planning delays are not disclosed (<span class="g gD">D</span>) and may partly sit inside inventory cover (P100)</td><td>on the Amazon route the signal lag is 19–24 weeks if part of the planning delay already sits in inventory cover; the forecast uses the sturdier goods basis</td></tr>
+<tr><td>Retail and distributor inventories cover all categories</td><td>cover is only a cap, never the lag itself</td></tr>
+<tr><td>End demand is proxied by Logitech's sell-through, not Amazon's actual sales</td><td>the correlation plateau is mostly the common industry cycle (Nordic lags chip shipments and US electronics retail by as much); one cycle and a ~16% share cannot narrow the lag</td></tr>
+<tr><td>The lag moves with the cycle</td><td>~4 quarters in the 2021–22 shortage (Nordic's backlog reached 9.9× quarterly revenue), ~2 in the 2023–24 destock; each rests on a single turning point</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>Amazon's actual sales (Keepa, POS data; paid)</td><td>tests edge 1 directly</td></tr>
+<tr><td>A lead-time history</td><td>updates edge 2's cap quarter by quarter</td></tr>
+<tr><td>More cycles</td><td>peers' data for 2008–10 and 2011–19 exist; Nordic's own chain data do not</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/lag.svg" alt="Reasoned lag kernel against the data's cross-correlation"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= MECHANISM -->
+<section class="mod" id="mechanism">
+<h2><span class="en">Mechanism</span>Channel inventory drives revenue, not the company's own balance sheet</h2>
+<p class="ask"><b>Brief</b>Where inventory actually sits at each tier, who bears it, and how each company discloses (or hides) it. Distinguish a company's own balance-sheet inventory from the inventory its channel holds.</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>Revenue is sell-in (sold into the channel), not end demand (sell-through); the difference is the change in channel inventory. So it is <b>channel inventory</b> that moves revenue, not a company's own stock.</p>
+<div class="tbl"><table>
+<tr><th></th><th>Own inventory (balance sheet)</th><th>Channel inventory (at distributors and retailers)</th></tr>
+<tr><td>Disclosure</td><td>every tier discloses it (XBRL / reports)</td><td>almost nobody gives a number; only Microchip reports distributor days</td></tr>
+<tr><td>How it is read</td><td>directly</td><td>indirectly: Logitech's by recursion from its sell-through − sell-in gap; the industry's from Microchip's distributor days</td></tr>
+</table></div>
+<div class="flowbox"><div class="flow">
+  <div class="lane"><h4>Signal</h4>
+    <div class="node"><b>Microchip distributor days</b><small>the only numeric disclosure of an industry channel</small></div>
+  </div>
+  <div class="lane"><h4>Channel state</h4>
+    <div class="node"><b>Building / drawdown / lean / normal</b><small>read from distributor days (D22)</small></div>
+  </div>
+  <div class="lane"><h4>"Lean", split</h4>
+    <div class="node"><b>Supply evidence: backlog, lead time</b><small>separates a shortage from caution after a destock (D24)</small></div>
+  </div>
+  <div class="lane out"><h4>In the forecast</h4>
+    <div class="node"><b>One term only</b><small>last quarter's state adjusts the expected guide error (F16, F20, F30)</small></div>
+  </div>
+</div></div>
+<div class="tbl"><table>
+<tr><th>Two kinds of lean</th><th>Shortage</th><th>Caution (after a destock)</th></tr>
+<tr><td>Backlog</td><td>orders placed but not delivered pile up</td><td>few orders; the backlog falls</td></tr>
+<tr><td>Lead time</td><td>lengthens</td><td>short</td></tr>
+<tr><td>Price</td><td>rises; Nordic's GM reached 60%</td><td>—</td></tr>
+<tr><td>What sets revenue</td><td>supply: Nordic knows how many wafers it will get, so its guide is accurate (+1.9% beat on average)</td><td>demand: rush orders still arrive inside the quarter, so it beats by more (+4.2% on average over the quarters that were neither building nor short)</td></tr>
+</table></div>
+<p>Own inventory was tried as a second signal; at the industry level it cannot separate the two, so it is only supporting evidence.</p>
+<p class="use"><b>In the forecast:</b> one term only, last quarter's state adjusting the expected guide error (F16, F20, F30). No restocking amount is added: management had seen the refill orders when it guided.</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Cover and inventory days</h5>
+    <div class="f">cover (weeks) = ending inventory ÷ (quarterly COGS ÷ 13)</div>
+    <div class="f">inventory days = inventory ÷ quarterly COGS × 91</div>
+    <div class="src">core/tiers.py · step 3 inventory_factors.dio</div></div>
+  <div class="fx"><h5>Channel stock added (Logitech, recursive)</h5>
+    <div class="f">F(t) = F(t−4) × (1 + sell-through YoY) − gap × sell-in(t−4)</div>
+    <div class="f">gap = sell-through YoY − sell-in YoY</div>
+    <div class="w">cumulate F, set the level at the quarters management calls "at target", divide by weekly sell-through to get weeks</div>
+    <div class="src">channel_index.py</div></div>
+  <div class="fx"><h5>Amplification</h5>
+    <div class="f">ratio of the standard deviations of adjacent tiers' YoY growth</div>
+    <div class="w">bootstrap 5–95% band</div>
+    <div class="src">bullwhip_links.csv</div></div>
+  <div class="fx"><h5>Channel-state rules</h5>
+    <table><tr><th>State</th><th>Rule</th></tr>
+      <tr><td>building</td><td>distributor days up ≥ 3 days over two quarters</td></tr>
+      <tr><td>drawdown</td><td>down ≥ 3 days over two quarters from above normal</td></tr>
+      <tr><td>lean</td><td>level z ≤ −1, or still falling from normal or low</td></tr>
+      <tr><td>shortage (Nordic)</td><td>lean and (backlog &gt; 2 quarters of revenue or live lead time &gt; 26 weeks)</td></tr></table>
+    <div class="src">config/model.yaml cycle_state · D22, D24</div></div>
+  <div class="fx"><h5>In the forecast</h5>
+    <div class="f">Nordic's expected error = its mean guide error after quarters that were neither building nor short + this quarter's state effect</div>
+    <div class="src">guide_error_model.py</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Coverage</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Inventory and COGS by tier</td><td>Amazon, Best Buy, CDW, Ingram, TD Synnex, Arrow, Avnet, Logitech</td><td>SEC XBRL</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Nordic inventory and COGS</td><td>quarterly</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Logitech sell-through − sell-in gap</td><td>21 quarters</td><td>call transcripts, quote-checked</td><td class="g-col"><span class="g gC">C</span></td></tr>
+<tr><td>Microchip distributor days</td><td>2007–2026</td><td>10-Q / 10-K</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Nordic backlog</td><td>2020Q4–2023Q1 (not disclosed after)</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Authorized-distributor lead time</td><td>live snapshot</td><td>findchips</td><td class="g-col"><span class="g gD">D</span></td></tr>
+<tr><td>12 peers' guides and actuals</td><td>2008–2026</td><td>Pipeline D</td><td class="g-col"><span class="g gA">A</span> <span class="g gB">B</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Check</th><th>Result</th><th>File</th></tr>
+<tr><td>Management confirms it</td><td>Logitech's CFO on the FY24 Q4 call: two points of the extra sell-in growth "is simply comparing the channel inventory year-over-year", i.e. this year's destock was smaller than last year's</td><td><span class="file">pipelines/A_company_financials/data/manual/logitech_2024Q1.txt</span></td></tr>
+<tr><td>The recursion reproduces that quarter</td><td>2024Q1 from the gap alone = <b>+48.0m</b> (looks like stocking up); recursion = −61.5 × 1.0035 + 48.0 = <b>−13.7m</b> (still destocking)</td><td><span class="file">channel_index_logitech.csv</span></td></tr>
+<tr><td>The amplification sits at the component tier (2021–26)</td><td>Logitech shipments / end demand ×0.99; purchases / shipments ×1.24; Nordic Consumer / Logitech shipments <b>×2.72</b></td><td><span class="file">bullwhip_links.csv</span></td></tr>
+<tr><td>The 2023 fall was a channel event</td><td>Nordic's top-10 customers −3%, the distribution-heavy broad market −46%</td><td><span class="file">Nordic annual reports · nordic_top10_vs_broad.csv</span></td></tr>
+<tr><td>The state predicts guide errors</td><td>12 peers, 619 firm-quarters: after a building quarter the guide error is −1.64 pts (t −4.4, firm fixed effects, clustered by quarter)</td><td><span class="file">guide_error_state_effect.csv</span></td></tr>
+<tr><td>The two kinds of lean are distinguishable</td><td>Shortage (2021Q1–22Q3): backlog 5.4–9.9 quarters of revenue, Nordic's own inventory 57–94 days, GM up to 60%.<br>After the destock (2025Q3–26Q2): lead time 16 weeks (one live snapshot, 2026Q2), own inventory 141–193 days, GM 52–53%</td><td></td></tr>
+<tr><td>Nordic's own channel (D25, P128)</td><td>Microchip's days are a stock; Nordic's wording is a flow. Cumulated into a level, Nordic's wording and Microchip's days correlate negatively at every shift from −3 to +4 quarters (−0.17 to −0.86), so Microchip is used only as a state signal (its turns agree within a quarter: Nordic destocking from 2022Q3, Microchip building from 2022Q4).<br>Size: with the top-10 customers (served direct) as the sell-through proxy, broad-market growth minus top-10 growth = −14.4, −42.7, −3.7 pts (2022–24), about −44m, −164m, −8m: ≈215m drained, ≈29 weeks of 2022 broad-market sales. Arrow / Avnet's all-vendor cover only rose from 7.0 / 9.0 to 9.9 / 14.5 weeks over the same years, so most of the excess sat with small customers</td><td><span class="file">nordic_channel_size.csv · nordic_wording_vs_microchip_shifts.csv</span></td></tr>
+<tr class="hl"><td>Today</td><td>Logitech's channel is 1.1–2.1 weeks below target (latest anchor / all anchors; −194m on all anchors), lean; distributor state lean (2026Q2)</td><td></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence and handling</th></tr>
+<tr><td>The channel <b>level</b> is unobservable</td><td>Logitech's channel weeks are anchored on "at target" statements, ±0.7 weeks; GN has a gap but no anchor, so direction only; ODM kitting is not disclosed at all (<span class="g gD">D</span> assumption 2–8 weeks)</td></tr>
+<tr><td>Retail and distributor inventories cover all categories</td><td>peripherals are a small part, so cover is only a cap</td></tr>
+<tr><td>State thresholds were set after seeing 2020–26 (disclosed, D22)</td><td>and a building channel is flagged a quarter late</td></tr>
+<tr><td>The shortage split was decided after seeing the data (F30)</td><td>Nordic uses the 7 quarters that were neither building nor short (+4.24%) instead of 14 (+3.08%); point 235.3 → 238.0; the walk-forward is no better (5.31 vs 5.20 pts); the rule before it is pre-registered and scored on 22 Oct</td></tr>
+<tr><td>One shortage and one destock</td><td>every state effect rests on one cycle</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>Score F30, the rule before it, the F16 pooled model and the own-words rule (F31) after 22 Oct</td><td>keep or drop the shortage split</td></tr>
+<tr><td>A lead-time history (free data are live snapshots only)</td><td>identifies shortages quarter by quarter now that the backlog is no longer disclosed</td></tr>
+<tr><td>Distributors' inventory by vendor (Arrow / Avnet do not disclose Nordic's share); an anchor for GN's channel</td><td>the channel level, not only its direction</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/channel_fill_gap_vs_recursion.svg" alt="Channel inventory added each quarter: gap-only reading vs recursion"></div>
+  <div class="fig"><img src="figures/logitech_channel_weeks.svg" alt="Logitech channel inventory relative to target, weeks"></div>
+  <div class="fig"><img src="figures/gn_channel_weeks.svg" alt="GN channel inventory, relative weeks"></div>
+  <div class="fig"><img src="figures/nordic_channel_state.svg" alt="Nordic's channel: its own words against the Microchip distributor-days state"></div>
+  <div class="fig"><img src="figures/bullwhip_by_link.svg" alt="Amplification by link"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= ATTRIBUTION -->
+<section class="mod" id="attribution">
+<h2><span class="en">Attribution</span>Logitech + GN ≈ 16% of Nordic's revenue (13–20%)</h2>
+<p class="ask"><b>Brief</b>Nordic sells into many end markets beyond these two customers. How much of Nordic's consumer revenue plausibly runs through Logitech and GN, and how did you estimate it?</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>Nordic does not disclose revenue by customer, so five independent legs bracket it (A–E), giving a range and a path over time rather than a single number.</p>
+<div class="flowbox"><div class="flow">
+  <div class="lane"><h4>Five legs</h4>
+    <div class="node"><b>A bottom-up</b><small>category units × radios × socket share × ASP</small></div>
+    <div class="node"><b>B ceiling</b><small>IFRS 8: no customer above 10% apart from two distributors</small></div>
+    <div class="node"><b>C category prior · D floor · E natural experiment</b></div>
+  </div>
+  <div class="lane"><h4>Invoicing route</h4>
+    <div class="node"><b>Through ODMs (indirect)</b><small>the IFRS 8 ceiling does not bind</small></div>
+    <div class="node"><b>Nordic invoices directly</b><small>the ceiling binds</small></div>
+  </div>
+  <div class="lane out"><h4>Share</h4>
+    <div class="node"><b>16% (13–20%)</b><small>through ODMs; 27% of Consumer (22–34%)</small></div>
+    <div class="node"><b>≈11%</b><small>direct invoicing</small></div>
+    <div class="node"><b>GN ≈1%</b><small>≈8m a year (6–10m)</small></div>
+  </div>
+  <div class="lane out"><h4>In the forecast</h4>
+    <div class="node"><b>s = 16.8% in the chain term</b><small>weight 0 in the guided quarter, so either end of the range leaves the point unchanged</small></div>
+  </div>
+</div></div>
+<p class="concl"><b>Conclusion:</b> ≈27% of Nordic Consumer (22–34%, 80%) and 16% of total revenue (13–20%) (the quarterly path shows 17% for 2026Q2 because it uses the 2024–26 FCC cohort, a socket share of 81% against 77% for all grants), if Logitech buys through ODMs; ≈11% if Nordic invoices it directly. GN is ≈8m a year (6–10m), ≈1%.</p>
+<p class="use"><b>In the forecast:</b> the share s sets how much of Nordic the chain speaks for (s = 16.8% in the chain term). The chain gets weight 0 in the guided quarter, so the point does not move whichever end of the range is right.</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Leg A, bottom-up</h5>
+    <div class="f">Nordic revenue from Logitech = Σ categories (category sales ÷ unit price × radios per unit) × Nordic socket share × chip ASP</div>
+    <div class="w">Monte Carlo over each input's range</div>
+    <div class="src">attribution.py</div></div>
+  <div class="fx"><h5>Leg B, ceiling (if invoiced directly)</h5>
+    <div class="f">Logitech ≤ 10% × Nordic revenue</div>
+    <div class="w">IFRS 8.34: apart from two distributors (30%, 12%), no customer above 10%</div></div>
+  <div class="fx"><h5>Share path</h5>
+    <div class="f">share = (Logitech + GN) ÷ Nordic's last-four-quarters revenue</div>
+    <div class="w">rolled quarter by quarter</div>
+    <div class="src">attribution_path.py</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Logitech peripheral-category sales</td><td>last four quarters 3,286m</td><td>10-K / 10-Q</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>FCC internal-photo census</td><td>101 Logitech grants (81 with public photos), 38 read, 33 legible; 30 peripherals: Nordic 23, Telink 5, other 2 → socket share 77% (62–87%)</td><td><span class="file">fcc_logitech_grants_2023_2026.csv</span></td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Nordic IFRS 8 major-customer disclosure</td><td>only two customers above 10%, both distributors (30%, 12%)</td><td>annual report</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Nordic last-four-quarters revenue</td><td>759.5m</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Nordic proprietary 2.4 GHz revenue</td><td>technology split, not disclosed from 2025</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Nordic top-10 customers vs broad market</td><td>annual</td><td>annual reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Leg / check</th><th>Evidence</th><th>Result</th></tr>
+<tr><td>A bottom-up</td><td>Nordic content ≈3.6% of Logitech's sales</td><td>Logitech ≈115m (median); implies ≈88m Logitech radios a year (75–104m)<span class="file">attribution.json</span></td></tr>
+<tr><td>B ceiling</td><td>if invoiced directly</td><td>Logitech ≤ 76m, share ≈11%</td></tr>
+<tr><td>C category prior</td><td>PC peripherals' weight in Nordic</td><td>≈17.8% (14.5–21.2%)</td></tr>
+<tr><td>D floor</td><td>proprietary 2.4 GHz revenue</td><td>peaked at 96.1m in 2022Q2 (13.7% of Nordic), down 66% by 2024Q1 (Logitech moved to BLE / Bolt)</td></tr>
+<tr><td>E natural experiment</td><td>Nordic Consumer −41% (−202.8m, 2022Q3–2024Q1); Logitech's radio categories −14% (2022Q1–2023Q3, their own peak to trough)</td><td>if all of it came from Logitech, Nordic content would have to be 51% of Logitech's sales, which is impossible → most of the fall came from other customers</td></tr>
+<tr><td>Share path</td><td>15% (2022Q1) → 21% (2024Q2, the broad market fell faster than Logitech) → 17% (2026Q2, 13–21%)</td><td><span class="file">attribution_path.csv</span></td></tr>
+<tr><td>Back-test</td><td>the quarter after the guide: the reasoned chain's slope is 3.2</td><td>Nordic moves ≈3× what the share implies (its other consumer customers ride the same cycle)<span class="file">chain_weight_tests.csv</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence</th></tr>
+<tr><td>The invoicing route is not disclosed</td><td>the gap between 16% and 11% comes from this one assumption</td></tr>
+<tr><td>FCC census: 38 of 81 public grants read; audio and webcams unread</td><td>a wide socket-share range; radios per unit and ASP are range assumptions</td></tr>
+<tr><td>The share covers only Logitech + GN</td><td>it understates Nordic's exposure to this consumer cycle (≈3×)</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>Read the remaining 12 peripheral grants and the audio / webcam grants</td><td>narrows the socket share</td></tr>
+<tr><td>Confirm Logitech's ODM and chip-buying route from US customs records</td><td>settles 16% vs 11%</td></tr>
+<tr><td>A chip census for GN</td><td>GN's share</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/attribution.svg" alt="Attribution: the share path and the slice of Nordic it covers"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= BREAKS -->
+<section class="mod" id="breaks">
+<h2><span class="en">Structural breaks</span>Which events changed the relationships the model relies on</h2>
+<p class="ask"><b>Brief</b>Anything in the past four years that changes the relationships and how you handled it.</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>The question is not which events happened but which ones changed the relationships the model uses (lags, amplification, shares, who holds the inventory). So each event gets a before / after test, with its date fixed in the config first (the AI / memory breaks were dated with the data in view), and is put into one of six types:</p>
+<div class="types"><span class="pill p-bad">Relationship break</span><span class="pill p-ok">Input moved</span><span class="pill p-warn">One-off shock</span><span class="pill p-fix">Proxy failure</span><span class="pill p-acc">Forward risk</span><span class="pill p-fix">Reporting basis</span></div>
+<div class="flowbox"><div class="flow">
+  <div class="lane"><h4>Events</h4>
+    <div class="node"><b>Dates fixed in the config first</b><small>shortage, build and destock, demand normalisation, tariffs, supplier incident, capacity; the AI / memory breaks were dated with the data in view</small></div>
+  </div>
+  <div class="lane"><h4>Before / after tests</h4>
+    <div class="node"><b>Relationships: Chow (HAC-robust)</b></div>
+    <div class="node"><b>Proxies: Fisher z · Welch t</b></div>
+    <div class="node"><b>Shocks: event study</b></div>
+  </div>
+  <div class="lane"><h4>Type</h4>
+    <div class="node"><b>One of six</b><small>see the event table under data support</small></div>
+  </div>
+  <div class="lane out"><h4>Handling</h4>
+    <div class="node"><b>Excluded · state enters the forecast · event term · monitored</b><small>cycle states are dated by the data, not by hand</small></div>
+  </div>
+</div></div>
+<p>The cycle state is dated by the data (distributor days + supply evidence), not drawn by hand, and enters the forecast through the guide error (F16, F20, F30).</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Relationship break</h5>
+    <div class="f">Nordic Consumer YoY ~ Logitech sell-through YoY (lag 2 quarters, the graph's lag)</div>
+    <div class="w">Chow test at the event date, HAC-robust</div>
+    <div class="src">relationship_breaks.py · G22, G28</div></div>
+  <div class="fx"><h5>Proxy failure</h5>
+    <div class="f">change in correlation: Fisher z · change in mean: Welch t</div></div>
+  <div class="fx"><h5>One-off shock</h5>
+    <div class="f">the shock runs forward along the graph from its date: lead time × Nordic content − the part already in the guide</div>
+    <div class="src">event_study.py · G23</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Content</th><th>Grade</th></tr>
+<tr><td>Chain series</td><td>Nordic Consumer; Logitech sell-in and the sell-through gap</td><td class="g-col"><span class="g gB">B</span> <span class="g gC">C</span></td></tr>
+<tr><td>Event evidence: call quotes (quote-checked)</td><td>tariffs, pre-buying, capacity, supplier incident</td><td class="g-col"><span class="g gC">C</span></td></tr>
+<tr><td>Event evidence: Nordic backlog</td><td>2020Q4–2023Q1</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Event evidence: inventory by tier</td><td>XBRL</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>Event evidence: WSTS and TD Synnex revenue</td><td>the proxy tests</td><td class="g-col"><span class="g gA">A</span> <span class="g gB">B</span></td></tr>
+<tr><td>Outputs</td><td><span class="file">event_breaks.csv · relationship_breaks.csv · event_study_supplier_incident.csv</span></td><td></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Event</th><th>Type</th><th>Before / after evidence</th><th>Handling</th></tr>
+<tr><td>2021–22 chip shortage</td><td><span class="pill p-bad">Relationship break</span></td><td>backlog reached 9.9× quarterly revenue; the chain link breaks once, at the end of the shortage (2022Q4), Chow p 0.04</td><td>excluded from the lag fits; Nordic's guide habit keeps these quarters apart as shortage (D24, F30)</td></tr>
+<tr><td>2022Q4–24Q2 build and destock</td><td><span class="pill p-bad">Relationship break</span></td><td>2023: top-10 customers −3.2%, broad market −45.9%; after a building quarter the peers' guide error is −1.64 pts (t −4.4), Nordic's −7.4</td><td>the channel state enters the forecast</td></tr>
+<tr><td>Post-COVID demand normalisation</td><td><span class="pill p-ok">Input moved</span></td><td>2023: Nordic Consumer −38%, of which Logitech + GN only −3.2 pts and the rest −34 pts; the chain is the same before and after 2024Q2 (Chow p 0.77, slope +1.66 → +1.07)</td><td>demand enters through the driver; no break added</td></tr>
+<tr><td>2025 US tariffs</td><td><span class="pill p-bad">Relationship break (price)</span></td><td>call: "price was a lift of 150 basis points" (GM) → price increases ≈2.8% of sales; Americas shipments −4.9% / −3.6%; only 3 quarters since, so no change can be detected (Chow p 0.78 / 0.91)</td><td>the unit basis strips the price step; the effect on the chain term is well under 1m</td></tr>
+<tr><td>2025Q1 pre-tariff buying</td><td><span class="pill p-warn">One-off shock</span></td><td>Logitech inventory 81 days (71 a year earlier), back to 69 in 2025Q2</td><td>lags unchanged</td></tr>
+<tr><td>AI / memory cycle</td><td><span class="pill p-fix">Proxy failure (unproven)</span></td><td>WSTS +129% vs Nordic +33%; correlation +0.76 → +0.27 (Fisher z p 0.28), Chow p 0.57; TD Synnex − Logitech growth gap Welch p 0.15; Microchip distributor days (28, 26, 25) unaffected</td><td>WSTS and distributor dollars are context only, never in the model; the state signal stays</td></tr>
+<tr><td>2026 supplier incident</td><td><span class="pill p-warn">One-off shock</span></td><td>event study: gross −7.1m on Nordic's Q3, 75% assumed in the guide → net −1.8m; Q4 −0.9m</td><td>enters the forecast as an event term</td></tr>
+<tr><td>Nordic capacity tightness</td><td><span class="pill p-acc">Forward risk</span></td><td>CEO: "running at its almost maximum pace"; lead time 16 weeks</td><td>monitoring W4: lead time &gt; 20 weeks or stock halves</td></tr>
+<tr><td>GN restructuring (SteelSeries in 2022, Hearing divested in 2026), SYNNEX + Tech Data merger (2021)</td><td><span class="pill p-fix">Reporting basis</span></td><td>filings</td><td>config switches (config structural_breaks)</td></tr>
+<tr class="hl"><td>Stable</td><td><span class="pill p-ok">Stable</span></td><td>Logitech's 10-K customer shares (Amazon 17–19%, Ingram 13–15%, TD Synnex 12–15%); lag-kernel weight at 1 quarter 0.54</td><td>the graph uses them point in time</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence</th></tr>
+<tr><td>Four years hold one full cycle</td><td>most tests have low power (3 quarters since the tariffs)</td></tr>
+<tr><td>State thresholds set after seeing 2020–26 (D22)</td><td>a build-up is flagged a quarter late; the shortage split was decided after seeing the data and the back-test does not support it (5.31 vs 5.20)</td></tr>
+<tr><td>75% of the supplier incident assumed in the guide (<span class="g gD">D</span> judgment)</td><td>range 0 to −7.1m</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>More quarters after the tariffs</td><td>re-tests the price break</td></tr>
+<tr><td>Watch capacity (W4)</td><td>if lead times lengthen, the shortage state switches on by rule</td></tr>
+<tr><td>More cycles</td><td>peers' data go back to 2008; Nordic's own chain data do not</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/event_study.svg" alt="Supplier incident event study"></div>
+  <div class="fig"><img src="figures/relationship_breaks.svg" alt="The tested chain relationship over time and the p-value of every break test"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= NOT BUILT -->
+<section class="mod" id="notbuilt">
+<h2><span class="en">What we chose not to build</span>Build only what can be back-tested</h2>
+<p class="ask"><b>Brief</b>What you chose not to build. Note where you used an existing library, API or dataset rather than writing your own, and where you deliberately stopped.</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>The value is in the reasoning and the tests, not in infrastructure: data fetching, statistical tests and charts use existing APIs and libraries. The rule for stopping: going further would not change any forecast number, or would only "work" by chance on one cycle.</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><p class="none">None (this section is about trade-offs).</p></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Used, not written</th><th>What</th></tr>
+<tr><td>Data and APIs</td><td>SEC EDGAR XBRL and filings, Oslo Børs NewsWeb, company PDFs (pdfplumber), FRED / Census / WSTS, ECB FX rates, findchips (Digi-Key and Mouser stock and lead times), fccid.io exhibits and the iFixit API</td></tr>
+<tr><td>Libraries</td><td>pandas, numpy, scipy, matplotlib; no database, scheduler or machine-learning framework</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Not built / stopped</th><th>Type</th><th>Reason</th></tr>
+<tr><td>Amazon Best Sellers Rank</td><td><span class="pill p-fix">Skipped</span></td><td>the free archive carries the rank in 2 of 14 monthly captures; Keepa is paid</td></tr>
+<tr><td>Price and promotion history, Idealo / Geizhals, brand promo pages</td><td><span class="pill p-fix">Skipped</span></td><td>no history to back-test</td></tr>
+<tr><td>GN sell-out data</td><td><span class="pill p-fix">Skipped</span></td><td>paid, and mostly an invisible channel</td></tr>
+<tr><td>FCC photo census</td><td><span class="pill p-warn">Stopped at 38 grants</span></td><td>enough to bound the socket share</td></tr>
+<tr><td>Factor search</td><td><span class="pill p-warn">Stopped after ~12</span></td><td>one more would "work" by chance</td></tr>
+<tr><td>ODM production-lead test</td><td><span class="pill p-warn">One pass</span></td><td>—</td></tr>
+<tr><td>Route-level propagation</td><td><span class="pill p-warn">Tested, dropped</span></td><td>no gain</td></tr>
+<tr><td>A state-dependent chain amplitude</td><td><span class="pill p-warn">Not built</span></td><td>one destock to estimate and score it on, and no live number would move</td></tr>
+<tr><td>Forecasts beyond the quarter after the guide</td><td><span class="pill p-warn">Not built</span></td><td>no public end demand to feed the graph further out</td></tr>
+<tr><td>Logitech's post-guide FX term</td><td><span class="pill p-warn">Computed, not applied</span></td><td>fails its walk-forward test (F27)</td></tr>
+<tr class="hl"><td>12-peer panel</td><td><span class="pill p-ok">Beyond scope, kept</span></td><td>it showed the beat is management's forecast error (K1)</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><p>Without those sources, end demand can only be proxied by Logitech's sell-through (see Lag).</p></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>Keepa (Amazon rank and price history), POS data</td><td>direct end sales</td></tr>
+<tr><td>Distributors' inventory by vendor</td><td>Nordic's channel level</td></tr>
+</table></div><p class="flowcap">Full list with reasons: <code>docs/not_built.md</code></p></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><p class="none">—</p></div></div>
+</section>
+
+<!-- ======================================================= LIMITATIONS -->
+<section class="mod" id="limits">
+<h2><span class="en">Model limitations</span>It works where the orders have not yet shown up</h2>
+<p class="ask"><b>Brief</b>Model limitations. Does it work, where and why, and where it doesn't.</p>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p class="concl"><b>Conclusion:</b> it helps where the orders have not yet shown up, and adds almost nothing where they have. For the guided quarter management already sees the chain's information in its orders, so the guide wins; one quarter out, the model timed by the graph's lags beats the guide extrapolation.</p>
+<p>The beat is management's forecast error, not demand: across 632 peer quarters revenue YoY has sd 29% but the beat only 3.9% (correlation 0.23); in the 20 quarters where revenue fell 30% or more the mean beat was −0.2% and 95% stayed within ±5%. Management writes the cycle into the guide.</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Walk-forward back-test</h5>
+    <div class="f">each quarter is fitted only on the data before it, then forecast; models are compared by RMSE on the same quarters</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Files</th></tr>
+<tr><td>Nordic and Logitech guides and actuals; 12 peers 2008–2026 (Pipeline D)</td><td><span class="file">walkforward_metrics_h1.csv · walkforward_metrics_h2.csv · guide_error_walkforward_nordic.csv · key_insights.csv · composite_risks.csv</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
+<tr><th>Test (out of sample)</th><th>Best</th><th>Against</th><th>Reading</th></tr>
+<tr><td>Guided quarter (h=1), Nordic revenue</td><td>guide × beat 7.4m</td><td>lag models 3.9–5.9× worse; chain weight 0</td><td>the guide holds the order book</td></tr>
+<tr><td>Nordic guide error (h=1)</td><td>pooled with peers 5.05 pts</td><td>rule in use 5.31, before the shortage split 5.20, past-4 beat 5.41, guide midpoint 5.55, Nordic's own words as the state (F31) 5.66</td><td>the rule in use is not the best out of sample: the shortage split was decided after seeing the data, and its habit rests on 7 quarters</td></tr>
+<tr class="hl"><td>The quarter after the guide (h=2)</td><td>GRi 25.4m</td><td>0.54× the guide extrapolation (n 9; post-hoc against GR 28.0m); reasoned chain 39.4m</td><td>where the chain earns its place</td></tr>
+<tr><td>Nowcast of Logitech's unreported quarter</td><td>persistence 4.96 pts</td><td>proxy composite 5.60 (n 13); TD Synnex alone 4.49 vs 4.22 (n 8)</td><td>not adopted</td></tr>
+<tr><td>Guide-setting factor (relative optimism)</td><td>—</td><td>671 peer firm-quarters: t 0.3, out-of-sample R² −0.005</td><td>no factor predicts the misses</td></tr>
+<tr><td>Channel factor, the quarter after the guide</td><td>—</td><td>479 peer firm-quarters: out-of-sample R² +1.6% (t 1.4); 102% of the gain from 2023Q3, 2023Q4, 2025Q4</td><td>useful, but small and only at turns</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Risk the tests cannot rule out (flags of the composite channel factor, a challenger not in the point)</th><th>What</th></tr>
+<tr><td>R1–R2</td><td>the gain comes from one cycle turn; factors chosen after seeing the data</td></tr>
+<tr><td>R3–R4</td><td>primary and challenger disagree this quarter; very few independent observations</td></tr>
+<tr><td>R5–R6</td><td>the mechanism fails external validation on 12 peers; it rests on one cycle turn</td></tr>
+<tr><td>Weakest links</td><td>the channel level (no company discloses weeks on hand in numbers); the invoicing route behind attribution; ~4 independent observations behind any Nordic-only estimate; the channel state flags a build-up a quarter late, with thresholds set after seeing 2020–26</td></tr>
+<tr><td>GN</td><td>the chain does not help: read-across correlation −0.17 / +0.21 against a 0.5 bar; GN is ≈1% of Nordic</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>Scored after the print</th><th>Against</th><th>When</th></tr>
+<tr><td>Nordic Q3</td><td>three pre-registered challengers and the channel composite</td><td>22 Oct</td></tr>
+<tr><td>Logitech Q2</td><td>the supply-side ODM nowcast (1,220m)</td><td>≈27 Oct</td></tr>
+<tr><td>Nordic Q4</td><td>GRi against GR and the reasoned chain</td><td>Feb 2027</td></tr>
+</table></div><p class="flowcap">challenger_prereg_log.csv · logitech_odm_prereg_log.csv · q4_prereg_log.csv</p></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/backtest.svg" alt="Walk-forward back-test: the guide wins the guided quarter; the graph helps one quarter out"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= NORDIC -->
+<section class="mod" id="nordic">
+<h2><span class="en">Nordic Semiconductor Q3 2026 · reports 22 Oct</span>Revenue 238.0m, gross margin 53.1%</h2>
+<div class="kv">
+  <div><div class="k">Revenue (≈80% range)</div><div class="v">238.0m</div><div class="s">224.6–251.3 · YoY +32.9%</div></div>
+  <div><div class="k">Gross margin (ex one-offs)</div><div class="v">53.1%</div><div class="s">51.9–54.3%</div></div>
+  <div><div class="k">Company guide</div><div class="v">220–240m</div><div class="s">GM &gt; 50% (6 Aug)</div></div>
+</div>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>In a guided quarter the guide already holds the orders Nordic can see, so the forecast is how far management will be off this time. No chain or lag model beat the guide in the back-test (see Lag).</p>
+<div class="flowbox"><div class="flow">
+  <div class="lane"><h4>Start</h4>
+    <div class="node"><b>Guide midpoint 230</b><small>220–240 (Q2 report, 6 Aug)</small></div>
+  </div>
+  <div class="lane"><h4>How far management will be off</h4>
+    <div class="node"><b>× (1 + 4.24%)</b><small>Nordic's <b>own</b> record (+4.2% vs the peers' +2.0%, only t 1.4, so using its own record is a judgment; F20), from the 7 quarters after a channel that was neither building nor short (F30)</small></div>
+    <div class="node"><b>Lean now, not a shortage</b><small>lead time 16 weeks → no building or shortage effect</small></div>
+  </div>
+  <div class="lane"><h4>Not in the guide</h4>
+    <div class="node"><b>Supplier incident −1.78</b><small>Logitech's 25 June incident, pushed through the supply graph to Nordic's shipments; 75% assumed already in the 6 Aug guide</small></div>
+    <div class="node"><b>Chain term × 0</b><small>encompassing test: the chain has no information beyond the guide</small></div>
+  </div>
+  <div class="lane out"><h4>Point</h4>
+    <div class="node"><b>238.0m</b><small>224.6–251.3 (≈80%)</small></div>
+    <div class="node"><b>GM 53.1%</b><small>only a floor is guided → the simple rule with the lowest back-test error (F18)</small></div>
+  </div>
+</div></div>
+<p class="concl"><b>Conclusion:</b> revenue 238.0m (224.6–251.3, ≈80%), +32.9% YoY; gross margin 53.1% (51.9–54.3%).</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Revenue</h5>
+    <div class="f">230 × (1 + 4.24%) − 1.78 + 0 = 238.0</div></div>
+  <div class="fx"><h5>Range</h5>
+    <div class="f">± 1.2816 × σ × 230, σ = √(s² + s²/n) = √(4.23² + 4.23²/7) = 4.52% → ± 13.3</div></div>
+  <div class="fx"><h5>Expected error e</h5>
+    <div class="f">e = Nordic's mean guide error after quarters that were neither building nor short = +4.24% (n 7)</div>
+    <div class="w">guide error = actual ÷ guide midpoint − 1; after a building quarter add −7.39 pts (n 7), after a shortage quarter −2.32 pts (n 7)</div></div>
+  <div class="fx"><h5>Supplier incident, net</h5>
+    <div class="f">event-study gross effect −7.1m × (1 − 75% already in the guide) = −1.78m</div></div>
+  <div class="fx"><h5>Gross margin</h5>
+    <div class="f">last quarter's GM ex one-offs = 53.1%</div>
+    <div class="w">range ± 1.2816 × 0.92: the rule's error over the 9 quarters of the current, hand-dated 'normal' regime (2.06 over all quarters, shown below)</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Q3 guide</td><td>revenue 220–240m; GM &gt; 50%</td><td>Nordic Q2 2026 report (6 Aug)</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Guides and actuals</td><td>21 quarters, 2021Q2–2026Q2</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Channel state</td><td>Microchip distributor days; Nordic backlog 2020Q4–2023Q1; live lead time 16 weeks</td><td>10-Q / 10-K; quarterly reports; findchips</td><td class="g-col"><span class="g gA">A</span> <span class="g gB">B</span> <span class="g gD">D</span></td></tr>
+<tr><td>Supplier incident</td><td>≈20m in Q2 FY27, up to 200m in Oct–Dec</td><td>Logitech call</td><td class="g-col"><span class="g gC">C</span></td></tr>
+<tr><td>Incident propagation</td><td>lead time 14 weeks; Nordic content 3.63%</td><td>supply graph (step 5d)</td><td></td></tr>
+<tr><td>GM and one-offs</td><td>2021–2026; one-offs in 2024Q2 (write-down) and 2025Q4</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span> <span class="g gA">A</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body">
+<div class="tbl"><table>
+<tr><th>Cross-check (10 of 13 inside the range)</th><th>Type</th><th class="num">Revenue</th><th>vs range</th></tr>
+<tr class="hl"><td>Point</td><td>main model</td><td class="num">238.0</td><td>224.6–251.3</td></tr>
+<tr><td>Rule before the shortage split</td><td>challenger (pre-registered)</td><td class="num">235.3</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Habit pooled with the peers (F16)</td><td>challenger (pre-registered)</td><td class="num">232.6</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Nordic's own words as the state (F31)</td><td>challenger (pre-registered)</td><td class="num">237.0</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Channel composite</td><td>challenger (pre-registered)</td><td class="num">239.8</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Composite + graph</td><td>challenger (pre-registered)</td><td class="num">238.6</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Reasoned chain (CH)</td><td>independent method</td><td class="num">224.5</td><td><span class="pill p-bad">outside</span></td></tr>
+<tr><td>Distributors turn to building</td><td>scenario</td><td class="num">221.0</td><td><span class="pill p-bad">outside</span></td></tr>
+<tr><td>Distributors restock to step 3's high</td><td>scenario</td><td class="num">252.6</td><td><span class="pill p-bad">outside</span></td></tr>
+</table></div>
+<p class="flowcap">cross_checks.csv · challenger_prereg_log.csv · composite_prereg_log.csv (scored on 22 Oct)</p>
+<div class="tbl"><table>
+<tr><th>Gross-margin rule</th><th class="num">Walk-forward RMSE (pts)</th><th>Result</th></tr>
+<tr class="hl"><td>Last quarter</td><td class="num">2.06</td><td><span class="pill p-acc">adopted</span></td></tr>
+<tr><td>Guide + last 4 errors</td><td class="num">2.08</td><td></td></tr>
+<tr><td>Guide + all errors</td><td class="num">2.31</td><td></td></tr>
+<tr><td>4-quarter mean</td><td class="num">2.63</td><td></td></tr>
+<tr><td>Same quarter last year</td><td class="num">4.33</td><td></td></tr>
+<tr><td>Channel-excess term (F25)</td><td class="num">2.35 vs 2.34</td><td>not adopted: peers −0.25 pts, t −1.18</td></tr>
+</table></div>
+<p>The &gt; 50% floor has been met in 77% of quarters.</p>
+</div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence</th></tr>
+<tr><td>The shortage split was decided after seeing the data (F30)</td><td>walk-forward over 14 quarters: 5.31 pts, against 5.20 before the split and 5.05 for the pooled model (best); the new habit rests on 7 quarters</td></tr>
+<tr><td>75% of the incident already in the guide (<span class="g gD">D</span> judgment)</td><td>all of it in the guide: 239.8; none: 232.7</td></tr>
+<tr><td>A turn to building</td><td>Nordic's own building effect comes from 7 quarters of one cycle; if it happens, revenue 221.0</td></tr>
+<tr><td>The GM range covers GM ex one-offs only</td><td>2 of the last 9 quarters had one-offs, so a reported figure can land outside the range (P117)</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>When</th></tr>
+<tr><td>Fill in the actual; score the new and old rules and every challenger; keep or drop the shortage split</td><td>after the 22 Oct print</td></tr>
+<tr><td>Distributor-inventory wording (W2) and lead time (W4) as pre-print signals</td><td>before the print</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/nordic_revenue_bridge.svg" alt="Nordic Q3 2026 revenue build-up"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= LOGITECH -->
+<section class="mod" id="logitech">
+<h2><span class="en">Logitech Q2 FY2027 · September quarter · reports ≈27 Oct</span>Net sales 1,226.3m, gross margin 45.3%</h2>
+<div class="kv">
+  <div><div class="k">Net sales (≈80% range)</div><div class="v">1,226.3m</div><div class="s">1,172.9–1,279.6 · YoY +3.4%</div></div>
+  <div><div class="k">Non-GAAP gross margin</div><div class="v">45.3%</div><div class="s">44.1–46.5%</div></div>
+  <div><div class="k">Company guide</div><div class="v">1,185–1,220m</div><div class="s">GM ≈44% (call)</div></div>
+</div>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>As for Nordic, the guided quarter is a forecast of how far management will be off.</p>
+<div class="flowbox"><div class="flow">
+  <div class="lane"><h4>Start</h4>
+    <div class="node"><b>Guide midpoint 1,202.5</b><small>1,185–1,220 (Q1 FY27 release, 28 Jul)</small></div>
+  </div>
+  <div class="lane"><h4>How far management will be off</h4>
+    <div class="node"><b>× (1 + 1.98%)</b><small>Logitech has guided quarterly only since 2025Q2 (5 guides), so its habit is partially pooled with 12 peers' (F16); the weight follows its sample size and noise</small></div>
+    <div class="node"><b>Channel state lean</b><small>the peers' building effect (−1.64 pts, t −4.4) does not apply now</small></div>
+  </div>
+  <div class="lane"><h4>Chain (shown only)</h4>
+    <div class="node"><b>1,315.7 × weight 0 (F29)</b><small>the sell-through it reads was known when Logitech guided; back-test error 23m vs 13m for the guide method (5 quarters)</small></div>
+  </div>
+  <div class="lane out"><h4>Point</h4>
+    <div class="node"><b>1,226.3m</b><small>1,172.9–1,279.6; just above the 1,220 top of the guide</small></div>
+    <div class="node"><b>GM 45.3%</b><small>a point guide → guide + mean past error (F18)</small></div>
+  </div>
+</div></div>
+<p class="flowcap">The chain is the tier identity: sell-in = sell-through + change in channel inventory, with channel weeks held flat.</p>
+<p class="concl"><b>Conclusion:</b> net sales 1,226.3m (1,172.9–1,279.6), +3.4% YoY, just above the 1,220m top of the guide; non-GAAP GM 45.3% (44.1–46.5%).</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Net sales</h5>
+    <div class="f">1,202.5 × (1 + 1.98%) + 0 × chain = 1,226.3</div>
+    <div class="w">range ± 1.2816 × 3.46% × 1,202.5 = ± 53.4</div></div>
+  <div class="fx"><h5>Partial pooling (DerSimonian–Laird estimates of μ, τ²)</h5>
+    <div class="f">w = τ² ÷ (τ² + s²/n) = 0.300 ÷ (0.300 + 3.42²/5) = 0.114</div>
+    <div class="f">e = 0.114 × own +1.61% + 0.886 × peers' μ +2.02% = +1.98%</div></div>
+  <div class="fx"><h5>Chain (shown only)</h5>
+    <div class="f">same quarter last year 1,186.1 × (1 + sell-through YoY 10.9%) = 1,315.7</div></div>
+  <div class="fx"><h5>Gross margin</h5>
+    <div class="f">44% + mean past error +1.3 pts = 45.3%</div>
+    <div class="w">range ± 1.2816 × 0.93 (the rule's walk-forward error)</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
+<tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Q2 FY27 guide</td><td>1,185–1,220m</td><td>Q1 FY27 release (28 Jul)</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>GM guide</td><td>≈44%</td><td>earnings call</td><td class="g-col"><span class="g gC">C</span></td></tr>
+<tr><td>Quarterly guides and actuals</td><td>5</td><td>8-K</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>12 peers' guides and actuals</td><td>2008–2026</td><td>Pipeline D</td><td class="g-col"><span class="g gA">A</span> <span class="g gB">B</span></td></tr>
+<tr><td>Sell-through YoY and gap</td><td>quarterly</td><td>earnings calls</td><td class="g-col"><span class="g gC">C</span></td></tr>
+<tr><td>Channel state</td><td>Microchip distributor days</td><td>10-Q / 10-K</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>GM guides and actuals</td><td>last 4</td><td>calls and 8-K</td><td class="g-col"><span class="g gC">C</span> <span class="g gB">B</span></td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body">
+<div class="tbl"><table>
+<tr><th>Cross-check (5 of 6 inside the range)</th><th>Type</th><th class="num">Net sales</th><th>vs range</th></tr>
+<tr class="hl"><td>Point</td><td>main model</td><td class="num">1,226.3</td><td>1,172.9–1,279.6</td></tr>
+<tr><td>Supply-side ODM nowcast (Merry + Chicony Jul–Aug revenue −13.2% YoY, F28)</td><td>challenger (pre-registered)</td><td class="num">1,220.4</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Chain at its back-test weight 0.23</td><td>scenario</td><td class="num">1,248.2</td><td><span class="pill p-ok">inside</span> +22</td></tr>
+<tr><td>Adding the implied guides at the 2023–25 turns, weight 0.48</td><td>scenario</td><td class="num">1,271.2</td><td><span class="pill p-ok">inside</span> +45</td></tr>
+<tr><td>Tier-identity chain</td><td>independent method</td><td class="num">1,315.7</td><td><span class="pill p-bad">outside</span> +89</td></tr>
+<tr><td>Post-guide FX change (F27)</td><td>not applied</td><td class="num">+1.4</td><td>the back-test is worse with it: 28.0m vs 23.3m (n 4)</td></tr>
+</table></div>
+<p class="flowcap">cross_checks.csv · logitech_odm_prereg_log.csv</p>
+<div class="tbl"><table>
+<tr><th>Gross margin</th><th>Value</th></tr>
+<tr><td>Last 4 quarters, actual − guide</td><td class="mono">+0.6, +2.3, +1.0, +1.3 (all above the guide)</td></tr>
+<tr><td>Rules by RMSE (pts)</td><td class="mono">guide + mean error 0.93 (adopted) · 4-quarter mean 1.11 · last quarter 1.29</td></tr>
+</table></div>
+</div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence</th></tr>
+<tr><td>Only 5 quarterly guides</td><td>own weight 11%: the habit is mostly borrowed from the peers</td></tr>
+<tr><td>Guide errors at turns</td><td>at the 2023–25 turns actual sales beat the implied quarterly outlook by up to 11% (logitech_implied_quarter_guides.csv); upside risk from the chain (+89m), downside from the ODM signal (1,220)</td></tr>
+<tr><td>Supplier incident (≈20m in Q2) assumed to be in the guide</td><td>—</td></tr>
+<tr><td>GM guided only 4 times</td><td>the mean past error is noisy</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>When</th></tr>
+<tr><td>Score the ODM challenger (W16); add the quarter to the guide record</td><td>after the ≈27 Oct print</td></tr>
+<tr><td>Update the challenger with the ODMs' September revenue</td><td>≈10 Oct</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/logitech_revenue_bridge.svg" alt="Logitech Q2 FY27 net sales build-up"></div>
+</div></div></div>
+</section>
+
+<!-- ======================================================= GN -->
+<section class="mod" id="gn">
+<h2><span class="en">GN Audio Q3 2026 · continuing ops · reports 5 Nov</span>Revenue 2,247 DKKm, EBITA margin 13.5%</h2>
+<div class="kv">
+  <div><div class="k">Revenue (≈80% range)</div><div class="v">2,247 DKKm</div><div class="s">2,023–2,471 · YoY +1.6%</div></div>
+  <div><div class="k">Adj. EBITA margin</div><div class="v">13.5%</div><div class="s">9.3–17.8%</div></div>
+  <div><div class="k">Full-year guide (19 Aug)</div><div class="v">organic 0–3%</div><div class="s">EBITA margin 9–10%</div></div>
+</div>
+
+<div class="blk"><div class="lbl">reasoning</div><div class="body">
+<p>GN gives only full-year guidance (set in February, revised through the year) with no quarterly guide and no comparable peer group, so the full-year number from the August statement is corrected by <b>its own</b> mean August-guide error (F17, F23); H1 is reported, so H2 is backed out and Q3 taken from it. FX is added separately: the organic guide excludes it, so it is computed from ECB rates and GN's currency mix (F27).</p>
+<div class="flowbox"><div class="flow c5">
+  <div class="lane"><h4>Full-year guide</h4>
+    <div class="node"><b>Organic 1.5%</b><small>midpoint of 0–3%</small></div>
+  </div>
+  <div class="lane"><h4>August error</h4>
+    <div class="node"><b>−3.3 pts → FY −1.8%</b><small>2021–25 mean</small></div>
+  </div>
+  <div class="lane"><h4>H2 backed out</h4>
+    <div class="node"><b>+0.15%</b><small>H1 reported −3.92%</small></div>
+  </div>
+  <div class="lane"><h4>Q3 + FX</h4>
+    <div class="node"><b>2,211 × 1.0015 × 1.0147</b><small>2025 Q3 continuing ops; FX +1.47 pts</small></div>
+  </div>
+  <div class="lane out"><h4>Revenue</h4>
+    <div class="node"><b>2,247 DKKm</b><small>2,023–2,471</small></div>
+  </div>
+</div></div>
+<p>The margin follows the same logic: full-year margin guide + August margin error → full-year EBITA − H1 reported = H2 → Q3 at its share of H2.</p>
+<div class="flowbox"><div class="flow c5">
+  <div class="lane"><h4>Full-year margin</h4>
+    <div class="node"><b>9.5% − 0.94 = 8.56%</b><small>guide midpoint + August margin error</small></div>
+  </div>
+  <div class="lane"><h4>Full-year EBITA</h4>
+    <div class="node"><b>8.56% × 9,331 = 799</b><small>full-year revenue 9,331</small></div>
+  </div>
+  <div class="lane"><h4>H2</h4>
+    <div class="node"><b>799 − 117 = 682</b><small>H1 EBITA 117 (reported)</small></div>
+  </div>
+  <div class="lane"><h4>Q3</h4>
+    <div class="node"><b>682 × 44.7% = 304</b><small>Q3's share of H2 (2025)</small></div>
+  </div>
+  <div class="lane out"><h4>EBITA margin</h4>
+    <div class="node"><b>304 ÷ 2,247 = 13.5%</b><small>9.3–17.8%</small></div>
+  </div>
+</div></div>
+<p class="concl"><b>Conclusion:</b> revenue 2,247 DKKm (2,023–2,471), +1.6% YoY; adj. EBITA margin 13.5% (9.3–17.8%).</p>
+</div></div>
+
+<div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
+  <div class="fx"><h5>Full-year organic</h5>
+    <div class="f">guide midpoint 1.5% + mean August error −3.3 pts = −1.8%</div></div>
+  <div class="fx"><h5>H2 organic</h5>
+    <div class="f">(FY × (H1b + H2b) − H1 × H1b) ÷ H2b = +0.15%</div>
+    <div class="w">H1 = −3.92% (reported); b = 2025 half-year revenue weights</div></div>
+  <div class="fx"><h5>Q3 revenue</h5>
+    <div class="f">2025 Q3 2,211 × (1 + 0.15%) × (1 + 1.47%) = 2,247</div>
+    <div class="w">range ± 1.2816 × H2 σ 7.79 pts × base</div></div>
+  <div class="fx"><h5>FX</h5>
+    <div class="f">Σ currency exposure × (this Q3's average rate ÷ last Q3's − 1)</div>
+    <div class="w">USD exposure 0.43 × +1.63% YoY = +0.69 pts; APAC basket 0.20 × +3.89% = +0.78 pts; total +1.47 pts</div></div>
+  <div class="fx"><h5>EBITA</h5>
+    <div class="f">(9.5% − 0.94) × 9,331 − 117 = 682; × 44.7% = 304; ÷ 2,247 = 13.5%</div>
+    <div class="w">range ± 1.2816 × √(2.61² + 2.02²) = ± 1.2816 × 3.30</div></div>
+</div></div></div>
+
+<div class="blk"><div class="lbl">data used</div><div class="body">
+<div class="tbl"><table>
+<tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
+<tr><td>Full-year guide</td><td>organic 0–3%; adj. EBITA margin 9–10%</td><td>19 Aug</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>August guides and actuals 2021–25</td><td>see the table below (173 statements quote-checked)</td><td>annual / interim reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>2025 Q3 continuing-ops revenue</td><td>2,211 (Enterprise 1,624 + Gaming 587)</td><td>quarterly report</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>H1 2026</td><td>organic −3.92%; EBITA 117</td><td>interim report</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>ECB reference rates</td><td>63 days of Q3 so far</td><td>ECB</td><td class="g-col"><span class="g gA">A</span></td></tr>
+<tr><td>GN's disclosed FX effects</td><td>5 quarters (to fit the currency exposure)</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+</table></div>
+<div class="tbl"><table>
+<tr><th>August error (actual − guide)</th><th class="num">2021</th><th class="num">2022</th><th class="num">2023</th><th class="num">2024</th><th class="num">2025</th><th class="num">Mean</th></tr>
+<tr><td>Organic revenue (pts)</td><td class="num">−3.0</td><td class="num">−9.5</td><td class="num">0</td><td class="num">−3.0</td><td class="num">−1.0</td><td class="num"><b>−3.3</b></td></tr>
+<tr><td>EBITA margin (pts)</td><td class="num">+0.2</td><td class="num">−3.4</td><td class="num">−0.4</td><td class="num">−0.5</td><td class="num">−0.6</td><td class="num"><b>−0.94</b></td></tr>
+<tr><td>Q3 share of H2 EBITA</td><td class="num">50.7%</td><td class="num">58.0%</td><td class="num">43.5%</td><td class="num">—</td><td class="num">44.7%</td><td class="num">2025 used</td></tr>
+</table></div>
+</div></div>
+
+<div class="blk"><div class="lbl">data support</div><div class="body">
+<div class="tbl"><table>
+<tr><th>Cross-check (3 of 4 inside the range)</th><th class="num">Revenue</th><th>vs range</th></tr>
+<tr class="hl"><td>Point</td><td class="num">2,247</td><td>2,023–2,471</td></tr>
+<tr><td>Division view</td><td class="num">2,348</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Guide as given (no error correction)</td><td class="num">2,389</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Error pooled with the semiconductor peers (wrong reference class)</td><td class="num">2,476</td><td><span class="pill p-bad">outside</span></td></tr>
+</table></div>
+<p class="note"><b>The point is below all three alternatives:</b> a bet that GN's August guide is too high again (4 of 5 years).</p>
+<div class="tbl"><table>
+<tr><th>Other checks</th><th>Result</th></tr>
+<tr><td>FX fit</td><td>USD exposure 0.43 errs 0.6 pts over 5 quarters (2.3 carrying the last quarter forward); North America check −7.3% vs −7.0% disclosed</td></tr>
+<tr><td>EBITA bridged from Q2</td><td>11.6% = Q2 EBITA 111 + incremental revenue contribution 40 + savings 50 + tariff refund 60; 8.9% without the one-off refund (the rule's 13.5% is 10.9% without it)</td></tr>
+<tr><td>EBITA with Q3's share at its 2021–25 mean, 49.2%</td><td>14.9%</td></tr>
+</table></div>
+</div></div>
+
+<div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
+<tr><th>Assumption / limit</th><th>Consequence</th></tr>
+<tr><td>August errors cover 5 years only, on changing perimeters</td><td>2022's −9.5 pts dominates the mean; revenue errors are GN Audio in 2021–22 and the group in 2023–25, margin errors Audio in 2021–23 and the group in 2024–25</td></tr>
+<tr><td>The margin depends most on assumptions</td><td>the rule's 13.5% and the Q2 bridge's 11.6% are 1.9 pts apart: the full-year guide needs H2 profit to be back-loaded; only 2025 is on the continuing-ops basis for Q3's share (43.5–58% across years, sd 6.6 pts)</td></tr>
+<tr><td>The chain does not help GN</td><td>read-across correlation −0.17 / +0.21, below the 0.5 bar; GN is ≈1% of Nordic</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
+<tr><th>What</th><th>What it solves</th></tr>
+<tr><td>Score the Q3 point after the 5 Nov print; add FY2026's August-guide error once the full year is reported (Feb 2027)</td><td>the August-error rule gets its 6th observation</td></tr>
+<tr><td>An anchor for GN's channel (it never says "at target"); a chip census for GN</td><td>GN's channel level and share</td></tr>
+</table></div></div></div>
+
+<div class="blk"><div class="lbl">figures</div><div class="body"><div class="figs">
+  <div class="fig"><img src="figures/gn_revenue_bridge.svg" alt="GN Q3 2026 revenue build-up"></div>
+</div></div></div>
+</section>
+
+</main>
+</div>

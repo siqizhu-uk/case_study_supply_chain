@@ -1,0 +1,4 @@
+target_quarter,fiscal_label,guide_source_quarter,statement,outlook_low_usdm,outlook_high_usdm,reported_quarters,release_url,note,implied_low_usdm,implied_high_usdm
+2023Q3,FY24Q2,2023Q2,New H1 2024 outlook Sales $1.875 - $1.975 billion,1875,1975,2023Q2,https://www.sec.gov/Archives/edgar/data/1032975/000103297523000050/exhibit991q1fy24.htm,H1 FY24 outlook raised with Q1 FY24 results (25 Jul 2023),900.5,1000.5
+2024Q1,FY24Q4,2023Q4,New FY24 outlook Sales $4.2 - $4.25 billion,4200,4250,2023Q2|2023Q3|2023Q4,https://www.sec.gov/Archives/edgar/data/1032975/000103297524000004/exhibit991q3fy24.htm,FY24 outlook raised with Q3 FY24 results (23 Jan 2024),913.0,963.0
+2025Q1,FY25Q4,2024Q4,New FY25 outlook Sales $4.54 - $4.57 billion,4540,4570,2024Q2|2024Q3|2024Q4,https://www.sec.gov/Archives/edgar/data/1032975/000103297525000005/exhibit991q3fy25.htm,FY25 outlook raised with Q3 FY25 results (Jan 2025),995.5,1025.5

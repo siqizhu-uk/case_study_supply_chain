@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "driver": "logi_ble_yoy_tv",
+  "n": 14,
+  "r2_in_sample": 0.922655746692515,
+  "rmse_in_sample": 9.118207554977317,
+  "rmse_loo": 13.508895834576261,
+  "lag_profile_pts": {
+    "1": 1.529480193222295,
+    "2": 1.2191486136840346,
+    "3": 1.376734123340467
+  },
+  "best_lag": 1,
+  "sum_lag_effect": 4.125362930246797,
+  "alternatives": {
+    "logi_ble_yoy": {
+      "rmse_loo": 16.27,
+      "r2_in_sample": 0.877,
+      "sum_lag_effect": 3.84
+    },
+    "logi_ble_yoy_tv": {
+      "rmse_loo": 13.51,
+      "r2_in_sample": 0.923,
+      "sum_lag_effect": 4.13
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "channel_index_choice": "start 2023Q1 (anchor rms 0.73 wk) preferred to start 2021Q2 (rms 0.82 wk)",
+  "logitech_anchor_fit": {
+    "anchors_used": [
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2025Q4",
+      "2026Q1"
+    ],
+    "constant": -362.7267331394716,
+    "anchor_weeks": {
+      "2025Q1": 1.22,
+      "2025Q2": 0.37,
+      "2025Q3": -0.07,
+      "2025Q4": -0.39,
+      "2026Q1": -0.95
+    },
+    "rms_weeks": 0.7331800408067844,
+    "max_abs_weeks": 1.2237928121720891
+  },
+  "gn_anchor_fit": {
+    "anchors_used": [],
+    "constant": 0.0,
+    "anchor_weeks": {},
+    "rms_weeks": NaN,
+    "max_abs_weeks": NaN
+  },
+  "reduced_form": {
+    "n": 16,
+    "lag": 2,
+    "sample": [
+      "2022Q3",
+      "2026Q2"
+    ],
+    "a": 10.897583987542248,
+    "coef": {
+      "g": 1.900323506008098
+    },
+    "se": {
+      "g": 0.573196227609959
+    },
+    "r2": 0.4350800695288365,
+    "rmse_loo": 26.79722657466504,
+    "ci90": {
+      "g": [
+        1.160976311107358,
+        3.355683731994461
+      ]
+    }
+  },
+  "prediction_2026Q3": {
+    "quarter": "2026Q3",
+    "driver_quarter": "2026Q1",
+    "driver_yoy": 7.432699920823449,
+    "trend_a": 10.897583987542248,
+    "demand_b_x_g": 14.12453437264533,
+    "yoy": 25.022118360187577,
+    "rmse_loo": 26.79722657466504
+  },
+  "call": [
+    {
+      "company": "nordic",
+      "print": "Q3 2026 revenue",
+      "unit": "USDm",
+      "state": "distribution restocking from a lean base (coded state +0.5); component distributors lean: Avnet 75 d, Arrow 61 d, Microchip distributor days 25 (31% of the way up its 10-year range)",
+      "direction": "small Q3 upside (mostly in the guide); the same amount is a payback risk in H1 2027",
+      "watch_flag": true,
+      "evidence": "own DIO 193 d (forward 184 d on the Q3 guide); inventory growth - revenue growth +27 pts; DSO 48 d (+11.5 YoY; receivables +42 pts faster than revenue)",
+      "adj_low": 0.0,
+      "adj_mid": 4.2,
+      "adj_high": 14.6,
+      "formula": "extra distributor weeks (0.0, 0.5, 1.5) x USD 17.7m/wk x distribution share (0.42, 0.47, 0.55)",
+      "config_line": "forecast.nordic_2026Q3.signal_adjustments_usdm.capacity_worry_pull_in",
+      "config_value": 0.0,
+      "questions": "Distributor weeks on hand and sell-through vs revenue in Q3? Split of the USD 217m inventory into wafers / WIP / finished goods? Why did receivables grow 2x revenue (timing, terms, or distributor mix)?",
+      "config_inside_range": true
+    },
+    {
+      "company": "logitech",
+      "print": "Q2 FY27 net sales (Jul-Sep 2026)",
+      "unit": "USDm",
+      "state": "lean: channel -2.1 wk vs target (all anchors) / -1.1 wk (latest anchor 2026Q1); sell-through ran +4 pts above sell-in in 2026Q2",
+      "direction": "refill tailwind to sell-in, capped by the late-June supplier incident",
+      "watch_flag": false,
+      "evidence": "DSO 50 d (-0.9 YoY); own DIO 72 d; FG growth - sales growth -11 pts; purchases -7% YoY",
+      "adj_low": 5.1,
+      "adj_mid": 36.5,
+      "adj_high": 161.9,
+      "formula": "deficit wk 1.1/1.6/2.3 x USD 92m/wk x refill (0.25, 0.5, 0.75) x supply (0.2, 0.5, 1.0)",
+      "config_line": "forecast.logitech_2026Q3.signal_adjustments_usdm (sum of hand-set lines)",
+      "config_value": 0.0,
+      "questions": "Weeks on hand at end-September vs target? How much of the refill was blocked by the supplier incident, and when does supply normalise?",
+      "config_inside_range": false
+    },
+    {
+      "company": "gn",
+      "print": "Q3 2026 Enterprise revenue (continuing ops)",
+      "unit": "DKKm",
+      "state": "distributors draining for 8 quarters: cumulative -481 DKKm = -4.0 wk of Enterprise sell-in since 2024Q3 (no anchor: relative, grade D)",
+      "direction": "H2 'positive organic' needs the drain to END more than sell-out to accelerate",
+      "watch_flag": false,
+      "evidence": "latest gap +3 pts (sell-out flat, sell-in -7% / -3% ex FalCom); group balance sheet not used (Hearing mix, held-for-sale 2026)",
+      "adj_low": -113.7,
+      "adj_mid": -48.7,
+      "adj_high": 16.2,
+      "formula": "Enterprise organic = sell-out (-2.0, 0.0, 2.0) - gap (3.0, 1.0, -1.0) = [-5.0, -1.0, 3.0] vs forecast mid +2% on base DKK 1624m",
+      "config_line": "forecast.gn_2026Q3.enterprise_org_pct.mid",
+      "config_value": 2.0,
+      "questions": "Enterprise sell-out vs sell-in in Q3 and distributor weeks on hand by region (EMEA)? Is the North America reduction finished?",
+      "config_inside_range": true
+    }
+  ]
+}

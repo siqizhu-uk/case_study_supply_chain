@@ -1,0 +1,10 @@
+target,company,challenger,spec_hash,data_hash,logged_on,guide_mid_usdm,challenger_error_pct,challenger_usdm,main_error_pct,main_usdm,actual_usdm,scored_on
+2026Q3,Nordic,F16 pooled guide-error model,6cdd701c11,e2531cc83b,2026-09-27,230.0,1.812,232.4,3.08,235.3,,
+2026Q3,Nordic,F16 pooled guide-error model,5459f81e05,e2531cc83b,2026-09-27,230.0,1.812,232.4,3.08,235.3,,
+2026Q3,Nordic,F16 pooled guide-error model,5459f81e05,54ed0b1872,2026-09-27,230.0,1.912,232.6,3.08,235.3,,
+2026Q3,Nordic,F16 pooled guide-error model,350e100728,54ed0b1872,2026-09-27,230.0,1.912,232.6,3.08,235.3,,
+2026Q3,Nordic,F16 pooled guide-error model,e0fdc60006,5537a0ab18,2026-09-27,230.0,1.912,232.6,4.24,238.0,,
+2026Q3,Nordic,F20 before F30 (supply-shortage quarters counted as lean),e0fdc60006,5537a0ab18,2026-09-27,230.0,3.079,235.3,4.24,238.0,,
+2026Q3,Nordic,F16 pooled guide-error model,46d8d775d7,5537a0ab18,2026-09-27,230.0,1.912,232.6,4.24,238.0,,
+2026Q3,Nordic,F20 before F30 (supply-shortage quarters counted as lean),46d8d775d7,5537a0ab18,2026-09-27,230.0,3.079,235.3,4.24,238.0,,
+2026Q3,Nordic,D25 own record with Nordic's own words as the state,46d8d775d7,5537a0ab18,2026-09-27,230.0,3.796,237.0,4.24,238.0,,

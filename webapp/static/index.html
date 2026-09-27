@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supply-chain model results</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Nordic ← Logitech / GN — results by step</div>
+    <div class="controls">
+      <label>compare with
+        <select id="baseline"></select>
+      </label>
+      <span id="status" class="muted"></span>
+    </div>
+  </header>
+  <nav id="tabs" class="tabs" role="tablist"></nav>
+  <main id="main"><p class="muted">Loading…</p></main>
+  <div id="toast" class="toast" hidden></div>
+  <script src="csv.js"></script>
+  <script src="app.js"></script>
+  <script src="assumptions.js"></script>
+</body>
+</html>

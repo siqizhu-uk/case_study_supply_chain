@@ -1,0 +1,20 @@
+quarter,net_sales_usdm,gross_profit_usdm,gm_pct,inventory_usdm,ces_yoy_pct,guide_low_usdm,guide_high_usdm,is_estimate,source
+2022Q1,13280,1042,7.85,,,,,1,stockanalysis.com XBRL-derived (pre-IPO); annual reconciles to 10-K
+2022Q2,12493,869,6.96,5771,,,,1,stockanalysis.com XBRL-derived
+2022Q3,12326,840,6.81,5751,,,,1,stockanalysis.com XBRL-derived
+2022Q4,12726,943,7.41,5358,,,,0,INGM S-1/A Oct 2024 balance sheet
+2023Q1,11569,849,7.34,4889,,,,1,stockanalysis.com / SEC XBRL companyfacts
+2023Q2,11526,865,7.50,4813,,,,1,stockanalysis.com / SEC XBRL companyfacts
+2023Q3,11925,855,7.17,4821,,,,0,INGM Q3 2024 release prior-year column
+2023Q4,13020,979,7.52,4660,,,,0,INGM Q4 2024 release prior-year column
+2024Q1,11335,835,7.37,4677,,,,0,INGM Q1 2025 release prior-year column
+2024Q2,11541,828,7.18,4739,,,,0,INGM Q2 2025 release prior-year column
+2024Q3,11763,845,7.19,4939,-2,,,0,INGM Q3 2024 release; CES down (delayed PC refresh) - YoY sign only
+2024Q4,13345,936,7.01,4699,3,13000,13500,1,INGM Q4 2024 release; CES up YoY (magnitude est)
+2025Q1,12281,829,6.75,5036,15,11425,11825,0,INGM Q1 2025 release/call
+2025Q2,12794,839,6.56,5510,14,11765,12165,0,INGM Q2 2025 release/call
+2025Q3,12604,870,6.90,5366,13,11875,12375,0,INGM Q3 2025 release/call
+2025Q4,14878,966,6.50,4970,8.8,14000,14350,0,INGM Q4 2025 release/call
+2026Q1,13963,926,6.63,5180,8,12450,12800,0,INGM Q1 2026 release/call; memory ASP tailwind 2-3%
+2026Q2,14531,959,6.60,6020,12,13600,14000,0,INGM Q2 2026 release/call; inventory +16% QoQ strategic procurement
+2026Q3,,,,,,13550,13950,0,Q3 2026 guidance (30 Jul 2026)

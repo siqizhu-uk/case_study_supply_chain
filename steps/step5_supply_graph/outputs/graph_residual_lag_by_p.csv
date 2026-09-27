@@ -1,0 +1,6 @@
+p,E14_lag_weeks,graph_mean_lag_weeks
+0 (old setting: residual all direct retail),3.0,18.17
+low 0.25,3.75,18.56
+mid 0.5,4.5,18.96
+high 0.75,5.25,19.35
+1 (residual all distributors),6.0,19.74

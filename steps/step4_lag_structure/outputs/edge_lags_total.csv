@@ -1,0 +1,7 @@
+route,brand,edge1_weeks,edge2_weeks,total_weeks,sim_p5_weeks,sim_p95_weeks,comonotone_low_weeks,comonotone_high_weeks,physical_weeks,total_quarters
+Amazon -> Logitech -> Nordic,logitech,4.5,19.5652,24.0652,11.6199,36.6675,8.4973,38.7588,17.3,1.8512
+Ingram / TD Synnex -> Logitech -> Nordic,logitech,9.1,19.5652,28.6652,15.3674,42.0083,10.0472,46.1208,20.4,2.205
+all Logitech routes (flow-weighted),logitech,6.956,19.5652,26.5212,13.4006,39.6502,9.1131,43.6858,18.946,2.0401
+Amazon -> GN -> Nordic,gn,4.5,20.2652,24.7652,11.3369,38.0453,8.765,40.7601,18.0,1.905
+Ingram / TD Synnex -> GN -> Nordic,gn,9.1,20.2652,29.3652,15.1974,43.4912,10.315,48.1221,21.1,2.2589
+all GN routes (flow-weighted),gn,6.11,20.2652,26.3752,12.7894,40.0649,9.3075,43.3368,19.085,2.0289

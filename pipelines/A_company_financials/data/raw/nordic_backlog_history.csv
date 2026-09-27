@@ -1,0 +1,3 @@
+quarter,backlog_usdm,revenue_usdm,is_estimate,source_key,quote,note
+2019Q4,106.7,,1,2020Q4,"Record order backlog of USD 492 million (+361%)",derived: 492 / (1 + 3.61); not stated directly
+2020Q4,492.0,127.1,0,2020Q4,"Record order backlog of USD 492 million (+361%)",revenue quote: 'Revenue of USD 127.1 million in Q4 (+53%)'

@@ -1,0 +1,6 @@
+edge_id,edge,what,availability,flow,why
+E15,ingram → other_retail,share,not_public,0.128,Ingram and TD Synnex report no customer above 10%; Amazon does not name suppliers
+E17,tdsynnex → other_retail,share,not_public,0.1112,as E15
+E16,ingram → amazon,share,not_public,0.0142,"not public: Ingram and TD Synnex each state no customer above 10% of net sales (Amazon < 10% of their total, which does not bound peripherals); Amazon names no suppliers"
+E18,tdsynnex → amazon,share,not_public,0.0124,as E16
+E25,nordic → amazon,lag,not_public,0.0,no demand series for Amazon's devices

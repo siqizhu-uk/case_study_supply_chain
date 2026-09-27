@@ -1,0 +1,6 @@
+tier,share_A,share_B,share_C,share_D,lag_A,lag_B,lag_C,lag_D
+Nordic → buyer / own plant,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0
+buyer → brand,0.973,0.0,0.027,0.0,0.0,0.0,1.0,0.0
+brand → channel,0.935,0.0,0.065,0.0,0.0,0.0,1.0,0.0
+distributor → retail,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0
+retail → end demand,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0

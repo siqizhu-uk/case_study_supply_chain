@@ -1,0 +1,14 @@
+model,n,first,last,rmse_beat_pts,bench_rmse_same_quarters,oos_r2_vs_bench,rmse_usdm,direction_hit,dm_hln,dm_p
+composite (equal weights),11,2023Q4,2026Q2,3.382,4.664,0.474,4.478,0.818,-1.228,0.248
+OLS on all factors (estimated weights),11,2023Q4,2026Q2,2.96,4.664,0.597,4.595,0.818,-1.288,0.227
+ridge on all factors,11,2023Q4,2026Q2,2.6,4.664,0.689,3.74,0.909,-1.814,0.1
+zero beat (guide midpoint),14,2023Q1,2026Q2,5.551,5.413,-0.052,8.306,0.0,0.191,0.851
+single factor: graph_demand_accel,6,2025Q1,2026Q2,2.483,1.67,-1.21,4.324,1.0,1.063,0.337
+single factor: nordic_dist_state,6,2025Q1,2026Q2,1.668,1.67,0.003,2.698,1.0,-0.008,0.994
+single factor: mchp_disti_days_change,11,2023Q4,2026Q2,2.972,4.664,0.594,4.411,0.727,-1.424,0.185
+single factor: nordic_fwd_dio,9,2024Q2,2026Q2,3.834,4.517,0.28,5.512,0.778,-1.181,0.272
+leave out: graph_demand_accel,11,2023Q4,2026Q2,3.128,4.664,0.55,4.188,0.818,-1.481,0.169
+leave out: nordic_dist_state,11,2023Q4,2026Q2,3.338,4.664,0.488,4.443,0.909,-1.251,0.239
+leave out: mchp_disti_days_change,9,2024Q2,2026Q2,4.403,4.517,0.049,6.466,0.667,-0.194,0.851
+leave out: nordic_fwd_dio,11,2023Q4,2026Q2,3.867,4.664,0.313,5.17,0.909,-0.913,0.383
+benchmark: past-4-quarter beat,11,2023Q4,2026Q2,4.664,4.664,0.0,6.166,0.818,,

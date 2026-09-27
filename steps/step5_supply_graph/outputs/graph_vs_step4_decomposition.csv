@@ -1,0 +1,8 @@
+group,nature,flow_share,graph_weeks,reference_weeks,reference,contribution_weeks,p_residual_via_dist
+Logitech -> Amazon direct,"structure: Amazon buys from Logitech directly (10-K customer share, A)",0.168,3.0,7.0,step 4 downstream mid,-0.673,0.5
+Logitech in-house (Suzhou) routes: Nordic -> Logitech without an ODM,"structure: ~35% built in-house (10-K, A)",0.327,13.0,15.0,step 4 upstream mid,-0.655,0.5
+Logitech ODM routes (upstream),agrees with step 4,0.608,15.0,15.0,step 4 upstream mid,0.0,0.5
+distributor route itself (Ingram / TD Synnex + distributor part of the 10-K residual),data bound: reseller inventory cover caps the distributor -> retail edges (P69),0.767,6.032,7.0,step 4 downstream mid,-0.742,0.5
+direct-retail part of Logitech's 10-K residual,"judgment: p = share of the residual via distributors (G20, grade D)",0.262,3.0,6.0,graph distributor route (as at p = 1),-0.785,0.5
+GN routes,GN (upstream + downstream),0.065,19.085,22.0,step 4 total mid,-0.189,0.5
+total (graph - step 4 mid),check: graph total - step 4 mid = -3.04,1.0,18.955,22.0,step 4 total mid,-3.045,0.5

@@ -1,0 +1,165 @@
+step,key,result,value,checked_on
+pipeline_a,logitech_guidance:2019-01-22:FY2019:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-01-22:FY2019:sales_growth_cc_pct:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-04-30:FY2019:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-04-30:FY2019:sales_growth_cc_pct:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-04-30:FY2020:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-04-30:FY2020:sales_growth_cc_pct:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2019-07-23:FY2020:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-01-21:FY2020:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-05-12:FY2020:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-05-12:FY2020:sales_growth_cc_pct:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-05-12:FY2021:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-05-12:FY2021:sales_growth_cc_pct:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-07-21:FY2021:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-07-21:FY2021:sales_growth_cc_pct:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-10-20:FY2021:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2020-10-20:FY2021:sales_growth_cc_pct:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-01-19:FY2021:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-01-19:FY2021:sales_growth_cc_pct:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-04-29:FY2021:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-04-29:FY2021:sales_growth_cc_pct:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-04-29:FY2022:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-04-29:FY2022:sales_growth_cc_pct:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-07-27:FY2022:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2021-10-26:FY2022:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-01-25:FY2022:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-01-25:FY2022:sales_growth_cc_pct:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-05-03:FY2022:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-05-03:FY2022:sales_growth_cc_pct:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-05-03:FY2023:op_income_usdm:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-05-03:FY2023:sales_growth_cc_pct:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-07-26:FY2023:op_income_usdm:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-07-26:FY2023:sales_growth_cc_pct:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2022-10-25:FY2023:sales_growth_cc_pct:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-01-12:FY2023:op_income_usdm:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-01-12:FY2023:sales_growth_cc_pct:lowered,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-05-02:FY2023:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-05-02:FY2023:sales_growth_cc_pct:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-05-02:FY2023:sales_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-05-02:H1FY2024:op_income_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-05-02:H1FY2024:sales_usdm:reiterated,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-07-25:FY2024:op_income_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-07-25:FY2024:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-07-25:H1FY2024:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-07-25:H1FY2024:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-10-24:FY2024:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-10-24:FY2024:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-10-24:H1FY2024:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2023-10-24:H1FY2024:sales_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-01-23:FY2024:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-01-23:FY2024:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-04-30:FY2024:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-04-30:FY2024:sales_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-04-30:FY2025:op_income_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-04-30:FY2025:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-07-23:FY2025:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-07-23:FY2025:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-10-22:FY2025:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2024-10-22:FY2025:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-01-28:FY2025:op_income_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-01-28:FY2025:sales_usdm:raised,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-04-10:FY2026:sales_usdm:withdrawn,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-04-29:FY2025:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-04-29:FY2025:sales_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-04-29:Q1FY2026:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-07-29:Q2FY2026:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2025-10-28:Q3FY2026:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-01-27:FY2026:op_income_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-01-27:FY2026:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-01-27:Q4FY2026:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-05-05:FY2026:op_income_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-05-05:FY2026:sales_usdm:actual,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-05-05:Q1FY2027:sales_usdm:initial,found,,2026-09-26
+pipeline_a,logitech_guidance:2026-07-28:Q2FY2027:sales_usdm:initial,found,,2026-09-26
+step1_t1,gn|2022,"figure 18,687 present in AR2022",18687.0,2026-09-26
+step1_t1,gn|2023,"figure 18,120 present in AR2023",18120.0,2026-09-26
+step1_t1,gn|2024,"figure 17,985 present in AR2024",17985.0,2026-09-26
+step1_t1,gn|2025,"figure 16,782 present in AR2025",16782.0,2026-09-26
+step1_t1,nordic|2021,found in AR text,,2026-09-26
+step1_t1,nordic|2022,found in AR text,,2026-09-26
+step1_t1,nordic|2023,found in AR text,,2026-09-26
+step1_t1,nordic|2024,found in AR text,,2026-09-26
+step1_t1,nordic|2025,found in AR text,,2026-09-26
+step1_t2_original,gn|2024Q3|Enterprise,found,,2026-09-26
+step1_t2_original,logitech|2022Q2|Gaming,found,,2026-09-26
+step1_t2_original,logitech|2022Q2|Video Collaboration,found,,2026-09-26
+step1_t2_original,logitech|2022Q3|Gaming,found,,2026-09-26
+step1_t2_original,logitech|2022Q3|Video Collaboration,found,,2026-09-26
+step1_t2_original,logitech|2022Q4|Gaming,found,,2026-09-26
+step1_t2_original,logitech|2022Q4|Video Collaboration,found,,2026-09-26
+step1_t2_original,nordic|2024Q1|Consumer,found,,2026-09-26
+step1_t2_original,nordic|2024Q2|Consumer,found,,2026-09-26
+step1_t2_original,nordic|2024Q4|Consumer,found,,2026-09-26
+step1_t2_restated,gn|2024Q1|Enterprise,found,,2026-09-26
+step1_t2_restated,gn|2024Q3|Enterprise,found,,2026-09-26
+step1_t2_restated,logitech|2022Q2|Gaming,found,,2026-09-26
+step1_t2_restated,logitech|2022Q2|Video Collaboration,found,,2026-09-26
+step1_t2_restated,logitech|2022Q3|Gaming,found,,2026-09-26
+step1_t2_restated,logitech|2022Q3|Video Collaboration,found,,2026-09-26
+step1_t2_restated,logitech|2022Q4|Gaming,found,,2026-09-26
+step1_t2_restated,logitech|2022Q4|Video Collaboration,found,,2026-09-26
+step1_t2_restated,nordic|2024Q1|Consumer,found,,2026-09-26
+step1_t2_restated,nordic|2024Q1|Industrial & Healthcare,found,,2026-09-26
+step1_t2_restated,nordic|2024Q2|Consumer,found,,2026-09-26
+step1_t2_restated,nordic|2024Q2|Industrial & Healthcare,found,,2026-09-26
+step1_t2_restated,nordic|2024Q3|Consumer,found,,2026-09-26
+step1_t2_restated,nordic|2024Q3|Industrial & Healthcare,found,,2026-09-26
+step1_t2_restated,nordic|2024Q4|Consumer,found,,2026-09-26
+step1_t2_restated,nordic|2024Q4|Industrial & Healthcare,found,,2026-09-26
+step1_t3,gn|2023Q4|audio_ebita_margin,both found,,2026-09-26
+step1_t3,gn|2026Q1|ebita_margin_cont_ops,both found,,2026-09-26
+step1_t3,nordic|2024Q2|gross_margin,both found,,2026-09-26
+step1_t3,nordic|2025Q4|gross_margin,both found,,2026-09-26
+step1_xbrl_fy,ingram|2022,10-K XBRL annual fact,50824.49,2026-09-26
+step1_xbrl_fy,ingram|2023,10-K XBRL annual fact,48040.364,2026-09-26
+step1_xbrl_fy,ingram|2024,10-K XBRL annual fact,47983.671,2026-09-26
+step1_xbrl_fy,ingram|2025,10-K XBRL annual fact,52556.263,2026-09-26
+step1_xbrl_fy,logitech|2009,10-K XBRL annual fact,2208.832,2026-09-26
+step1_xbrl_fy,logitech|2010,10-K XBRL annual fact,1966.748,2026-09-26
+step1_xbrl_fy,logitech|2011,10-K XBRL annual fact,2366.765,2026-09-26
+step1_xbrl_fy,logitech|2012,10-K XBRL annual fact,2316.203,2026-09-26
+step1_xbrl_fy,logitech|2013,10-K XBRL annual fact,2099.277,2026-09-26
+step1_xbrl_fy,logitech|2014,10-K XBRL annual fact,2008.028,2026-09-26
+step1_xbrl_fy,logitech|2015,10-K XBRL annual fact,2004.908,2026-09-26
+step1_xbrl_fy,logitech|2016,10-K XBRL annual fact,2018.1,2026-09-26
+step1_xbrl_fy,logitech|2017,10-K XBRL annual fact,2221.427,2026-09-26
+step1_xbrl_fy,logitech|2018,10-K XBRL annual fact,2566.863,2026-09-26
+step1_xbrl_fy,logitech|2019,10-K XBRL annual fact,2788.322,2026-09-26
+step1_xbrl_fy,logitech|2020,10-K XBRL annual fact,2975.851,2026-09-26
+step1_xbrl_fy,logitech|2021,10-K XBRL annual fact,5252.279,2026-09-26
+step1_xbrl_fy,logitech|2022,10-K XBRL annual fact,5481.101,2026-09-26
+step1_xbrl_fy,logitech|2023,10-K XBRL annual fact,4538.818,2026-09-26
+step1_xbrl_fy,logitech|2024,10-K XBRL annual fact,4298.467,2026-09-26
+step1_xbrl_fy,logitech|2025,10-K XBRL annual fact,4554.9,2026-09-26
+step1_xbrl_fy,logitech|2026,10-K XBRL annual fact,4840.761,2026-09-26
+step1_xbrl_fy,tdsynnex|2009,10-K XBRL annual fact,7719.197,2026-09-26
+step1_xbrl_fy,tdsynnex|2010,10-K XBRL annual fact,8614.141,2026-09-26
+step1_xbrl_fy,tdsynnex|2011,10-K XBRL annual fact,10409.84,2026-09-26
+step1_xbrl_fy,tdsynnex|2012,10-K XBRL annual fact,10285.507,2026-09-26
+step1_xbrl_fy,tdsynnex|2013,10-K XBRL annual fact,10845.164,2026-09-26
+step1_xbrl_fy,tdsynnex|2014,10-K XBRL annual fact,13839.59,2026-09-26
+step1_xbrl_fy,tdsynnex|2015,10-K XBRL annual fact,13338.397,2026-09-26
+step1_xbrl_fy,tdsynnex|2016,10-K XBRL annual fact,14061.837,2026-09-26
+step1_xbrl_fy,tdsynnex|2017,10-K XBRL annual fact,16771.128,2026-09-26
+step1_xbrl_fy,tdsynnex|2018,10-K XBRL annual fact,19767.945,2026-09-26
+step1_xbrl_fy,tdsynnex|2019,10-K XBRL annual fact,19069.97,2026-09-26
+step1_xbrl_fy,tdsynnex|2020,10-K XBRL annual fact,19977.15,2026-09-26
+step1_xbrl_fy,tdsynnex|2021,10-K XBRL annual fact,31614.169,2026-09-26
+step1_xbrl_fy,tdsynnex|2022,10-K XBRL annual fact,62343.81,2026-09-26
+step1_xbrl_fy,tdsynnex|2023,10-K XBRL annual fact,57555.416,2026-09-26
+step1_xbrl_fy,tdsynnex|2024,10-K XBRL annual fact,58452.436,2026-09-26
+step1_xbrl_fy,tdsynnex|2025,10-K XBRL annual fact,62508.086,2026-09-26
+step2_quote,ifrs834_major_customers_2024|AR2025,found,,2026-09-26
+step2_quote,ifrs834_major_customers_2025|AR2025,found,,2026-09-26
+step2_quote,logitech_inhouse_production_share|10KFY26,found,,2026-09-26
+step2_quote,nordic_pr_logitech_2005|https://www.design-reuse.com/news/202509680--logitech-chooses-the-nrf2402-and-nrf2401a-chipsets-for-the-new-logitech-v200-cordless-notebook-mouse/,found,,2026-09-26
+step2_quote,top10_share_2025|AR2025,found,,2026-09-26
+step5_residual_quote,R1,found,,2026-09-26
+step5_residual_quote,R2,found,,2026-09-26
+step5_residual_quote,R3,found,,2026-09-26
+step5_residual_quote,R4,found,,2026-09-26
+step5_residual_quote,R5,found,,2026-09-26
+step5_residual_quote,R6,found,,2026-09-26
+step5_residual_quote,R7,found,,2026-09-26
+step5_residual_quote,R8,found,,2026-09-26

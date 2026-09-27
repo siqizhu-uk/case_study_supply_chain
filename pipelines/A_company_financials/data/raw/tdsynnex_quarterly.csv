@@ -1,0 +1,29 @@
+quarter,fiscal_label,revenue_usdm,gross_billings_usdm,gross_profit_usdm,gm_pct,inventory_usdm,ccc_days,endpoint_gb_yoy_pct,advanced_gb_yoy_pct,guide_low_usdm,guide_high_usdm,is_estimate,source
+2020Q1,FQ1-20,4081.0,,255.1,6.3,2710.3,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2020Q2,FQ2-20,4470.9,,274.6,6.1,3033.3,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2020Q3,FQ3-20,5306.4,,297.5,5.6,2832.6,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2020Q4,FQ4-20,6118.8,,366.7,6.0,2684.1,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2021Q1,FQ1-21,4939.0,,304.6,6.2,2556.7,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2021Q2,FQ2-21,5856.8,,329.2,5.6,2684.7,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2021Q3,FQ3-21,5207.1,,312.6,6.0,2866.2,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2021Q4,FQ4-21,15611.3,,943.2,6.0,6642.9,,,,,,0,SEC XBRL companyfacts (headline only; segments not available)
+2022Q1,FQ1-22,15470.0,20064.0,969.0,6.26,7883.0,24.0,,,,,0,SNX 8-K Ex99.1 FQ1 FY22 (quarter ends Feb; mapped to calendar quarter containing 2 of 3 months)
+2022Q2,FQ2-22,15270.0,19685.0,956.0,6.26,8434.0,21.0,,,14800.0,15800.0,0,SNX 8-K Ex99.1 FQ2 FY22
+2022Q3,FQ3-22,15356.0,19971.0,916.0,5.97,9755.0,23.0,,,14500.0,15500.0,0,SNX 8-K Ex99.1 FQ3 FY22
+2022Q4,FQ4-22,16248.0,20913.0,1060.0,6.52,9067.0,23.0,-2.0,8.0,15200.0,16200.0,1,SNX 8-K Ex99.1 FQ4 FY22 (endpoint 'modest decline' / AS 'strong growth' - magnitudes est)
+2023Q1,FQ1-23,15125.0,20202.0,1004.0,6.64,8373.0,26.0,-5.0,5.0,15200.0,16200.0,1,SNX 8-K Ex99.1 FQ1 FY23 (magnitudes est)
+2023Q2,FQ2-23,14062.0,18716.0,963.0,6.85,7797.0,24.0,-10.0,3.0,14000.0,15000.0,1,SNX 8-K Ex99.1 FQ2 FY23 (PC post-pandemic decline; magnitudes est)
+2023Q3,FQ3-23,13961.0,18584.0,971.0,6.96,7462.0,23.0,-8.0,1.0,13500.0,14500.0,1,SNX 8-K Ex99.1 FQ3 FY23 (trough; magnitudes est)
+2023Q4,FQ4-23,14407.0,19744.0,1019.0,7.07,7146.0,23.0,-4.0,-1.0,14000.0,15000.0,1,SNX 8-K Ex99.1 FQ4 FY23 (magnitudes est)
+2024Q1,FQ1-24,13975.0,19267.0,1006.0,7.2,7091.0,21.0,-7.0,-3.0,14000.0,14700.0,0,SNX 8-K Ex99.1 FQ1 FY24 / call
+2024Q2,FQ2-24,13948.0,19305.0,974.0,6.98,7098.0,23.0,1.0,5.0,13300.0,14900.0,0,SNX FQ2 FY24 transcript
+2024Q3,FQ3-24,14685.0,20282.0,961.0,6.54,7674.0,21.0,5.0,12.0,13300.0,14900.0,0,SNX FQ3 FY24 transcript
+2024Q4,FQ4-24,15845.0,21211.0,1041.0,6.57,8287.0,18.0,3.0,11.0,14900.0,15700.0,0,SNX FQ4 FY24 transcript; 'consumer segment continues to suffer'
+2025Q1,FQ1-25,14532.0,20718.0,998.0,6.87,8360.0,,8.0,7.0,14400.0,15200.0,0,SNX FQ1 FY25; peripherals declined
+2025Q2,FQ2-25,14946.0,21648.0,1046.0,7.0,8656.0,,13.0,12.0,13900.0,14700.0,0,SNX FQ2 FY25; $100-200m tariff pull-forward
+2025Q3,FQ3-25,15651.0,22731.0,1130.0,7.22,9138.0,,10.0,13.0,14700.0,15500.0,0,SNX FQ3 FY25
+2025Q4,FQ4-25,17379.0,24327.0,1195.0,6.88,9504.0,,12.0,17.0,16500.0,17300.0,0,SNX FQ4 FY25; memory prices up dramatically
+2026Q1,FQ1-26,17161.0,25775.0,1252.0,7.3,10981.0,16.0,14.0,19.0,15100.0,15900.0,0,SNX FQ1 FY26; ~2pts from ASPs/pull-forward
+2026Q2,FQ2-26,19575.0,28879.0,1339.0,6.84,13894.0,17.0,13.0,31.0,16100.0,16900.0,0,SNX FQ2 FY26; endpoint growth ASP-driven; units +msd
+2026Q3,FQ3-26,21558.0,31828.0,1425.0,6.61,15291.6,,,,18200.0,19000.0,0,"SNX FQ3 FY26 8-K 2026-09-24 (ex991): revenue 21,558 (+37.7% YoY) vs guide 18.2-19.0bn; gross billings 31,828 (+40%); endpoint / advanced split not in the release (call not collected)"
+2026Q4,FQ4-26,,,,,,,,,21800.0,22600.0,0,FQ4 FY26 guidance in the FQ3 release: 'Revenue $21.8 - $22.6 billion'

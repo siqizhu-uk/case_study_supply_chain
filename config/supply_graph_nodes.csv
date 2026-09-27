@@ -1,0 +1,11 @@
+node,label,layer,x,named_in_brief
+nordic,Nordic Semiconductor,0,0.50,yes
+odm,ODMs / EMS,1,0.22,no
+nordic_distributors,Component distributors,1,0.62,no
+logitech,Logitech (incl. own Suzhou plant),2,0.33,yes
+gn,GN Store Nord,2,0.64,yes
+ingram,Ingram Micro,3,0.68,yes
+tdsynnex,TD Synnex,3,0.90,yes
+other_retail,Other retail / DTC,4,0.15,no
+amazon,Amazon (retailer; device OEM),4,0.45,yes
+consumers,End demand (sell-out),5,0.30,no

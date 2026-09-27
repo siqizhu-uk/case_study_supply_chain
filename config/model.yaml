@@ -1,0 +1,736 @@
+# ============================================================================
+# Supply Chain Signal Model — ALL assumptions live here.
+# Change a number, re-run `make run`, and every table, chart and forecast
+# regenerates. Nothing below is hard-coded in the Python.
+# ============================================================================
+
+meta:
+  as_of: "2026-09-22"
+  base_currency: USD
+  quarters_in_history: 26            # 2020Q1 .. 2026Q2 (distributors/Logitech headline from XBRL pre-2021Q2)
+
+# ----------------------------------------------------------------------------
+# 1. MECHANISM: where inventory sits between each pair of tiers, and the
+#    typical weeks it takes for a demand change to propagate one tier up.
+#    Lags are stated in WEEKS and are the reasoning BEFORE any regression.
+# ----------------------------------------------------------------------------
+tiers:
+  - id: sell_out
+    name: "End demand (Amazon / retail shelf sell-out)"
+    inventory_holder: "Retailer (Amazon own-inventory + 3P sellers); Logitech/GN have NO visibility on balance sheet"
+    disclosure: "Not disclosed. Proxy = Logitech's stated sell-through vs sell-in gap; GN 'sell-out' commentary; Amazon BSR (not scraped here)."
+  - id: distributor
+    name: "Distributor sell-through (Ingram Micro, TD Synnex)"
+    inventory_holder: "Distributor balance sheet (INGM ~40 DIO, SNX ~55 DIO incl. Hyve)"
+    disclosure: "Inventory $ quarterly; peripherals are ~1-2% of their sales so their aggregates are a channel-POSTURE signal, not a peripherals sell-through measure."
+  - id: oem
+    name: "OEM sell-in (Logitech net sales; GN Enterprise + SteelSeries)"
+    inventory_holder: "Logitech own inventory (~70 DIO) + channel weeks-on-hand (not disclosed in numbers). GN inventory on balance sheet; Enterprise sell-in vs sell-out gap disclosed qualitatively."
+    disclosure: "Revenue quarterly; sell-through minus sell-in gap given verbally each call (Logitech); GN gives Enterprise sell-out when it diverges."
+  - id: component
+    name: "Component sell-in (Nordic revenue)"
+    inventory_holder: "Nordic own inventory (~190 DIO in 2026, deliberate build); distributor inventory (Arrow/Avnet/Future/Digi-Key/Mouser ~40% of revenue); ODM/EMS inventory (invisible)."
+    disclosure: "Revenue by end-market; own inventory; verbal distributor-inventory state; backlog APM discontinued Q2 2023."
+
+# Weeks for a change at tier k to show up at tier k+1 under NORMAL channel conditions.
+# Reasoning (documented in docs/history/mechanism_and_lags.md):
+#   sell_out -> distributor reorder: retailer WOH targets 2-6 wks; replenishment weekly  ->  2-4 wks
+#   distributor -> OEM sell-in: distributor DIO ~6 wks; OEM sees sell-through data weekly, adjusts sell-in within the quarter -> 3-6 wks
+#   OEM -> ODM/EMS build plan: S&OP cycle 4-8 wks; OEM own inventory ~10 wks buffers -> 6-12 wks
+#   ODM/EMS -> component order -> Nordic revenue: standard lead time 12-16 wks; from distributor stock 0-2 wks; blended -> 4-10 wks
+lag_weeks:
+  sell_out_to_distributor: {low: 2, mid: 3, high: 4}
+  distributor_to_oem:      {low: 3, mid: 4, high: 6}
+  oem_to_odm_build:        {low: 6, mid: 8, high: 12}
+  odm_to_component:        {low: 4, mid: 7, high: 10}
+# => end-to-end sell_out -> Nordic revenue: 15 / 22 / 32 weeks  (~1.2 / 1.7 / 2.5 quarters) in a normal channel.
+
+# Regime multipliers on lag and amplitude. amplitude_multiplier is the WHOLE-COMPANY Nordic swing relative to Logitech
+# (documentation only: no code reads it). It must NOT be applied to the Logitech / GN slice of Nordic revenue: Nordic's
+# own Q4 2023 report shows the 2023 destock hit the broad market (-46%) while top-10 Bluetooth customers were -3%.
+# The slice multiplier is estimated in step 3 (inventory_mechanism.slice_amplitude below, output slice_multiplier.csv).
+# The 2021-22 backlog regime stretched the lag
+# to ~4 quarters (Nordic turned negative YoY four quarters after Logitech); the
+# 2023-24 destock compressed it to ~2 quarters on the way down and up.
+regimes:
+  supply_constrained:   {quarters: ["2020Q3","2022Q2"], lag_multiplier: 2.0, amplitude_multiplier: 0.5, note: "Backlog absorbs demand changes; revenue = supply, not demand"}
+  destock:              {quarters: ["2022Q3","2024Q1"], lag_multiplier: 1.0, amplitude_multiplier: 2.5, note: "Bullwhip unwind; Nordic broad-market -46% vs Logitech -17%"}
+  normal:               {quarters: ["2024Q2","2026Q2"], lag_multiplier: 1.0, amplitude_multiplier: 1.6, note: "Channel weeks-on-hand at target; Nordic amplitude ~1.6x Logitech"}
+
+# ----------------------------------------------------------------------------
+# 1b. WHICH PRODUCT LINES CONTAIN A WIRELESS SoC (the tier-2 driver series).
+#    Weight = share of units in that line that carry a BLE / 2.4GHz radio (our assumption; edit freely).
+#    'core' lines exist in both Logitech taxonomies (FY22 old, FY24 new) so their YoY runs from 2021Q2.
+# ----------------------------------------------------------------------------
+radio_content:
+  logitech:                       # category column in data/raw/logitech_quarterly.csv -> weight
+    pointing_usdm:     {weight: 0.9, core: true,  note: "wireless mice; a few wired"}
+    keyboards_usdm:    {weight: 0.8, core: true,  note: "wireless keyboards/combos; wired exist"}
+    gaming_usdm:       {weight: 0.7, core: true,  note: "Lightspeed/BLE mice, keyboards, headsets; wired share and Streamlabs software inside"}
+    tablet_usdm:       {weight: 0.9, core: true,  note: "iPad keyboard cases are BLE"}
+    headsets_usdm:     {weight: 0.8, core: false, note: "Zone wireless; not separately reported before FY23"}
+    video_collab_usdm: {weight: 0.3, core: false, note: "FCC VR-series grants certify BLE (remotes/pairing) but the value is the camera/codec"}
+    webcams_usdm:      {weight: 0.05, core: false, note: "essentially wired"}
+    other_usdm:        {weight: 0.3, core: false, note: "mobile/PC speakers (BT classic), presenters (BLE)"}
+  gn:                             # division column in data/raw/gn_quarterly.csv -> weight
+    enterprise_rev_dkkm: {weight: 0.9, note: "Jabra headsets, speakerphones, Link dongles, BlueParrott; some wired/DECT"}
+    gaming_div_rev_dkkm: {weight: 0.8, note: "SteelSeries: 2.4GHz + BT; wired mice/keyboards exist"}
+    consumer_rev_dkkm:   {weight: 1.0, note: "Jabra Elite/Talk earbuds (BT/LE Audio) — wound down 2024; matters for the 2021-24 history"}
+    hearing_rev_dkkm:    {weight: 0.0, note: "Out of scope by the brief: it names 'Jabra enterprise audio and SteelSeries gaming' and asks for 'GN Audio' (the pre-2024 segment = Enterprise + Consumer + SteelSeries). ReSound hearing aids are BLE devices, Nordic content unknown; set >0 to include. Sold to Amplifon end-2026"}
+
+# Quarterly lag candidates tested in the regression (0..max_lag quarters).
+regression:
+  max_lag_quarters: 4                         # lags scanned in the cross-correlation table
+  lags_used: [1, 2, 3]                        # lags entering the regression = the reasoned 1-3 quarter window (L0 excluded on purpose)
+  target: nordic_consumer_yoy                 # dependent variable
+  driver: logi_ble_yoy                        # Logitech BLE-relevant categories (pointing + keyboards + gaming); panel column name
+  controls: [nordic_dist_state]               # verbal distributor-inventory state (-1 destock, 0 normal, +1 restock); see tiers.py for other columns
+  min_obs: 12
+  ridge_alpha: 1.0                            # shrinkage because n ~ 14; set 0 for plain OLS
+
+# ----------------------------------------------------------------------------
+# 1c. INVENTORY MECHANISM (step 3). Every number here is an assumption or a prior stated BEFORE the data is used;
+#     the reasons are in steps/step3_inventory_mechanism/config/decisions.csv (decision ids in brackets).
+# ----------------------------------------------------------------------------
+inventory_mechanism:
+  days_per_quarter: 91.25
+  # [D5] channel-inventory index from the sell-through minus sell-in gap (exact flow identity, recursion on year-ago fill)
+  channel_index:
+    logitech:
+      start: "2021Q2"                 # first quarter with a gap value (2021Q2-2022Q4 are grade D: uncited)
+      alt_start: "2023Q1"             # first cited (grade C) gap -> sensitivity run
+      missing_gap_pts: 0.0            # a quarter with no disclosure is treated as no material gap [D6]
+      anchors: ["2025Q1", "2025Q2", "2025Q3", "2025Q4", "2026Q1"]   # management: channel at target (config/anchors.csv) [D7]
+    gn:
+      start: "2024Q3"                 # first quarter GN quantified Enterprise sell-out vs sell-in
+      missing_gap_pts: 0.0
+      anchors: []                     # GN never states the channel is at target -> index is relative to 2023Q3-2024Q2 (grade D)
+  # [D10] prior inventory cover (WEEKS) at each stocking point between end demand and Nordic revenue - stated before the
+  # accelerator regression; measured points are computed from filings, unobservable ones are assumptions
+  cover_prior_weeks:
+    retail_and_distribution_channel: {low: 4, mid: 6, high: 8}   # Logitech 'weeks on hand in a normal operating range'; not disclosed numerically
+    odm_ems_component_stock:         {low: 2, mid: 4, high: 8}   # EMS/ODM buffer of radios before build; unobservable
+    # measured (step 3 computes them): Logitech finished-goods weeks (XBRL), component-distributor weeks (Microchip
+    # distributor days as the MCU-channel proxy) weighted by nordic_distribution_share
+  nordic_distribution_share: {low: 0.42, mid: 0.47, high: 0.55}  # AR2025 IFRS 8.34: two distributors 30% + 12% = 42% is a floor
+  # [D11] accelerator (stock-adjustment) regression: y = a + b1*g(t-L) + b2*dg(t-L); b2 = implied cover in quarters
+  accelerator:
+    target: nordic_consumer_yoy
+    driver: logi_sellthrough_yoy      # Logitech sell-in YoY + sell-through gap = end-demand proxy [D12]
+    lag: 2                            # reasoned lag 22 weeks mid = 1.7q -> 2 (step 4); lag 1 reported as sensitivity
+    alt_lags: [1]
+    sample: ["2022Q3", "2026Q2"]      # supply-constrained regime excluded: revenue = wafer supply, not orders [D13]
+    hac_lags: 2
+  bootstrap: {reps: 2000, block: 4, seed: 7}   # moving-block bootstrap for every ratio / coefficient interval
+  # [D9] amplitude of the Logitech / GN slice of Nordic revenue relative to their own sell-in
+  slice_amplitude:
+    top10_avg_customer_usdm_2023: 27.6          # USD 276m / 10 (Nordic Q4 2023 report)
+  # [D15] channel call for the next prints
+  channel_call:
+    refill_share_next_q: {low: 0.25, mid: 0.50, high: 0.75}       # share of a channel deficit (or excess) closed within one quarter
+    nordic_safety_stock_weeks: {low: 0.0, mid: 0.5, high: 1.5}    # extra distributor cover built in Q3 2026 ('some safety stockings for some additional weeks')
+    logitech_supply_availability: {low: 0.2, mid: 0.5, high: 1.0} # share of a channel refill Logitech can ship in Jul-Sep given the late-June supplier incident
+    gn_sellout_growth_next_q_pct: {low: -2.0, mid: 0.0, high: 2.0} # Q2 2026 report: Enterprise headset sell-out flat
+    gn_gap_next_q_pts: {low: 3.0, mid: 1.0, high: -1.0}           # sell-out minus sell-in: 2-4 pts for 8 quarters; low case = drain continues, high = small refill
+    dso_flag_days: 5                                              # DSO up >5 days YoY while sell-in > sell-through = stuffing flag
+    dso_break_quarter:  {nordic: "2024Q4"}                        # 'reflecting improved collection': YoY DSO only compared from 2025Q4
+
+# ----------------------------------------------------------------------------
+# 2. ATTRIBUTION: how much of Nordic's revenue plausibly runs through
+#    Logitech and GN. Bottom-up from units x radio content x Nordic share x ASP,
+#    then capped by Nordic's "no customer >10%" disclosure.
+# ----------------------------------------------------------------------------
+attribution:
+  logitech:
+    ble_relevant_sales_usdm_ttm: 4020         # FY26 pointing+keyboards+gaming+headsets (TTM to Jun-26 from data)
+    avg_sell_in_asp_usd: {low: 30, mid: 38, high: 48}
+    wireless_share: {low: 0.60, mid: 0.70, high: 0.80}
+    radios_per_wireless_unit: {low: 1.2, mid: 1.4, high: 1.6}   # device SoC + receiver dongle on ~40-60% of units
+    nordic_socket_share: {low: 0.30, mid: 0.45, high: 0.60}     # Nordic vs Telink/Realtek/in-house on Logitech radios
+    nordic_asp_usd: {low: 1.3, mid: 1.8, high: 2.4}             # nRF52 high-volume pricing (1k price 2.6; volume 30-50% lower)
+  gn:
+    steelseries_sales_usdm_ttm: 400           # DKK ~2.7bn
+    enterprise_sales_usdm_ttm: 990            # DKK ~6.6bn
+    steelseries_units_m: {low: 5, mid: 8, high: 11}
+    steelseries_wireless_share: {low: 0.4, mid: 0.5, high: 0.6}
+    enterprise_units_m: {low: 12, mid: 16, high: 20}
+    enterprise_nordic_share: {low: 0.05, mid: 0.12, high: 0.20}  # Jabra uses Qualcomm/BT-classic for audio; Nordic mainly in Link dongles / BLE side-channels
+    nordic_socket_share_gaming: {low: 0.3, mid: 0.5, high: 0.7}
+    nordic_asp_usd: {low: 1.5, mid: 2.0, high: 2.6}
+  route_direct_share: {low: 0.15, mid: 0.35, high: 0.5}  # share of Logitech's Nordic volume invoiced by Nordic to Logitech directly — prior anchored on Logitech 10-K FY26: Suzhou plant builds ~35% of output by value; the rest is bought by ODMs/CMs (and even Suzhou may buy via a distributor)
+  nordic_no_customer_over_pct: 10             # Nordic AR 2025 (IFRS 8.34): the only >=10% customers are two DISTRIBUTORS (30%, 12%); so no OEM >= 10% -> hard cap if Logitech is invoiced direct, not binding if via ODM/distributor. Earlier reading ("no disclosure") was wrong; no invoiced
+                                              # customer is >=10% by implication, not by statement. Whether Logitech is invoiced directly or via ODMs is UNKNOWN
+                                              # (its own Suzhou plant, ~35% of output, suggests at least part is direct), so both capped and uncapped are reported
+  nordic_consumer_rev_usdm_ttm: 452           # 2025Q3..2026Q2
+  nordic_total_rev_usdm_ttm: 760
+  # Category-level view: Logitech is ~35-40% of the global mouse/keyboard market, so it is a PROXY for
+  # the PC-peripheral category even where it is not the direct customer.
+  pc_peripherals_share_of_nordic_consumer: {low: 0.20, mid: 0.30, high: 0.40}
+
+# ----------------------------------------------------------------------------
+# 3. STRUCTURAL BREAKS handled explicitly (see docs). Each has a switch.
+# ----------------------------------------------------------------------------
+structural_breaks:
+  logitech_taxonomy_fy24: {apply: true, note: "FY22 old taxonomy mapped; headsets inside 'other' pre-FY23"}
+  logitech_tariff_refund_q1fy27: {apply: true, adj_gm_pts: -5.0, note: "Q1 FY27 GAAP GM 49.5% incl $61m refunds; use ~44.8% ex"}
+  logitech_supplier_incident_2026: {apply: true, q2fy27_sales_hit_usdm: 20, q3fy27_sales_hit_usdm: 200, note: "Late-June 2026 semiconductor supplier facility incident; gaming + mice/keyboards"}
+  nordic_taxonomy_2025: {apply: true, note: "Industrial+Healthcare merged; share bikes to Consumer; use restated where available"}
+  nordic_q2_2024_writedown: {apply: true, adj_gm_pct: 49.8}
+  nordic_q4_2025_gm_oneoff: {apply: true, adj_gm_pct: 52.0}
+  gn_steelseries_consolidation_2022: {apply: true, note: "Use SteelSeries + Enterprise as the peripherals-relevant GN series; Consumer excluded (wound down 2024)"}
+  gn_hearing_discontinued_2026: {apply: true, note: "Forecast target = continuing ops (Enterprise + Gaming) = 'GN Audio' successor"}
+  distributor_asp_inflation_2026: {apply: true, asp_tailwind_pts: 2.5, note: "INGM/SNX $ growth overstates units by ~2-3pts (memory-driven ASPs)"}
+  tdsynnex_techdata_merger_2021: {apply: true, no_yoy_quarters: ["2021Q4", "2022Q3"], note: "SYNNEX + Tech Data closed 1 Sep 2021; revenue ~3x from FQ4 FY21. Pre-merger 2020Q1-2021Q3 rows are SYNNEX standalone (XBRL); YoY masked across the merger"}
+  gn_hearing_in_group_2026: {apply: true, note: "GN group revenue for 2026 = continuing ops + Hearing (discontinued, still disclosed). Hearing aids use BLE too; whether they carry Nordic silicon is unknown"}
+
+# ----------------------------------------------------------------------------
+# 4. FORECAST ANCHORS for the three prints. Method = guidance midpoint
+#    x (1 + expected beat conditioned on channel regime) + signal adjustments.
+# ----------------------------------------------------------------------------
+forecast:
+  nordic_2026Q3:
+    guide_low: 220
+    guide_high: 240
+    guide_gm_floor: 50.0
+    regime: normal
+    signal_adjustments_usdm:
+      capacity_worry_pull_in: 0.0          # F19: was +1.0. Sign grade C (CEO, Q2 2026 call: small customers may add 'some safety stockings'), size grade D; pull-ins booked by 6 Aug are in the guide (orders-based) and dist_inventory_state +0.5 codes the same quote -> risk scenario only
+      nrf54_ramp_mix: 0.0
+    pull_in_scenario_usdm: 1.0             # F19: the old pull-in line's size, kept only as a risk scenario (step 7d scenarios.py)
+    extra_uncertainty_pct: 3.0             # model/signal uncertainty added in quadrature to the historical beat dispersion (not used when the composite is adopted: its error is measured out of sample)
+    composite_overlaps: [capacity_worry_pull_in]   # lines the step-6c composite already captures (distributor-state factor) -> dropped if it is adopted
+  logitech_2026Q3:
+    guide_low: 1185
+    guide_high: 1220
+    guide_gm: 44.0
+    regime: normal
+    signal_adjustments_usdm: {}            # the three hand-set channel lines (+8 / +4 / -6) are replaced by the step-7c chain term (decision F5)
+    extra_uncertainty_pct: 1.2
+  gn_2026Q3:
+    base_quarter: 2025Q3
+    method: guide_error_model        # guide_error_model (F16: latest full-year guide + GN's expected guide error -> implied H2) | division_assumptions (the rows below)
+    enterprise_org_pct: {low: -1.0, mid: 2.0, high: 4.0}    # 'positive organic in H2'; FY lower half of -3..+3 with H1 -6% => H2 ~ +2-3%
+    gaming_org_pct: {low: 8.0, mid: 12.0, high: 16.0}       # 'double-digit in H2'; FY lower half of 7-13 with H1 +2% => H2 ~ +13%
+    fx_pts: null                                            # computed from ECB rates (fx block, F27); was a hand-typed -1.5 = Q2's effect carried forward, wrong sign for Q3
+    tariff_refund_q3_dkkm: 60                               # of DKK 100-150m H2 refunds, ~half in Q3
+    cost_savings_q3_dkkm: 50                                # DKK 200m run-rate programme executed Q2 2026
+
+# Forecast one quarter PAST the guide (step 7b, decision B45): Nordic Q4 2026 from the 21 October origin (h = 2), where the
+# back-test says the chain helps (GR 0.59x the benchmark's error, p 0.09, n 9). No guide exists for Q4, so the benchmark
+# is the Q3 guide carried by last year's Q3->Q4 step. The graph models read the step-5 lag kernel: edit an edge lag in
+# config/supply_graph.csv and GR / GRg move. GR fills the demand quarter not yet reported (Q3) by persistence, so lags
+# that only shift weight between lags 1 and 2 cannot move it (P74); GRg fills it with Logitech's own Q3 guide instead,
+# which makes the lags bite but is back-tested on 4 quarters only (Logitech guides quarterly from 2025Q2).
+forecast_next_quarter:
+  target: "2026Q4"
+  horizon: 2
+  models: [G, GB, GR, GRg, GRi]     # shown side by side; the point forecast is point_model
+  point_model: GRi                  # F26 (analyst 2026-09-27): Logitech SELL-IN through the Nordic -> ODM -> Logitech segment, our sell-in forecast for the unreported quarter
+  gri_fill: our_forecast            # F26: the unreported Logitech quarter in GRi = our bias-corrected sell-in forecast | persistence (F24's rule).
+                                    # our_forecast errs 1.17 vs 2.61 on sell-in YoY (5 guided quarters) but does NOT clear F24's bar (DM t -1.0;
+                                    # 99% of the gain from 2025Q2). Kept by analyst decision (683fda): the company has announced a Q3 slowdown
+                                    # (bias-corrected guide +3.0% vs persistence +6.9%) and its bias-corrected guide tracked every later quarter
+                                    # within 1.5 pts; ignoring it would carry forward a growth rate Logitech says will not recur. Persistence -> Q4 218.6
+  band_z: 1.2816                    # 80% band = point +/- z x walk-forward h=2 RMSE (USD m), widened by the lag scenario
+  role:
+    G: "benchmark: Q3 guide x last year's Q3->Q4 step"
+    GB: "benchmark + real-time beat"
+    GR: "challenger (was the point until F26): sell-through proxy through the whole graph, unreported quarter by persistence (F24)"
+    GRi: "point (F26): Logitech sell-in through the Nordic -> ODM -> Logitech segment; unreported quarter = our bias-corrected sell-in forecast"
+    GRg: "sensitivity only: GR with Logitech's raw guide for the unreported quarter (F24; GRi uses guide x (1+past beat), F26)"
+
+# Logitech supply-side nowcast (step 7f, decision F28), a pre-registered CHALLENGER to the Logitech revenue forecast; fixed
+# BEFORE estimating. Forecast date = the note's date, the last days of Logitech's quarter (26 Sep for Jul-Sep): its ODMs have
+# published the first TWO months of the quarter (TWSE MOPS, by the 10th of the next month); month 3 comes after the forecast date.
+# (Revision 1, 2026-09-27, before any result was used: the first draft scored history with all three months, i.e. at Logitech's
+# report date - one month the forecast date does not have.) Logitech's sell-in = what its ODMs built
+# for it - finished-goods change, so the ODMs' same-quarter revenue is news the guide (given at the start of the quarter) did
+# not have. Surprise s_t = ODM revenue YoY over the months known at the forecast date (same months a year earlier) minus the
+# guide-implied Logitech YoY (guide mid / sales t-4 - 1). Target: Logitech's beat = actual / guide mid - 1 (%).
+# beat_t = a + b x s_t, OLS walk-forward on earlier guided quarters only; benchmark = mean past beat (the habit). Guides: the
+# explicit quarterly guides (from 2025Q2) plus the 3 quarterly guides implied by Logitech's annual / half-year outlooks.
+# Never adopted into the forecast on its back-test (n <= 8); scored at each print from the pre-registration log.
+logitech_odm_challenger:
+  odm_codes: ["2439", "2385"]        # Merry (acoustics) + Chicony (keyboards): the two whose Logitech link is not just the cycle (G18)
+  months_known: 2                    # at the forecast date (end of quarter): months 1-2 of the quarter
+  min_train: 4
+  use_implied_guides: true
+  role: challenger
+
+# How the supply chain enters each forecast (step 7c, steps/step7_forecast/src/chain_forecast.py; decisions F1-F8).
+#   final = guide-anchored benchmark + weight x (chain forecast - benchmark) + events propagated through the graph
+# Rules fixed BEFORE the live numbers were computed:
+#   Nordic: weight = encompassing beta of (actual - guide) on the chain's tilt, walk-forward quarters, if t >= weight_t_min,
+#           capped to [0, 1]; else 0. Of the chain models that pass (CH as reasoned / GR fitted slope), the lower RMSE is used.
+#   Logitech: inverse-MSE (Bates-Granger) weight of the tier-identity model vs the guide-anchored benchmark.
+#   GN: a same-quarter read-across is used only if its correlation >= gn_min_corr.
+chain_forecast:
+  weight_t_min: 2.0
+  gn_min_corr: 0.5
+  logitech_h1_rule: guide_only      # F29 (analyst 2026-09-27): a guided quarter uses the guide method only, as Nordic's (weight 0);
+                                    # the chain reads last quarter's sell-through, which Logitech knew when it guided - no news.
+                                    # inverse_mse restores the Bates-Granger weight (0.23), still reported as a diagnostic
+  supplier_incident:                # Logitech's late-June 2026 semiconductor-supplier incident, pushed back to Nordic through the graph
+    as_of: "2026-08-06"             # Nordic's Q2 report / Q3 guide date (graph weights known then)
+    # lost Logitech sales: structural_breaks.logitech_supplier_incident_2026 (Q2 FY27 = 2026Q3, Q3 FY27 = 2026Q4; the $200m is 'up to')
+    share_in_nordic_guide: 0.75     # grade D: Nordic guided on 6 Aug 'based on current customer orders', after Logitech's 28 Jul disclosure;
+                                    # Q3 deliveries sit inside the 12-16 week order lead time, so most cuts were already booked
+
+# Dashboard display rules (step 7, decision F9): what kind of range each forecast row carries, and the thresholds that
+# colour the indicators that used to be fixed amber. Display only: nothing here moves a forecast.
+dashboard_rules:
+  range_basis:                      # matched on the print's first word and the metric's prefix (forecasts.csv)
+    - {company: nordic, metric_prefix: "Revenue", basis: statistical}
+    - {company: nordic, metric_prefix: "Gross margin", basis: margin_regime}      # band on the current-regime error, not the walk-forward RMSE
+    - {company: logitech, metric_prefix: "Net sales", basis: statistical}
+    - {company: logitech, metric_prefix: "Gross margin", basis: margin_walkforward}
+    - {company: gn, metric_prefix: "Revenue", basis: gn_organic}
+    - {company: gn, metric_prefix: "Adj. EBITA", basis: gn_ebita}
+  min_n_beat: 8                     # a historical beat on fewer quarters is flagged "small sample"
+  gn_enterprise_org_amber_below: 0.0          # GN Enterprise organic growth below this -> amber (H2 guide needs a return to positive)
+  nordic_dist_state_amber_abs: 0.5            # |coded distributor state| at or above this -> amber (restock / pull-in, or destock)
+  nordic_inv_days_amber_above: 200            # Nordic's own inventory days above this -> amber (nRF54 build outrunning demand; W3)
+  distributor_inv_days_amber_change: 5        # Ingram or TD Synnex inventory days up this much on the quarter -> amber (W12)
+  nordic_lead_time_amber_weeks: 20           # live factory lead time on Nordic's parts above this -> amber; above cycle_state.shortage.lead_time_min_weeks -> red (D24, W4)
+
+# Channel-cycle state from the mechanism data (step 3b, decision D22): which phase of the inventory cycle a quarter is in,
+# read from component-distributor inventory, not from hand-set dates. Signal = Microchip's distributor days (MCU channel,
+# 2007-2026, the longest series; Arrow / Avnet days confirm from 2020). Point in time: level z-scored against the history
+# known then (expanding median / IQR, >= min_history quarters), change over two quarters in days. Rule written after
+# seeing the 2020-26 path (disclosed), then checked on 2007-2019 and on the 12 peers' guidance misses.
+cycle_state:
+  signal: mchp_disti_days
+  confirm: [arrow_dio, avnet_dio]
+  min_history: 12
+  change_quarters: 2
+  building_min_change_days: 3.0     # days rising >= 3 over two quarters: distributors accumulating stock -> they stop ordering
+  drawdown_max_change_days: -3.0    # days falling <= -3: stock being worked down -> orders below sell-through, then recovery
+  drawdown_requires_prior_z_above: 0.0   # only EXCESS stock can be worked down: a fall from a level at or below normal is the
+                                         # channel tightening (shortage, 2020Q4-2021Q3) and counts as lean. Revision 2, made after
+                                         # seeing the first classification and the beats by state (disclosed in D22)
+  lean_max_z: -1.0                  # level well below its own history: channel lean -> sell-in >= sell-through
+  min_scale_days: 1.0               # floor on the robust scale (IQR / 1.349) so a flat history does not divide by zero
+  priority: [building, drawdown, lean, normal]
+  state_known_lag_quarters: 1       # a quarter's state is known after the distributor's 10-Q: the forecast of t uses t-1
+  # D24 (analyst decision 2026-09-27): distributor days alone cannot tell 'wanted it but could not get it' (a supply
+  # shortage) from 'did not want it' (caution after a destock) - both read lean. For Nordic, a lean quarter is a SHORTAGE
+  # when its own supply data show unmet demand. The evidence is supply-side and the thresholds were stated before looking;
+  # chip makers' own inventory was tried first and separates nothing (industry DIO stayed above its median in 2021: WIP
+  # piles up while finished goods run short; P126). The industry state (peers, Logitech, gamma) stays four-way.
+  shortage:
+    applies_to: nordic
+    backlog_min_quarters_of_revenue: 2.0  # order backlog above two quarters of shipments: customers ordering half a year out
+                                          # (normal backlog ~ one quarter at 12-16-week lead times); disclosed 2020Q4-2023Q1
+    lead_time_min_weeks: 26               # authorized-distributor lead time (live findchips snapshots) when no backlog is disclosed
+
+# Which breaks changed the supply-chain relationships (step 5, decision G22). Chow tests at two sets of dates fixed in
+# advance: the hand-set regime edges and the transitions dated by the cycle state above. Link tested: Nordic consumer YoY on
+# Logitech sell-through YoY two quarters earlier (the graph's lag). Thresholds for calling a relationship 'stable'.
+relationship_breaks:
+  link_lag_quarters: 2
+  event_dates: ["2022Q3", "2024Q2"]           # hand-set regime edges (config regimes)
+  alpha: 0.05
+  hac_lags: 1
+  stable_share_range_pts: 3.0                  # a 10-K customer share moving less than this across the years = stable
+  stable_kernel_range: 0.03                    # lag-1 kernel weight moving less than this across the 10-Ks = stable
+  # Events of 2021-26 tested one by one (decision G28): does the relationship change, or only its input?
+  event_breaks:
+    tariff_2025:
+      event_quarter: "2025Q2"                  # US price step in April 2025 (Logitech Q4 FY26 call: 'the price increase that we implemented last April')
+      gm_lift_from_price_pts: 1.5              # Q2 FY26 call: 'price was a lift of 150 basis points' (to the gross margin)
+      gm_rate: 0.44                            # non-GAAP gross margin around the step
+      # share of each quarter's YoY carrying the step (mid-April start; the YoY laps it from mid-April 2026)
+      price_effect_weight: {"2025Q2": 0.83, "2025Q3": 1.0, "2025Q4": 1.0, "2026Q1": 1.0, "2026Q2": 0.17}
+    normalisation_window: ["2022Q1", "2024Q1"] # post-COVID end-demand fall: Logitech sell-through YoY negative
+    ai_cycle_quarter: "2023Q3"                 # first full quarter after the May 2023 data-centre guidance shock; chosen with the data in view (disclosed)
+    memory_cycle_quarter: "2025Q4"             # memory price surge visible in WSTS and distributor dollars; dated with the data in view (disclosed)
+    gap_compare_from: "2023Q1"                 # distributor-vs-Logitech gap before the memory cycle: after the SYNNEX merger mask and the COVID base
+
+# One model of the guide error for all three forecasts (step 7e, steps/step7_forecast/src/guide_error_model.py, F16-F17).
+#   expected error = company habit alpha (partially pooled with the 12 peers' quarterly guides) + gamma x channel BUILDING
+#   state of quarter t-1 (step 3b cycle_state, known at the forecast date). Fixed before the fit: the one state contrast
+#   (building: distributors accumulating -> next quarter's orders short of the guide), the t bar, the pooling rule.
+guide_error_model:
+  state_lag_quarters: 1          # forecast of t uses the state of t-1 (cycle_state.state_known_lag_quarters); lag 2 reported as robustness
+  state_t_min: 2.0               # gamma used only if |t| >= this (peers, company fixed effects, SE clustered by quarter)
+  variance_prior_weight: 8       # a company's residual variance is pooled toward the peers' with this many pseudo-observations
+  pooled_with_peers: [Logitech]   # only 5 explicit quarterly guides: pooled with the peers' quarterly guides (F16); GN's annual organic guide has no comparable population (own record, F17)
+  own_state_effect: [Nordic]      # F20: its own record, split by the data-dated channel state; Nordic +4.2% vs peers +2.0% is t 1.4 on the current rule (t ~2 when F20 was taken)
+  challenger_pooled: [Nordic]     # F16's pooled Nordic model kept as a pre-registered challenger (steps/step7_forecast/outputs/challenger_prereg_log.csv)
+  no_state_adjustment: [GN]       # F23: GN's habit = simple mean of its own August-guide errors (pts of annual organic growth); the peers' gamma is a quarterly % revenue-miss effect
+
+# One FX rule for the three forecasts (step 7, fx_update.py, decision F27): translation effect of the rates actually seen
+# minus the FX the guide assumed. Rates: ECB reference rates (Pipeline B; FRED timed out from this machine, 2026-09-27).
+fx:
+  logitech:
+    reporting: USD
+    share_quarters: 4                     # regional sales shares of the last four reported quarters
+    apac_basket: [CNY, JPY, AUD]          # Asia Pacific currencies, equal weights (assumption: Logitech does not disclose the mix)
+    calibrate_slope: true                 # scale the structural effect by its slope on Logitech's disclosed FX effects (hedging, CAD / BRL / GBP not in the map)
+  gn:
+    reporting: DKK
+    apac_basket: [CNY, JPY, AUD]
+    apac_share: 0.20                      # Rest of World ~21% of revenue (GN AR2025); treated as the APAC basket
+    usd_share_prior: 0.40                 # North America ~40% (GN AR2025); the used share is fitted to GN's disclosed FX effects
+  nordic:
+    reporting: USD
+    note: "guide, reporting and price lists in USD: no translation effect on revenue; NOK opex and costs touch the gross margin only (not modelled)"
+
+# Walk-forward back-test (step 6): at each forecast date (the day before Nordic reports quarter t) the models are re-fit
+# on data that existed then: Logitech through t-1, Nordic through t-1, Nordic's guidance for t. Expanding window, no
+# re-tuning (lags, ridge alpha fixed from the reasoned prior), so there is nothing to purge or embargo.
+backtest:
+  min_train_obs: 8                  # smallest training window before the first forecast (4 regressors + intercept)
+  first_target: "2023Q1"            # earliest quarter forecast (earlier ones cannot meet min_train_obs)
+  beat_window_quarters: 4           # real-time guidance-beat estimate = mean beat of the previous 4 quarters
+  hac_lags: 1
+  exclude_supply_constrained_from_training: false   # sensitivity run flips it
+
+# Composite channel factor (step 6c): predicts Nordic's GUIDANCE MISS (actual / guide midpoint - 1), i.e. only what the
+# guide does not already contain. Factors, signs and lags are fixed here BEFORE the back-test runs (decision B13); every
+# factor is dated t-1 or earlier at the forecast date. Composite C_t = mean over factors of sign x expanding z-score
+# (mean / sd from data up to t-1 only). Model: beat_t = a + b C_t, re-fit each quarter (walk-forward).
+composite:
+  target: nordic_beat_vs_guide_pct
+  min_z_history: 4                  # quarters of factor history before its z-score is used
+  first_train_quarter: "2021Q4"
+  factors:
+    logi_sellthrough_accel: {column: logi_sellthrough_yoy, transform: diff, lag: 1, sign: 1, reason: "end demand accelerating -> downstream restock -> orders above the guide"}
+    nordic_dist_state:      {column: nordic_dist_state,    transform: level, lag: 1, sign: 1, reason: "distributors restocking -> shipments above the guide"}
+    mchp_disti_days_change: {column: mchp_disti_days,      transform: diff, lag: 1, sign: -1, reason: "MCU channel days falling -> lean channel -> replenishment orders"}
+    nordic_fwd_dio:         {column: nordic_fwd_dio,       transform: level, lag: 1, sign: -1, reason: "own stock low vs guided cost of sales -> demand pulling ahead of the plan"}
+  placebo: {draws: 1000, ar1_phi: 0.5, seed: 11}   # noise factors with the persistence of real quarterly factors
+  # a process fact no back-test can see: shown in the risk box until the first pre-registered print is scored
+  selection_history: "The four factors were chosen after step 3 had already shown the 2021-2026 data (researcher degrees of freedom)."
+  first_clean_test: "Nordic Q3 2026 print, 22 Oct 2026 (pre-registered in steps/step6_backtest/outputs/composite_prereg_log.csv; the last row logged before the print is the forecast of record)"
+  risk_thresholds:                  # when a risk is flagged
+    top3_gain_share: 0.5            # the three best quarters carry more than half of the out-of-sample gain
+    challenger_gap_pts: 1.0         # primary and ridge challenger disagree on this quarter's beat by more than 1 pt
+    min_effective_n: 10             # Bartlett n_eff = n(1-rho)/(1+rho) of the composite below this -> flagged (5-10 independent points per estimated parameter)
+  # Uncertainty band: |C| predicts the SIZE of the error, not its sign. Scaled band = constant band x (1+|C_t|)/(1+mean|C| in training):
+  # no extra fitted parameter, same average width, redistributed towards extreme channel states. Stated before the run.
+  interval:
+    coverage: 0.80
+    use_scaled_if_interval_score_lower: true   # step 7 uses the scaled band only if its walk-forward interval score beats the constant band's
+  # Analyst decision 2026-09-25 (step 6 decision B26): the composite passed its gate, but the peer panel (step 6d, risk R5)
+  # shows its mechanism does not generalise. It stays a pre-registered CHALLENGER and does not enter the forecast.
+  use_in_forecast: false
+  # Graph challenger (step 6c-g, decision B44, 2026-09-26): the same composite with ONE factor swapped - Logitech
+  # sell-through acceleration (one path, fixed lag 1) replaced by the acceleration of graph demand: the same sell-out proxy
+  # pushed through the step-5 lag kernel (all paths, graph as known at the forecast date, lags below 1 quarter put on t-1).
+  # Everything else (other factors, signs, z-scoring, gate) unchanged. Added AFTER the factor search was stopped (B40):
+  # a pre-registered challenger only, never adopted on its back-test.
+  graph_challenger:
+    replaces: logi_sellthrough_accel
+    name: graph_demand_accel
+    factor: {column: graph_demand_h1, transform: diff, lag: 0, sign: 1, reason: "graph-weighted end demand reaching Nordic accelerating -> orders above the guide (already dated t-1 and earlier by the kernel)"}
+    use_in_forecast: false
+  adopt_if:                         # stated before the run: step 7 uses the composite beat only if ALL hold (and use_in_forecast is true)
+    oos_r2_vs_benchmark_min: 0.0    # beats the real-time past-beat benchmark out of sample
+    placebo_p_max: 0.10             # fewer than 10% of noise composites do as well
+    min_forecasts: 10
+    leave_one_out_min_share: 0.75   # at least 3 of 4 leave-one-factor-out composites still beat the benchmark
+
+# Peer panel (step 6d): do channel / inventory factors predict GUIDANCE MISSES across companies and several cycles?
+# Estimated on the peers only (Pipeline D); Nordic is never used in estimation, so applying the result to Nordic
+# is an external test. Specification fixed here before the run (decision B20+).
+peer_panel:
+  first_target: "2014Q1"             # first quarter forecast (earlier quarters only train)
+  min_train_quarters: 12             # time periods in the pooled training window before the first forecast
+  firm_fe: expanding_mean            # each firm's own mean past beat = its guidance conservatism (firm fixed effect, past only)
+  factors:
+    own_fwd_dio:        {sign: -1, reason: "own stock low vs next quarter's guided cost of sales -> demand pulling ahead of the plan (same sign as the Nordic composite)"}
+    industry_mchp_days: {sign: -1, reason: "MCU distribution days falling -> lean channel -> replenishment; common to all firms, so identified from time variation only"}
+  min_z_history: 8                   # quarters of a firm's own history before its z-score is used
+
+# Cycle stability (step 6f, decisions B32-B35). PRIOR, written before the 2008-10 data were built: the lean-channel -> beat
+# mechanism works through guidance anchored on the recent trend, so the slope should be LARGER in windows with sharp cycle
+# turns (2008-10, 2020-26) than in the calmer 2011-19. If the peers' slope inside Nordic's own window is close to Nordic's,
+# Nordic's large slope is a property of that cycle, not of Nordic. Windows are dated by the cycle, not chosen on the result.
+cycle_test:
+  windows:
+    gfc_2008_10:      {from: "2008Q3", to: "2010Q4", reason: "Lehman crash (2008Q4), destock, 2009-10 restock"}
+    normal_2011_19:   {from: "2011Q1", to: "2019Q4", reason: "ordinary corrections: 2011-12, 2015-16, 2019"}
+    covid_2020_26:    {from: "2020Q1", to: "2026Q2", reason: "shortage, double-ordering, 2023-24 destock, recovery"}
+  scale: full_sample_sd     # one fixed sd of the Microchip days change (2008-2026) for every window and for Nordic: slopes comparable
+  sign: -1                  # falling distributor days = lean channel = expected beat (same as peer_panel.industry_mchp_days)
+  min_firms_per_quarter: 3  # quarter-level regression uses quarters with at least this many firms
+
+# Supply-chain graph (step 5, decisions G1-G6). The chain is a network: Logitech sells to Amazon directly (18% of gross
+# sales) AND through Ingram / TD Synnex; Nordic ships to Logitech's own Suzhou plant AND to ODMs, directly AND through its
+# distributors. Edges: config/supply_graph.csv (one row per edge: share, reorder lag in weeks, who holds the inventory,
+# whether the company discloses it, evidence). Time-varying shares (Logitech's customers, from each 10-K, point in time
+# by filing date): config/supply_graph_weights.csv. Named shares used by the edge formulas:
+supply_graph:
+  params:
+    dist:        {grade: B, floor: 0.42, low: 0.42, mid: 0.47, high: 0.55, source: "Nordic AR2025 IFRS 8.34: two distributors 30% + 12% (floor); NCR ~40% broad market"}
+    suzhou:      {grade: A, low: 0.30, mid: 0.35, high: 0.40, source: "Logitech 10-K FY26: 'approximately 35% of our total production of products based on value'"}
+    dist_to_amazon: {grade: D, low: 0.0, mid: 0.10, high: 0.25, source: "assumption: share of Ingram / TD Synnex peripherals sold on to Amazon (not disclosed)"}
+    gn_amazon:   {grade: C, cap: 0.175, low: 0.02, mid: 0.10, high: 0.175, source: "assumption, capped by filing: GN AR2025 names only one customer >10% (a distributor), so Amazon < 10% of group = < 17.5% of continuing ops"}
+    gn_distrib:  {grade: C, floor: 0.21, low: 0.21, mid: 0.35, high: 0.50, source: "GN AR2025: one distributor, mainly Enterprise, DKK 2,001m = 21% of continuing ops (audited floor); rest and the Ingram / TD split assumed"}
+    logi_residual_via_dist: {grade: D, floor: 0.25, cap: 0.75, low: 0.25, mid: 0.50, high: 0.75, source: "share of Logitech's unnamed 10-K residual (56% of gross sales) sold through smaller distributors (D&H, ALSO, Esprinet, Exertis, Copaco, Daiwabo, Digital China ...), not disclosed. Floor 0.25 (conditional, from C evidence): B2B ~40% of revenue (CEO, JPMorgan May 2026) vs Ingram + TD Synnex 26%, so >= 14 of the 56 pts is B2B, sold mainly via distributors per the 10-K. Cap 0.75 and mid 0.50: judgment - the 10-K sells directly to major retail chains with significant shelf space, so the residual cannot be nearly all distribution. Evidence: steps/step5_supply_graph/config/logi_residual_evidence.csv (G20)"}
+  brand_share: {logitech: 0.935, gn: 0.065, source: "step 2 attribution p50: Logitech ~USD 115m vs GN ~8m of Nordic revenue"}
+  grades: {A: "audited filing, measures this edge", B: "filing floor or company disclosure combined with an estimate", C: "indirect: proxy on a broader base, verbal, or one snapshot", D: "assumption: no public data found (not_public) or not yet collected (not_collected)"}
+  # Range width follows the evidence grade (data support is not the level): every lag and named share gets at least this
+  # relative half-width around its mid, then data bounds (inventory cover, filing caps) are applied on top.
+  min_halfwidth_by_grade: {A: 0.10, B: 0.25, C: 0.50, D: 1.00}
+  little_law_tolerance: 1.10          # a tier's reorder lag (high) should not exceed its inventory cover x this (lag check)
+  mc_draws: 300                       # Monte Carlo (seeded; enough for p5-p95 of the mean lag) over params and edge lags (triangular low / mid / high)
+  demand_series: sellout_proxy_yoy   # the one end-demand series with history: Logitech sell-in YoY + disclosed sell-through gap
+  weeks_per_quarter: 13
+  # G25: order-signal lag = physical dwell (edge table lag_weeks_*, Little's-law capped) + information delay of the planning
+  # decision the BUYER on the edge makes (config/supply_graph.csv info_delay_planner). Textbook periodic review with an
+  # exponentially smoothed forecast: delay = R/2 (wait for the next review) + (1 - alpha)/alpha x R (mean age of the
+  # smoothed forecast), weeks. Keys low / mid / high are DELAY scenarios (low delay = higher alpha). Grade D: no company
+  # discloses its cadence -> min_halfwidth_by_grade D widens each planner around its mid; never capped by inventory cover.
+  lag_basis: physical                 # kernel read by propagate(): step 6 GR / GRg, 6c graph factor, step 7c chain and the Q4 line
+  lag_answer_basis: signal            # the brief's lag question: step 4 edge priors and the step 5 signal-lag section
+  info_delay:
+    count_review_half: true           # false = smoothing term only (sensitivity: R/2 cycle stock may already sit in the cover, P100)
+    planners:
+      weekly_replenishment: {grade: D, review_weeks: {low: 1.0, mid: 1.0, high: 1.0}, alpha: {low: 0.67, mid: 0.50, high: 0.33},
+                             source: "retailers (Amazon, big-box, resellers) and IT distributors reorder weekly against a weeks-on-hand target from a POS-driven forecast; weekly alpha 0.33-0.67 (textbook 0.1-0.3 is for slow, noisy items)"}
+      oem_sop:              {grade: D, review_weeks: {low: 4.33, mid: 4.33, high: 4.33}, alpha: {low: 1.0, mid: 0.8, high: 0.6},
+                             source: "brand's monthly S&OP (consensus demand plan -> build plan to the ODM / own plant); the monthly plan re-anchors on the latest sell-in, alpha 0.6-1.0 per month"}
+      odm_mrp:              {grade: D, review_weeks: {low: 1.0, mid: 2.0, high: 2.0}, alpha: {low: 1.0, mid: 1.0, high: 1.0},
+                             source: "ODM / EMS (and the brand's own plant) run MRP on the brand's build plan, weekly to bi-weekly buckets; no own smoothing (alpha 1: it explodes the plan)"}
+      nordic_dist_reorder:  {grade: D, review_weeks: {low: 2.0, mid: 4.33, high: 4.33}, alpha: {low: 1.0, mid: 1.0, high: 0.8},
+                             source: "Nordic's distributors (Arrow / Avnet / Future / Digi-Key) reorder monthly (bi-weekly at the low end) on POS / backlog"}
+  # G21 (check only): where the graph's lag differs from step 4's, and why step 4's measured peak (2 quarters) is longer
+  # than both. Continuous lag tau (quarters): x_tau(t) = (1-f) x(t-k) + f x(t-k-1), tau = k + f; tau maximises the
+  # correlation with Nordic consumer YoY (step 4's criterion); CI from a moving-block bootstrap over quarters.
+  lag_check:
+    tau_max_q: 4.0                    # same range as step 4's integer lags 0-4
+    tau_step_q: 0.05                  # ~0.65 weeks
+    min_pairs: 8                      # fewer (y, x_tau) pairs than this -> no correlation for that tau
+    block_len: 4                      # quarters per bootstrap block (one year: keeps the YoY overlap inside a block)
+    boot_draws: 2000
+    seed: 21
+    ci: [0.05, 0.95]
+    near_optimal_corr_gap: 0.03       # 'near-optimal set' = every tau with corr >= max - 0.03. Judgment: ~ the corr spread of
+                                      # a flat surface on 13-18 quarters of one cycle; the set, not the argmax, is what the data
+                                      # say about the lag (P86)
+    controls:                         # drivers outside the Logitech -> Nordic chain (common-cycle control; Logitech is a small share of each)
+      snx_sales_yoy: "TD Synnex net sales YoY (broad IT distribution)"
+      rseas_yoy: "US electronics & appliance store sales YoY (FRED RSEAS, Pipeline B)"
+      wsts_yoy: "world semiconductor billings YoY (WSTS, Pipeline B; Nordic's own tier, no order chain: a pure cycle control)"
+    # not used: Ingram sales YoY (ingm_sales_yoy) starts 2023Q1 - 10 quarters on the common sample, one cycle turn
+
+# Guidance-setting factors (step 6g, decisions B36-B40). The beat is management's forecast error, so candidate predictors
+# describe HOW the guide was set, and are orthogonal to the channel factors. PRIOR (written before the fits): a guide set
+# above what peers guide for the same quarter is more likely to be missed (sign -1).
+guidance_optimism:
+  primary: raw                # relative guided q/q growth. The planned seasonal version (guided q/q minus the same quarter last
+                              # year) was dropped AFTER seeing the data: for a firm in a deep cycle last year's q/q is the cycle,
+                              # not seasonality (Nordic 2025Q2 'norm' +71.7%); it is kept as a robustness row (P55)
+  min_peers: 5                # median over at least this many OTHER peers guiding the same quarter
+  consumer_heavy_min_share: 0.30   # exploratory comparator (post hoc, P56): peers with consumer share >= 30% in the 10-K
+  first_target: "2014Q1"      # walk-forward on the peer panel, as in peer_panel
+  min_train_quarters: 12
+  episode_quarters: ["2023Q3", "2023Q4"]   # the two quarters that carry ~60% of Nordic's channel slope (step 6f): every Nordic
+                                           # fit is also shown without them
+  deep_decline_yoy_pct: -30   # 'the cycle is in the guide' test: peer quarters with revenue YoY at or below this
+
+# Revenue beyond the guided quarter (step 6h, decisions B41-B43). K1 says channel signals belong in revenue forecasts, not
+# beat forecasts; this tests that on the peer panel. PRIOR (before the fit): a leaner distribution channel (falling Microchip
+# distributor days) means restocking ahead, so growth from the guided quarter t to t+1 is HIGHER (sign +).
+#   origin: end of quarter t (guide for t known, actuals to t-1, Microchip days to t-1)
+#   target: g2 = actual(t+1) / guide_mid(t) - 1
+#   benchmark: firm's mean past g2 for the same quarter of the year (all earlier years; not last year alone, P55)
+#   model: benchmark + b * x_channel(t-1), b pooled over peers, re-estimated each quarter on past data only
+revenue_h2:
+  first_target: "2014Q1"
+  min_train_quarters: 12
+  min_seasonal_years: 2        # a firm needs this many past same-quarter g2 values before it is scored
+
+# Peer similarity (step 6e, decision B29): WHO counts as a Nordic-like peer is fixed here BEFORE any candidate's slope is
+# looked at. Characteristics are read from each company's latest 10-K (quote-checked). Candidates are listed on business
+# description alone (consumer / IoT / broad-market semiconductors that guide quarterly in their 8-K).
+peer_similarity:
+  nordic: {distribution_share: {low: 0.42, mid: 0.47, high: 0.55}, consumer_share: 0.60}    # AR2025 IFRS 8.34 two distributors 30% + 12%; consumer end-market ~60% of revenue
+  criteria: {min_distribution_share: 0.35}
+  candidates: [synaptics, semtech, power_integrations, diodes, lattice, ambarella, impinj, maxlinear, monolithic_power, alpha_omega]
+
+# Historical guidance-beat statistics are computed from data, but the regime
+# conditioning windows are set here.
+# One rule for every company's guidance bias (step 7, decision F14): computed from the guidance track record
+# (steps/step7_forecast/src/guidance_record.py, anchor_table), the same statistic for all three, so the three
+# forecasts rest on evidence in the same format. forecast = guide x (1 + bias), range from the bias's dispersion.
+guidance_anchor:
+  statistic: mean                  # mean error vs the guide midpoint (median shown next to it)
+  nordic: {guide: quarterly_revenue, condition_on: regime}          # the regime of the forecast quarter (config forecast.nordic_2026Q3.regime)
+  logitech: {guide: quarterly_sales}
+  gn: {guide: annual_organic_growth, statement_month: 8}            # the August statement of each year vs the full-year outcome
+  margins:                         # step 7, decision F18: the margin counterpart (steps/step7_forecast/src/margin_model.py)
+    nordic: {rule: best_simple_rule}                                  # only a floor guide (>50%): last quarter / 4q mean / same quarter last year, best walk-forward
+    # Channel-excess term (decision F25), fixed BEFORE estimating: price protection and ASP concessions flow upstream when the
+    # channel holds excess stock (step 3b state building or drawdown in the quarter before). dGM_t = firm effect + delta x excess_t-1,
+    # delta estimated on the 12 peers (Pipeline D XBRL revenue and COGS, 2008-2026), SE clustered by quarter (the state is common
+    # to all firms). Quarter-on-quarter moves beyond +/-10 pts are accounting events (M&A amortisation, write-downs) and dropped.
+    # Nordic uses its one-off-adjusted GM (config one_offs). Adopt only if delta < 0 with |t| >= 2 AND the term lowers Nordic's
+    # walk-forward error (delta re-estimated each quarter on peers' data up to then).
+    nordic_excess: {states: [building, drawdown], state_lag_quarters: 1, max_abs_change_pts: 10.0, t_min: 2.0, first_target: "2012Q1"}
+    logitech: {rule: guide_plus_bias}                                 # call GM guide (forecast.logitech_2026Q3.guide_gm) + mean past error
+    gn: {rule: fy_guide_plus_bias_h2_implied, statement_month: 8}   # all years' August margin errors (as F16 uses GN's own record over all years)
+guidance_bias:
+  nordic_window_normal: ["2024Q2", "2026Q2"]
+  nordic_window_destock: ["2022Q4", "2024Q1"]
+  logitech_window: ["2025Q2", "2026Q2"]
+
+# Step 4 — lag of THIS chain, edge by edge (decisions L4-L9, steps/step4_lag_structure/config/decisions.csv).
+#   Amazon / Ingram Micro / TD Synnex --edge 1--> Logitech / GN --edge 2--> Nordic
+#   edge 1 = customers' sell-out -> their orders to the brand (= brand sell-in)
+#   edge 2 = brand sell-in -> build / component orders -> Nordic revenue (ODM / EMS and Nordic's distributors folded in)
+# PRIORS are computed from the step 5 graph (config/supply_graph.csv, grade-widened edge ranges, flow-weighted over paths,
+# cut at the brand node as in step 5's stage_lags) BEFORE any fit; nothing here is a lag value. The data then refine a
+# prior only where they can locate the lag (posterior rule below).
+edge_lags:
+  prior_ci: 0.90                     # prior low / high read as the 5th / 95th percentile: prior sd = (high - low) / (2 x 1.645)
+  mechanism:                         # the reasoning each prior encodes (stated before the data; numbers come from the graph)
+    edge1: "retailers / distributors reorder weekly against a weeks-on-hand target: a sell-out change reaches the brand's sell-in within one reorder cycle plus the cover correction; the physical part is bounded above by each customer's inventory cover (Little's law: Amazon 5.2 wk, Ingram 5.8 wk, CDW 2.4 wk), the weekly review and forecast smoothing add ~1.5 wk per ordering tier (G25, grade D)"
+    edge2: "a sell-in change moves the brand's build plan (monthly S&OP: ~3 wk information delay, G25; finished-goods buffer ~9.5 wk at Logitech), then the ODM's component call-offs (MRP ~1 wk; from distributor stock 0-2 wk, or direct orders inside the nRF54 lead time of 16 wk); Nordic books revenue when the ODM, the brand's own plant or a distributor restocks (distributors' monthly reorder ~2 wk)"
+  edge1:
+    series: excess_weeks             # step 3 Logitech channel index (weeks vs target, anchored on management's 'at target' statements)
+    trend: true                      # D21 (step 3): the anchors drift ~2 wk in 5 quarters while management says 'at target' -> a linear
+                                     # trend absorbs the drift so rho measures reversion, not the drift (no-trend fit shown as a row)
+    min_obs: 12                      # fewer quarters of the index -> prior only (GN: 8 quarters, no anchor, grade D)
+    weeks_per_quarter: 13
+    # rho -> mean lag. Primary: continuous-time stock adjustment sampled at quarter ends, rho = exp(-13 / T), T = -13 / ln(rho)
+    # weeks (retailers replenish weekly, so the adjustment is continuous, not at quarter ends). Koyck discrete mean lag
+    # rho / (1 - rho) quarters is shown next to it (it books a same-quarter response as zero lag).
+    median_unbiased:                 # Andrews (1993) exact median-unbiased AR(1) with intercept + trend: OLS rho on n ~ 13 is biased down
+      grid: {lo: -0.6, hi: 1.0, step: 0.02}
+      reps: 2000
+      burn_in: 50
+      seed: 44
+  edge2:
+    target: nordic_consumer_yoy
+    driver: {logitech: logi_sales_yoy, gn: gn_periph_yoy}   # logi_sales_yoy from 2021Q1: the sample then holds the 2022-23 turn;
+    driver_alt: logi_ble_yoy                               # radio categories only from 2022Q2 (n 13): robustness row
+    control: wsts_yoy                # common semiconductor cycle; its own lag (kappa) set at its correlation peak on the same sample
+    control_alt: rseas_yoy           # US electronics-store sales: robustness row
+    regimes: [destock, normal]       # supply_constrained excluded: revenue = wafer supply, not orders (D13)
+    profile_chi2: 2.706              # chi2(1) 90%: the profile-likelihood set of tau, n ln(SSR(tau) / SSR_min) <= 2.706 (iid errors: too narrow
+                                     # with overlapping YoY, so the block bootstrap is read next to it)
+  # Posterior (L8): precision-weighted on weeks when the data locate the lag; the data are UNINFORMATIVE (posterior = prior)
+  # when the 90% interval is unbounded (edge 1: unit root not rejected) or covers at least this share of the searched range
+  # (edge 2: 0-4 quarters). Judgment: an interval spanning three quarters of the range says the data cannot place the lag.
+  uninformative_share: 0.75
+  total_draws: 20000                 # simulation of route totals (edges drawn independently; the comonotone low / high sum shown too)
+  seed: 45
+
+# Step 5d — structural breaks through the chain; the 2026 supplier incident as a worked event study (decision G23,
+# steps/step5_supply_graph/src/event_study.py). A SHOCK leaves every edge as it is and the graph carries it; a
+# BREAK changes an edge (share, lag, amplitude) or the reporting basis. The incident's size and dates are NOT repeated here:
+# lost sales = structural_breaks.logitech_supplier_incident_2026, as_of and share already in Nordic's guide =
+# chain_forecast.supplier_incident, lags = config/supply_graph.csv, content per Logitech $ = step 2 attribution path.
+event_study:
+  incident_date: "2026-06-25"         # grade C: Logitech Q1 FY27 release (28 Jul) 'late June 2026'; only the week matters
+  window: ["2026Q1", "2027Q2"]        # computed from 2026Q1 (a lead can map before the incident); shown from 2026Q2
+  fiscal_to_calendar: {q2fy27_sales_hit_usdm: "2026Q3", q3fy27_sales_hit_usdm: "2026Q4", q4fy27: "2027Q1"}   # Logitech FY ends March
+  resolved_quarter: "2027Q1"          # grade C (verbal): Logitech 'largely resolved by Q4, little to no Q4 impact' (Q4 FY27 = Jan-Mar 2027)
+  inhouse_build_edge: E05             # grade C: chips shipped direct to Logitech's Suzhou plant (E03) wait E05's in-house lag between
+                                      # build and sale (Logitech stock); the rest of E03's lag is the order-to-build wait
+  frozen_weeks: {low: 0, mid: 4, high: 8}   # grade D (not_public): deliveries this soon after the incident ship anyway (in transit,
+                                            # frozen schedule, non-cancellable) and sit at the holder; later ones are pushed out / cancelled
+  order_lead_weeks_low: 12            # grade C: standard component lead time 12-16 wk (lag_weeks reasoning); high = nrf54_leadtime_weeks (findchips)
+  holder_cover_anchor: {logitech: logi_rm_weeks, nordic_distributors: arrow_avnet_weeks, odm: ""}   # graph_lag_bounds.csv; ODM kit cover not public
+  customer_cover_anchor: {amazon: amazon_weeks, ingram: ingram_weeks, tdsynnex: tdsynnex_weeks, other: retail_weeks}   # weighted by the 10-K shares
+  normal_weekly_sales: logitech_guide_mid   # Logitech's normal run-rate = forecast.logitech_2026Q3 guide midpoint / weeks_per_quarter
+  scenarios:                          # recovery; grade D except where noted. mid = what Logitech said
+    mid:      {q3fy27_loss_scale: 1.0, q4fy27_loss_usdm: 0,  resolved_quarter: "2027Q1", restock_share: 0.0}
+    downside: {q3fy27_loss_scale: 1.0, q4fy27_loss_usdm: 20, resolved_quarter: "2027Q2", restock_share: 0.0}   # 'little' = a Q2-FY27-sized tail, restart a quarter later
+    upside:   {q3fy27_loss_scale: 0.5, q4fy27_loss_usdm: 0,  resolved_quarter: "2027Q1", restock_share: 1.0}   # $200m is 'up to'; the channel refills the cover it drew
+
+# Step 5e — route-level propagation (decision G26, steps/step5_supply_graph/src/route_propagation*.py): step 7c's
+# CH by route. Logitech's own sell-through (the total) is ALLOCATED across its 10-K routes by the route proxies' deviations
+# from their weighted mean (sum_r w_r D_r = total exactly); each route is propagated with its own graph kernel; GN stays on
+# the aggregate path (no route disclosure beyond annual-report caps). Proxies are all-vendor / all-category: only their
+# deviations are used, standardised point in time. Scored walk-forward vs CH-aggregate (= shrink 0) and GB; nothing selected.
+route_propagation:
+  total_demand: [logi_sales_yoy, logi_st_gap]   # Logitech sell-in YoY + disclosed sell-through gap (the D of step 6 GR / 7c CH)
+  routes:                             # key = Logitech's first customer in config/supply_graph.csv; proxies in priority order
+    amazon:       {proxies: [amazon_revenue_yoy], combine: first, asp_adjust: false, note: "Amazon total revenue YoY (XBRL; all categories incl. AWS and ads): weak"}
+    ingram:       {proxies: [ingm_ces_yoy, ingm_sales_yoy], combine: first, asp_adjust: true, note: "Ingram client & endpoint YoY (2024Q3+), else total sales YoY"}
+    tdsynnex:     {proxies: [snx_endpoint_yoy], combine: first, asp_adjust: true, note: "TD Synnex Endpoint Solutions gross billings YoY (2022Q4-2023Q4 magnitudes estimated)"}
+    other_retail: {proxies: [bestbuy_computing_comp, cdw_revenue_yoy, rseas_yoy], combine: mean, asp_adjust: false, note: "Best Buy Computing & Mobile comps, CDW revenue YoY, US electronics-store sales YoY"}
+  standardise: zscore                 # zscore (own mean / sd at the origin; deviations x sd of the total) | demean | none
+  min_obs: 6                          # quarters of a proxy known at the origin before its deviation is used (sd of 6 points: +-30%)
+  deviation_shrink: 1.0               # fixed before scoring; 0 = aggregate CH exactly
+  sensitivity:                        # reported next to the main run, never selected
+    - {label: "shrink 0.5", shrink: 0.5, standardise: zscore}
+    - {label: "demean (no scaling)", shrink: 1.0, standardise: demean}
+  asp_adjust_from: "2026Q1"           # distributor dollars from here minus structural_breaks.distributor_asp_inflation_2026
+  horizons: [1, 2]
+  live_targets: {1: "2026Q3", 2: "2026Q4"}
+  divergence_top_n: 5                 # quarters where route and aggregate CH differ most, shown with who drove the gap
+
+# Step 5f — route proxies as a NOWCAST of Logitech's unreported quarter (decision G27; code steps/step5_supply_graph/src/
+# route_nowcast*.py). At the h=2 origin of Nordic t (the day before Nordic reports t-1) Logitech has not reported t-1; step 6 GR
+# fills it by persistence. Rules below are fixed BEFORE any score. A proxy is used for quarter q only if released by origin(q).
+route_nowcast:
+  target: [logi_sales_yoy, logi_st_gap]   # Logitech sell-through YoY (sell-in YoY + disclosed gap) = the D of step 6 GR / 7c CH
+  origin_days_after_quarter_end: 21   # origin(q) = q end + 21 d = the day before Nordic reports q (Q3 2026: 22 Oct). Nordic's Q4
+                                      # reports come in Feb, so 21 d is early (conservative: never admits a later release)
+  release_lag:                        # first publication after the period end; a rule that is too long only drops data
+    logitech: {days: 26, anchor: quarter_end, grade: B, basis: "Q1 FY27 reported 28 Jul 2026 (chain_forecast note); Q2 FY27 ~27 Oct"}
+    tdsynnex: {days: 45, anchor: fiscal_quarter_end, grade: C, basis: "FQ3 FY26 8-K 24 Sep 2026 = FQ end 31 Aug + 24 d (tdsynnex_quarterly.csv source note); FQ4 releases ~6 weeks after the Nov year end; 45 d conservative"}
+    bestbuy: {column: filed, grade: A, basis: "8-K Ex 99 filing date per quarter (bestbuy_category_comps.csv)"}
+    rseas: {days: 45, anchor: month_end, grade: B, basis: "Census advance MARTS ~2 weeks after month end; repo vintage (validated 2026-09-23) ends Aug 2026; 45 d conservative admits months 1-2 of the quarter"}
+    amazon: {days: 29, anchor: quarter_end, grade: C, basis: "reports in the last days of the month after quarter end (typical, e.g. 30 Oct)"}
+    ingram: {days: 30, anchor: quarter_end, grade: B, basis: "Q2 2026 release 30 Jul 2026 (ingram_quarterly.csv 2026Q3 guide row)"}
+    cdw: {days: 30, anchor: quarter_end, grade: C, basis: "reports late Oct / early Nov for Q3 (typical)"}
+    logitech_guide: {days: 26, anchor: previous_quarter_end, grade: B, basis: "given with Logitech's report of q-1"}
+  tdsynnex_period_end_month: 2        # FQ ends Feb/May/Aug/Nov: the pipeline labels it with the calendar quarter holding 2 of its 3 months
+  proxies:                            # each enters as its change since the previous quarter, both as known at their own origins
+    snx_sales: {source: tdsynnex, column: snx_sales_yoy, asp_adjust: true, note: "TD Synnex revenue YoY (all vendors, memory ASPs in 2026)"}
+    snx_endpoint: {source: tdsynnex, column: snx_endpoint_yoy, asp_adjust: true, note: "Endpoint Solutions billings YoY (2022Q4-2023Q4 estimated; not in the FQ3 FY26 release)"}
+    bestbuy_computing: {source: bestbuy, column: computing_mobile_comp_pct, note: "Best Buy Domestic Computing & Mobile comps (1 of 3 months overlaps the target)"}
+    rseas: {source: rseas, column: rseas_usdm, note: "US electronics & appliance store sales, months released by the origin (partial quarter YoY)"}
+  asp_adjust_from: "2026Q1"           # minus structural_breaks.distributor_asp_inflation_2026 (dollar growth overstates units)
+  models:                             # N = nowcast of y(q); proxy_change: y(q) = y(q-1) + b x mean_j z_j(q), z_j = dx_j / sd(dx_j), b OLS without intercept
+    N0: {kind: persistence, label: "persistence (default)"}
+    N1: {kind: guide, label: "Logitech's guide (comparison only: user rule)"}
+    N2c: {kind: proxy_change, proxies: [snx_sales, rseas, bestbuy_computing], label: "composite of available proxies"}
+    N2s: {kind: proxy_change, proxies: [snx_sales], label: "TD Synnex revenue alone"}
+    N2e: {kind: proxy_change, proxies: [snx_endpoint], label: "TD Synnex Endpoint alone (no live value)"}
+  first_train_quarter: "2021Q4"       # 2021Q2-Q3 YoY carry the 2020 lockdown base (+69% -> +7%): a break, not a cycle
+  min_train_obs: 6                    # fewer training changes -> b = 0 (the model returns persistence)
+  adoption:                           # analyst rule 2026-09-27, fixed before scoring
+    default: N0                       # persistence: the last reported quarter fills the unreported one (a modelling assumption)
+    candidates: [N2c, N2s]            # N2e cannot be adopted (no live value); N1 is not a candidate
+    comparison_only: [N1]             # user rule: Logitech's guide is known to be inaccurate; scored in one labelled row, never pre-registered
+    t_min: 2.0                        # same bar as chain_forecast.weight_t_min
+    # adopt a candidate only if (1) nowcast RMSE < N0's on the same quarters AND (DM-HLN t <= -t_min OR encompassing t >= t_min),
+    # and (2) Nordic h=2 RMSE of GR fed with it <= GR (persistence) on the same quarters. Otherwise the verdict is N0.
+  live_quarter: "2026Q3"              # Logitech Q2 FY27 (Jul-Sep), reported ~27 Oct; Nordic target 2026Q4 at h=2
+  nordic_horizon: 2                   # the nowcast fills the quarter Logitech has not reported at the h=2 origin (lags 0-1 of the kernel)
+  scenario: mid                       # graph shares and lags (as step 6's walk-forward)
+  check_on: "2026-10-27"
+
+# Step 5g — INDUSTRY-CYCLE REGRESSION as a pre-registered Q4 challenger (decision G29; code steps/step5_supply_graph/
+# src/cycle_challenger*.py). Analyst approval 2026-09-27. Nordic consumer YoY at t (GR's target: total = guide-anchored benchmark
+# + consumer tilt) on an industry-cycle series, not constrained to Logitech's total. Everything below written BEFORE any score.
+# It is a challenger only: it never enters the Q4 forecast (F22 / F24 stay); adoption for later prints is the analyst's call.
+cycle_challenger:
+  horizon: 2                          # the quarter after the guided one (step 6 h=2: origin = the day before Nordic reports t-1)
+  lag_quarters: 2                     # regressor = the cycle YoY of quarter t-2: the last full quarter released at the origin; t-1 is
+                                      # filled by persistence (F24), so t-2 IS the model's information about t-1 and t (G21: Nordic lags
+                                      # RSEAS by 18-20 weeks, WSTS by 26: within one quarter of lag 2)
+  primary: CYC
+  models:                             # one slope each (OLS, expanding window, step 6's forecast_row: same targets, training rows, guide)
+    CYC:  {regressors: [rseas], role: primary, label: "US electronics-store sales YoY at t-2 (consumer end demand, one slope)"}
+    CYCw: {regressors: [wsts], role: robustness, label: "WSTS world semiconductor billings YoY at t-2 (the analyst's candidate; AI / memory composition break from 2024: live input far outside its training range)"}
+    CYCg: {regressors: [rseas, graph_demand], role: robustness, label: "RSEAS at t-2 + GR's graph demand (two slopes: the cycle beyond Logitech)"}
+  series:                             # panel column (core.tiers.build_panel) and first-publication rule of its quarter (month 3)
+    rseas: {column: rseas_yoy, release: route_nowcast, note: "Census MARTS via FRED, grade A; release rule = route_nowcast.release_lag.rseas (45 d, conservative)"}
+    wsts: {column: wsts_yoy, release_days: 45, grade: C, note: "WSTS / SIA monthly billings released ~5-6 weeks after month end (repo vintage validated 2026-09-23 ends Jul 2026); 45 d conservative"}
+  adoption:                           # bar for the primary, on the quarters where CYC, GR, CH, GB and the actual all exist, fixed before scoring
+    t_min: 2.0                        # same bar as chain_forecast.weight_t_min and route_nowcast.adoption.t_min
+    max_top3_gain_share: 0.5          # the squared-error gain over GR must not come mostly from 3 quarters (step 6c R1 logic)
+    # met = RMSE < GR's AND (DM-HLN t vs GR <= -t_min OR encompassing t (CYC adds to GR) >= t_min) AND top-3 gain share < 0.5.
+    # Met or not, CYC stays a pre-registered challenger for the Q4 2026 print.
+  combination_diagnostic: equal_mean  # (GR + CYC) / 2 scored as a diagnostic only, never a candidate (adding CYC's cycle term to GR
+                                      # would count the common cycle twice: GR's slope already times it, P77)
+  live_target: "2026Q4"
+  check_on: "2027-02-05"              # Nordic's Q4 2026 report (early February 2027); Q3 on 22 Oct adds one training row for later h=2 lines

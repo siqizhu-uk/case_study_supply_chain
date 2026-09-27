@@ -1,0 +1,105 @@
+{
+  "reasoned": {
+    "low": {
+      "weeks": 15,
+      "quarters": 1.15
+    },
+    "mid": {
+      "weeks": 22,
+      "quarters": 1.69
+    },
+    "high": {
+      "weeks": 32,
+      "quarters": 2.46
+    }
+  },
+  "best_lag_all": 2,
+  "turning_points": {
+    "sellout_proxy": {
+      "peak": "2021Q1",
+      "peak_val": 116.6,
+      "trough": "2022Q4",
+      "trough_val": -24.2,
+      "sign_changes": [
+        "2021Q4",
+        "2024Q1"
+      ]
+    },
+    "logitech_ble": {
+      "peak": "2024Q2",
+      "peak_val": 14.3,
+      "trough": "2022Q4",
+      "trough_val": -16.0,
+      "sign_changes": [
+        "2023Q4"
+      ]
+    },
+    "gn_periph": {
+      "peak": "2024Q2",
+      "peak_val": 12.6,
+      "trough": "2023Q2",
+      "trough_val": -18.1,
+      "sign_changes": [
+        "2024Q1",
+        "2024Q3",
+        "2024Q4",
+        "2025Q1"
+      ]
+    },
+    "nordic_consumer": {
+      "peak": "2025Q1",
+      "peak_val": 63.3,
+      "trough": "2023Q1",
+      "trough_val": -42.9,
+      "sign_changes": [
+        "2022Q4",
+        "2024Q2"
+      ]
+    },
+    "nordic_total": {
+      "peak": "2025Q1",
+      "peak_val": 108.2,
+      "trough": "2024Q1",
+      "trough_val": -48.8,
+      "sign_changes": [
+        "2023Q1",
+        "2024Q3"
+      ]
+    }
+  },
+  "amplitude": {
+    "destock_2022_2024": 2.558359493849748,
+    "recovery_2024_2026": 5.091107458024153
+  },
+  "level_check": {
+    "xcorr": {
+      "lag_q": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4
+      },
+      "corr": {
+        "0": 0.2403190601560075,
+        "1": 0.49267391609025113,
+        "2": 0.6733738987177402,
+        "3": 0.7568306702677555,
+        "4": 0.6935795262847579
+      },
+      "n": {
+        "0": 18,
+        "1": 17,
+        "2": 16,
+        "3": 15,
+        "4": 14
+      }
+    },
+    "implied_share_of_consumer_by_regime": {
+      "destock": 21.6,
+      "normal": 21.5,
+      "supply_constrained": 17.4
+    },
+    "note": "level series from steps/step2_attribution/outputs/attribution_path.csv (nordic_content_pct_of_logi_sales_p50); the ratio is an estimate, the timing is the test"
+  }
+}

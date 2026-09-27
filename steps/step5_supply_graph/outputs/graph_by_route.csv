@@ -1,0 +1,9 @@
+brand,route,weight,lag_weeks
+gn,amazon,0.0065,18.0
+gn,ingram,0.0114,21.1
+gn,other_retail,0.0358,18.0
+gn,tdsynnex,0.0114,21.1
+logitech,amazon,0.1683,17.3
+logitech,ingram,0.1309,20.4
+logitech,other_retail,0.5236,18.8
+logitech,tdsynnex,0.1122,20.4

@@ -1,0 +1,801 @@
+month,code,name,revenue,prior_month,same_month_last_year,url
+2010-01,2301,Lite-On Technology,8331063.0,8717625.0,5330500.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_1_0.html
+2010-02,2301,Lite-On Technology,7020105.0,8331063.0,4457396.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_2_0.html
+2010-03,2301,Lite-On Technology,8939781.0,7020105.0,6478404.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_3_0.html
+2010-04,2301,Lite-On Technology,8769444.0,8939781.0,6423471.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_4_0.html
+2010-05,2301,Lite-On Technology,8747668.0,8769444.0,5577538.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_5_0.html
+2010-06,2301,Lite-On Technology,9230898.0,8747668.0,7020072.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_6_0.html
+2010-07,2301,Lite-On Technology,8694181.0,9230898.0,6948918.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_7_0.html
+2010-08,2301,Lite-On Technology,8575872.0,8694181.0,7003469.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_8_0.html
+2010-09,2301,Lite-On Technology,9073793.0,8575872.0,8086673.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_9_0.html
+2010-10,2301,Lite-On Technology,8402675.0,9073793.0,7947940.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_10_0.html
+2010-11,2301,Lite-On Technology,8244036.0,8402675.0,7842609.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_11_0.html
+2010-12,2301,Lite-On Technology,8255719.0,8244036.0,8717625.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_12_0.html
+2011-01,2301,Lite-On Technology,8024366.0,8255719.0,8331063.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_1_0.html
+2011-02,2301,Lite-On Technology,6349603.0,8024366.0,7020105.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_2_0.html
+2011-03,2301,Lite-On Technology,8571505.0,6349603.0,8939781.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_3_0.html
+2011-04,2301,Lite-On Technology,8223264.0,8571505.0,8769444.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_4_0.html
+2011-05,2301,Lite-On Technology,8182672.0,8223264.0,8747668.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_5_0.html
+2011-06,2301,Lite-On Technology,8447596.0,8182672.0,9230898.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_6_0.html
+2011-07,2301,Lite-On Technology,9054610.0,8447596.0,8694181.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_7_0.html
+2011-08,2301,Lite-On Technology,8364462.0,9054610.0,8575872.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_8_0.html
+2011-09,2301,Lite-On Technology,7724682.0,8364462.0,9073793.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_9_0.html
+2011-10,2301,Lite-On Technology,7397599.0,7724682.0,8402675.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_10_0.html
+2011-11,2301,Lite-On Technology,7283275.0,7397599.0,8244036.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_11_0.html
+2011-12,2301,Lite-On Technology,6978286.0,7283275.0,8255719.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_12_0.html
+2012-01,2301,Lite-On Technology,5464476.0,6978286.0,8024366.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_1_0.html
+2012-02,2301,Lite-On Technology,5810627.0,5464476.0,6349603.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_2_0.html
+2012-03,2301,Lite-On Technology,6941825.0,5810627.0,8571505.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_3_0.html
+2012-04,2301,Lite-On Technology,6400996.0,6941825.0,8223264.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_4_0.html
+2012-05,2301,Lite-On Technology,6477014.0,6400996.0,8182672.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_5_0.html
+2012-06,2301,Lite-On Technology,6780948.0,6477014.0,8447596.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_6_0.html
+2012-07,2301,Lite-On Technology,6806402.0,6780948.0,9054610.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_7_0.html
+2012-08,2301,Lite-On Technology,6081082.0,6806402.0,8364462.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_8_0.html
+2012-09,2301,Lite-On Technology,6567954.0,6081082.0,7724682.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_9_0.html
+2012-10,2301,Lite-On Technology,6343188.0,6567954.0,7397599.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_10_0.html
+2012-11,2301,Lite-On Technology,6487130.0,6343188.0,7283275.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_11_0.html
+2012-12,2301,Lite-On Technology,6582696.0,6487130.0,6978286.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_12_0.html
+2013-01,2301,Lite-On Technology,16765347.0,,16336640.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_1_0.html
+2013-02,2301,Lite-On Technology,13233451.0,16765347.0,17111615.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_2_0.html
+2013-03,2301,Lite-On Technology,16432315.0,13233451.0,19576555.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_3_0.html
+2013-04,2301,Lite-On Technology,16245804.0,16432315.0,18267529.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_4_0.html
+2013-05,2301,Lite-On Technology,16487126.0,16245804.0,18167186.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_5_0.html
+2013-06,2301,Lite-On Technology,17207592.0,16487126.0,18168533.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_6_0.html
+2013-07,2301,Lite-On Technology,17890878.0,17207592.0,17452952.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_7_0.html
+2013-08,2301,Lite-On Technology,18967971.0,17890878.0,18826330.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_8_0.html
+2013-09,2301,Lite-On Technology,20361095.0,18967971.0,19384414.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_9_0.html
+2013-10,2301,Lite-On Technology,19448265.0,20361095.0,17916219.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_10_0.html
+2013-11,2301,Lite-On Technology,19600010.0,19448265.0,17703391.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_11_0.html
+2013-12,2301,Lite-On Technology,20182420.0,19600010.0,17388342.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_12_0.html
+2014-01,2301,Lite-On Technology,17727880.0,20182420.0,16765347.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_1_0.html
+2014-02,2301,Lite-On Technology,15388859.0,17727880.0,13233451.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html
+2014-03,2301,Lite-On Technology,18275063.0,15388859.0,16432315.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_3_0.html
+2014-04,2301,Lite-On Technology,18914343.0,18275063.0,16245804.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_4_0.html
+2014-05,2301,Lite-On Technology,19692792.0,18914343.0,16487126.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_5_0.html
+2014-06,2301,Lite-On Technology,20242459.0,19692792.0,17207592.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_6_0.html
+2014-07,2301,Lite-On Technology,20805607.0,20242459.0,17890878.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_7_0.html
+2014-08,2301,Lite-On Technology,19184669.0,20805607.0,18967971.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_8_0.html
+2014-09,2301,Lite-On Technology,20313033.0,19184669.0,20361095.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_9_0.html
+2014-10,2301,Lite-On Technology,19687688.0,20313033.0,19448265.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_10_0.html
+2014-11,2301,Lite-On Technology,19986978.0,19687688.0,19600010.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_11_0.html
+2014-12,2301,Lite-On Technology,20436365.0,19986978.0,20182420.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_12_0.html
+2015-01,2301,Lite-On Technology,18975208.0,20436365.0,17727880.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_1_0.html
+2015-02,2301,Lite-On Technology,14383057.0,18975208.0,15388859.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_2_0.html
+2015-03,2301,Lite-On Technology,18186275.0,14383057.0,18275063.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_3_0.html
+2015-04,2301,Lite-On Technology,17171511.0,18186275.0,18914343.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_4_0.html
+2015-05,2301,Lite-On Technology,16764254.0,17171511.0,19692792.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_5_0.html
+2015-06,2301,Lite-On Technology,17726914.0,16764254.0,20242459.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_6_0.html
+2015-07,2301,Lite-On Technology,17483188.0,17726914.0,20805607.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_7_0.html
+2015-08,2301,Lite-On Technology,17897372.0,17483188.0,19184669.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_8_0.html
+2015-09,2301,Lite-On Technology,20595148.0,17897372.0,20313033.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_9_0.html
+2015-10,2301,Lite-On Technology,19761709.0,20595148.0,19687688.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_10_0.html
+2015-11,2301,Lite-On Technology,18818084.0,19761709.0,19986978.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_11_0.html
+2015-12,2301,Lite-On Technology,19032358.0,18818084.0,20436365.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_12_0.html
+2016-01,2301,Lite-On Technology,17339436.0,19032358.0,18975208.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_1_0.html
+2016-02,2301,Lite-On Technology,14085616.0,17339436.0,14383057.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_2_0.html
+2016-03,2301,Lite-On Technology,18386736.0,14085616.0,18186275.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_3_0.html
+2016-04,2301,Lite-On Technology,17231563.0,18386736.0,17171511.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_4_0.html
+2016-05,2301,Lite-On Technology,17436437.0,17231563.0,16764254.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_5_0.html
+2016-06,2301,Lite-On Technology,19106676.0,17436437.0,17726914.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_6_0.html
+2016-07,2301,Lite-On Technology,19370125.0,19106676.0,17483188.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_7_0.html
+2016-08,2301,Lite-On Technology,21053273.0,19370125.0,17897372.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_8_0.html
+2016-09,2301,Lite-On Technology,22257257.0,21053273.0,20595148.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_9_0.html
+2016-10,2301,Lite-On Technology,20549504.0,22257257.0,19761709.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_10_0.html
+2016-11,2301,Lite-On Technology,21337233.0,20549504.0,18818084.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_11_0.html
+2016-12,2301,Lite-On Technology,21387557.0,21337233.0,19032358.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_12_0.html
+2017-01,2301,Lite-On Technology,16215205.0,21387557.0,17339436.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_1_0.html
+2017-02,2301,Lite-On Technology,16024156.0,16215205.0,14085616.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_2_0.html
+2017-03,2301,Lite-On Technology,19108673.0,16024156.0,18386736.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_3_0.html
+2017-04,2301,Lite-On Technology,16814973.0,19108673.0,17231563.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_4_0.html
+2017-05,2301,Lite-On Technology,16703620.0,16814973.0,17436437.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_5_0.html
+2017-06,2301,Lite-On Technology,19533942.0,16703620.0,19106676.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_6_0.html
+2017-07,2301,Lite-On Technology,17517179.0,19533942.0,19370125.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_7_0.html
+2017-08,2301,Lite-On Technology,18620313.0,17517179.0,21053273.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_8_0.html
+2017-09,2301,Lite-On Technology,19852586.0,18620313.0,22257257.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_9_0.html
+2017-10,2301,Lite-On Technology,17635775.0,19852586.0,20549504.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_10_0.html
+2017-11,2301,Lite-On Technology,18527351.0,17635775.0,21337233.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_11_0.html
+2017-12,2301,Lite-On Technology,18017103.0,18527351.0,21387557.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_12_0.html
+2018-01,2301,Lite-On Technology,16504580.0,18017103.0,16215205.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_1_0.html
+2018-02,2301,Lite-On Technology,13037374.0,16504580.0,16024156.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_2_0.html
+2018-03,2301,Lite-On Technology,18983633.0,13037374.0,19108673.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_3_0.html
+2018-04,2301,Lite-On Technology,16567947.0,18983633.0,16814973.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_4_0.html
+2018-05,2301,Lite-On Technology,18491015.0,16567947.0,16703620.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_5_0.html
+2018-06,2301,Lite-On Technology,19638825.0,18491015.0,19533942.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_6_0.html
+2018-07,2301,Lite-On Technology,15504459.0,19638825.0,17517179.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_7_0.html
+2018-08,2301,Lite-On Technology,18592860.0,15504459.0,18620313.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_8_0.html
+2018-09,2301,Lite-On Technology,19298171.0,18592860.0,19852586.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_9_0.html
+2018-10,2301,Lite-On Technology,17601421.0,19298171.0,17635775.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_10_0.html
+2018-11,2301,Lite-On Technology,16732076.0,17601421.0,18527351.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_11_0.html
+2018-12,2301,Lite-On Technology,16138178.0,16732076.0,18017103.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_12_0.html
+2019-01,2301,Lite-On Technology,15607442.0,16138178.0,16504580.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_1_0.html
+2019-02,2301,Lite-On Technology,10873799.0,15607442.0,13037374.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_2_0.html
+2019-03,2301,Lite-On Technology,14711282.0,10873799.0,18983633.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_3_0.html
+2019-04,2301,Lite-On Technology,13534890.0,14711282.0,16567947.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_4_0.html
+2019-05,2301,Lite-On Technology,14796455.0,13534890.0,18491015.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_5_0.html
+2019-06,2301,Lite-On Technology,16148258.0,14796455.0,19638825.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_6_0.html
+2019-07,2301,Lite-On Technology,15345459.0,16148258.0,15504459.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_7_0.html
+2019-08,2301,Lite-On Technology,16349594.0,15345459.0,18592860.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_8_0.html
+2019-09,2301,Lite-On Technology,16429858.0,16349594.0,19298171.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_9_0.html
+2019-10,2301,Lite-On Technology,14646078.0,16429858.0,17601421.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_10_0.html
+2019-11,2301,Lite-On Technology,15012746.0,14646078.0,16732076.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_11_0.html
+2019-12,2301,Lite-On Technology,14492267.0,15012746.0,16138178.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_12_0.html
+2020-01,2301,Lite-On Technology,11314389.0,14492267.0,15607442.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_1_0.html
+2020-02,2301,Lite-On Technology,8669987.0,11314389.0,10873799.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_2_0.html
+2020-03,2301,Lite-On Technology,12600894.0,8669987.0,14711282.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_3_0.html
+2020-04,2301,Lite-On Technology,13747339.0,12600894.0,13534890.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_4_0.html
+2020-05,2301,Lite-On Technology,13716515.0,13747339.0,14796455.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_5_0.html
+2020-06,2301,Lite-On Technology,14287458.0,13716515.0,16148258.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_6_0.html
+2020-07,2301,Lite-On Technology,13117685.0,14287458.0,15345459.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_7_0.html
+2020-08,2301,Lite-On Technology,13455724.0,13117685.0,16349594.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_8_0.html
+2020-09,2301,Lite-On Technology,14762717.0,13455724.0,16429858.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_9_0.html
+2020-10,2301,Lite-On Technology,14100919.0,14762717.0,14646078.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_10_0.html
+2020-11,2301,Lite-On Technology,13894461.0,14100919.0,15012746.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_11_0.html
+2020-12,2301,Lite-On Technology,13439321.0,13894461.0,14492267.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_12_0.html
+2021-01,2301,Lite-On Technology,14076995.0,13439321.0,11314389.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_1_0.html
+2021-02,2301,Lite-On Technology,10402034.0,14076995.0,8669987.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_2_0.html
+2021-03,2301,Lite-On Technology,13238485.0,10402034.0,12600894.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_3_0.html
+2021-04,2301,Lite-On Technology,13642841.0,13238485.0,13747339.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_4_0.html
+2021-05,2301,Lite-On Technology,13554054.0,13642841.0,13716515.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_5_0.html
+2021-06,2301,Lite-On Technology,13480059.0,13554054.0,14287458.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_6_0.html
+2021-07,2301,Lite-On Technology,13707748.0,13480059.0,13117685.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_7_0.html
+2021-08,2301,Lite-On Technology,13542561.0,13707748.0,13455724.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_8_0.html
+2021-09,2301,Lite-On Technology,14612619.0,13542561.0,14762717.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_9_0.html
+2021-10,2301,Lite-On Technology,14593228.0,14612619.0,14100919.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_10_0.html
+2021-11,2301,Lite-On Technology,14918003.0,14593228.0,13894461.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_11_0.html
+2021-12,2301,Lite-On Technology,15057937.0,14918003.0,13439321.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_12_0.html
+2022-01,2301,Lite-On Technology,14495059.0,15057937.0,14076995.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_1_0.html
+2022-02,2301,Lite-On Technology,11589602.0,14495059.0,10402034.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_2_0.html
+2022-03,2301,Lite-On Technology,15146833.0,11589602.0,13238485.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_3_0.html
+2022-04,2301,Lite-On Technology,13768307.0,15146833.0,13642841.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_4_0.html
+2022-05,2301,Lite-On Technology,14564453.0,13768307.0,13554054.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_5_0.html
+2022-06,2301,Lite-On Technology,14643034.0,14564453.0,13480059.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_6_0.html
+2022-07,2301,Lite-On Technology,14799908.0,14643034.0,13707748.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_7_0.html
+2022-08,2301,Lite-On Technology,15434850.0,14799908.0,13542561.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_8_0.html
+2022-09,2301,Lite-On Technology,15937899.0,15434850.0,14612619.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_9_0.html
+2022-10,2301,Lite-On Technology,14895453.0,15937899.0,14593228.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_10_0.html
+2022-11,2301,Lite-On Technology,14845042.0,14895453.0,14918003.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_11_0.html
+2022-12,2301,Lite-On Technology,13354661.0,14845042.0,15057937.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_12_0.html
+2023-01,2301,Lite-On Technology,10678871.0,13354661.0,14495059.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_1_0.html
+2023-02,2301,Lite-On Technology,10811251.0,10678871.0,11589602.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_2_0.html
+2023-03,2301,Lite-On Technology,12684153.0,10811251.0,15146833.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_3_0.html
+2023-04,2301,Lite-On Technology,12028907.0,12684153.0,13768307.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_4_0.html
+2023-05,2301,Lite-On Technology,12352866.0,12028907.0,14564453.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_5_0.html
+2023-06,2301,Lite-On Technology,12911091.0,12352866.0,14643034.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_6_0.html
+2023-07,2301,Lite-On Technology,12567821.0,12911091.0,14799908.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_7_0.html
+2023-08,2301,Lite-On Technology,13289503.0,12567821.0,15434850.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_8_0.html
+2023-09,2301,Lite-On Technology,14100034.0,13289503.0,15937899.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_9_0.html
+2023-10,2301,Lite-On Technology,12238842.0,14100034.0,14895453.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_10_0.html
+2023-11,2301,Lite-On Technology,12347799.0,12238842.0,14845042.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_11_0.html
+2023-12,2301,Lite-On Technology,12324469.0,12347799.0,13354661.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_12_0.html
+2024-01,2301,Lite-On Technology,9908418.0,12324469.0,10678871.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_1_0.html
+2024-02,2301,Lite-On Technology,8081408.0,9908418.0,10811251.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_2_0.html
+2024-03,2301,Lite-On Technology,10785248.0,8081408.0,12684153.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_3_0.html
+2024-04,2301,Lite-On Technology,10595027.0,10785248.0,12028907.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_4_0.html
+2024-05,2301,Lite-On Technology,10952517.0,10595027.0,12352866.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_5_0.html
+2024-06,2301,Lite-On Technology,11735967.0,10952517.0,12911091.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_6_0.html
+2024-07,2301,Lite-On Technology,12865638.0,11735967.0,12567821.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_7_0.html
+2024-08,2301,Lite-On Technology,12053795.0,12865638.0,13289503.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_8_0.html
+2024-09,2301,Lite-On Technology,11850060.0,12053795.0,14100034.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_9_0.html
+2024-10,2301,Lite-On Technology,12396253.0,11850060.0,12238842.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_10_0.html
+2024-11,2301,Lite-On Technology,12512519.0,12396253.0,12347799.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_11_0.html
+2024-12,2301,Lite-On Technology,13387348.0,12512519.0,12324469.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_12_0.html
+2025-01,2301,Lite-On Technology,12147361.0,13387348.0,9908418.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_1_0.html
+2025-02,2301,Lite-On Technology,10916888.0,12147361.0,8081408.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_2_0.html
+2025-03,2301,Lite-On Technology,13352871.0,10916888.0,10785248.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_3_0.html
+2025-04,2301,Lite-On Technology,13408177.0,13352871.0,10595027.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_4_0.html
+2025-05,2301,Lite-On Technology,13394635.0,13408177.0,10952517.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_5_0.html
+2025-06,2301,Lite-On Technology,13619675.0,13394635.0,11735967.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_6_0.html
+2025-07,2301,Lite-On Technology,13811634.0,13619675.0,12865638.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_7_0.html
+2025-08,2301,Lite-On Technology,15648789.0,13811634.0,12053795.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_8_0.html
+2025-09,2301,Lite-On Technology,15430791.0,15648789.0,11850060.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_9_0.html
+2025-10,2301,Lite-On Technology,15204242.0,15430791.0,12396253.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_10_0.html
+2025-11,2301,Lite-On Technology,14246280.0,15204242.0,12512519.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_11_0.html
+2025-12,2301,Lite-On Technology,14907047.0,14246280.0,13387348.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_12_0.html
+2026-01,2301,Lite-On Technology,14112349.0,14907047.0,12147361.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_1_0.html
+2026-02,2301,Lite-On Technology,12812239.0,14112349.0,10916888.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_2_0.html
+2026-03,2301,Lite-On Technology,16483767.0,12812239.0,13352871.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_3_0.html
+2026-04,2301,Lite-On Technology,16694759.0,16483767.0,13408177.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_4_0.html
+2026-05,2301,Lite-On Technology,17353659.0,16694759.0,13394635.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_5_0.html
+2026-06,2301,Lite-On Technology,18655552.0,17353659.0,13619675.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html
+2026-07,2301,Lite-On Technology,19005536.0,18655552.0,13811634.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html
+2026-08,2301,Lite-On Technology,19592400.0,19005536.0,15648789.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html
+2010-01,2385,Chicony Electronics,1416597.0,1741056.0,836758.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_1_0.html
+2010-02,2385,Chicony Electronics,1189814.0,1416597.0,922111.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_2_0.html
+2010-03,2385,Chicony Electronics,1662946.0,1189814.0,1333622.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_3_0.html
+2010-04,2385,Chicony Electronics,1597738.0,1662946.0,1374095.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_4_0.html
+2010-05,2385,Chicony Electronics,1641980.0,1597738.0,1237135.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_5_0.html
+2010-06,2385,Chicony Electronics,1500725.0,1641980.0,1302077.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_6_0.html
+2010-07,2385,Chicony Electronics,1452723.0,1500725.0,1476265.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_7_0.html
+2010-08,2385,Chicony Electronics,1645436.0,1452723.0,1732218.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_8_0.html
+2010-09,2385,Chicony Electronics,2180305.0,1645436.0,2110244.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_9_0.html
+2010-10,2385,Chicony Electronics,2068559.0,2180305.0,1723292.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_10_0.html
+2010-11,2385,Chicony Electronics,2194092.0,2068559.0,1961565.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_11_0.html
+2010-12,2385,Chicony Electronics,1620380.0,2194092.0,1741056.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_12_0.html
+2011-01,2385,Chicony Electronics,1417666.0,1620380.0,1416597.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_1_0.html
+2011-02,2385,Chicony Electronics,931036.0,1417666.0,1189814.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_2_0.html
+2011-03,2385,Chicony Electronics,1536644.0,931036.0,1662946.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_3_0.html
+2011-04,2385,Chicony Electronics,1267644.0,1536644.0,1597738.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_4_0.html
+2011-05,2385,Chicony Electronics,1482215.0,1267644.0,1641980.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_5_0.html
+2011-06,2385,Chicony Electronics,1543505.0,1482215.0,1500725.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_6_0.html
+2011-07,2385,Chicony Electronics,1484320.0,1543505.0,1452723.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_7_0.html
+2011-08,2385,Chicony Electronics,1564968.0,1484320.0,1645436.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_8_0.html
+2011-09,2385,Chicony Electronics,1781506.0,1564968.0,2180305.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_9_0.html
+2011-10,2385,Chicony Electronics,1597458.0,1781506.0,2068559.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_10_0.html
+2011-11,2385,Chicony Electronics,1653951.0,1597458.0,2194092.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_11_0.html
+2011-12,2385,Chicony Electronics,1779774.0,1653951.0,1620380.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_12_0.html
+2012-01,2385,Chicony Electronics,1248014.0,1779774.0,1417666.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_1_0.html
+2012-02,2385,Chicony Electronics,1361917.0,1248014.0,931036.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_2_0.html
+2012-03,2385,Chicony Electronics,1455272.0,1361917.0,1536644.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_3_0.html
+2012-04,2385,Chicony Electronics,1519363.0,1455272.0,1267644.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_4_0.html
+2012-05,2385,Chicony Electronics,1635163.0,1519363.0,1482215.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_5_0.html
+2012-06,2385,Chicony Electronics,1632237.0,1635163.0,1543505.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_6_0.html
+2012-07,2385,Chicony Electronics,1798759.0,1632237.0,1484320.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_7_0.html
+2012-08,2385,Chicony Electronics,1987380.0,1798759.0,1564968.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_8_0.html
+2012-09,2385,Chicony Electronics,2121336.0,1987380.0,1781506.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_9_0.html
+2012-10,2385,Chicony Electronics,2408601.0,2121336.0,1597458.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_10_0.html
+2012-11,2385,Chicony Electronics,2587932.0,2408601.0,1653951.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_11_0.html
+2012-12,2385,Chicony Electronics,3586626.0,2587932.0,1779774.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_12_0.html
+2013-01,2385,Chicony Electronics,5873901.0,,4031581.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_1_0.html
+2013-02,2385,Chicony Electronics,4721884.0,5873901.0,4636511.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_2_0.html
+2013-03,2385,Chicony Electronics,6597561.0,4721884.0,5215342.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_3_0.html
+2013-04,2385,Chicony Electronics,5754994.0,6597561.0,5277463.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_4_0.html
+2013-05,2385,Chicony Electronics,5941991.0,5754994.0,5435515.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_5_0.html
+2013-06,2385,Chicony Electronics,6131932.0,5941991.0,5093277.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_6_0.html
+2013-07,2385,Chicony Electronics,5700106.0,6131932.0,5369185.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_7_0.html
+2013-08,2385,Chicony Electronics,6083585.0,5700106.0,5907047.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_8_0.html
+2013-09,2385,Chicony Electronics,6682871.0,6083585.0,6544665.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_9_0.html
+2013-10,2385,Chicony Electronics,6512235.0,6682871.0,6208777.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_10_0.html
+2013-11,2385,Chicony Electronics,7414867.0,6512235.0,6413356.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_11_0.html
+2013-12,2385,Chicony Electronics,7112682.0,7414867.0,7376932.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_12_0.html
+2014-01,2385,Chicony Electronics,5648668.0,7112682.0,5873901.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_1_0.html
+2014-02,2385,Chicony Electronics,4932419.0,5648668.0,4721884.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html
+2014-03,2385,Chicony Electronics,6374006.0,4932419.0,6613655.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_3_0.html
+2014-04,2385,Chicony Electronics,6219679.0,6374006.0,5754994.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_4_0.html
+2014-05,2385,Chicony Electronics,6343006.0,6219679.0,5942082.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_5_0.html
+2014-06,2385,Chicony Electronics,6415313.0,6343006.0,6270970.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_6_0.html
+2014-07,2385,Chicony Electronics,6050206.0,6415313.0,5561068.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_7_0.html
+2014-08,2385,Chicony Electronics,6078635.0,6050206.0,6083585.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_8_0.html
+2014-09,2385,Chicony Electronics,7866553.0,6078635.0,6682871.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_9_0.html
+2014-10,2385,Chicony Electronics,7680950.0,7866553.0,6512235.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_10_0.html
+2014-11,2385,Chicony Electronics,8123197.0,7680950.0,7414867.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_11_0.html
+2014-12,2385,Chicony Electronics,8376832.0,8123197.0,7107037.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_12_0.html
+2015-01,2385,Chicony Electronics,6668599.0,8376832.0,5648668.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_1_0.html
+2015-02,2385,Chicony Electronics,4898817.0,6668599.0,4932419.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_2_0.html
+2015-03,2385,Chicony Electronics,6438739.0,4898817.0,6374006.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_3_0.html
+2015-04,2385,Chicony Electronics,6253401.0,6438739.0,6219679.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_4_0.html
+2015-05,2385,Chicony Electronics,6806863.0,6253401.0,6343006.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_5_0.html
+2015-06,2385,Chicony Electronics,7198514.0,6806863.0,6416014.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_6_0.html
+2015-07,2385,Chicony Electronics,6723583.0,7198514.0,6050206.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_7_0.html
+2015-08,2385,Chicony Electronics,6793255.0,6723583.0,6078635.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_8_0.html
+2015-09,2385,Chicony Electronics,7517760.0,6793255.0,7866553.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_9_0.html
+2015-10,2385,Chicony Electronics,7036601.0,7517760.0,7680950.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_10_0.html
+2015-11,2385,Chicony Electronics,7360885.0,7036601.0,8123197.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_11_0.html
+2015-12,2385,Chicony Electronics,6976597.0,7360885.0,8377357.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_12_0.html
+2016-01,2385,Chicony Electronics,5600811.0,6976597.0,6668599.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_1_0.html
+2016-02,2385,Chicony Electronics,4592953.0,5600811.0,4897512.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_2_0.html
+2016-03,2385,Chicony Electronics,6431429.0,4592953.0,6438739.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_3_0.html
+2016-04,2385,Chicony Electronics,5287804.0,6431429.0,6253401.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_4_0.html
+2016-05,2385,Chicony Electronics,6051631.0,5287804.0,6806863.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_5_0.html
+2016-06,2385,Chicony Electronics,6921863.0,6051631.0,7198814.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_6_0.html
+2016-07,2385,Chicony Electronics,6219894.0,6921863.0,6723583.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_7_0.html
+2016-08,2385,Chicony Electronics,7055487.0,6219894.0,6793255.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_8_0.html
+2016-09,2385,Chicony Electronics,7699548.0,7055487.0,7517760.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_9_0.html
+2016-10,2385,Chicony Electronics,6754613.0,7699548.0,7036601.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_10_0.html
+2016-11,2385,Chicony Electronics,7216573.0,6754613.0,7360885.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_11_0.html
+2016-12,2385,Chicony Electronics,7180789.0,7216573.0,6967359.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_12_0.html
+2017-01,2385,Chicony Electronics,5143902.0,7180789.0,5600811.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_1_0.html
+2017-02,2385,Chicony Electronics,5203731.0,5143902.0,4592953.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_2_0.html
+2017-03,2385,Chicony Electronics,6594380.0,5203731.0,6431429.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_3_0.html
+2017-04,2385,Chicony Electronics,5405917.0,6594380.0,5287804.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_4_0.html
+2017-05,2385,Chicony Electronics,6024573.0,5405917.0,6051631.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_5_0.html
+2017-06,2385,Chicony Electronics,7239136.0,6024573.0,6921863.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_6_0.html
+2017-07,2385,Chicony Electronics,6159685.0,7239136.0,6219894.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_7_0.html
+2017-08,2385,Chicony Electronics,7144632.0,6159685.0,7055487.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_8_0.html
+2017-09,2385,Chicony Electronics,8204632.0,7144632.0,7699548.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_9_0.html
+2017-10,2385,Chicony Electronics,7258777.0,8204632.0,6754613.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_10_0.html
+2017-11,2385,Chicony Electronics,7168342.0,7258777.0,7216574.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_11_0.html
+2017-12,2385,Chicony Electronics,6608609.0,7168342.0,7185454.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_12_0.html
+2018-01,2385,Chicony Electronics,6296190.0,6608609.0,5143902.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_1_0.html
+2018-02,2385,Chicony Electronics,4645242.0,6296190.0,5203731.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_2_0.html
+2018-03,2385,Chicony Electronics,6632412.0,4645242.0,6594380.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_3_0.html
+2018-04,2385,Chicony Electronics,6429137.0,6632412.0,5405917.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_4_0.html
+2018-05,2385,Chicony Electronics,7380200.0,6429137.0,6024573.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_5_0.html
+2018-06,2385,Chicony Electronics,7452135.0,7380200.0,7239136.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_6_0.html
+2018-07,2385,Chicony Electronics,7721252.0,7452135.0,6159685.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_7_0.html
+2018-08,2385,Chicony Electronics,8669740.0,7721252.0,7144632.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_8_0.html
+2018-09,2385,Chicony Electronics,8584290.0,8669740.0,8204632.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_9_0.html
+2018-10,2385,Chicony Electronics,8239915.0,8584290.0,7258777.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_10_0.html
+2018-11,2385,Chicony Electronics,8165418.0,8239915.0,7168342.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_11_0.html
+2018-12,2385,Chicony Electronics,7044474.0,8165418.0,6607980.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_12_0.html
+2019-01,2385,Chicony Electronics,7128216.0,7044474.0,6296190.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_1_0.html
+2019-02,2385,Chicony Electronics,4954893.0,7128216.0,4645242.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_2_0.html
+2019-03,2385,Chicony Electronics,7094332.0,4954893.0,6632412.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_3_0.html
+2019-04,2385,Chicony Electronics,6751644.0,7094332.0,6429137.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_4_0.html
+2019-05,2385,Chicony Electronics,7990153.0,6751644.0,7380200.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_5_0.html
+2019-06,2385,Chicony Electronics,7809262.0,7990153.0,7452135.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_6_0.html
+2019-07,2385,Chicony Electronics,8009584.0,7809262.0,7721252.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_7_0.html
+2019-08,2385,Chicony Electronics,9042891.0,8009584.0,8669740.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_8_0.html
+2019-09,2385,Chicony Electronics,9133066.0,9042891.0,8584290.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_9_0.html
+2019-10,2385,Chicony Electronics,9280205.0,9133066.0,8239915.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_10_0.html
+2019-11,2385,Chicony Electronics,8260309.0,9280205.0,8165418.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_11_0.html
+2019-12,2385,Chicony Electronics,7097768.0,8260309.0,7044474.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_12_0.html
+2020-01,2385,Chicony Electronics,6228700.0,7097768.0,7128216.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_1_0.html
+2020-02,2385,Chicony Electronics,4280190.0,6228700.0,4954893.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_2_0.html
+2020-03,2385,Chicony Electronics,7601329.0,4280190.0,7094332.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_3_0.html
+2020-04,2385,Chicony Electronics,8891424.0,7601329.0,6751644.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_4_0.html
+2020-05,2385,Chicony Electronics,8190663.0,8891424.0,7990153.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_5_0.html
+2020-06,2385,Chicony Electronics,8014033.0,8190663.0,7809262.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_6_0.html
+2020-07,2385,Chicony Electronics,8194616.0,8014033.0,8009584.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_7_0.html
+2020-08,2385,Chicony Electronics,8569027.0,8194616.0,9042891.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_8_0.html
+2020-09,2385,Chicony Electronics,9657558.0,8569027.0,9133066.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_9_0.html
+2020-10,2385,Chicony Electronics,8723786.0,9657558.0,9280205.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_10_0.html
+2020-11,2385,Chicony Electronics,8383006.0,8723786.0,8260309.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_11_0.html
+2020-12,2385,Chicony Electronics,8347896.0,8383006.0,7097768.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_12_0.html
+2021-01,2385,Chicony Electronics,9211314.0,8347896.0,6228700.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_1_0.html
+2021-02,2385,Chicony Electronics,6832174.0,9211314.0,4280190.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_2_0.html
+2021-03,2385,Chicony Electronics,9093560.0,6832174.0,7601329.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_3_0.html
+2021-04,2385,Chicony Electronics,8004716.0,9093560.0,8891424.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_4_0.html
+2021-05,2385,Chicony Electronics,8421571.0,8004716.0,8190663.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_5_0.html
+2021-06,2385,Chicony Electronics,8866488.0,8421571.0,8014033.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_6_0.html
+2021-07,2385,Chicony Electronics,8895088.0,8866488.0,8194616.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_7_0.html
+2021-08,2385,Chicony Electronics,8599800.0,8895088.0,8569027.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_8_0.html
+2021-09,2385,Chicony Electronics,9854024.0,8599800.0,9657558.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_9_0.html
+2021-10,2385,Chicony Electronics,9473418.0,9854024.0,8723786.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_10_0.html
+2021-11,2385,Chicony Electronics,10317316.0,9473418.0,8383006.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_11_0.html
+2021-12,2385,Chicony Electronics,9994978.0,10317316.0,8347896.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_12_0.html
+2022-01,2385,Chicony Electronics,9928201.0,9994978.0,9211314.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_1_0.html
+2022-02,2385,Chicony Electronics,8313488.0,9928201.0,6832174.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_2_0.html
+2022-03,2385,Chicony Electronics,10603963.0,8313488.0,9093560.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_3_0.html
+2022-04,2385,Chicony Electronics,8060503.0,10603963.0,8004716.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_4_0.html
+2022-05,2385,Chicony Electronics,9863250.0,8060503.0,8421571.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_5_0.html
+2022-06,2385,Chicony Electronics,10728048.0,9863250.0,8866488.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_6_0.html
+2022-07,2385,Chicony Electronics,10302508.0,10728048.0,8895088.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_7_0.html
+2022-08,2385,Chicony Electronics,10261684.0,10302508.0,8599800.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_8_0.html
+2022-09,2385,Chicony Electronics,10096600.0,10261684.0,9854024.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_9_0.html
+2022-10,2385,Chicony Electronics,9392634.0,10096600.0,9473418.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_10_0.html
+2022-11,2385,Chicony Electronics,9643687.0,9392634.0,10317316.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_11_0.html
+2022-12,2385,Chicony Electronics,8565939.0,9643687.0,9904611.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_12_0.html
+2023-01,2385,Chicony Electronics,7088704.0,8565939.0,9928201.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_1_0.html
+2023-02,2385,Chicony Electronics,6863311.0,7088704.0,8313488.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_2_0.html
+2023-03,2385,Chicony Electronics,8769945.0,6863311.0,10603963.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_3_0.html
+2023-04,2385,Chicony Electronics,7873565.0,8769945.0,8060503.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_4_0.html
+2023-05,2385,Chicony Electronics,8453826.0,7873565.0,9863250.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_5_0.html
+2023-06,2385,Chicony Electronics,9035308.0,8453826.0,10715446.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_6_0.html
+2023-07,2385,Chicony Electronics,8022391.0,9035308.0,10302508.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_7_0.html
+2023-08,2385,Chicony Electronics,8645868.0,8022391.0,10261684.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_8_0.html
+2023-09,2385,Chicony Electronics,9140680.0,8645868.0,10096600.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_9_0.html
+2023-10,2385,Chicony Electronics,8238719.0,9140680.0,9392634.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_10_0.html
+2023-11,2385,Chicony Electronics,8219515.0,8238719.0,9643687.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_11_0.html
+2023-12,2385,Chicony Electronics,7970712.0,8219515.0,8566415.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_12_0.html
+2024-01,2385,Chicony Electronics,7695297.0,7970712.0,7088704.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_1_0.html
+2024-02,2385,Chicony Electronics,6640240.0,7695297.0,6863311.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_2_0.html
+2024-03,2385,Chicony Electronics,8510366.0,6640240.0,8769945.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_3_0.html
+2024-04,2385,Chicony Electronics,7762708.0,8510366.0,7873565.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_4_0.html
+2024-05,2385,Chicony Electronics,8549876.0,7762708.0,8453826.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_5_0.html
+2024-06,2385,Chicony Electronics,8361276.0,8549876.0,9035308.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_6_0.html
+2024-07,2385,Chicony Electronics,8380859.0,8361276.0,8022391.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_7_0.html
+2024-08,2385,Chicony Electronics,9687161.0,8380859.0,8645868.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_8_0.html
+2024-09,2385,Chicony Electronics,9653109.0,9687161.0,9140680.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_9_0.html
+2024-10,2385,Chicony Electronics,9287911.0,9653109.0,8238719.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_10_0.html
+2024-11,2385,Chicony Electronics,8632762.0,9287911.0,8219515.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_11_0.html
+2024-12,2385,Chicony Electronics,8316694.0,8632762.0,7970712.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_12_0.html
+2025-01,2385,Chicony Electronics,7517508.0,8316694.0,7695297.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_1_0.html
+2025-02,2385,Chicony Electronics,7290720.0,7517508.0,6640240.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_2_0.html
+2025-03,2385,Chicony Electronics,8473057.0,7290720.0,8510366.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_3_0.html
+2025-04,2385,Chicony Electronics,8024350.0,8473057.0,7762708.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_4_0.html
+2025-05,2385,Chicony Electronics,8123837.0,8024350.0,8549876.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_5_0.html
+2025-06,2385,Chicony Electronics,8346496.0,8123837.0,8361276.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_6_0.html
+2025-07,2385,Chicony Electronics,8041213.0,8346496.0,8380859.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_7_0.html
+2025-08,2385,Chicony Electronics,8482907.0,8041213.0,9687161.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_8_0.html
+2025-09,2385,Chicony Electronics,8284209.0,8482907.0,9653109.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_9_0.html
+2025-10,2385,Chicony Electronics,7431616.0,8284209.0,9287911.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_10_0.html
+2025-11,2385,Chicony Electronics,7734551.0,7431616.0,8632762.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_11_0.html
+2025-12,2385,Chicony Electronics,7910554.0,7734551.0,8316694.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_12_0.html
+2026-01,2385,Chicony Electronics,7695028.0,7910554.0,7517508.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_1_0.html
+2026-02,2385,Chicony Electronics,6373159.0,7695028.0,7290311.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_2_0.html
+2026-03,2385,Chicony Electronics,8802853.0,6373159.0,8473057.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_3_0.html
+2026-04,2385,Chicony Electronics,7272740.0,8802853.0,8024350.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_4_0.html
+2026-05,2385,Chicony Electronics,7226928.0,7272740.0,8123837.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_5_0.html
+2026-06,2385,Chicony Electronics,7888735.0,7226928.0,8346496.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html
+2026-07,2385,Chicony Electronics,7056988.0,7888735.0,8041213.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html
+2026-08,2385,Chicony Electronics,6521222.0,7056988.0,8482907.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html
+2010-01,2392,Cheng Uei Precision (Foxlink),2267001.0,3027522.0,2000535.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_1_0.html
+2010-02,2392,Cheng Uei Precision (Foxlink),1775083.0,2267001.0,2006440.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_2_0.html
+2010-03,2392,Cheng Uei Precision (Foxlink),2754622.0,1775083.0,2530620.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_3_0.html
+2010-04,2392,Cheng Uei Precision (Foxlink),3216535.0,2754622.0,2647970.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_4_0.html
+2010-05,2392,Cheng Uei Precision (Foxlink),3345042.0,3216535.0,2473957.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_5_0.html
+2010-06,2392,Cheng Uei Precision (Foxlink),3891881.0,3345042.0,2524095.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_6_0.html
+2010-07,2392,Cheng Uei Precision (Foxlink),4155821.0,3891881.0,2893561.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_7_0.html
+2010-08,2392,Cheng Uei Precision (Foxlink),4649736.0,4155821.0,3620611.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_8_0.html
+2010-09,2392,Cheng Uei Precision (Foxlink),5680109.0,4649736.0,4267376.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_9_0.html
+2010-10,2392,Cheng Uei Precision (Foxlink),5113114.0,5680109.0,4226874.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_10_0.html
+2010-11,2392,Cheng Uei Precision (Foxlink),5573343.0,5113114.0,3501253.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_11_0.html
+2010-12,2392,Cheng Uei Precision (Foxlink),5085739.0,5573343.0,3027522.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_12_0.html
+2011-01,2392,Cheng Uei Precision (Foxlink),4262536.0,5085739.0,2267001.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_1_0.html
+2011-02,2392,Cheng Uei Precision (Foxlink),2960528.0,4262536.0,1775083.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_2_0.html
+2011-03,2392,Cheng Uei Precision (Foxlink),4740977.0,2960528.0,2754622.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_3_0.html
+2011-04,2392,Cheng Uei Precision (Foxlink),4476149.0,4740977.0,3216535.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_4_0.html
+2011-05,2392,Cheng Uei Precision (Foxlink),4474637.0,4476149.0,3345042.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_5_0.html
+2011-06,2392,Cheng Uei Precision (Foxlink),4745047.0,4474637.0,3891881.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_6_0.html
+2011-07,2392,Cheng Uei Precision (Foxlink),5412445.0,4745047.0,4155821.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_7_0.html
+2011-08,2392,Cheng Uei Precision (Foxlink),5643415.0,5412445.0,4649736.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_8_0.html
+2011-09,2392,Cheng Uei Precision (Foxlink),6824718.0,5643415.0,5680109.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_9_0.html
+2011-10,2392,Cheng Uei Precision (Foxlink),5868161.0,6824718.0,5113114.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_10_0.html
+2011-11,2392,Cheng Uei Precision (Foxlink),5732120.0,5868161.0,5573343.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_11_0.html
+2011-12,2392,Cheng Uei Precision (Foxlink),4354801.0,5732120.0,5085739.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_12_0.html
+2012-01,2392,Cheng Uei Precision (Foxlink),3866589.0,4354801.0,4262536.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_1_0.html
+2012-02,2392,Cheng Uei Precision (Foxlink),3928340.0,3866589.0,2960528.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_2_0.html
+2012-03,2392,Cheng Uei Precision (Foxlink),4177478.0,3928340.0,4740977.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_3_0.html
+2012-04,2392,Cheng Uei Precision (Foxlink),4139278.0,4177478.0,4476149.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_4_0.html
+2012-05,2392,Cheng Uei Precision (Foxlink),4210879.0,4139278.0,4474637.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_5_0.html
+2012-06,2392,Cheng Uei Precision (Foxlink),3773067.0,4210879.0,4745047.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_6_0.html
+2012-07,2392,Cheng Uei Precision (Foxlink),4312986.0,3773067.0,5412445.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_7_0.html
+2012-08,2392,Cheng Uei Precision (Foxlink),6027659.0,4312986.0,5643415.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_8_0.html
+2012-09,2392,Cheng Uei Precision (Foxlink),7085821.0,6027659.0,6824718.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_9_0.html
+2012-10,2392,Cheng Uei Precision (Foxlink),7704869.0,7085821.0,5868161.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_10_0.html
+2012-11,2392,Cheng Uei Precision (Foxlink),8845941.0,7704869.0,5732120.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_11_0.html
+2012-12,2392,Cheng Uei Precision (Foxlink),6415157.0,8845941.0,4354801.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_12_0.html
+2013-01,2392,Cheng Uei Precision (Foxlink),11939761.0,,6443131.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_1_0.html
+2013-02,2392,Cheng Uei Precision (Foxlink),7249054.0,11939761.0,6583166.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_2_0.html
+2013-03,2392,Cheng Uei Precision (Foxlink),7688273.0,7249054.0,7211026.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_3_0.html
+2013-04,2392,Cheng Uei Precision (Foxlink),7438602.0,7688273.0,6920256.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_4_0.html
+2013-05,2392,Cheng Uei Precision (Foxlink),6773162.0,7438602.0,7414120.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_5_0.html
+2013-06,2392,Cheng Uei Precision (Foxlink),6100340.0,6773162.0,6407320.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_6_0.html
+2013-07,2392,Cheng Uei Precision (Foxlink),6720437.0,6100340.0,7871329.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_7_0.html
+2013-08,2392,Cheng Uei Precision (Foxlink),7814103.0,6720437.0,9521728.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_8_0.html
+2013-09,2392,Cheng Uei Precision (Foxlink),10018559.0,7814103.0,9720022.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_9_0.html
+2013-10,2392,Cheng Uei Precision (Foxlink),9868693.0,10018559.0,10892204.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_10_0.html
+2013-11,2392,Cheng Uei Precision (Foxlink),12459017.0,9868693.0,12379548.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_11_0.html
+2013-12,2392,Cheng Uei Precision (Foxlink),12166276.0,12459017.0,11511891.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_12_0.html
+2014-01,2392,Cheng Uei Precision (Foxlink),9697666.0,12166276.0,11939761.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_1_0.html
+2014-02,2392,Cheng Uei Precision (Foxlink),6972156.0,9697666.0,7249054.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html
+2014-03,2392,Cheng Uei Precision (Foxlink),7195710.0,6972156.0,7688273.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_3_0.html
+2014-04,2392,Cheng Uei Precision (Foxlink),6307971.0,7195710.0,7438602.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_4_0.html
+2014-05,2392,Cheng Uei Precision (Foxlink),5845277.0,6307971.0,6773162.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_5_0.html
+2014-06,2392,Cheng Uei Precision (Foxlink),5321006.0,5845277.0,6100340.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_6_0.html
+2014-07,2392,Cheng Uei Precision (Foxlink),6202128.0,5321006.0,6720437.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_7_0.html
+2014-08,2392,Cheng Uei Precision (Foxlink),6445143.0,6202128.0,7814103.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_8_0.html
+2014-09,2392,Cheng Uei Precision (Foxlink),8192467.0,6445143.0,10018559.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_9_0.html
+2014-10,2392,Cheng Uei Precision (Foxlink),10224877.0,8192467.0,9868693.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_10_0.html
+2014-11,2392,Cheng Uei Precision (Foxlink),9168859.0,10224877.0,12459017.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_11_0.html
+2014-12,2392,Cheng Uei Precision (Foxlink),9494126.0,9168859.0,12166276.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_12_0.html
+2015-01,2392,Cheng Uei Precision (Foxlink),9063362.0,9494126.0,9697666.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_1_0.html
+2015-02,2392,Cheng Uei Precision (Foxlink),6270936.0,9063362.0,6972156.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_2_0.html
+2015-03,2392,Cheng Uei Precision (Foxlink),6279535.0,6270936.0,7195709.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_3_0.html
+2015-04,2392,Cheng Uei Precision (Foxlink),7803040.0,6279535.0,6307971.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_4_0.html
+2015-05,2392,Cheng Uei Precision (Foxlink),6224118.0,7803040.0,5845277.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_5_0.html
+2015-06,2392,Cheng Uei Precision (Foxlink),7507928.0,6224118.0,5321006.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_6_0.html
+2015-07,2392,Cheng Uei Precision (Foxlink),9514082.0,7507928.0,6202128.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_7_0.html
+2015-08,2392,Cheng Uei Precision (Foxlink),9975127.0,9514082.0,6445143.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_8_0.html
+2015-09,2392,Cheng Uei Precision (Foxlink),12485098.0,9975127.0,8192467.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_9_0.html
+2015-10,2392,Cheng Uei Precision (Foxlink),14033193.0,12485098.0,10224877.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_10_0.html
+2015-11,2392,Cheng Uei Precision (Foxlink),10753469.0,14033193.0,9168859.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_11_0.html
+2015-12,2392,Cheng Uei Precision (Foxlink),8345492.0,10753469.0,9494126.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_12_0.html
+2016-01,2392,Cheng Uei Precision (Foxlink),7305000.0,8345492.0,9063362.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_1_0.html
+2016-02,2392,Cheng Uei Precision (Foxlink),4544900.0,7305000.0,6270936.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_2_0.html
+2016-03,2392,Cheng Uei Precision (Foxlink),6547833.0,4544900.0,6279535.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_3_0.html
+2016-04,2392,Cheng Uei Precision (Foxlink),6289648.0,6547833.0,7803040.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_4_0.html
+2016-05,2392,Cheng Uei Precision (Foxlink),5736497.0,6289648.0,6224118.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_5_0.html
+2016-06,2392,Cheng Uei Precision (Foxlink),6374218.0,5736497.0,7507928.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_6_0.html
+2016-07,2392,Cheng Uei Precision (Foxlink),7253893.0,6374218.0,9514082.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_7_0.html
+2016-08,2392,Cheng Uei Precision (Foxlink),8538435.0,7253893.0,9975127.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_8_0.html
+2016-09,2392,Cheng Uei Precision (Foxlink),10499921.0,8538435.0,12485098.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_9_0.html
+2016-10,2392,Cheng Uei Precision (Foxlink),9491381.0,10499921.0,14033193.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_10_0.html
+2016-11,2392,Cheng Uei Precision (Foxlink),9161333.0,9491381.0,10753469.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_11_0.html
+2016-12,2392,Cheng Uei Precision (Foxlink),8756470.0,9161333.0,8345492.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_12_0.html
+2017-01,2392,Cheng Uei Precision (Foxlink),6094516.0,8756470.0,7305000.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_1_0.html
+2017-02,2392,Cheng Uei Precision (Foxlink),5835154.0,6094516.0,4544900.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_2_0.html
+2017-03,2392,Cheng Uei Precision (Foxlink),6234983.0,5835154.0,6547833.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_3_0.html
+2017-04,2392,Cheng Uei Precision (Foxlink),5935684.0,6234983.0,6289648.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_4_0.html
+2017-05,2392,Cheng Uei Precision (Foxlink),5909592.0,5935684.0,5736497.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_5_0.html
+2017-06,2392,Cheng Uei Precision (Foxlink),6834239.0,5909592.0,6374218.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_6_0.html
+2017-07,2392,Cheng Uei Precision (Foxlink),8653851.0,6834239.0,7253893.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_7_0.html
+2017-08,2392,Cheng Uei Precision (Foxlink),8741191.0,8653851.0,8538435.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_8_0.html
+2017-09,2392,Cheng Uei Precision (Foxlink),9978149.0,8741191.0,10499921.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_9_0.html
+2017-10,2392,Cheng Uei Precision (Foxlink),9350780.0,9978149.0,9491381.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_10_0.html
+2017-11,2392,Cheng Uei Precision (Foxlink),10823536.0,9350780.0,9161333.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_11_0.html
+2017-12,2392,Cheng Uei Precision (Foxlink),9232410.0,10823536.0,8756470.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_12_0.html
+2018-01,2392,Cheng Uei Precision (Foxlink),7996459.0,9232410.0,6094516.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_1_0.html
+2018-02,2392,Cheng Uei Precision (Foxlink),4813725.0,7996459.0,5835154.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_2_0.html
+2018-03,2392,Cheng Uei Precision (Foxlink),6163790.0,4813725.0,6234983.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_3_0.html
+2018-04,2392,Cheng Uei Precision (Foxlink),6440903.0,6163790.0,5935684.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_4_0.html
+2018-05,2392,Cheng Uei Precision (Foxlink),7687207.0,6440903.0,5909592.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_5_0.html
+2018-06,2392,Cheng Uei Precision (Foxlink),6646528.0,7687207.0,6834239.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_6_0.html
+2018-07,2392,Cheng Uei Precision (Foxlink),7563778.0,6646528.0,8653851.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_7_0.html
+2018-08,2392,Cheng Uei Precision (Foxlink),7377347.0,7563778.0,8741191.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_8_0.html
+2018-09,2392,Cheng Uei Precision (Foxlink),7759664.0,7377347.0,9978149.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_9_0.html
+2018-10,2392,Cheng Uei Precision (Foxlink),9142617.0,7759664.0,9350780.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_10_0.html
+2018-11,2392,Cheng Uei Precision (Foxlink),8331371.0,9142617.0,10823536.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_11_0.html
+2018-12,2392,Cheng Uei Precision (Foxlink),7987571.0,8331371.0,9232410.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_12_0.html
+2019-01,2392,Cheng Uei Precision (Foxlink),8237924.0,7987571.0,7996459.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_1_0.html
+2019-02,2392,Cheng Uei Precision (Foxlink),4592281.0,8237924.0,4813725.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_2_0.html
+2019-03,2392,Cheng Uei Precision (Foxlink),6417442.0,4592281.0,6163790.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_3_0.html
+2019-04,2392,Cheng Uei Precision (Foxlink),6942848.0,6417442.0,6440903.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_4_0.html
+2019-05,2392,Cheng Uei Precision (Foxlink),6748763.0,6942848.0,7687207.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_5_0.html
+2019-06,2392,Cheng Uei Precision (Foxlink),7307444.0,6748763.0,6646528.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_6_0.html
+2019-07,2392,Cheng Uei Precision (Foxlink),9490878.0,7307444.0,7563778.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_7_0.html
+2019-08,2392,Cheng Uei Precision (Foxlink),9037905.0,9490878.0,7377347.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_8_0.html
+2019-09,2392,Cheng Uei Precision (Foxlink),10631412.0,9037905.0,7759664.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_9_0.html
+2019-10,2392,Cheng Uei Precision (Foxlink),11153791.0,10631412.0,9142617.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_10_0.html
+2019-11,2392,Cheng Uei Precision (Foxlink),9254251.0,11153791.0,8331371.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_11_0.html
+2019-12,2392,Cheng Uei Precision (Foxlink),8088603.0,9254251.0,7987571.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_12_0.html
+2020-01,2392,Cheng Uei Precision (Foxlink),6162048.0,8088603.0,8237924.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_1_0.html
+2020-02,2392,Cheng Uei Precision (Foxlink),3632766.0,6162048.0,4592281.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_2_0.html
+2020-03,2392,Cheng Uei Precision (Foxlink),6404164.0,3632766.0,6417442.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_3_0.html
+2020-04,2392,Cheng Uei Precision (Foxlink),7059919.0,6404164.0,6942848.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_4_0.html
+2020-05,2392,Cheng Uei Precision (Foxlink),6546772.0,7059919.0,6748763.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_5_0.html
+2020-06,2392,Cheng Uei Precision (Foxlink),6706050.0,6546772.0,7307444.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_6_0.html
+2020-07,2392,Cheng Uei Precision (Foxlink),8474038.0,6706050.0,9490878.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_7_0.html
+2020-08,2392,Cheng Uei Precision (Foxlink),8338378.0,8474038.0,9037905.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_8_0.html
+2020-09,2392,Cheng Uei Precision (Foxlink),9018174.0,8338378.0,10631412.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_9_0.html
+2020-10,2392,Cheng Uei Precision (Foxlink),8948344.0,9018174.0,11153791.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_10_0.html
+2020-11,2392,Cheng Uei Precision (Foxlink),9112691.0,8948344.0,9254251.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_11_0.html
+2020-12,2392,Cheng Uei Precision (Foxlink),9148757.0,9112691.0,8088603.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_12_0.html
+2021-01,2392,Cheng Uei Precision (Foxlink),8569765.0,9148757.0,6162048.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_1_0.html
+2021-02,2392,Cheng Uei Precision (Foxlink),4955216.0,8569765.0,3632766.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_2_0.html
+2021-03,2392,Cheng Uei Precision (Foxlink),6349181.0,4955216.0,6404164.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_3_0.html
+2021-04,2392,Cheng Uei Precision (Foxlink),6391299.0,6349181.0,7059919.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_4_0.html
+2021-05,2392,Cheng Uei Precision (Foxlink),5732272.0,6391299.0,6546772.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_5_0.html
+2021-06,2392,Cheng Uei Precision (Foxlink),5309864.0,5732272.0,6706050.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_6_0.html
+2021-07,2392,Cheng Uei Precision (Foxlink),6155907.0,5309864.0,8474038.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_7_0.html
+2021-08,2392,Cheng Uei Precision (Foxlink),6711913.0,6155907.0,8338378.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_8_0.html
+2021-09,2392,Cheng Uei Precision (Foxlink),8309497.0,6711913.0,9018174.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_9_0.html
+2021-10,2392,Cheng Uei Precision (Foxlink),8843530.0,8309497.0,8948344.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_10_0.html
+2021-11,2392,Cheng Uei Precision (Foxlink),9516271.0,8843530.0,9112691.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_11_0.html
+2021-12,2392,Cheng Uei Precision (Foxlink),9956020.0,9516271.0,9148757.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_12_0.html
+2022-01,2392,Cheng Uei Precision (Foxlink),7086816.0,9956020.0,8569765.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_1_0.html
+2022-02,2392,Cheng Uei Precision (Foxlink),5197726.0,7086816.0,4955216.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_2_0.html
+2022-03,2392,Cheng Uei Precision (Foxlink),5475687.0,5197726.0,6349181.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_3_0.html
+2022-04,2392,Cheng Uei Precision (Foxlink),7029664.0,5475687.0,6391299.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_4_0.html
+2022-05,2392,Cheng Uei Precision (Foxlink),7389632.0,7029664.0,5732272.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_5_0.html
+2022-06,2392,Cheng Uei Precision (Foxlink),7464123.0,7389632.0,5309864.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_6_0.html
+2022-07,2392,Cheng Uei Precision (Foxlink),7721549.0,7464123.0,6155907.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_7_0.html
+2022-08,2392,Cheng Uei Precision (Foxlink),8025226.0,7721549.0,6711913.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_8_0.html
+2022-09,2392,Cheng Uei Precision (Foxlink),10810229.0,8025226.0,8309497.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_9_0.html
+2022-10,2392,Cheng Uei Precision (Foxlink),10090117.0,10810229.0,8843530.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_10_0.html
+2022-11,2392,Cheng Uei Precision (Foxlink),8990178.0,10090117.0,9516271.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_11_0.html
+2022-12,2392,Cheng Uei Precision (Foxlink),8821647.0,8990178.0,9956020.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_12_0.html
+2023-01,2392,Cheng Uei Precision (Foxlink),7761119.0,8821647.0,7086816.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_1_0.html
+2023-02,2392,Cheng Uei Precision (Foxlink),5459339.0,7761119.0,5197726.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_2_0.html
+2023-03,2392,Cheng Uei Precision (Foxlink),5713144.0,5459339.0,5475687.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_3_0.html
+2023-04,2392,Cheng Uei Precision (Foxlink),5862943.0,5713144.0,7029664.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_4_0.html
+2023-05,2392,Cheng Uei Precision (Foxlink),5472673.0,5862943.0,7389632.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_5_0.html
+2023-06,2392,Cheng Uei Precision (Foxlink),5849537.0,5472673.0,7464123.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_6_0.html
+2023-07,2392,Cheng Uei Precision (Foxlink),7898761.0,5849537.0,7721549.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_7_0.html
+2023-08,2392,Cheng Uei Precision (Foxlink),7642344.0,7898761.0,8025226.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_8_0.html
+2023-09,2392,Cheng Uei Precision (Foxlink),9434240.0,7642344.0,10810229.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_9_0.html
+2023-10,2392,Cheng Uei Precision (Foxlink),9784697.0,9434240.0,10090117.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_10_0.html
+2023-11,2392,Cheng Uei Precision (Foxlink),10596128.0,9784697.0,8990178.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_11_0.html
+2023-12,2392,Cheng Uei Precision (Foxlink),9377848.0,10596128.0,8821647.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_12_0.html
+2024-01,2392,Cheng Uei Precision (Foxlink),8043429.0,9377848.0,7761119.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_1_0.html
+2024-02,2392,Cheng Uei Precision (Foxlink),4874952.0,8043429.0,5459339.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_2_0.html
+2024-03,2392,Cheng Uei Precision (Foxlink),6063550.0,4874952.0,5713144.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_3_0.html
+2024-04,2392,Cheng Uei Precision (Foxlink),7040320.0,6063550.0,5862943.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_4_0.html
+2024-05,2392,Cheng Uei Precision (Foxlink),7286444.0,7040320.0,5472673.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_5_0.html
+2024-06,2392,Cheng Uei Precision (Foxlink),7412648.0,7286444.0,5849537.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_6_0.html
+2024-07,2392,Cheng Uei Precision (Foxlink),8580565.0,7412648.0,7898761.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_7_0.html
+2024-08,2392,Cheng Uei Precision (Foxlink),8333024.0,8580565.0,7642344.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_8_0.html
+2024-09,2392,Cheng Uei Precision (Foxlink),7917574.0,8333024.0,9434240.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_9_0.html
+2024-10,2392,Cheng Uei Precision (Foxlink),12029845.0,7917574.0,9784697.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_10_0.html
+2024-11,2392,Cheng Uei Precision (Foxlink),10242856.0,12029845.0,10596128.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_11_0.html
+2024-12,2392,Cheng Uei Precision (Foxlink),10861425.0,10242856.0,9377848.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_12_0.html
+2025-01,2392,Cheng Uei Precision (Foxlink),8903684.0,10861425.0,8043429.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_1_0.html
+2025-02,2392,Cheng Uei Precision (Foxlink),6385852.0,8903684.0,4874952.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_2_0.html
+2025-03,2392,Cheng Uei Precision (Foxlink),6093881.0,6385852.0,6063550.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_3_0.html
+2025-04,2392,Cheng Uei Precision (Foxlink),6584560.0,6093881.0,7040320.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_4_0.html
+2025-05,2392,Cheng Uei Precision (Foxlink),5226685.0,6584560.0,7286444.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_5_0.html
+2025-06,2392,Cheng Uei Precision (Foxlink),9558929.0,5226685.0,7412648.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_6_0.html
+2025-07,2392,Cheng Uei Precision (Foxlink),6733663.0,9558929.0,8580565.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_7_0.html
+2025-08,2392,Cheng Uei Precision (Foxlink),6889918.0,6733663.0,8333024.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_8_0.html
+2025-09,2392,Cheng Uei Precision (Foxlink),12841827.0,6889918.0,7917574.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_9_0.html
+2025-10,2392,Cheng Uei Precision (Foxlink),10149615.0,12841827.0,12029845.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_10_0.html
+2025-11,2392,Cheng Uei Precision (Foxlink),7280472.0,10149615.0,10242856.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_11_0.html
+2025-12,2392,Cheng Uei Precision (Foxlink),7811576.0,7280472.0,10861425.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_12_0.html
+2026-01,2392,Cheng Uei Precision (Foxlink),7222249.0,7811576.0,8903684.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_1_0.html
+2026-02,2392,Cheng Uei Precision (Foxlink),5046941.0,7222249.0,6385852.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_2_0.html
+2026-03,2392,Cheng Uei Precision (Foxlink),8015155.0,5046941.0,6093881.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_3_0.html
+2026-04,2392,Cheng Uei Precision (Foxlink),6222374.0,8015155.0,6584560.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_4_0.html
+2026-05,2392,Cheng Uei Precision (Foxlink),6047246.0,6222374.0,5226685.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_5_0.html
+2026-06,2392,Cheng Uei Precision (Foxlink),5498589.0,6047246.0,9558929.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html
+2026-07,2392,Cheng Uei Precision (Foxlink),8941317.0,5498589.0,6733663.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html
+2026-08,2392,Cheng Uei Precision (Foxlink),5188271.0,8941317.0,6889918.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html
+2010-01,2439,Merry Electronics,410728.0,550655.0,179785.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_1_0.html
+2010-02,2439,Merry Electronics,388214.0,410728.0,325445.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_2_0.html
+2010-03,2439,Merry Electronics,512749.0,388214.0,378289.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_3_0.html
+2010-04,2439,Merry Electronics,538136.0,512749.0,314785.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_4_0.html
+2010-05,2439,Merry Electronics,482469.0,538136.0,385329.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_5_0.html
+2010-06,2439,Merry Electronics,564896.0,482469.0,366361.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_6_0.html
+2010-07,2439,Merry Electronics,593942.0,564896.0,447597.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_7_0.html
+2010-08,2439,Merry Electronics,563314.0,593942.0,501893.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_8_0.html
+2010-09,2439,Merry Electronics,645418.0,563314.0,597050.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_9_0.html
+2010-10,2439,Merry Electronics,548440.0,645418.0,656080.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_10_0.html
+2010-11,2439,Merry Electronics,640331.0,548440.0,575135.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_11_0.html
+2010-12,2439,Merry Electronics,542831.0,640331.0,550655.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_99_12_0.html
+2011-01,2439,Merry Electronics,446822.0,542831.0,410728.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_1_0.html
+2011-02,2439,Merry Electronics,268640.0,446822.0,388214.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_2_0.html
+2011-03,2439,Merry Electronics,521522.0,268640.0,512749.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_3_0.html
+2011-04,2439,Merry Electronics,391456.0,521522.0,538136.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_4_0.html
+2011-05,2439,Merry Electronics,423251.0,391456.0,482469.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_5_0.html
+2011-06,2439,Merry Electronics,424207.0,423251.0,564896.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_6_0.html
+2011-07,2439,Merry Electronics,346449.0,424207.0,593942.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_7_0.html
+2011-08,2439,Merry Electronics,444195.0,346449.0,563314.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_8_0.html
+2011-09,2439,Merry Electronics,515994.0,444195.0,612311.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_9_0.html
+2011-10,2439,Merry Electronics,539064.0,515994.0,548440.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_10_0.html
+2011-11,2439,Merry Electronics,700161.0,539064.0,640331.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_11_0.html
+2011-12,2439,Merry Electronics,622423.0,700161.0,542830.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_100_12_0.html
+2012-01,2439,Merry Electronics,483010.0,622423.0,446822.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_1_0.html
+2012-02,2439,Merry Electronics,547464.0,483010.0,268640.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_2_0.html
+2012-03,2439,Merry Electronics,697140.0,547464.0,521522.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_3_0.html
+2012-04,2439,Merry Electronics,525345.0,697140.0,391456.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_4_0.html
+2012-05,2439,Merry Electronics,478943.0,525345.0,423251.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_5_0.html
+2012-06,2439,Merry Electronics,483679.0,478943.0,424207.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_6_0.html
+2012-07,2439,Merry Electronics,400780.0,483679.0,346449.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_7_0.html
+2012-08,2439,Merry Electronics,469917.0,400780.0,444195.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_8_0.html
+2012-09,2439,Merry Electronics,454466.0,469917.0,515994.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_9_0.html
+2012-10,2439,Merry Electronics,525342.0,454466.0,539064.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_10_0.html
+2012-11,2439,Merry Electronics,614437.0,525342.0,700161.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_11_0.html
+2012-12,2439,Merry Electronics,688701.0,614437.0,622423.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_101_12_0.html
+2013-01,2439,Merry Electronics,846751.0,,583615.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_1_0.html
+2013-02,2439,Merry Electronics,565682.0,846751.0,672328.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_2_0.html
+2013-03,2439,Merry Electronics,866993.0,565682.0,836591.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_3_0.html
+2013-04,2439,Merry Electronics,711141.0,866993.0,650145.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_4_0.html
+2013-05,2439,Merry Electronics,751264.0,711141.0,571742.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_5_0.html
+2013-06,2439,Merry Electronics,759501.0,751264.0,602986.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_6_0.html
+2013-07,2439,Merry Electronics,916591.0,759501.0,498045.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_7_0.html
+2013-08,2439,Merry Electronics,1063194.0,916591.0,611431.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_8_0.html
+2013-09,2439,Merry Electronics,1038052.0,1063194.0,585353.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_9_0.html
+2013-10,2439,Merry Electronics,1131628.0,1038052.0,620232.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_10_0.html
+2013-11,2439,Merry Electronics,1365558.0,1131628.0,711771.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_11_0.html
+2013-12,2439,Merry Electronics,1217226.0,1365558.0,771113.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_102_12_0.html
+2014-01,2439,Merry Electronics,979099.0,1217226.0,846751.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_1_0.html
+2014-02,2439,Merry Electronics,644068.0,979099.0,565682.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html
+2014-03,2439,Merry Electronics,1041582.0,644068.0,866993.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_3_0.html
+2014-04,2439,Merry Electronics,1117813.0,1041582.0,711141.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_4_0.html
+2014-05,2439,Merry Electronics,874362.0,1117813.0,751264.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_5_0.html
+2014-06,2439,Merry Electronics,930310.0,874362.0,759501.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_6_0.html
+2014-07,2439,Merry Electronics,1056431.0,930310.0,916591.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_7_0.html
+2014-08,2439,Merry Electronics,1137179.0,1056431.0,1063194.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_8_0.html
+2014-09,2439,Merry Electronics,1259086.0,1137179.0,1038052.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_9_0.html
+2014-10,2439,Merry Electronics,1112201.0,1259086.0,1131628.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_10_0.html
+2014-11,2439,Merry Electronics,1124199.0,1112201.0,1365558.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_11_0.html
+2014-12,2439,Merry Electronics,1047042.0,1124199.0,1217226.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_103_12_0.html
+2015-01,2439,Merry Electronics,1054090.0,1047042.0,979099.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_1_0.html
+2015-02,2439,Merry Electronics,664216.0,1054090.0,644068.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_2_0.html
+2015-03,2439,Merry Electronics,986230.0,664216.0,1041582.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_3_0.html
+2015-04,2439,Merry Electronics,860773.0,986230.0,1117813.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_4_0.html
+2015-05,2439,Merry Electronics,849992.0,860773.0,874362.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_5_0.html
+2015-06,2439,Merry Electronics,899962.0,849992.0,930310.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_6_0.html
+2015-07,2439,Merry Electronics,923950.0,899962.0,1056431.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_7_0.html
+2015-08,2439,Merry Electronics,1042266.0,923950.0,1137179.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_8_0.html
+2015-09,2439,Merry Electronics,1350015.0,1042266.0,1259086.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_9_0.html
+2015-10,2439,Merry Electronics,1380070.0,1350015.0,1112201.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_10_0.html
+2015-11,2439,Merry Electronics,1188581.0,1380070.0,1124199.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_11_0.html
+2015-12,2439,Merry Electronics,1038126.0,1188581.0,1047042.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_104_12_0.html
+2016-01,2439,Merry Electronics,958137.0,1038126.0,1054090.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_1_0.html
+2016-02,2439,Merry Electronics,431972.0,958137.0,664216.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_2_0.html
+2016-03,2439,Merry Electronics,869687.0,431972.0,986230.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_3_0.html
+2016-04,2439,Merry Electronics,1158565.0,869687.0,860773.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_4_0.html
+2016-05,2439,Merry Electronics,1131393.0,1158565.0,849992.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_5_0.html
+2016-06,2439,Merry Electronics,1409432.0,1131393.0,899962.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_6_0.html
+2016-07,2439,Merry Electronics,1484369.0,1409432.0,923950.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_7_0.html
+2016-08,2439,Merry Electronics,1681828.0,1484369.0,1042266.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_8_0.html
+2016-09,2439,Merry Electronics,1756453.0,1681828.0,1350015.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_9_0.html
+2016-10,2439,Merry Electronics,1947514.0,1756453.0,1380070.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_10_0.html
+2016-11,2439,Merry Electronics,2090922.0,1947514.0,1188581.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_11_0.html
+2016-12,2439,Merry Electronics,1998798.0,2090922.0,1038126.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_105_12_0.html
+2017-01,2439,Merry Electronics,1419388.0,1998798.0,958137.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_1_0.html
+2017-02,2439,Merry Electronics,1227321.0,1419388.0,431972.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_2_0.html
+2017-03,2439,Merry Electronics,1862924.0,1227321.0,869687.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_3_0.html
+2017-04,2439,Merry Electronics,1620764.0,1862924.0,1158565.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_4_0.html
+2017-05,2439,Merry Electronics,1851405.0,1620764.0,1131393.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_5_0.html
+2017-06,2439,Merry Electronics,1895281.0,1851405.0,1409432.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_6_0.html
+2017-07,2439,Merry Electronics,1577209.0,1895281.0,1484369.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_7_0.html
+2017-08,2439,Merry Electronics,2392315.0,1577209.0,1681828.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_8_0.html
+2017-09,2439,Merry Electronics,2532602.0,2392315.0,1756453.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_9_0.html
+2017-10,2439,Merry Electronics,3383878.0,2532602.0,1947514.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_10_0.html
+2017-11,2439,Merry Electronics,3521710.0,3383878.0,2090922.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_11_0.html
+2017-12,2439,Merry Electronics,3390960.0,3521710.0,1998798.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_106_12_0.html
+2018-01,2439,Merry Electronics,2093787.0,3390960.0,1419388.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_1_0.html
+2018-02,2439,Merry Electronics,883380.0,2093787.0,1227321.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_2_0.html
+2018-03,2439,Merry Electronics,1372483.0,883380.0,1862924.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_3_0.html
+2018-04,2439,Merry Electronics,1855735.0,1372483.0,1620764.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_4_0.html
+2018-05,2439,Merry Electronics,2275038.0,1855735.0,1851405.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_5_0.html
+2018-06,2439,Merry Electronics,2590379.0,2275038.0,1895281.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_6_0.html
+2018-07,2439,Merry Electronics,2918587.0,2590379.0,1577209.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_7_0.html
+2018-08,2439,Merry Electronics,3580811.0,2918587.0,2392315.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_8_0.html
+2018-09,2439,Merry Electronics,4564775.0,3580811.0,2532602.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_9_0.html
+2018-10,2439,Merry Electronics,4849161.0,4564775.0,3383878.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_10_0.html
+2018-11,2439,Merry Electronics,4744235.0,4849161.0,3521710.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_11_0.html
+2018-12,2439,Merry Electronics,3789985.0,4744235.0,3390960.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_107_12_0.html
+2019-01,2439,Merry Electronics,2918940.0,3789985.0,2093787.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_1_0.html
+2019-02,2439,Merry Electronics,1311738.0,2918940.0,883380.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_2_0.html
+2019-03,2439,Merry Electronics,3380856.0,1311738.0,1372483.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_3_0.html
+2019-04,2439,Merry Electronics,3361223.0,3380856.0,1855735.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_4_0.html
+2019-05,2439,Merry Electronics,3665768.0,3361223.0,2275038.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_5_0.html
+2019-06,2439,Merry Electronics,2963050.0,3665768.0,2590379.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_6_0.html
+2019-07,2439,Merry Electronics,3051910.0,2963050.0,2918587.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_7_0.html
+2019-08,2439,Merry Electronics,3582689.0,3051910.0,3580811.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_8_0.html
+2019-09,2439,Merry Electronics,3550645.0,3582689.0,4564775.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_9_0.html
+2019-10,2439,Merry Electronics,3456947.0,3550645.0,4849161.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_10_0.html
+2019-11,2439,Merry Electronics,2780800.0,3456947.0,4744235.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_11_0.html
+2019-12,2439,Merry Electronics,2411510.0,2780800.0,3789985.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_108_12_0.html
+2020-01,2439,Merry Electronics,1853159.0,2411510.0,2918940.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_1_0.html
+2020-02,2439,Merry Electronics,710110.0,1853159.0,1311738.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_2_0.html
+2020-03,2439,Merry Electronics,2627338.0,710110.0,3380856.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_3_0.html
+2020-04,2439,Merry Electronics,2068643.0,2627338.0,3361223.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_4_0.html
+2020-05,2439,Merry Electronics,2166735.0,2068643.0,3665768.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_5_0.html
+2020-06,2439,Merry Electronics,2205230.0,2166735.0,2963050.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_6_0.html
+2020-07,2439,Merry Electronics,2492807.0,2205230.0,3051910.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_7_0.html
+2020-08,2439,Merry Electronics,2660172.0,2492807.0,3582689.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_8_0.html
+2020-09,2439,Merry Electronics,4964147.0,2660172.0,3550645.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_9_0.html
+2020-10,2439,Merry Electronics,4188080.0,4964147.0,3456947.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_10_0.html
+2020-11,2439,Merry Electronics,4569397.0,4188080.0,2780800.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_11_0.html
+2020-12,2439,Merry Electronics,3946322.0,4569397.0,2411510.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_109_12_0.html
+2021-01,2439,Merry Electronics,3254313.0,3946322.0,1853159.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_1_0.html
+2021-02,2439,Merry Electronics,1986006.0,3254313.0,710110.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_2_0.html
+2021-03,2439,Merry Electronics,2494730.0,1986006.0,2627338.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_3_0.html
+2021-04,2439,Merry Electronics,2830459.0,2494730.0,2068643.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_4_0.html
+2021-05,2439,Merry Electronics,2744608.0,2830459.0,2166735.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_5_0.html
+2021-06,2439,Merry Electronics,2595484.0,2744608.0,2205230.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_6_0.html
+2021-07,2439,Merry Electronics,2478705.0,2595484.0,2492807.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_7_0.html
+2021-08,2439,Merry Electronics,2542511.0,2478705.0,2660172.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_8_0.html
+2021-09,2439,Merry Electronics,3443415.0,2542511.0,4964147.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_9_0.html
+2021-10,2439,Merry Electronics,3658923.0,3443415.0,4188080.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_10_0.html
+2021-11,2439,Merry Electronics,4468241.0,3658923.0,4569397.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_11_0.html
+2021-12,2439,Merry Electronics,3683850.0,4468241.0,3946322.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_110_12_0.html
+2022-01,2439,Merry Electronics,2374754.0,3683850.0,3254313.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_1_0.html
+2022-02,2439,Merry Electronics,1454247.0,2374754.0,1986006.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_2_0.html
+2022-03,2439,Merry Electronics,2189938.0,1454247.0,2494730.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_3_0.html
+2022-04,2439,Merry Electronics,2113643.0,2189938.0,2830459.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_4_0.html
+2022-05,2439,Merry Electronics,2866873.0,2113643.0,2744608.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_5_0.html
+2022-06,2439,Merry Electronics,3033457.0,2866873.0,2595484.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_6_0.html
+2022-07,2439,Merry Electronics,3290225.0,3033457.0,2478705.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_7_0.html
+2022-08,2439,Merry Electronics,3716353.0,3290225.0,2542511.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_8_0.html
+2022-09,2439,Merry Electronics,4074768.0,3716353.0,3443415.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_9_0.html
+2022-10,2439,Merry Electronics,4224308.0,4074768.0,3658923.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_10_0.html
+2022-11,2439,Merry Electronics,3124607.0,4224308.0,4468241.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_11_0.html
+2022-12,2439,Merry Electronics,3032043.0,3124607.0,3683850.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_111_12_0.html
+2023-01,2439,Merry Electronics,2694480.0,3032043.0,2374754.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_1_0.html
+2023-02,2439,Merry Electronics,1935370.0,2694480.0,1454247.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_2_0.html
+2023-03,2439,Merry Electronics,2500910.0,1935370.0,2189938.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_3_0.html
+2023-04,2439,Merry Electronics,2575636.0,2500910.0,2113643.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_4_0.html
+2023-05,2439,Merry Electronics,3149657.0,2575636.0,2866873.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_5_0.html
+2023-06,2439,Merry Electronics,2636640.0,3149657.0,3033457.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_6_0.html
+2023-07,2439,Merry Electronics,2395737.0,2636640.0,3290225.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_7_0.html
+2023-08,2439,Merry Electronics,2583492.0,2395737.0,3716353.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_8_0.html
+2023-09,2439,Merry Electronics,4502585.0,2583492.0,4074768.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_9_0.html
+2023-10,2439,Merry Electronics,4540138.0,4502585.0,4224308.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_10_0.html
+2023-11,2439,Merry Electronics,4068222.0,4540138.0,3124607.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_11_0.html
+2023-12,2439,Merry Electronics,3142205.0,4068222.0,3032043.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_112_12_0.html
+2024-01,2439,Merry Electronics,3517151.0,3142205.0,2694480.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_1_0.html
+2024-02,2439,Merry Electronics,2066594.0,3517151.0,1935370.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_2_0.html
+2024-03,2439,Merry Electronics,2767702.0,2066594.0,2500910.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_3_0.html
+2024-04,2439,Merry Electronics,3513164.0,2767702.0,2575636.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_4_0.html
+2024-05,2439,Merry Electronics,3512244.0,3513164.0,3149657.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_5_0.html
+2024-06,2439,Merry Electronics,3265801.0,3512244.0,2636640.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_6_0.html
+2024-07,2439,Merry Electronics,3807765.0,3265801.0,2395737.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_7_0.html
+2024-08,2439,Merry Electronics,4503841.0,3807765.0,2583492.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_8_0.html
+2024-09,2439,Merry Electronics,4548840.0,4503841.0,4502585.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_9_0.html
+2024-10,2439,Merry Electronics,4116233.0,4548840.0,4540138.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_10_0.html
+2024-11,2439,Merry Electronics,4348473.0,4116233.0,4068222.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_11_0.html
+2024-12,2439,Merry Electronics,3886010.0,4348473.0,3142205.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_113_12_0.html
+2025-01,2439,Merry Electronics,2987315.0,3886010.0,3517151.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_1_0.html
+2025-02,2439,Merry Electronics,2721996.0,2987315.0,2066594.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_2_0.html
+2025-03,2439,Merry Electronics,3150779.0,2721996.0,2767702.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_3_0.html
+2025-04,2439,Merry Electronics,3292035.0,3150779.0,3513164.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_4_0.html
+2025-05,2439,Merry Electronics,3527908.0,3292035.0,3512244.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_5_0.html
+2025-06,2439,Merry Electronics,3454770.0,3527908.0,3265801.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_6_0.html
+2025-07,2439,Merry Electronics,3658294.0,3454770.0,3807765.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_7_0.html
+2025-08,2439,Merry Electronics,4413573.0,3658294.0,4503841.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_8_0.html
+2025-09,2439,Merry Electronics,4990360.0,4413573.0,4548840.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_9_0.html
+2025-10,2439,Merry Electronics,4969238.0,4990360.0,4116233.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_10_0.html
+2025-11,2439,Merry Electronics,4969265.0,4969238.0,4348473.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_11_0.html
+2025-12,2439,Merry Electronics,4256847.0,4969265.0,3886010.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_114_12_0.html
+2026-01,2439,Merry Electronics,3921486.0,4256847.0,2987315.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_1_0.html
+2026-02,2439,Merry Electronics,3144240.0,3921486.0,2721996.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_2_0.html
+2026-03,2439,Merry Electronics,3908500.0,3144240.0,3150779.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_3_0.html
+2026-04,2439,Merry Electronics,3233301.0,3908500.0,3292035.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_4_0.html
+2026-05,2439,Merry Electronics,3741673.0,3233301.0,3527908.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_5_0.html
+2026-06,2439,Merry Electronics,3459919.0,3741673.0,3454770.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_6_0.html
+2026-07,2439,Merry Electronics,3647858.0,3459919.0,3658294.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_7_0.html
+2026-08,2439,Merry Electronics,4117732.0,3647858.0,4413573.0,https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_8_0.html

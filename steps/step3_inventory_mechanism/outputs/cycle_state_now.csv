@@ -1,0 +1,2 @@
+latest_quarter,latest_state,next_state_probs,expected_peer_beat_next_pct,building_vs_other_pct,building_vs_other_t
+2026Q2,lean,"{'building': 0.062, 'drawdown': 0.0, 'lean': 0.688, 'normal': 0.25}",2.13,-1.68,-4.37

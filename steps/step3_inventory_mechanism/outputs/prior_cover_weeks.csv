@@ -1,0 +1,7 @@
+point,tier_test,source,low,mid,high
+retail + distribution channel (Logitech products),logitech_channel,assumption: 'weeks on hand' never disclosed numerically,4.0,6.0,8.0
+Logitech own stock (RM + FG),logitech_own,measured: DIO / 7 (range over sample),7.3,10.5,16.2
+  of which finished goods,,measured: XBRL FG / COGS x 13,6.5,9.2,12.0
+ODM / EMS component stock,,assumption (unobservable),2.0,4.0,8.0
+component distributors (Nordic parts),,measured proxy: Microchip distributor days / 7 x Nordic distribution share,1.1,1.9,3.4
+TOTAL end demand -> Nordic (prior for the Nordic-tier c x 52),nordic,sum,14.4,22.4,35.5

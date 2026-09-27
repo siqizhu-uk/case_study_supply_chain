@@ -1,0 +1,13 @@
+brand,fit,driver,control,slope,slope_kind,n,first_quarter,coverage,kappa_weeks,tau_weeks,ci_lo_weeks,ci_hi_weeks,set_lo_weeks,set_hi_weeks
+logitech,primary,logi_sales_yoy,wsts_yoy,0.2541,fixed s x m,16,2022Q3,1.0,26.0,13.0,13.0,52.0,0.0,52.0
+logitech,attribution low (step 2 p10),logi_sales_yoy,wsts_yoy,0.2014,fixed s x m,16,2022Q3,1.0,26.0,13.0,13.0,52.0,0.0,52.0
+logitech,attribution high (step 2 p90),logi_sales_yoy,wsts_yoy,0.3195,fixed s x m,16,2022Q3,1.0,26.0,13.0,13.0,52.0,0.0,52.0
+logitech,slice multiplier low (step 3),logi_sales_yoy,wsts_yoy,0.0686,fixed s x m,16,2022Q3,1.0,26.0,13.0,9.75,52.0,0.0,52.0
+logitech,slice multiplier high (step 3),logi_sales_yoy,wsts_yoy,0.3151,fixed s x m,16,2022Q3,1.0,26.0,13.0,13.0,52.0,0.0,52.0
+logitech,control: RSEAS instead of WSTS,logi_sales_yoy,rseas_yoy,0.2541,fixed s x m,16,2022Q3,1.0,20.15,39.0,13.0,52.0,0.0,52.0
+logitech,driver: radio categories (logi_ble_yoy),logi_ble_yoy,wsts_yoy,0.2541,fixed s x m,13,2023Q2,1.0,28.6,26.0,13.0,39.0,0.0,52.0
+logitech,regime: destock intercept,logi_sales_yoy,wsts_yoy,0.2541,fixed s x m,16,2022Q3,1.0,26.0,39.0,13.0,52.0,0.0,52.0
+logitech,regime: normal only,logi_sales_yoy,wsts_yoy,0.2541,fixed s x m,9,2024Q2,1.0,29.25,38.35,13.0,39.0,0.0,52.0
+gn,primary,gn_periph_yoy,wsts_yoy,0.0435,fixed s x m,9,2024Q2,1.0,29.25,13.0,13.0,39.0,0.0,52.0
+logitech,unconstrained (slope free),logi_sales_yoy,wsts_yoy,1.3951,fitted b,16,2022Q3,0.8765,26.0,35.1,,,0.65,46.15
+logitech,"step 5 end-to-end correlation (no constraint, no control)",logi_ble_yoy,,,correlation,13,2023Q2,,,31.2,18.85,36.4,19.5,37.05

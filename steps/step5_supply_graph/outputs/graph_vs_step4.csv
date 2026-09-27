@@ -1,0 +1,6 @@
+measure,step4_low,step4_mid,step4_high,graph_mid,graph_mc_p5,graph_mc_p95,gap_mid_weeks,graph_inside_step4_range
+"total lag, sell-out -> Nordic revenue",15,22,32,18.96,16.62,20.96,-3.04,True
+upstream: Nordic -> finished device at the brand,10,15,22,14.35,,,-0.65,True
+downstream: brand -> consumer,5,7,10,4.61,,,-2.39,False
+"downstream, routes through Ingram / TD Synnex only",5,7,10,6.1,,,-0.9,True
+"total, if the whole 10-K residual went through a distributor (p = 1)",15,22,32,19.9,,,-2.1,True

@@ -1,0 +1,16 @@
+company,metric_class,interval,basis,grade,rule,final_grade
+nordic,total revenue (quarterly),±0.02%,"Σ4Q vs audited FY, 5 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",C
+nordic,segment: Consumer,±7%,"4 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,C
+nordic,segment: Industrial & Healthcare,±15%,"4 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,C
+nordic,margins (reported vs adjusted),up to 7.8 pts,"2 quarters compared, max |adjusted − reported|",C,model the adjusted series and show the reported one beside it; widen Q4 ranges,C
+logitech,total revenue (quarterly),±0.00%,"Σ4Q vs audited FY, 6 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",B
+logitech,segment: Gaming,±8%,"3 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,B
+logitech,segment: Video Collaboration,±26%,"3 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,B
+logitech,margins (reported vs adjusted),up to 0.5 pts,"21 quarters compared, max |adjusted − reported|",B,model the adjusted series and show the reported one beside it; widen Q4 ranges,B
+gn,total revenue (quarterly),±0.00%,"Σ4Q vs audited FY, 4 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",C
+gn,segment: Enterprise,±4%,"2 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,C
+gn,margins (reported vs adjusted),up to 19.3 pts,"3 quarters compared, max |adjusted − reported|",C,model the adjusted series and show the reported one beside it; widen Q4 ranges,C
+ingram,total revenue (quarterly),±0.00%,"Σ4Q vs audited FY, 4 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",B
+ingram,segments,±0% observed,no restatement found in the cached filings,B,no taxonomy change in the window (Ingram / TD Synnex report one segment),B
+tdsynnex,total revenue (quarterly),±0.00%,"Σ4Q vs audited FY, 6 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",B
+tdsynnex,segments,±0% observed,no restatement found in the cached filings,B,no taxonomy change in the window (Ingram / TD Synnex report one segment),B

@@ -1,0 +1,8 @@
+year,metric,value,unit,document_key,quote_fragments,grade,note
+2021,top10_share_of_bt_pct,40,pct,2022Q4,"The top-10 customers accounted for 44% of|Bluetooth revenue in 2022, up from 40% in 2021",B,Q4 2022 report; share of Bluetooth revenue
+2022,top10_share_of_bt_pct,44,pct,2022Q4,The top-10 customers accounted for 44% of|Bluetooth revenue in 2022,B,Q4 2022 report; the later dollar figures give 285/669 = 42.6% (AR2022 says 'around 44%')
+2022,top10_bt_revenue_usdm,285,USDm,2023Q4,285 million in 2022|marginal decline of 3% from USD,B,Q4 2023 report (comparative)
+2023,top10_bt_revenue_usdm,276,USDm,2023Q4,top-10 customers amounted to USD 276 million in,B,Q4 2023 report
+2023,broad_bt_revenue_usdm,208,USDm,2023Q4,customers declined by 46% to USD 208 million,B,Q4 2023 report ('broad market customers declined by 46%'); 276 + 208 = 484 = 2023 short-range revenue 483.9
+2023,top10_share_of_bt_pct,57,pct,2023Q4,revenue share of the top-10 hence increased to 57% in|2023 from 44% in 2022,B,Q4 2023 report; 276/484 = 57.0% -> the share is of BLUETOOTH revenue
+2024,top10_share_of_bt_pct,58,pct,2024Q4,The top-10 Bluetooth customers accounted for 58%|of revenue in 2024,C,Q4 2024 report says 'of revenue'; read as share of Bluetooth revenue by analogy with 2023 (the denominator is our reading -> grade C)

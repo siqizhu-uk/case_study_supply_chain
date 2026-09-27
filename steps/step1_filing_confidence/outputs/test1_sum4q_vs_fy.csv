@@ -1,0 +1,27 @@
+company,fiscal_year,sum_4q,audited_fy,diff_pct,audited_basis,verification,pass
+nordic,2021,610.5,610.5,0.0,typed from AR2022,found in AR text,True
+nordic,2022,776.8,776.7,0.013,typed from AR2022,found in AR text,True
+nordic,2023,542.8,542.9,-0.018,typed from AR2023,found in AR text,True
+nordic,2024,511.4,511.4,0.0,typed from AR2024,found in AR text,True
+nordic,2025,667.7,667.6,0.015,typed from AR2025,found in AR text,True
+logitech,2021,5252.3,5252.3,0.0,10-K XBRL annual fact (audited),xbrl,True
+logitech,2022,5481.2,5481.1,0.002,10-K XBRL annual fact (audited),xbrl,True
+logitech,2023,4538.9,4538.8,0.002,10-K XBRL annual fact (audited),xbrl,True
+logitech,2024,4298.5,4298.5,0.001,10-K XBRL annual fact (audited),xbrl,True
+logitech,2025,4554.9,4554.9,0.0,10-K XBRL annual fact (audited),xbrl,True
+logitech,2026,4840.8,4840.8,0.001,10-K XBRL annual fact (audited),xbrl,True
+gn,2021,15775.0,,,searched AR2021 text for a figure within 0.3% of Σ4Q,AR not cached,
+gn,2022,18687.0,18687.0,0.0,searched AR2022 text for a figure within 0.3% of Σ4Q,"figure 18,687 present in AR2022",True
+gn,2023,18120.0,18120.0,0.0,searched AR2023 text for a figure within 0.3% of Σ4Q,"figure 18,120 present in AR2023",True
+gn,2024,17985.0,17985.0,0.0,searched AR2024 text for a figure within 0.3% of Σ4Q,"figure 17,985 present in AR2024",True
+gn,2025,16782.0,16782.0,0.0,searched AR2025 text for a figure within 0.3% of Σ4Q,"figure 16,782 present in AR2025",True
+ingram,2022,50825.0,50824.5,0.001,10-K XBRL annual fact (audited),xbrl,True
+ingram,2023,48040.0,48040.4,-0.001,10-K XBRL annual fact (audited),xbrl,True
+ingram,2024,47984.0,47983.7,0.001,10-K XBRL annual fact (audited),xbrl,True
+ingram,2025,52557.0,52556.3,0.001,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2020,19977.1,19977.2,-0.0,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2021,31614.2,31614.2,0.0,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2022,62344.0,62343.8,0.0,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2023,57555.0,57555.4,-0.001,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2024,58453.0,58452.4,0.001,10-K XBRL annual fact (audited),xbrl,True
+tdsynnex,2025,62508.0,62508.1,-0.0,10-K XBRL annual fact (audited),xbrl,True

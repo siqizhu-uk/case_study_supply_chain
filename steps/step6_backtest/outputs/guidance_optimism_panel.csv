@@ -1,0 +1,8 @@
+spec,firm_quarters,quarters,b_rel_raw,t_rel_raw,b_rel_seasonal,t_rel_seasonal,b_g,t_g,b_x_channel,t_x_channel
+rel_raw,671,70,0.0045,0.3062,,,,,,
+rel_seasonal,642,67,,,0.0103,1.428,,,,
+g,676,71,,,,,0.0248,0.5973,,
+rel_raw + x_channel,671,70,0.0038,0.2509,,,,,0.1923,0.4605
+"rel_raw, 2008Q3-2010Q4",67,9,-0.0755,-0.488,,,,,,
+"rel_raw, 2011Q1-2019Q4",310,35,-0.0122,-0.3559,,,,,,
+"rel_raw, 2020Q1-2026Q4",294,26,0.0153,1.1047,,,,,,

@@ -1,0 +1,5 @@
+spec,factor,b_pts_per_sd,se_clustered_by_quarter,t,p,firm_quarters,quarters
+FE + own forward DIO,z_own_fwd_dio,0.0916,0.0663,1.3817,0.1729,515,54
+FE + industry channel,z_industry,0.3896,0.2357,1.653,0.1041,561,55
+FE + both,z_own_fwd_dio,0.0399,0.0657,0.6082,0.5457,515,54
+FE + both,z_industry,0.4351,0.2342,1.8578,0.0688,515,54

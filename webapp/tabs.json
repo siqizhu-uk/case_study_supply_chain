@@ -1,0 +1,132 @@
+[
+  {
+    "id": "overview",
+    "title": "Overview",
+    "question": "Every model in one table with its walk-forward performance, the three forecasts, and everything that changed in the last run.",
+    "report": "outputs/model_report.md",
+    "files": [
+      "outputs/model_inventory.csv",
+      "outputs/forecasts.csv",
+      "outputs/forecast_next_quarter.csv"
+    ],
+    "link": "deliverables/dashboard.html"
+  },
+  {
+    "id": "assumptions",
+    "title": "⚙ Assumptions",
+    "question": "Every value in config/model.yaml and every edge lag in config/supply_graph.csv, editable. Run scenario re-runs the whole model in a sandbox copy of the repo and compares its forecasts (the three prints and the graph-driven Nordic Q4 line) and outputs with the committed ones; your config and outputs are not touched.",
+    "files": [
+      "outputs/forecasts.csv",
+      "outputs/forecast_next_quarter.csv"
+    ]
+  },
+  {
+    "id": "pitfalls",
+    "title": "⚠ Pitfalls",
+    "question": "Every data and method trap found so far: evidence, cost if missed, fix, where it lives, what guards it.",
+    "report": "outputs/pitfalls.md",
+    "files": [
+      "audit/pitfalls.csv"
+    ]
+  },
+  {
+    "id": "step1",
+    "title": "1 · Filing confidence",
+    "folder": "steps/step1_filing_confidence",
+    "report": "outputs/step1_report.md"
+  },
+  {
+    "id": "step2",
+    "title": "2 · Attribution",
+    "folder": "steps/step2_attribution",
+    "report": "outputs/step2_report.md"
+  },
+  {
+    "id": "step3",
+    "title": "3 · Inventory mechanism",
+    "folder": "steps/step3_inventory_mechanism",
+    "report": "outputs/step3_report.md"
+  },
+  {
+    "id": "step4",
+    "title": "4 · Lag structure",
+    "folder": "steps/step4_lag_structure",
+    "report": "outputs/step4_report.md"
+  },
+  {
+    "id": "step5",
+    "title": "5 · Supply-chain graph",
+    "folder": "steps/step5_supply_graph",
+    "report": "outputs/step5_report.md",
+    "files": [
+      "config/supply_graph.csv",
+      "config/supply_graph_weights.csv",
+      "config/supply_graph_nodes.csv",
+      "docs/history/mechanism_and_lags.md"
+    ]
+  },
+  {
+    "id": "step6",
+    "title": "6 · Back-test",
+    "folder": "steps/step6_backtest",
+    "report": "outputs/step6_report.md"
+  },
+  {
+    "id": "step7",
+    "title": "7 · Forecast",
+    "folder": "steps/step7_forecast",
+    "report": "../../outputs/model_report.md",
+    "files": [
+      "outputs/model_inventory.csv",
+      "outputs/forecasts.csv",
+      "outputs/forecast_next_quarter.csv",
+      "outputs/tier_panel.csv",
+      "outputs/figures/tiers_yoy.png"
+    ],
+    "link": "deliverables/dashboard.html"
+  },
+  {
+    "id": "pipeA",
+    "title": "Data A · Company financials",
+    "folder": "pipelines/A_company_financials",
+    "report": "data/processed/validation_report.md",
+    "files": [
+      "pipelines/A_company_financials/config/data_config.csv",
+      "pipelines/A_company_financials/data/processed/inventory_detail_validation.csv",
+      "pipelines/A_company_financials/data/processed/nordic_balance_validation.csv",
+      "pipelines/A_company_financials/data/processed/verbal_consistency.csv"
+    ]
+  },
+  {
+    "id": "pipeB",
+    "title": "Data B · Macro",
+    "folder": "pipelines/B_macro_industry",
+    "report": "data/processed/validation_report.md",
+    "files": [
+      "pipelines/B_macro_industry/config/data_config.csv",
+      "pipelines/B_macro_industry/data/processed/macro_quarterly.csv"
+    ]
+  },
+  {
+    "id": "pipeC",
+    "title": "Data C · Real-time channel",
+    "folder": "pipelines/C_realtime_channel",
+    "files": [
+      "pipelines/C_realtime_channel/config/data_config.csv",
+      "pipelines/C_realtime_channel/data/processed/channel_latest.csv",
+      "pipelines/C_realtime_channel/data/processed/design_win_evidence.csv"
+    ]
+  },
+  {
+    "id": "pipeD",
+    "title": "Data D · Peer panel",
+    "folder": "pipelines/D_peer_panel",
+    "report": "data/processed/validation_report.md",
+    "files": [
+      "pipelines/D_peer_panel/config/data_config.csv",
+      "pipelines/D_peer_panel/data/raw/peer_panel.csv",
+      "pipelines/D_peer_panel/data/processed/peer_validation.csv",
+      "pipelines/D_peer_panel/data/raw/peer_channel_weeks.csv"
+    ]
+  }
+]

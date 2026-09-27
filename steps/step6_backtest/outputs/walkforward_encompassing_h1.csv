@@ -1,0 +1,8 @@
+model,n,alpha_usdm,beta_on_tilt,beta_se_hac,t,p,reading
+GB,14,0.846,1.08,0.5,2.162,0.052,adds to guidance
+N,14,1.415,0.062,0.09,0.684,0.507,no incremental information
+L6,6,6.316,0.027,0.031,0.883,0.427,no incremental information
+L6tv,6,6.417,0.037,0.033,1.143,0.317,no incremental information
+L3,10,5.159,-0.024,0.054,-0.445,0.668,no incremental information
+GR,10,5.427,-0.052,0.049,-1.067,0.317,no incremental information
+L6leak,6,6.429,0.004,0.06,0.059,0.956,no incremental information

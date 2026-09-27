@@ -1,0 +1,241 @@
+snapshot_date,part,family,listed_mpn,distributor,distributor_group,authorized,manufacturer,qty_in_stock,stock_text,price_1,price_1000,currency,lead_time,source
+2026-09-22,nRF52840-QIAA-R,nRF52,nRF52840-QIAA-R,Digi-Key,Digi-Key,1,Nordic Semiconductor,42000.0,42000,7.25,4.07,USD,,hand snapshot 2026-09-22 (browser): findchips.com/search/nRF52840-QIAA-R (Digi-Key/Mouser direct fetch blocked 403)
+2026-09-22,nRF52840-QIAA-R,nRF52,nRF52840-QIAA-R,Mouser,Mouser,1,Nordic Semiconductor,5686.0,5686,7.5,4.68,USD,,hand snapshot 2026-09-22 (browser): findchips.com (R7 cut-tape stock; -R reel 0)
+2026-09-22,nRF52840-QIAA-R,nRF52,nRF52840-QIAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,9317.0,9317,7.52,4.68,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF52832-QFAA-R,nRF52,nRF52832-QFAA-R,Digi-Key,Digi-Key,1,Nordic Semiconductor,148359.0,148359,4.81,2.62,USD,,hand snapshot 2026-09-22 (browser): findchips.com/search/nRF52832-QFAA-R
+2026-09-22,nRF52832-QFAA-R,nRF52,nRF52832-QFAA-R,Mouser,Mouser,1,Nordic Semiconductor,26481.0,26481,4.63,2.65,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF52832-QFAA-R,nRF52,nRF52832-QFAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,5797.0,5797,4.63,2.65,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF52833-QIAA-R,nRF52,nRF52833-QIAA-R,Digi-Key,Digi-Key,1,Nordic Semiconductor,2968.0,2968,6.19,3.45,USD,,hand snapshot 2026-09-22 (browser): findchips.com/search/nRF52833-QIAA-R
+2026-09-22,nRF52833-QIAA-R,nRF52,nRF52833-QIAA-R,Mouser,Mouser,1,Nordic Semiconductor,690.0,690,6.11,3.79,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF52833-QIAA-R,nRF52,nRF52833-QIAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,271.0,271,4.13,3.33,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,nRF54L15-QFAA-R,Digi-Key,Digi-Key,1,Nordic Semiconductor,307.0,307,4.38,2.89,USD,,hand snapshot 2026-09-22 (browser): findchips.com/search/nRF54L15-QFAA-R
+2026-09-22,nRF54L15-QFAA-R,nRF54,nRF54L15-QFAA-R,Mouser,Mouser,1,Nordic Semiconductor,9882.0,9882,4.5,2.49,USD,,hand snapshot 2026-09-22 (browser): findchips.com (-R 6229 + -R7 3653)
+2026-09-22,nRF54L15-QFAA-R,nRF54,nRF54L15-QFAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,2234.0,2234,4.07,2.37,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,nRF54L15-QFAA-R,Future Electronics,Future,1,Nordic Semiconductor,0.0,0,,2.48,USD,16.0,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,nRF54L15-QFAA-R,Avnet,Avnet,1,Nordic Semiconductor,0.0,0,2.47,2.16,USD,16.0,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF5340-QKAA-R,nRF53,nRF5340-QKAA-R,Digi-Key,Digi-Key,1,Nordic Semiconductor,0.0,0,9.74,6.09,USD,,hand snapshot 2026-09-22 (browser): findchips.com/search/nRF5340-QKAA-R
+2026-09-22,nRF5340-QKAA-R,nRF53,nRF5340-QKAA-R,Mouser,Mouser,1,Nordic Semiconductor,12567.0,12567,9.94,6.66,USD,,hand snapshot 2026-09-22 (browser): findchips.com (-R 11593 + -R7 974)
+2026-09-22,nRF5340-QKAA-R,nRF53,nRF5340-QKAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,3468.0,3468,10.64,7.49,USD,,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-22,nRF5340-QKAA-R,nRF53,nRF5340-QKAA-R,Future Electronics,Future,1,Nordic Semiconductor,0.0,0,,6.0,USD,16.0,hand snapshot 2026-09-22 (browser): findchips.com
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,1849.0,1849,3.55,2.03,GBP,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,5768.0,5768,3.55,1.86,GBP,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,1849.0,Global -  1849,4.03,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,5768.0,Global -  5768,4.03,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,2797.0,2797,4.54,2.29,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,6013.0,6013,2.22,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.97,2.4,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.7429,2.4,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,31.0,31,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,40.0,40,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,TME,TME,1,Nordic Semiconductor,0.0,0,2.69,2.69,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,TME,TME,1,Nordic Semiconductor,373.0,373,3.12,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Sensible Micro Corporation,Sensible Micro Corporation,0,Nordic Semiconductor,3000.0,3000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,IBS Electronics,IBS Electronics,0,Nordic Semiconductor,1000.0,1000,4.1736,4.1736,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832QFAAR7,ComSIT USA,ComSIT USA,0,Nordic Semiconductor,5000.0,Stock DE -  5000    Stock ES -  0    Stock US -  0    Stock MX -  0    Stock CN -  0    Stock HK -  0,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Rutronik,Rutronik,1,Nordic Semiconductor,666000.0,Stock DE  - 666000    Stock HK  - 0    Stock US  - 0    Stock SG  - 0,2.85,2.85,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832QFAAR,ComSIT USA,ComSIT USA,0,Nordic Semiconductor,2250.0,2250,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,1430.0,1430,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,14321.0,14321,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,96530.0,96530,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,97550.0,97550,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,92010.0,92010,2.5137,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,92570.0,92570,2.5137,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R BOO,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,38860.0,38860,2.5661,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Chip-Germany GmbH,Chip-Germany GmbH,0,Nordic Semiconductor,1000.0,1000,1.6754,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Sense Electronic Company Limited,Sense Electronic Company Limited,0,Nordic Semiconductor,11279.0,11279,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.0,2.56,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.0,2.56,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Avnet Asia,Avnet,1,Nordic Semiconductor,15000.0,15000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Avnet Asia,Avnet,1,Nordic Semiconductor,5000.0,5000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,MacroQuest Electronics,MacroQuest Electronics,0,Nordic Semiconductor,6522.0,6522,3.36,2.88,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,New Advantage Corporation,New Advantage Corporation,0,Nordic Semiconductor,2000.0,2000,5.92,5.38,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Honest Han,12891.0,12891,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832_QFAA_R,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Hongxing Electrical Ltd,28296.0,28296,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Avnet Silica,Avnet,1,Nordic Semiconductor,141000.0,Silica  - 141000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Avnet Silica,Avnet,1,Nordic Semiconductor,56000.0,Silica  - 56000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,9817.0,9817,5.76,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,623.0,623,5.18,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,9887.0,Local -  70   Global -  9887,7.86,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,428.0,Global -  428,9.53,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,9817.0,9817,4.69,,GBP,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,428.0,428,3.74,,GBP,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,6000.0,6000,4.0946,3.8606,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,4.3286,3.7875,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,14.0,14,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,TME,TME,1,Nordic Semiconductor,879.0,879,4.43,4.12,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,IBS Electronics,IBS Electronics,0,Nordic Semiconductor,18000.0,18000,6.5847,6.5847,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,IBS Electronics,IBS Electronics,0,Nordic Semiconductor,4000.0,4000,6.5847,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840QIAAR,ComSIT USA,ComSIT USA,0,NDCSMI,300.0,300,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840QIAAR7,ComSIT USA,ComSIT USA,0,Nordic Semiconductor,800.0,Stock DE -  800    Stock ES -  0    Stock US -  0    Stock MX -  0    Stock CN -  0    Stock HK -  0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Rutronik,Rutronik,1,Nordic Semiconductor,66000.0,Stock DE  - 0    Stock HK  - 66000    Stock US  - 0    Stock SG  - 0,4.51,4.51,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,12000.0,12000,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,16151.0,16151,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,73790.0,73790,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,74870.0,74870,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840QIAAR,Chip Stock,Chip Stock,0,,3500.0,3500,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Avnet Silica,Avnet,1,Nordic Semiconductor,12000.0,Silica  - 12000,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Vyrian,Vyrian,0,Nordic Semiconductor,2942.0,2942,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,42168.0,42168,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,39700.0,39700,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIA A-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,42168.0,42168,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,MacroQuest Electronics,MacroQuest Electronics,0,Nordic Semiconductor,4540.0,4540,3.94,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Greenchips,Greenchips,0,Nordic Semiconductor,1567.0,1567,3.4067,2.7887,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,4.73,4.03,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,4.73,4.03,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Hongxing Electrical Ltd,9645.0,9645,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Hongxing Electrical Ltd,5746.0,5746,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,1706.0,1706,4.65,,GBP,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,0,3.19,,GBP,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,1706.0,Global -  1706,5.64,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,Global -  0,8.14,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,269.0,269,5.64,2.99,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,2102.0,2102,3.06,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,3.6286,3.175,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,3.6286,3.175,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,2.0,2,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Rutronik,Rutronik,1,Nordic Semiconductor,174000.0,Stock DE  - 135000    Stock HK  - 39000    Stock US  - 0    Stock SG  - 0,3.8,3.8,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Rutronik,Rutronik,1,Nordic Semiconductor,49.0,Stock DE  - 49    Stock HK  - 0    Stock US  - 0    Stock SG  - 0,3.8,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,IBS Electronics,IBS Electronics,0,Nordic Semiconductor,800.0,800,5.5131,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,9690.0,9690,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,9750.0,9750,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Honest Han,7476.0,7476,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.96,3.38,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.96,3.38,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,"Component Electronics, Inc","Component Electronics, Inc",0,Nordic Semiconductor,94.0,94,5.38,3.5,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,"Component Electronics, Inc","Component Electronics, Inc",0,Nordic Semiconductor,662.0,662,5.38,3.5,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,30710.0,30710,5.8305,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,9360.0,9360,7.4512,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,3000.0,3000,6.54,,GBP,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,469.0,469,6.35,,GBP,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,3000.0,Global -  3000,13.78,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,469.0,Global -  469,11.16,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,3468.0,3468,10.64,7.19,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,479.0,479,6.44,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,7.425,5.82,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,7.425,5.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,17.0,17,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,TME,TME,1,Nordic Semiconductor,0.0,0,7.92,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Rutronik,Rutronik,1,Nordic Semiconductor,6000.0,Stock DE  - 0    Stock HK  - 6000    Stock US  - 0    Stock SG  - 0,6.28,6.28,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,3872.0,3872,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,5581.0,5581,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,36740.0,36740,5.8652,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,38050.0,38050,5.8652,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,31170.0,31170,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,7.5,6.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,7.5,6.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Chip-Germany GmbH,Chip-Germany GmbH,0,Nordic Semiconductor,500.0,500,3.8064,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Shengyu Electronics Technology Limited,Shengyu Electronics Technology Limited,0,Honest Han,5955.0,5955,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,2133.0,2133,3.52,1.94,GBP,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,0,3.36,1.9,GBP,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,2133.0,Global -  2133,6.25,4.11,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,element14 Asia-Pacific,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,Global -  0,6.24,3.45,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,2133.0,2133,3.52,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Newark,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,0,4.45,2.91,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.4714,2.1625,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.4714,2.1625,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,IBS Electronics,IBS Electronics,0,Nordic Semiconductor,14000.0,14000,3.7647,3.7647,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Rutronik,Rutronik,1,Nordic Semiconductor,45000.0,Stock DE  - 45000    Stock HK  - 0    Stock US  - 0    Stock SG  - 0,2.57,2.57,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Rutronik,Rutronik,1,Nordic Semiconductor,264.0,Stock DE  - 264    Stock HK  - 0    Stock US  - 0    Stock SG  - 0,4.12,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Avnet Asia,Avnet,1,Nordic Semiconductor,12000.0,12000,,,,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Avnet Asia,Avnet,1,Nordic Semiconductor,0.0,0,,,,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,,In Stock,2.45,2.17,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,2.45,2.17,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Chip-Germany GmbH,Chip-Germany GmbH,0,Nordic Semiconductor,550.0,550,2.8688,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Avnet Silica,Avnet,1,Nordic Semiconductor,0.0,Silica  - 0,,,,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,28140.0,28140,4.3994,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-23,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,27000.0,27000,4.3994,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.97,2.4,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.7429,2.4,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,1849.0,1849,3.55,2.03,GBP,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,5768.0,5768,3.55,1.86,GBP,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,DigiKey,DigiKey,0,Nordic Semiconductor,148533.0,148359 Digi-Reel&#174;,4.81,3.18,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,DigiKey,DigiKey,0,Nordic Semiconductor,28798.0,28624 Digi-Reel&#174;,4.81,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,TME,TME,1,Nordic Semiconductor,0.0,0,2.69,2.69,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,TME,TME,1,Nordic Semiconductor,373.0,373,3.12,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,31.0,31,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,40.0,40,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Sensible Micro Corporation,Sensible Micro Corporation,0,Nordic Semiconductor,3000.0,3000,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832QFAAR,ComSIT Europe,ComSIT Europe,0,Nordic Semiconductor,2250.0,2250,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832QFAAR7,ComSIT Europe,ComSIT Europe,0,Nordic Semiconductor,5000.0,Stock DE -  5000    Stock ES -  0    Stock US -  0    Stock MX -  0    Stock CN -  0    Stock HK -  0,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,1430.0,1430,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,14321.0,14321,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,92010.0,92010,2.5137,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,92570.0,92570,2.5137,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R BOO,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,38860.0,38860,2.5661,,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,New Advantage Corporation,New Advantage Corporation,0,Nordic Semiconductor,2000.0,2000,5.92,5.38,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,96530.0,96530,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,97550.0,97550,,,,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.0,2.56,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52832-QFAA-R,nRF52,NRF52832-QFAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.0,2.56,USD,,findchips.com/search/nRF52832-QFAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,9817.0,9817,4.69,,GBP,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,428.0,428,3.74,,GBP,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,6000.0,6000,4.0946,3.8606,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,4.3286,3.7875,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,DigiKey,DigiKey,0,Nordic Semiconductor,44838.0,44838 Tape & Reel,4.07,4.07,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,DigiKey,DigiKey,0,Nordic Semiconductor,31484.0,31484 Tape & Reel,3.93,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,TME,TME,1,Nordic Semiconductor,879.0,879,4.43,4.12,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,14.0,14,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840QIAAR7,ComSIT Europe,ComSIT Europe,0,Nordic Semiconductor,800.0,Stock DE -  800    Stock ES -  0    Stock US -  0    Stock MX -  0    Stock CN -  0    Stock HK -  0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840QIAAR,ComSIT Europe,ComSIT Europe,0,Nordic Semiconductor,72.0,Stock DE -  72    Stock ES -  0    Stock US -  0    Stock MX -  0    Stock CN -  0    Stock HK -  0,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,12000.0,12000,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,16151.0,16151,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Greenchips,Greenchips,0,Nordic Semiconductor,1567.0,1567,3.4067,2.7887,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,42168.0,42168,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,39700.0,39700,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIA A-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,42168.0,42168,4.0219,,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,4.73,4.03,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,4.73,4.03,USD,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,73790.0,73790,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840-QIAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,74870.0,74870,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52840-QIAA-R,nRF52,NRF52840QIAAR,Chip Stock,Chip Stock,0,,3500.0,3500,,,,,findchips.com/search/nRF52840-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,1706.0,1706,4.65,,GBP,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,0,3.19,,GBP,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,3.6286,3.175,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,3.6286,3.175,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,DigiKey,DigiKey,0,Nordic Semiconductor,6174.0,6000 Digi-Reel&#174;,6.19,4.1107,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,DigiKey,DigiKey,0,Nordic Semiconductor,442.0,442 Tape & Reel,4.1605,3.9244,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,RS,RS,0,Nordic Semiconductor,1114.0,1114,2.89,,GBP,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,2.0,2,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.96,3.38,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,3.96,3.38,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,9690.0,9690,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Chip Stock,Chip Stock,0,Nordic Semiconductor,9750.0,9750,,,,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,30710.0,30710,5.8305,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF52833-QIAA-R,nRF52,NRF52833-QIAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,9360.0,9360,7.4512,,USD,,findchips.com/search/nRF52833-QIAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,7.425,5.82,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,7.425,5.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,3000.0,3000,6.54,,GBP,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,469.0,469,6.35,,GBP,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,DigiKey,DigiKey,0,Nordic Semiconductor,1657.0,1483 Digi-Reel&#174;,9.74,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,DigiKey,DigiKey,0,Nordic Semiconductor,174.0,0 Digi-Reel&#174;,9.74,6.5258,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,RS,RS,0,Nordic Semiconductor,1551.0,1551,4.703,,GBP,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,TME,TME,1,Nordic Semiconductor,0.0,0,7.92,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Bristol Electronics,Bristol Electronics,0,Nordic Semiconductor,17.0,17,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,3872.0,3872,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Chip 1 Exchange,Chip 1 Exchange,0,Nordic Semiconductor,5581.0,5581,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,7.5,6.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,7.5,6.25,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,36740.0,36740,5.8652,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,38050.0,38050,5.8652,,USD,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF5340-QKAA-R,nRF53,NRF5340-QKAA-R,Chip Stock,Chip Stock,0,Nordic Semiconductor,31170.0,31170,,,,,findchips.com/search/nRF5340-QKAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.4714,2.1625,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Avnet Americas,Avnet,1,Nordic Semiconductor,0.0,0,2.4714,2.1625,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,2133.0,2133,3.52,1.94,GBP,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Farnell,Farnell/Newark/element14,1,Nordic Semiconductor,0.0,0,3.36,1.9,GBP,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,DigiKey,DigiKey,0,Nordic Semiconductor,2160.0,1986 Digi-Reel&#174;,4.38,2.8903,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,DigiKey,DigiKey,0,Nordic Semiconductor,761.0,761 Cut Tape,4.64,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,,In Stock,2.45,2.17,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Braemac Americas-Symmetry,Braemac,1,Nordic Semiconductor,0.0,0,2.45,2.17,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,28140.0,28140,4.3994,,USD,,findchips.com/search/nRF54L15-QFAA-R
+2026-09-26,nRF54L15-QFAA-R,nRF54,NRF54L15-QFAA-R7,Win Source Electronics,Win Source Electronics,0,Nordic Semiconductor,27000.0,27000,4.3994,,USD,,findchips.com/search/nRF54L15-QFAA-R

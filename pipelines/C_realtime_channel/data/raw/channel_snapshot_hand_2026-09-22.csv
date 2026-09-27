@@ -1,0 +1,19 @@
+snapshot_date,part,family,distributor,qty_in_stock,factory_lead_time_weeks,price_1,price_1000,source
+2026-09-22,nRF52840-QIAA-R,nRF52,Digi-Key,42000,,7.25,4.07,findchips.com/search/nRF52840-QIAA-R (Digi-Key/Mouser direct fetch blocked 403)
+2026-09-22,nRF52840-QIAA-R,nRF52,Mouser,5686,,7.50,4.68,findchips.com (R7 cut-tape stock; -R reel 0)
+2026-09-22,nRF52840-QIAA-R,nRF52,Newark,9317,,7.52,4.68,findchips.com
+2026-09-22,nRF52832-QFAA-R,nRF52,Digi-Key,148359,,4.81,2.62,findchips.com/search/nRF52832-QFAA-R
+2026-09-22,nRF52832-QFAA-R,nRF52,Mouser,26481,,4.63,2.65,findchips.com
+2026-09-22,nRF52832-QFAA-R,nRF52,Newark,5797,,4.63,2.65,findchips.com
+2026-09-22,nRF52833-QIAA-R,nRF52,Digi-Key,2968,,6.19,3.45,findchips.com/search/nRF52833-QIAA-R
+2026-09-22,nRF52833-QIAA-R,nRF52,Mouser,690,,6.11,3.79,findchips.com
+2026-09-22,nRF52833-QIAA-R,nRF52,Newark,271,,4.13,3.33,findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,Digi-Key,307,,4.38,2.89,findchips.com/search/nRF54L15-QFAA-R
+2026-09-22,nRF54L15-QFAA-R,nRF54,Mouser,9882,,4.50,2.49,findchips.com (-R 6229 + -R7 3653)
+2026-09-22,nRF54L15-QFAA-R,nRF54,Newark,2234,,4.07,2.37,findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,Future Electronics,0,16,,2.48,findchips.com
+2026-09-22,nRF54L15-QFAA-R,nRF54,Avnet,0,16,2.47,2.16,findchips.com
+2026-09-22,nRF5340-QKAA-R,nRF53,Digi-Key,0,,9.74,6.09,findchips.com/search/nRF5340-QKAA-R
+2026-09-22,nRF5340-QKAA-R,nRF53,Mouser,12567,,9.94,6.66,findchips.com (-R 11593 + -R7 974)
+2026-09-22,nRF5340-QKAA-R,nRF53,Newark,3468,,10.64,7.49,findchips.com
+2026-09-22,nRF5340-QKAA-R,nRF53,Future Electronics,0,16,,6.00,findchips.com

@@ -1,0 +1,27 @@
+company,quarter,kind,scope,usd_growth_pct,cc_growth_pct,fx_pts,quote,source
+logitech,2021Q2,realised,group,66.0,58.0,8.0,"up 66 percent in US dollars and 58 percent in constant currency, compared to Q1 of the prior year",filings/logitech/2021Q2.htm
+logitech,2021Q3,realised,group,4.0,2.0,2.0,"up 4 percent in US dollars and 2 percent in constant currency, compared to Q2 of the prior year",filings/logitech/2021Q3.htm
+logitech,2022Q1,realised,group,-20.0,-17.0,-3.0,down 20 percent in US dollars and 17 percent in constant currency compared to Q4 of the prior year,filings/logitech/2022Q1.htm
+logitech,2022Q2,realised,group,-12.0,-9.0,-3.0,"down 12 percent in US dollars and 9 percent in constant currency, compared to Q1 of the prior year",filings/logitech/2022Q2.htm
+logitech,2022Q3,realised,group,-12.0,-7.0,-5.0,"down 12 percent in US dollars and 7 percent in constant currency, compared to Q2 of the prior year",filings/logitech/2022Q3.htm
+logitech,2022Q4,realised,group,-22.0,-17.0,-5.0,"down 22 percent in US dollars and 17 percent in constant currency, compared to Q3 of the prior year",filings/logitech/2022Q4.htm
+logitech,2023Q1,realised,group,-22.0,-20.0,-2.0,"down 22 percent in US dollars and 20 percent in constant currency, compared to Q4 of the prior year",filings/logitech/2023Q1.htm
+logitech,2024Q1,realised,group,5.0,5.0,0.0,"up 5 percent in US dollars and 5 percent in constant currency, compared to Q4 of the prior year",filings/logitech/2024Q1.htm
+logitech,2024Q2,realised,group,12.0,13.0,-1.0,"up 12 percent in US dollars and 13 percent in constant currency, compared to Q1 of the prior year",filings/logitech/2024Q2.htm
+logitech,2024Q3,realised,group,6.0,6.0,0.0,"up 6 percent in US dollars and 6 percent in constant currency, compared to Q2 of the prior year",filings/logitech/2024Q3.htm
+logitech,2024Q4,realised,group,7.0,6.0,1.0,up 7 percent in US dollars and 6 percent in constant currency compared to Q3 of the prior year,filings/logitech/2024Q4.htm
+logitech,2025Q2,guide_assumed,group,3.5,2.5,1.0,"Sales growth (in US dollars, year over year) 1% - 6% Sales growth (in constant currency, year over year) 0% - 5%",filings/logitech/2025Q1.htm
+logitech,2025Q2,realised,group,5.0,5.0,0.0,"up 5 percent in US dollars and 5 percent in constant currency, compared to Q1 of the prior year",filings/logitech/2025Q2.htm
+logitech,2025Q3,guide_assumed,group,5.0,3.0,2.0,"Sales growth (in US dollars, year over year) 3% - 7% Sales growth (in constant currency, year over year) 1% - 5%",filings/logitech/2025Q2.htm
+logitech,2025Q3,realised,group,6.0,4.0,2.0,up 6 percent in US dollars and 4 percent in constant currency compared to Q2 of the prior year,filings/logitech/2025Q3.htm
+logitech,2025Q4,guide_assumed,group,4.5,2.5,2.0,"Sales growth (in US dollars, year over year) 3% - 6% Sales growth (in constant currency, year over year) 1% - 4%",filings/logitech/2025Q3.htm
+logitech,2026Q1,realised,group,7.0,3.0,4.0,up 7 percent in US dollars and 3 percent in constant currency compared to Q4 of the prior year,filings/logitech/2026Q1.htm
+logitech,2026Q2,guide_assumed,group,5.0,3.0,2.0,"Sales growth (in US dollars, year over year) 4% - 6% Sales growth (in constant currency, year over year) 2% - 4%",filings/logitech/2026Q1.htm
+logitech,2026Q2,realised,group,7.0,5.0,2.0,"up 7 percent in US dollars and 5 percent in constant currency, compared to Q1 of the prior year",filings/logitech/2026Q2.htm
+logitech,2026Q3,guide_assumed,group,1.5,1.5,0.0,"Sales growth (in US dollars, year over year) 0% - 3% Sales growth (in constant currency, year over year) 0% - 3%",filings/logitech/2026Q2.htm
+gn,2023Q1,realised,group,,,1.0, 1% impact from the development in foreign exchange rates,filings/gn/2023Q1.pdf
+gn,2023Q3,realised,north_america,,,-7.0,-7% impact from the development in foreign exchange rates,filings/gn/2023Q3.pdf
+gn,2024Q2,realised,group,,,-1.0,-1% impact from the development in foreign exchange rates,filings/gn/2024Q2.pdf
+gn,2024Q3,realised,group,,,-1.0,-1% impact from the development in foreign exchange rates,filings/gn/2024Q3.pdf
+gn,2025Q1,realised,group,,,1.0, 1% impact from the development in foreign exchange rates,filings/gn/2025Q1.pdf
+gn,2026Q2,realised,group,,,-2.0,-2% impact from the develop- ment in foreign exchange rates,filings/gn/2026Q2.pdf

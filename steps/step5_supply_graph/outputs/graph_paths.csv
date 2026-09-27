@@ -1,0 +1,37 @@
+brand,path,weight,lag_weeks
+logitech,nordic > nordic_distributors > odm > logitech > amazon > consumers,0.0514,18.0
+logitech,nordic > nordic_distributors > odm > logitech > ingram > other_retail > consumers,0.036,21.0
+logitech,nordic > nordic_distributors > odm > logitech > ingram > amazon > consumers,0.004,22.0
+logitech,nordic > nordic_distributors > odm > logitech > tdsynnex > other_retail > consumers,0.0308,21.0
+logitech,nordic > nordic_distributors > odm > logitech > tdsynnex > amazon > consumers,0.0034,22.0
+logitech,nordic > nordic_distributors > odm > logitech > other_retail > consumers,0.16,19.5
+logitech,nordic > nordic_distributors > logitech > amazon > consumers,0.0277,16.0
+logitech,nordic > nordic_distributors > logitech > ingram > other_retail > consumers,0.0194,19.0
+logitech,nordic > nordic_distributors > logitech > ingram > amazon > consumers,0.0022,20.0
+logitech,nordic > nordic_distributors > logitech > tdsynnex > other_retail > consumers,0.0166,19.0
+logitech,nordic > nordic_distributors > logitech > tdsynnex > amazon > consumers,0.0018,20.0
+logitech,nordic > nordic_distributors > logitech > other_retail > consumers,0.0861,17.5
+logitech,nordic > odm > logitech > amazon > consumers,0.058,18.0
+logitech,nordic > odm > logitech > ingram > other_retail > consumers,0.0406,21.0
+logitech,nordic > odm > logitech > ingram > amazon > consumers,0.0045,22.0
+logitech,nordic > odm > logitech > tdsynnex > other_retail > consumers,0.0348,21.0
+logitech,nordic > odm > logitech > tdsynnex > amazon > consumers,0.0039,22.0
+logitech,nordic > odm > logitech > other_retail > consumers,0.1804,19.5
+logitech,nordic > logitech > amazon > consumers,0.0312,16.0
+logitech,nordic > logitech > ingram > other_retail > consumers,0.0219,19.0
+logitech,nordic > logitech > ingram > amazon > consumers,0.0024,20.0
+logitech,nordic > logitech > tdsynnex > other_retail > consumers,0.0187,19.0
+logitech,nordic > logitech > tdsynnex > amazon > consumers,0.0021,20.0
+logitech,nordic > logitech > other_retail > consumers,0.0971,17.5
+gn,nordic > nordic_distributors > odm > gn > amazon > consumers,0.0031,18.0
+gn,nordic > nordic_distributors > odm > gn > ingram > other_retail > consumers,0.0048,21.0
+gn,nordic > nordic_distributors > odm > gn > ingram > amazon > consumers,0.0005,22.0
+gn,nordic > nordic_distributors > odm > gn > tdsynnex > other_retail > consumers,0.0048,21.0
+gn,nordic > nordic_distributors > odm > gn > tdsynnex > amazon > consumers,0.0005,22.0
+gn,nordic > nordic_distributors > odm > gn > other_retail > consumers,0.0168,18.0
+gn,nordic > odm > gn > amazon > consumers,0.0034,18.0
+gn,nordic > odm > gn > ingram > other_retail > consumers,0.0054,21.0
+gn,nordic > odm > gn > ingram > amazon > consumers,0.0006,22.0
+gn,nordic > odm > gn > tdsynnex > other_retail > consumers,0.0054,21.0
+gn,nordic > odm > gn > tdsynnex > amazon > consumers,0.0006,22.0
+gn,nordic > odm > gn > other_retail > consumers,0.0189,18.0

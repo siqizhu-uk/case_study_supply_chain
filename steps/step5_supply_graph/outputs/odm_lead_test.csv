@@ -1,0 +1,76 @@
+odm,code,target,lead_months,corr,n_quarters
+Lite-On Technology,2301,Logitech sales,0,0.209,22
+Lite-On Technology,2301,Nordic consumer,0,0.69,18
+Lite-On Technology,2301,TD Synnex (control),0,0.647,18
+Lite-On Technology,2301,Logitech sales,1,0.157,22
+Lite-On Technology,2301,Nordic consumer,1,0.626,18
+Lite-On Technology,2301,TD Synnex (control),1,0.72,19
+Lite-On Technology,2301,Logitech sales,2,0.07,22
+Lite-On Technology,2301,Nordic consumer,2,0.491,18
+Lite-On Technology,2301,TD Synnex (control),2,0.705,19
+Lite-On Technology,2301,Logitech sales,3,0.02,22
+Lite-On Technology,2301,Nordic consumer,3,0.397,18
+Lite-On Technology,2301,TD Synnex (control),3,0.703,19
+Lite-On Technology,2301,Logitech sales,6,-0.26,22
+Lite-On Technology,2301,Nordic consumer,6,0.123,18
+Lite-On Technology,2301,TD Synnex (control),6,0.393,19
+Chicony Electronics,2385,Logitech sales,0,0.541,22
+Chicony Electronics,2385,Nordic consumer,0,0.74,18
+Chicony Electronics,2385,TD Synnex (control),0,0.392,18
+Chicony Electronics,2385,Logitech sales,1,0.533,22
+Chicony Electronics,2385,Nordic consumer,1,0.717,18
+Chicony Electronics,2385,TD Synnex (control),1,0.258,19
+Chicony Electronics,2385,Logitech sales,2,0.398,22
+Chicony Electronics,2385,Nordic consumer,2,0.683,18
+Chicony Electronics,2385,TD Synnex (control),2,0.377,19
+Chicony Electronics,2385,Logitech sales,3,0.265,22
+Chicony Electronics,2385,Nordic consumer,3,0.645,18
+Chicony Electronics,2385,TD Synnex (control),3,0.448,19
+Chicony Electronics,2385,Logitech sales,6,-0.088,22
+Chicony Electronics,2385,Nordic consumer,6,0.35,18
+Chicony Electronics,2385,TD Synnex (control),6,0.027,19
+Cheng Uei Precision (Foxlink),2392,Logitech sales,0,0.149,22
+Cheng Uei Precision (Foxlink),2392,Nordic consumer,0,0.245,18
+Cheng Uei Precision (Foxlink),2392,TD Synnex (control),0,-0.123,18
+Cheng Uei Precision (Foxlink),2392,Logitech sales,1,0.228,22
+Cheng Uei Precision (Foxlink),2392,Nordic consumer,1,0.34,18
+Cheng Uei Precision (Foxlink),2392,TD Synnex (control),1,0.016,19
+Cheng Uei Precision (Foxlink),2392,Logitech sales,2,0.131,22
+Cheng Uei Precision (Foxlink),2392,Nordic consumer,2,0.266,18
+Cheng Uei Precision (Foxlink),2392,TD Synnex (control),2,0.076,19
+Cheng Uei Precision (Foxlink),2392,Logitech sales,3,0.004,22
+Cheng Uei Precision (Foxlink),2392,Nordic consumer,3,0.197,18
+Cheng Uei Precision (Foxlink),2392,TD Synnex (control),3,-0.048,19
+Cheng Uei Precision (Foxlink),2392,Logitech sales,6,-0.225,22
+Cheng Uei Precision (Foxlink),2392,Nordic consumer,6,-0.054,18
+Cheng Uei Precision (Foxlink),2392,TD Synnex (control),6,-0.278,19
+Merry Electronics,2439,Logitech sales,0,0.609,22
+Merry Electronics,2439,Nordic consumer,0,0.063,18
+Merry Electronics,2439,TD Synnex (control),0,0.354,18
+Merry Electronics,2439,Logitech sales,1,0.699,22
+Merry Electronics,2439,Nordic consumer,1,0.172,18
+Merry Electronics,2439,TD Synnex (control),1,0.206,19
+Merry Electronics,2439,Logitech sales,2,0.735,22
+Merry Electronics,2439,Nordic consumer,2,0.158,18
+Merry Electronics,2439,TD Synnex (control),2,0.332,19
+Merry Electronics,2439,Logitech sales,3,0.63,22
+Merry Electronics,2439,Nordic consumer,3,0.211,18
+Merry Electronics,2439,TD Synnex (control),3,0.41,19
+Merry Electronics,2439,Logitech sales,6,0.19,22
+Merry Electronics,2439,Nordic consumer,6,0.133,18
+Merry Electronics,2439,TD Synnex (control),6,0.256,19
+merry+chicony,merry+chicony,Logitech sales,0,0.679,22
+merry+chicony,merry+chicony,Nordic consumer,0,0.702,18
+merry+chicony,merry+chicony,TD Synnex (control),0,0.429,18
+merry+chicony,merry+chicony,Logitech sales,1,0.697,22
+merry+chicony,merry+chicony,Nordic consumer,1,0.704,18
+merry+chicony,merry+chicony,TD Synnex (control),1,0.272,19
+merry+chicony,merry+chicony,Logitech sales,2,0.636,22
+merry+chicony,merry+chicony,Nordic consumer,2,0.702,18
+merry+chicony,merry+chicony,TD Synnex (control),2,0.409,19
+merry+chicony,merry+chicony,Logitech sales,3,0.492,22
+merry+chicony,merry+chicony,Nordic consumer,3,0.717,18
+merry+chicony,merry+chicony,TD Synnex (control),3,0.505,19
+merry+chicony,merry+chicony,Logitech sales,6,0.021,22
+merry+chicony,merry+chicony,Nordic consumer,6,0.42,18
+merry+chicony,merry+chicony,TD Synnex (control),6,0.151,19

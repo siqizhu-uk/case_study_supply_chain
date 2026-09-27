@@ -1,0 +1,17 @@
+company,cik,distribution_share,distribution_basis,distribution_quote,consumer_share,consumer_definition,consumer_quote,note
+microchip,827054,0.47,total,Sales to distributors accounted for approximately 47% of our net sales in fiscal 2026,,not disclosed,,
+nxp,1413447,0.581,computed from amounts,"revenue from distributors was $7,051 million|Revenue from direct customers was $5,084 million",0.129,Mobile end market,"Mobile 1,584","7,051 / (7,051 + 5,084); Mobile 1,584 of 12,269"
+ti,97476,0.2,upper bound,less than 20% of our revenue was generated from sales of our products through distributors,,not disclosed (mobile phones 21% only),Mobile phones (21% of TI revenue),fails min_distribution_share
+adi,6281,0.56,total,Sales to third-party distributors accounted for approximately 56% of our revenue,0.13,Consumer end market,Consumer 13% 13% 10%,
+onsemi,1097864,0.54,total,"Sales to distributors accounted for approximately 54%, 53% and 52% of our revenue",0.21,upper bound: 100% - automotive 51% - industrial 28%,Sales into the automotive and industrial end-markets represented approximately 51% and 28% of our revenue,
+silabs,1038074,0.71,total,71% of our revenue was derived from distributors,0.433,Home & Life segment,Home & Life 339.9,339.9 / 784.8
+semtech,88941,0.74,total,authorized distributors accounted for approximately 74% of our net sales,0.15,High-End Consumer,High-End Consumer 15 %,
+power_integrations,833640,0.69,total,Sales to distributors accounted for 69% and 70% of our net revenue,0.37,Consumer end market,Consumer 37 %,
+lattice,855658,0.84,total,"sales to distributors accounted for approximately 84%, 89%, and 87%",,not extracted,,
+maxlinear,1288469,0.37,total,"Sales to distributors accounted for approximately 37%, 44%, and 50% of our net revenue",0.44,broadband (home) applications,revenue directly attributable to broadband applications accounted for approximately 44%,definition differs: home broadband
+monolithic_power,1280452,0.54,lower bound (three largest distributors),"three distributors accounted for 26%, 18% and 10% of our total revenue",0.091,Consumer end market,9.1 %,
+alpha_omega,1387467,0.723,lower bound (two distributors),"Two distributors, WPG and Promate, collectively accounted for 72.3%",0.122,Consumer segment,"Consumer 83,008",83.0 / 678.9
+synaptics,817720,,not disclosed,,,,,excluded: criterion cannot be checked
+diodes,29002,,not disclosed (only: customers >=10% are broad-based distributors),,,,,excluded: criterion cannot be checked
+ambarella,1280263,,not disclosed,,,,,excluded: criterion cannot be checked
+impinj,1114995,,not disclosed,,,,,excluded: criterion cannot be checked

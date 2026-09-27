@@ -1,0 +1,16 @@
+lag_q,corr,n,regime
+0,,1,supply_constrained
+1,,0,supply_constrained
+2,,0,supply_constrained
+3,,0,supply_constrained
+4,,0,supply_constrained
+0,-0.22036528162384109,7,destock
+1,0.36009013480433794,7,destock
+2,0.633924622051968,6,destock
+3,,5,destock
+4,,4,destock
+0,-0.5608730431493082,9,normal
+1,0.5185656850507784,9,normal
+2,0.662825585423811,9,normal
+3,0.47581726318719253,9,normal
+4,-0.07360285645412468,9,normal

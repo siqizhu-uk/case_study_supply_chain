@@ -1,0 +1,230 @@
+# Peer panel (Pipeline D): semiconductor companies that publish a quarterly revenue guide in their earnings 8-K
+# (Exhibit 99.1). Every guidance number is parsed by regex from that exhibit and stored with the matched sentence.
+# Patterns run on whitespace-normalised text; the first pattern that matches wins. Units are normalised to USD m.
+# kind: range -> groups (low, unit, high, unit); plusminus -> (mid, unit, halfwidth, unit); lmh -> (low, mid, high) in USD m;
+#       backward_mid -> (date, mid, unit): the midpoint of the guide for the quarter JUST REPORTED (used as a chain check)
+peers:
+  microchip:
+    cik: 827054
+    note: "FY ends March; also discloses distributor days of inventory (Pipeline A mchp_distributor_days.csv)"
+    patterns:
+      - {kind: range_one_unit, re: 'Consolidated Guidance Net Sales \$([\d.,]+) to \$([\d.,]+) (billion|million)'}
+      - {kind: range_one_unit, re: 'Net Sales \$([\d.,]+) to \$([\d.,]+) (billion|million)'}
+      - {kind: range, re: 'net sales[^.]{0,120}?between \$([\d.,]+) (million|billion) and \$([\d.,]+) (million|billion)'}
+      - {kind: range, re: '(?:anticipate|expect)[^.]{0,60}?quarter net sales (?:to be )?between \$([\d.,]+) (billion|million) and \$([\d.,]+) (billion|million)'}
+      - {kind: range, re: 'net sales (?:for the [a-z ]+quarter of fiscal \d{4} )?(?:are expected to be|to be|of) (?:between )?\$([\d.,]+) (billion|million) (?:and|to) \$([\d.,]+) (billion|million)'}
+    backward: {kind: backward_mid, re: 'midpoint of our guidance provided on ([A-Z][a-z]+ \d{1,2}, \d{4}) was net sales of \$([\d.,]+) (billion|million)'}
+  nxp:
+    cik: 1413447
+    note: "discloses distribution channel inventory in weeks each quarter"
+    patterns:
+      - {kind: lmh, re: 'Guidance for the [A-Za-z]+ Quarter.{0,250}?Total Revenue \$ ?([\d,]+) \$ ?([\d,]+) \$ ?([\d,]+)'}
+    # unit changed from months to weeks during the sample -> parsed with its unit and converted (x 52/12); the unit is kept as a column
+    channel_weeks: 'Channel Inventory \((weeks|months)\) ([\d.]+) ([\d.]+) ([\d.]+)'
+  ti:
+    cik: 97476
+    note: "calendar quarters"
+    patterns:
+      - {kind: range, re: 'outlook (?:for the [a-z-]+ quarter of \d{4} )?is for revenue in the range of \$([\d.,]+) (billion|million) to \$([\d.,]+) (billion|million)'}
+      - {kind: range_one_unit, re: 'TI expects:? [^A-Za-z]{0,6}Revenue: \$([\d.,]+) ?[-–] ?([\d.,]+) (billion|million)'}
+      - {kind: range, re: 'expects?[^.]{0,80}?revenue[^.]{0,40}?in the range of \$([\d.,]+) (billion|million) to \$([\d.,]+) (billion|million)'}
+      - {kind: range_one_unit, re: 'expects?[^.]{0,80}?revenue[^.]{0,40}?(?:in the range of|of) \$([\d.,]+) ?[-–] ?\$?([\d.,]+) (billion|million)'}
+  adi:
+    cik: 6281
+    note: "FY ends late Oct / early Nov; 52/53-week quarters"
+    patterns:
+      - {kind: plusminus, re: 'forecasting revenue of \$([\d.,]+) (billion|million)\s*,?\s*\+/-\s*\$([\d.,]+) (billion|million)'}
+      - {kind: plusminus, re: 'Revenue \$([\d.,]+) (billion|million) \(\+/- \$([\d.,]+) (billion|million)\)'}
+      - {kind: range, re: 'revenue[^$]{0,140}?in the range of \$([\d.,]+) (million|billion) to \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'revenue[^.]{0,80}?in the range of \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+      - {kind: pct_seq, re: 'revenue[^.]{0,120}?in the range of ([-+]?[\d.]+)%? ?(?:to|-|–) ?([-+]?[\d.]+) ?% sequentially'}
+      - {kind: pct_seq, re: 'Revenue estimated to (?:increase|decrease|be) in the range of ([-+]?[\d.]+)% to ([-+]?[\d.]+)%'}
+      - {kind: pct_seq_down, re: 'Revenue: Down ([\d.]+)% to ([\d.]+)% sequentially'}
+      - {kind: pct_seq, re: 'Revenue: Up ([\d.]+)% to ([\d.]+)% sequentially'}
+      - {kind: pct_seq, re: 'Revenue estimated to increase (-?[\d.]+)% to (-?[\d.]+)% sequentially'}
+      - {kind: pct_seq_down, re: 'Revenue estimated to decrease (-?[\d.]+)% to (-?[\d.]+)% sequentially'}
+  onsemi:
+    cik: 1097864
+    note: "calendar quarters"
+    patterns:
+      - {kind: range_one_unit, re: 'outlook[^$]{0,300}?Revenue \$([\d.,]+) to \$([\d.,]+) (million|billion)'}
+  silabs:
+    cik: 1038074
+    note: "guidance suspended from 2026 (pending acquisition by Texas Instruments) -> structural break; use pre-2026 only"
+    patterns:
+      - {kind: range_one_unit, re: 'expects [a-z-]+ ?quarter revenue to be (?:in the range of|between) \$([\d.,]+) (?:million )?(?:to|and) \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'expects revenue (?:for|in) the [a-z-]+ quarter to be (?:in the range of |between )?\$([\d.,]+)(?: million)? (?:to|and) \$([\d.,]+) (million|billion)'}
+      - {kind: range, re: 'revenue (?:to be )?(?:in the range of|between) \$([\d.,]+) (million|billion) (?:to|and) \$([\d.,]+) (million|billion)'}
+  semtech:
+    cik: 88941
+    note: "fiscal year ends late January; distribution ~74%, High-End Consumer ~15% (Nordic-like by the step-6e criterion)"
+    patterns:
+      - {kind: pm_fixed_unit, unit: million, re: 'Net sales \$ ?([\d.,]+) \+/- \$ ?([\d.,]+)'}
+      - {kind: range_one_unit, re: 'Net sales are expected to be in the range of \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: '(?:net sales|revenue)[^.]{0,80}?(?:between|range of) \$([\d.,]+)(?: million)? (?:to|and) \$([\d.,]+) (million|billion)'}
+  power_integrations:
+    cik: 833640
+    note: "distribution ~69%, consumer ~37%"
+    patterns:
+      - {kind: plusminus, re: 'Revenues are expected to be (?:in a range of )?\$([\d.,]+) (million|billion),? plus or minus \$([\d.,]+) (million|billion)'}
+      - {kind: pct_center_pm, re: 'Revenues are expected to (increase|decrease|grow|decline) by ([a-z]+|[\d.]+) percent compared to the [a-z]+ quarter of \d{4}, plus or minus ([a-z]+|[\d.]+) percent'}
+      - {kind: plusminus, re: 'Revenues are expected to be \$([\d.,]+) (million|billion) plus or minus \$([\d.,]+) (million|billion)'}
+      - {kind: pct_pm, re: 'Revenues are expected to be flat compared to the [a-z]+ quarter of \d{4}, plus or minus ([a-z]+|[\d.]+) percent'}
+      - {kind: range_one_unit, re: 'revenues? (?:is|are) expected to be (?:between|in a range of) \$([\d.,]+)(?: million)? (?:and|to) \$([\d.,]+) (million|billion)'}
+  lattice:
+    cik: 855658
+    note: "distribution ~84%; 2026: AMI acquisition - guide 'with two months of AMI revenue included' is the comparable one"
+    patterns:
+      - {kind: pct_pm, re: 'Revenue is expected to be approximately flat plus or minus ([\d.]+)% on a sequential basis'}
+      - {kind: pct_pm, re: 'Revenue is expected to be flat plus or minus ([\d.]+)% on a sequential basis'}
+      - {kind: pct_pm, re: 'Revenue for the [a-z]+ quarter of \d{4} is expected to be approximately flat to plus or minus ([\d.]+)%'}
+      - {kind: pct_flat_down, re: 'Revenue is expected to be approximately flat to down ([\d.]+)%'}
+      - {kind: pct_flat_up, re: 'Revenue is expected to be approximately flat to up ([\d.]+)%'}
+      - {kind: plusminus_mid, re: '\$([\d.,]+) (million|billion) at the midpoint with [a-z ]+ of AMI revenue included'}
+      - {kind: range_one_unit, re: 'Revenue for the [a-z]+ quarter of \d{4} is expected to be between (?:approximately )?\$([\d.,]+)(?: million)? and \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'Revenue is expected to be between \$([\d.,]+)(?: million)? and \$([\d.,]+) (million|billion)'}
+      - {kind: pct_seq_down, re: 'Revenue is expected to decline (?:approximately )?([\d.]+)% to ([\d.]+)% on a sequential basis'}
+      - {kind: pct_seq, re: 'Revenue is expected to (?:increase|grow) (?:approximately )?([\d.]+)% to ([\d.]+)% on a sequential basis'}
+      # 2011-2014 wordings (read in the releases): 'flat to up 5%', 'increase approximately flat to up 4%', 'flat to plus 4%',
+      # 'minus 5% to 9%', 'flat to plus or minus 2%', '8% to 12% lower'
+      - {kind: pct_flat_up, re: '[Rr]evenue is expected to (?:be |increase )?(?:approximately )?flat to (?:up|plus) ([\d.]+)% on a sequential basis'}
+      - {kind: pct_pm, re: '[Rr]evenue is expected to be flat to plus or minus ([\d.]+)% on a sequential basis'}
+      - {kind: pct_seq_down, re: '[Rr]evenue is expected to be minus ([\d.]+)% to ([\d.]+)% on a sequential basis'}
+      - {kind: pct_seq_down, re: 'Revenue is expected to be ([\d.]+)% to ([\d.]+)% lower on a sequential basis'}
+      # deliberately NOT parsed: Feb-2015 guide 'Excluding the effects of ... Silicon Image' (closed 11 Mar 2015, inside the quarter)
+      # and the May/Jul-2015 guides 'on a non-GAAP basis' (acquired deferred revenue) - guide and GAAP actual measure different things
+  maxlinear:
+    cik: 1288469
+    note: "distribution ~37%; home broadband ~44%"
+    patterns:
+      - {kind: range_one_unit, re: 'expects revenue in the [a-z]+ quarter of \d{4} to be [^$]{0,40}?or \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'expects? (?:net )?revenue in the [a-z]+ quarter(?: of \d{4})? to (?:be|increase[^$]{0,80}?to|decrease[^$]{0,80}?to) (?:approximately |between |in the range of )?\$([\d.,]+)(?: million)? (?:to|and) \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'expects revenue in the [a-z]+ quarter to be in the range of \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'Revenue \$([\d.,]+) ?- ?\$([\d.,]+) \$[\d.,]+ ?- ?\$[\d.,]+ Gross Margin', unit: million}
+      - {kind: range_one_unit, re: 'expects revenue in the [a-z]+ quarter(?: of)? \d{4} to be (?:approximately |between )?\$([\d.,]+)(?: million)? (?:to|and) \$([\d.,]+) (million|billion)'}
+  monolithic_power:
+    cik: 1280452
+    note: "distribution >= 54% (three largest distributors); consumer ~9%; discloses days of inventory on next quarter's revenue"
+    patterns:
+      - {kind: range_one_unit, re: 'Revenue in the range of \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+  alpha_omega:
+    cik: 1387467
+    note: "fiscal year ends June; distribution >= 72% (two distributors); consumer ~12%"
+    patterns:
+      - {kind: range_one_unit, re: 'Revenue is expected to be in the range of \$([\d.,]+)(?: million)? to \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'Revenue to be between \$([\d.,]+)(?: million)? and \$([\d.,]+) (million|billion)'}
+      - {kind: plusminus, re: 'Revenue is expected to be approximately \$([\d.,]+) (million|billion), plus or minus \$([\d.,]+) (million|billion)'}
+      - {kind: plusminus, re: 'Revenue to be approximately \$([\d.,]+) (million|billion), plus or minus \$([\d.,]+) (million|billion)'}
+      - {kind: range_one_unit, re: 'Revenue is expected to be between \$([\d.,]+)(?: million)? and \$ ?([\d.,]+) (million|billion)'}
+first_release_date: "2011-01-01"
+sanity_abs_beat_pct: 15
+plausible_guide_ratio: [0.25, 4.0]  # a guide mid outside 0.25-4x the reported quarter's revenue is a sub-item sentence (Microchip '$51-54 million' = 0.1x): skip to the next match.
+                                   # NOT tighter: 0.5-2x dropped Silicon Labs' real Q4-2023 guide ($85m after $204m) - a filter that removes the destock extremes is selection bias
+unit_typo_ratio: 100          # a parsed value >100x or <1/100 of the same company's actual revenue is a unit typo in the filing (e.g. '$1,240 billion')        # |actual / guide mid - 1| above this -> listed for manual check (not dropped)
+
+# Quarters where guide and actual measure different companies (M&A / divestiture). Kept in peer_panel.csv, flagged
+# `excluded`, left out of every estimate. Each needs a reason a reader can check.
+structural_breaks:
+  - {company: adi, quarter: "2021Q4", reason: "Maxim acquisition closed 26 Aug 2021, after the 18 Aug guide ($1.78bn, ADI standalone); actual includes Maxim (+31% 'beat')"}
+  - {company: adi, quarter: "2017Q2", reason: "Linear Technology acquisition closed 10 Mar 2017, after the Feb guide ($870-950m, ADI standalone)"}
+  - {company: microchip, quarter: "2016Q2", reason: "guide was 'net sales without Atmel' (Atmel acquisition closed 4 Apr 2016); actual includes Atmel"}
+  - {company: microchip, quarter: "2018Q2", reason: "Microsemi acquisition closed 29 May 2018, inside the guided quarter; guide $1.012-1.062bn excluded it"}
+  - {company: onsemi, quarter: "2011Q1", reason: "guide explicitly 'Excludes expected results of SANYO Semiconductor' (acquired 1 Jan 2011); actual includes it"}
+  - {company: maxlinear, quarter: "2015Q2", reason: "Entropic acquisition: the 30 Apr 2015 release still calls it 'our proposed acquisition'; Q2 is 'our first quarterly results reflecting contribution from the acquisition of Entropic' (+89% 'beat')"}
+  - {company: maxlinear, quarter: "2020Q3", reason: "Intel Home Gateway Platform Division acquisition 'on track to close during the current quarter ending September 30, 2020' - guide given before it closed (+112% 'beat')"}
+  - {company: silabs, quarter: "2021Q2", reason: "I&A business sold to Skyworks (closed 26 Jul 2021): Apr-2021 guide was total company, the first-reported actual is continuing operations"}
+  - {company: silabs, quarter: "2021Q3", reason: "same divestiture; guide and actual on different bases"}
+  - {company: silabs, quarter: "2021Q4", reason: "Q4 = FY - 9M mixes the continuing-ops 10-K with total-company first-reported quarters -> meaningless (111 vs a $200m guide)"}
+  - {company: lattice, quarter: "2015Q1", reason: "Feb-2015 outlook 'Excluding the effects of our recently announced intent to acquire Silicon Image'; Silicon Image closed 11 Mar 2015, inside the quarter"}
+
+# |beat| above the sanity threshold that a manual read CONFIRMED as real: kept in every estimate
+verified_outliers:
+  - {company: power_integrations, quarter: "2020Q4", reason: "Feb-2021 release: revenue 'above our expectations driven by broad-based demand'; sell-through exceeded sell-in -> a genuine beat"}
+  - {company: power_integrations, quarter: "2021Q1", reason: "Apr-2021 release: sell-through 'exceeded sell-in again in the first quarter' with 'continued strength in bookings' -> a genuine beat"}
+  - {company: monolithic_power, quarter: "2020Q3", reason: "Jul-2020 guide '$200 million to $210 million'; Oct-2020 release: 'Revenue was $259.4 million ... a 39.3% increase from $186.2 million'; no acquisition in the quarter; the release gives no reason -> kept as a genuine beat (reason not disclosed)"}
+  - {company: ti, quarter: "2022Q2", reason: "Apr-2022 release: 'second quarter outlook ... $4.20 billion to $4.80 billion ... comprehends an impact due to reduced demand from COVID-19 restrictions in China'; actual $5.21bn -> a genuinely conservative guide"}
+
+# NXP switched Channel Inventory from months to weeks in the Q4 2024 release and restated the prior quarter as 8 weeks
+# where 1.7 months = 7.4 weeks: a definition change, not rounding -> no change is computed across the switch
+channel_definition_breaks:
+  - {company: nxp, first_quarter_new_definition: "2024Q4"}
+
+# The guide and the reported GAAP figure measure different things; the release itself gives the comparable number.
+# Each row: the quote must be found in that quarter's release (checked in validate.py).
+actual_overrides:
+  - {company: onsemi, quarter: "2017Q1", actual_usdm: 1281.6, quote: "GAAP revenue of $1,436.7 million and non-GAAP revenue of $1,281.6 million", reason: "GAAP includes a one-off item; the guide ($1,215-1,265m) was on the non-GAAP basis"}
+
+# ---------------------------------------------------------------- 2008-09 cycle (history window, step 6f)
+# Microchip distributor days start in 2008 (June-2008 10-Q), so the industry factor exists from 2008Q2: the window is the
+# releases that guide 2008Q3-2010Q4. XBRL starts 2009Q2 for most peers -> actuals come from the release itself, read twice
+# (narrative sentence and income-statement table) and checked against XBRL where both exist. Wordings below were read in
+# the releases; 2001-02 is out of reach (8-K earnings releases start in 2003-04; no distributor-days series before 2008).
+history:
+  release_from: "2008-06-01"
+  release_to: "2011-03-15"         # actuals: the releases that report up to 2010Q4
+  guide_release_to: "2010-11-15"   # guides: up to the release that guides 2010Q4 (the main panel starts with 2011Q1)
+  actual_re: '(?:revenues?|net sales)(?: (?:for|in) the [\w\- ]{0,50}?)? (?:was|were|of|totaled) (?:a record |record )?\$ ?([\d.,]+) ?(million|billion)'
+  actual_headline_re: 'reported [\w\- ]{0,40}?revenues? of \$ ?([\d.,]+) ?(million|billion)'
+  # a multi-column revenue row of the income statement ('Net revenues $ 562.7 $ 421.9 ...'); an outlook row ('Revenue $570 to $585')
+  # has no second number and is skipped. Second source = a revenue row whose value equals the narrative figure (thousands or millions)
+  table_re: '(?:Net sales|Net revenues?|Total (?:net )?revenues?|Revenues?)\s*\$\s*([\d,]+(?:\.\d+)?)\s+\(?\$?\s*[\d,]+(?:\.\d+)?'
+  actual_tolerance: 0.005
+  no_numeric_guide:     # releases read; no numeric revenue guide given in them (a selection trap: guidance disappears in the trough)
+    - {company: microchip, release: "2009-01-29", quote: "Microchip is not providing revenue guidance at this time"}
+    - {company: microchip, release: "2009-05-07", quote: "Microchip is not providing revenue guidance at this time"}
+    - {company: monolithic_power, release: "2008-07-31 .. 2010-07-28", quote: "no revenue outlook in any release until 2010-11-03 (given on the call only)"}
+  exclude_releases:     # filings that would be mis-read as the initial guide
+    - {company: microchip, release: "2009-01-06", reason: "mid-quarter pre-announcement: 'Net sales for the third fiscal quarter are expected to be down 29 to 31% sequentially' (the Dec quarter already under way)"}
+  verified_outliers:    # |beat| > 15%, read: the 2008Q4 crash and the 2009 restock, no M&A in the quarter
+    - {company: microchip, quarter: "2008Q4", reason: "Oct-2008 guide 'down 8% to 16%'; the Jan-2009 release reports $192.2m (-29% q/q): the demand collapse after Lehman"}
+    - {company: ti, quarter: "2008Q4", reason: "Oct-2008 initial guide '$2.83 - 3.07 billion'; TI cut it mid-quarter (Dec 2008); actual $2.49bn: the collapse"}
+    - {company: power_integrations, quarter: "2009Q1", reason: "guide 'down 15 to 25 percent'; actual $40.3m = -5% q/q: destock ended earlier than guided"}
+    - {company: power_integrations, quarter: "2009Q2", reason: "guide '$39 million and $43 million'; actual $49.3m: restock"}
+    - {company: lattice, quarter: "2010Q1", reason: "guide 'increase 8% to 12%'; actual $70.4m (+30% q/q): recovery"}
+  structural_breaks:
+    - {company: microchip, quarter: "2010Q2", reason: "SST acquisition (Apr 2010): guide 'excluding SST' plus 'about $18 million' from SST"}
+  patterns:
+    microchip:
+      - {kind: pct_flat_up, re: 'expect net sales in the quarter ending [A-Za-z]+ \d+, \d{4} quarter to be flat to up ([\d.]+)% sequentially'}
+      - {kind: pct_seq_down, re: 'we (?:currently )?expect net sales in the [A-Za-z]+ quarter to be down ([\d.]+)% to ([\d.]+)%'}
+      - {kind: pct_seq, re: 'we expect revenue (?:for the [A-Za-z]+ quarter )?to be up (?:between )?([\d.]+)% (?:and|to) ([\d.]+)% sequentially'}
+    adi:
+      - {kind: pct_point, re: 'operating plan is for revenues to (decline|increase) sequentially by approximately ([\d.]+)%'}
+      - {kind: pct_seq_down, re: 'revenue for the [a-z]+ quarter will decline by ([\d.]+)% to ([\d.]+)%'}
+      - {kind: range_one_unit, re: 'revenue will grow to approximately \$([\d.,]+)(?: million)? to \$([\d.,]+) (million)'}
+      - {kind: range_one_unit, re: 'planning for revenue in the [a-z]+ quarter to increase to \$([\d.,]+)(?: million)? to \$([\d.,]+) (million)'}
+      - {kind: pct_flat, re: 'planning for (?:our )?(?:[a-z]+ quarter )?revenue(?: in the [a-z]+ quarter(?: of fiscal \d{4})?)? to be approximately flat'}
+    silabs:
+      - {kind: range_one_unit, re: 'guid(?:ing|ed) (?:expected )?revenues? (?:for the [a-z]+ quarter )?(?:in the range of|to) \$([\d.,]+)(?: million)? to \$([\d.,]+) (million)'}
+      - {kind: pct_flat_down, re: 'guided revenue for the [a-z]+ quarter to be flat to down ([a-z\d.]+) percent'}
+      - {kind: pct_seq_down, re: 'sequential revenue decline of ([\d.]+) to ([\d.]+) percent'}
+    semtech:
+      - {kind: pct_flat_up, re: 'estimates net sales for the [a-z]+ quarter, which (?:will )?ends? [A-Za-z]+ \d+, \d{4}, will be flat to up ([\d.]+) percent'}
+      - {kind: pct_seq, re: 'estimates net sales for the [a-z]+ quarter, which (?:will )?ends? [A-Za-z]+ \d+, \d{4}, will increase (?:between )?([\d.]+) percent to ([\d.]+) percent'}
+      - {kind: pct_seq, re: 'Net sales are expected to increase approximately ([\d.]+) percent to ([\d.]+) percent sequentially'}
+    power_integrations:
+      - {kind: range_one_unit, re: 'expects? (?:its )?(?:[a-z]+[- ]quarter )?revenues (?:for the [a-z]+ quarter of \d{4} )?to be (?:in (?:the|a) range of|between) \$([\d.,]+)(?: million)? (?:to|and) \$([\d.,]+) (million)'}
+      - {kind: pct_seq_down, re: 'expects its revenues for the [a-z]+ quarter of \d{4} to be down ([\d.]+) to ([\d.]+) percent'}
+      - {kind: pct_seq, re: 'expects its revenues for the [a-z]+ quarter of \d{4} to increase by ([a-z\d.]+) to ([\d.]+) percent'}
+    lattice:
+      - {kind: pct_flat_down, re: 'Revenue is expected to be flat to down ([a-z\d.]+) (?:percent|%) on a sequential basis'}
+      - {kind: pct_seq_down, re: 'Revenue is expected to be down (?:by )?([\d.]+)% to ([\d.]+)% on a sequential basis'}
+      - {kind: pct_pm, re: 'Revenue is expected to be plus or minus ([\d.]+)% on a sequential basis'}
+      - {kind: pct_signed_range, re: 'Revenue is expected to be (minus|plus) ([\d.]+)% to (minus|plus) ([\d.]+)% on a sequential basis'}
+
+# ---------------------------------------------------------------- growth beyond the guided quarter (step 6h)
+# g2 = actual(t+1) / guide(t) - 1 spans two quarters, so an acquisition closing inside t+1 shows up as 'growth' even when the
+# guide for t is clean (these do not distort the beat and are not in structural_breaks). Quotes read in the releases.
+h2_breaks:   # (company, guided quarter t) whose t+1 contains an acquisition
+  - {company: onsemi, quarter: "2016Q3", reason: "Nov-2016 release: 'Closed acquisition of Fairchild Semiconductor' (Sep 2016); g2 +39%"}
+  - {company: semtech, quarter: "2023Q1", reason: "Mar-2023 release: 'Completed the acquisition of Sierra Wireless' (Jan 2023); g2 +58%"}
+  - {company: semtech, quarter: "2012Q2", reason: "Aug-2012 release: 'a full quarter of revenue from the Gennum acquisition, which closed on March 20, 2012'"}
+h2_verified:  # |g2 - seasonal| > 30 pts, read: no closed acquisition in the releases for t .. t+2 -> genuine cycle moves, kept
+  - {company: alpha_omega, quarter: "2022Q4", reason: "2023 destock"}
+  - {company: maxlinear, quarter: "2023Q1", reason: "2023 destock"}
+  - {company: maxlinear, quarter: "2023Q2", reason: "2023 destock"}
+  - {company: microchip, quarter: "2023Q4", reason: "2024 destock (distributor days 37 -> 41)"}
+  - {company: monolithic_power, quarter: "2020Q2", reason: "Q3 2020 surge (verified_outliers 2020Q3)"}
+  - {company: power_integrations, quarter: "2020Q3", reason: "2020-21 restock"}
+  - {company: power_integrations, quarter: "2020Q4", reason: "2020-21 restock"}
+  - {company: silabs, quarter: "2023Q3", reason: "2023-24 destock (guided Q4 -58% q/q)"}

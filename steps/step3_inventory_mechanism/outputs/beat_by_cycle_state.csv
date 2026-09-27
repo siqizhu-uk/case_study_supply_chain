@@ -1,0 +1,9 @@
+sample,state,n,quarters,mean_beat_pct,se_clustered,t,sd_pct,share_below_guide_mid
+peers,building,167,17,0.357,0.219,1.627,2.629,0.246
+peers,drawdown,98,10,1.436,0.32,4.483,2.345,0.184
+peers,lean,169,16,2.304,0.48,4.805,4.269,0.142
+peers,normal,185,20,2.11,0.587,3.596,4.467,0.205
+nordic,building,7,7,-3.157,2.105,-1.5,6.015,0.714
+nordic,drawdown,3,3,3.852,0.865,4.454,1.835,0.0
+nordic,lean,9,9,2.251,1.056,2.133,3.359,0.111
+nordic,normal,2,2,5.643,1.162,4.858,2.323,0.0

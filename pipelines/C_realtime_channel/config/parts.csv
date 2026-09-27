@@ -1,0 +1,6 @@
+part,family,role,note
+nRF52832-QFAA-R,nRF52,legacy volume BLE SoC (mice/keyboards),the highest-volume part in shipping peripherals
+nRF52840-QIAA-R,nRF52,mainstream BLE 5 SoC,Logitech Lift / MX-class designs
+nRF52833-QIAA-R,nRF52,mid-range BLE SoC,
+nRF5340-QKAA-R,nRF53,dual-core BLE + audio,headsets / premium peripherals
+nRF54L15-QFAA-R,nRF54,new generation (ramping 2025-26),capacity-constrained per Nordic Q2 2026 call

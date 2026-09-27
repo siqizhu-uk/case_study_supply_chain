@@ -1,0 +1,8 @@
+basis,scenario,Amazon direct,via Ingram / TD Synnex,other retail direct,all routes (flow-weighted)
+physical,low,8.55,10.07,8.92,9.15
+signal,low,8.55,10.07,8.92,9.15
+physical,mid,17.33,20.46,18.75,18.96
+signal,mid,24.09,28.72,26.22,26.51
+physical,high,25.39,30.14,28.35,28.31
+signal,high,39.43,47.18,44.56,44.36
+"signal, smoothing only",mid,19.41,23.54,21.3,21.57

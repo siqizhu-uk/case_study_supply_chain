@@ -1,0 +1,28 @@
+quarter,fiscal_label,net_sales_usdm,gm_gaap_pct,gm_nongaap_pct,americas_usdm,emea_usdm,apac_usdm,inventory_usdm,gaming_usdm,keyboards_usdm,pointing_usdm,video_collab_usdm,webcams_usdm,tablet_usdm,headsets_usdm,other_usdm,sellthrough_minus_sellin_pts,sellthrough_gap_is_estimate,guide_low_usdm,guide_high_usdm,guide_gm_pct,source
+2020Q1,FY20Q4,709.2,39.0,,,,,229.2,,,,,,,,,,,,,,SEC XBRL companyfacts (headline only; segments not available)
+2020Q2,FY21Q1,791.9,38.6,,,,,271.2,,,,,,,,,,,,,,SEC XBRL companyfacts (headline only; segments not available)
+2020Q3,FY21Q2,1257.2,45.3,,,,,394.7,,,,,,,,,,,,,,SEC XBRL companyfacts (headline only; segments not available)
+2020Q4,FY21Q3,1667.3,44.9,,,,,476.8,,,,,,,,,,,,,,SEC XBRL companyfacts (headline only; segments not available)
+2021Q1,FY21Q4,1535.9,46.3,,,,,661.1,,,,,,,,,,,,,,SEC XBRL companyfacts (headline only; segments not available)
+2021Q2,FY22Q1,1312.1,43.4,43.8,612.6,358.0,341.5,778.6,335.4,218.4,182.9,234.9,109.9,79.3,,151.3,3.0,1.0,,,,SEC 8-K Ex99.1 Q1 FY22 (old taxonomy; headsets inside Audio&Wearables in 'other')
+2021Q3,FY22Q2,1306.3,41.5,42.0,541.5,399.5,365.3,827.7,330.8,236.3,189.0,231.7,94.5,80.8,,143.2,3.0,1.0,,,,SEC 8-K Ex99.1 Q2 FY22; call: channel 'tight in some areas'
+2021Q4,FY22Q3,1632.8,40.3,40.6,674.4,552.1,406.3,834.5,469.3,281.6,231.1,287.2,115.1,82.9,,165.6,2.0,1.0,,,,SEC 8-K Ex99.1 Q3 FY22; call: channel 'light in some areas'
+2022Q1,FY22Q4,1230.0,40.2,40.5,489.5,414.5,326.0,933.1,316.4,231.1,178.1,243.4,84.1,67.2,,109.7,0.0,1.0,,,,SEC 8-K Ex99.1 Q4 FY22 (regions = FY minus 9M)
+2022Q2,FY23Q1,1159.9,39.6,40.0,502.3,290.5,367.1,917.4,297.9,227.7,183.3,181.6,109.3,66.6,45.9,47.5,0.0,0.0,,,,SEC 8-K Ex99.1 Q1 FY23 (recast new taxonomy per FY24 releases); call: sell-in/sell-through in balance
+2022Q3,FY23Q2,1149.0,38.2,38.6,492.2,297.2,359.6,880.0,322.0,200.9,185.2,179.2,102.0,54.2,44.8,60.7,-2.0,1.0,,,,SEC 8-K Ex99.1 Q2 FY23 (recast); own inventory reduction begins
+2022Q4,FY23Q3,1269.9,37.6,37.9,513.8,428.5,327.6,797.7,411.9,220.1,199.1,173.5,94.3,65.2,46.7,59.2,-2.0,1.0,,,,SEC 8-K Ex99.1 Q3 FY23 (recast); heavy promotion
+2023Q1,FY23Q4,960.1,35.8,36.3,422.6,283.5,254.0,682.9,256.4,187.8,160.8,143.6,73.2,68.4,39.1,30.8,5.0,1.0,,,,SEC 8-K Ex99.1 Q4 FY23 (recast); channel to be reduced Q1-Q2 FY24
+2023Q2,FY24Q1,974.5,38.5,39.0,445.2,258.9,270.5,572.3,266.4,180.9,174.5,139.3,75.2,70.3,36.9,31.0,7.0,1.0,,,,SEC 8-K Ex99.1 Q1 FY24; 'high single digit decline in channel inventory'
+2023Q3,FY24Q2,1057.0,41.5,42.0,462.4,311.8,282.8,532.9,282.1,194.9,191.7,152.4,88.2,63.7,44.4,39.6,4.0,1.0,,,,SEC 8-K Ex99.1 Q2 FY24; sell-out stronger than expected; channel reduced
+2023Q4,FY24Q3,1255.5,42.0,42.3,538.5,416.6,300.3,447.3,409.0,229.4,206.2,169.5,85.9,64.2,41.8,49.4,-3.0,0.0,,,,SEC 8-K Ex99.1 Q3 FY24; sell-through -4% vs net sales -1%
+2024Q1,FY24Q4,1011.5,43.2,43.6,450.2,314.2,247.1,422.5,273.5,216.2,170.7,148.1,76.0,55.8,45.5,25.8,-5.0,0.0,,,,SEC 8-K Ex99.1 Q4 FY24; sell-through flat vs sell-in +5%
+2024Q2,FY25Q1,1088.2,42.8,43.3,485.3,309.8,293.1,459.6,309.5,215.3,189.9,147.0,72.9,78.5,44.2,30.7,-3.0,1.0,,,,SEC 8-K Ex99.1 Q1 FY25; 'in Q1 and Q2 sell-in will be larger than sell-out. That is planned'
+2024Q3,FY25Q2,1116.0,43.6,44.1,480.1,351.9,284.1,520.5,300.5,209.9,195.9,159.7,80.2,85.6,46.9,37.3,-2.0,1.0,,,,SEC 8-K Ex99.1 Q2 FY25; demand ~4 of 6 pts growth
+2024Q4,FY25Q3,1340.3,42.9,43.2,553.6,454.7,332.1,483.6,466.7,236.7,217.0,176.1,84.4,77.4,45.9,36.0,2.0,0.0,,,,SEC 8-K Ex99.1 Q3 FY25; sell-out +8% vs net sales +6%
+2025Q1,FY25Q4,1010.4,43.1,43.5,454.4,297.5,258.4,503.7,261.8,220.6,185.9,143.2,77.9,58.0,42.7,20.2,2.0,0.0,,,,SEC 8-K Ex99.1 Q4 FY25; sell-through > sell-in by ~2pts; pre-tariff inventory build
+2025Q2,FY26Q1,1147.7,41.7,42.1,461.7,346.8,339.2,499.8,315.9,222.5,195.8,166.7,84.4,91.2,45.5,25.7,0.0,0.0,1100.0,1150.0,41.5,SEC 8-K Ex99.1 Q1 FY26; sell-in in line with sell-through; US price increase ~10%; tariffs -100bp
+2025Q3,FY26Q2,1186.1,43.4,43.8,462.7,382.4,340.9,517.7,323.3,235.9,221.1,167.7,83.3,85.1,43.5,26.3,1.0,1.0,1145.0,1190.0,41.5,SEC 8-K Ex99.1 Q2 FY26; Americas sell-through > sell-in; tariffs -150bp offset by price +150bp
+2025Q4,FY26Q3,1421.5,43.2,43.5,556.4,485.7,379.4,449.5,482.7,254.6,241.2,193.3,82.3,93.6,45.9,28.0,4.0,0.0,1375.0,1415.0,42.5,SEC 8-K Ex99.1 Q3 FY26; sell-through +10% reported vs +6% net sales; CCC 27 days
+2026Q1,FY26Q4,1085.5,44.5,44.8,474.4,324.1,287.0,489.9,292.3,224.6,200.9,161.4,76.2,66.3,44.9,18.9,0.0,0.0,1070.0,1090.0,43.5,SEC 8-K Ex99.1 Q4 FY26; weeks on hand in line with last year; promo +100bp; tariffs -70bp / price +150bp
+2026Q2,FY27Q1,1227.2,49.5,49.8,515.9,343.7,367.6,491.7,354.2,227.8,227.3,185.3,76.6,89.4,44.1,22.5,4.0,0.0,1190.0,1215.0,,SEC 8-K Ex99.1 Q1 FY27 + 10-Q Jun-26; GM incl $61m tariff refunds (~44.8% ex); sell-through +11% vs +7% net sales; supplier incident late June
+2026Q3,FY27Q2,,,,,,,,,,,,,,,,,,1185.0,1220.0,44.0,Q2 FY27 guidance (28 Jul 2026): $1185-1220m incl ~$20m supplier-incident headwind; GM ~44% per call; report expected 27 Oct 2026

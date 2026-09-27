@@ -1,0 +1,6 @@
+model,horizon,n,rmse_total_usdm,bench_rmse_usdm,rmse_ratio_vs_GB,encompassing_beta,encompassing_t,weight
+CH_h1,1,14,12.732,7.426,1.715,-0.658,-2.03,0.0
+GR_h1,1,10,21.051,5.267,3.997,-0.052,-0.815,0.0
+CH_h2,2,14,38.385,44.086,0.871,3.163,2.569,1.0
+GR_h2,2,9,28.029,47.21,0.594,1.308,3.568,1.0
+LOGI_ID_h1,1,5,22.818,12.576,1.814,,,0.0

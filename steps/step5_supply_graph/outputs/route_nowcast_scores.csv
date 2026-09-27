@@ -1,0 +1,21 @@
+scope,model,label,role,n,first,last,rmse,rmse_bench_same_quarters,rmse_ratio,bias,dm_t,dm_p,enc_beta,enc_t,gain_share_top3,rmse_ratio_last6,table,forecast,enc_vs_guide_beta,enc_vs_guide_t,mean_abs_change_vs_N0_usdm,nowcast_rmse_ratio,nowcast_dm_t,nowcast_enc_t,nowcast_bar_met,nordic_gr_rmse_ratio,nordic_bar_met,adopted,verdict
+own quarters,N1,Logitech's guide (comparison only: user rule),comparison only (user rule: not a candidate),5.0,2025Q2,2026Q2,4.042,2.929,1.38,-2.085,1.189,0.3,-0.164,-0.28,,1.38,nowcast vs N0,,,,,,,,,,,,
+own quarters,N2c,composite of available proxies,candidate,13.0,2023Q2,2026Q2,5.597,4.961,1.128,-1.475,0.532,0.604,-0.31,-0.553,,0.81,nowcast vs N0,,,,,,,,,,,,
+own quarters,N2s,TD Synnex revenue alone,candidate,8.0,2024Q3,2026Q2,4.491,4.222,1.064,-0.26,0.742,0.482,-1.342,-0.645,,1.057,nowcast vs N0,,,,,,,,,,,,
+own quarters,N2e,TD Synnex Endpoint alone (no live value),sensitivity (cannot be adopted),8.0,2024Q3,2026Q2,4.245,4.222,1.005,-0.539,0.068,0.948,0.512,0.233,,1.022,nowcast vs N0,,,,,,,,,,,,
+common quarters,N2c,composite of available proxies,candidate,8.0,2024Q3,2026Q2,4.142,4.222,0.981,0.819,-0.125,0.904,0.931,0.679,6.297,0.81,nowcast vs N0,,,,,,,,,,,,
+common quarters,N2s,TD Synnex revenue alone,candidate,8.0,2024Q3,2026Q2,4.491,4.222,1.064,-0.26,0.742,0.482,-1.342,-0.645,,1.057,nowcast vs N0,,,,,,,,,,,,
+common quarters,N2e,TD Synnex Endpoint alone (no live value),sensitivity (cannot be adopted),8.0,2024Q3,2026Q2,4.245,4.222,1.005,-0.539,0.068,0.948,0.512,0.233,,1.022,nowcast vs N0,,,,,,,,,,,,
+all quarters,N0,persistence (default),default,20.0,2021Q3,2026Q2,15.511,,,2.888,,,,,,,nowcast vs N0,,,,,,,,,,,,
+,N0,,default,9.0,2024Q2,2026Q2,28.029,,,,,,,,,,Nordic h=2 vs N0 version,GR,1.308,3.568,0.0,,,,,,,,
+,N1,,comparison only (user rule: not a candidate),9.0,2024Q2,2026Q2,28.436,28.029,1.015,-6.666,1.323,0.222,-2.646,-0.528,,1.017,Nordic h=2 vs N0 version,GR,1.299,3.448,1.051,,,,,,,,
+,N2c,,candidate,9.0,2024Q2,2026Q2,27.434,28.029,0.979,-6.994,-2.544,0.035,13.373,1.853,0.946,0.981,Nordic h=2 vs N0 version,GR,1.274,3.674,0.851,,,,,,,,
+,N2s,,candidate,9.0,2024Q2,2026Q2,28.471,28.029,1.016,-6.759,1.106,0.301,-37.523,-3.663,,1.017,Nordic h=2 vs N0 version,GR,1.304,3.451,0.452,,,,,,,,
+,N2e,,sensitivity (cannot be adopted),9.0,2024Q2,2026Q2,27.708,28.029,0.989,-7.062,-1.062,0.319,9.74,1.089,1.133,0.986,Nordic h=2 vs N0 version,GR,1.298,3.646,0.643,,,,,,,,
+,N0,,default,14.0,2023Q1,2026Q2,38.385,,,,,,,,,,Nordic h=2 vs N0 version,CH,3.163,2.569,0.0,,,,,,,,
+,N1,,comparison only (user rule: not a candidate),14.0,2023Q1,2026Q2,38.404,38.385,1.0,1.413,1.537,0.148,-19.442,-0.334,,1.001,Nordic h=2 vs N0 version,CH,3.168,2.563,0.086,,,,,,,,
+,N2c,,candidate,14.0,2023Q1,2026Q2,38.295,38.385,0.998,1.462,-1.508,0.155,25.719,0.901,1.006,0.997,Nordic h=2 vs N0 version,CH,3.17,2.614,0.251,,,,,,,,
+,N2s,,candidate,14.0,2023Q1,2026Q2,38.414,38.385,1.001,1.401,0.834,0.42,-250.195,-1.679,,1.001,Nordic h=2 vs N0 version,CH,3.158,2.554,0.041,,,,,,,,
+,N2e,,sensitivity (cannot be adopted),14.0,2023Q1,2026Q2,38.361,38.385,0.999,1.37,-0.952,0.359,100.686,0.888,1.059,0.999,Nordic h=2 vs N0 version,CH,3.152,2.574,0.049,,,,,,,,
+,N2c,,,,,,,,,,,,,,,,adoption,,,,,1.128,0.532,-0.553,False,0.979,True,False,N0
+,N2s,,,,,,,,,,,,,,,,adoption,,,,,1.064,0.742,-0.645,False,1.016,False,False,N0

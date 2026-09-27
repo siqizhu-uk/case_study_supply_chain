@@ -1,0 +1,27 @@
+company,release_date,quarter,url,channel_weeks,channel_weeks_prev_col,channel_weeks_yago_col,channel_unit_reported,channel_quote
+nxp,2019-10-29,2019Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344719000033/nxp3q19earningsrelease.htm,9.966666666666665,10.399999999999999,10.399999999999999,months,Channel Inventory (months) 2.3 2.4 2.4
+nxp,2020-02-04,2019Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344720000005/nxp4q19earningsrelease.htm,9.966666666666665,9.966666666666665,10.399999999999999,months,Channel Inventory (months) 2.3 2.3 2.4
+nxp,2020-04-28,2020Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344720000028/nxp1q20earningsrelease.htm,10.399999999999999,9.966666666666665,10.399999999999999,months,Channel Inventory (months) 2.4 2.3 2.4
+nxp,2020-07-28,2020Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344720000054/nxpi-20200727.htm,10.399999999999999,10.399999999999999,10.399999999999999,months,Channel Inventory (months) 2.4 2.4 2.4
+nxp,2020-10-27,2020Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344720000086/nxpi-20201027.htm,10.399999999999999,10.399999999999999,9.966666666666665,months,Channel Inventory (months) 2.4 2.4 2.3
+nxp,2021-02-02,2020Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344721000004/exhibit991.htm,6.933333333333334,10.399999999999999,9.966666666666665,months,Channel Inventory (months) 1.6 2.4 2.3
+nxp,2021-04-27,2021Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344721000030/nxp1q21exhibit991.htm,6.933333333333334,6.933333333333334,10.399999999999999,months,Channel Inventory (months) 1.6 1.6 2.4
+nxp,2021-08-03,2021Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344721000064/nxp2q21exhibit991.htm,6.933333333333334,6.933333333333334,10.399999999999999,months,Channel Inventory (months) 1.6 1.6 2.4
+nxp,2021-11-02,2021Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344721000092/nxp3q21exhibit991.htm,6.933333333333334,6.933333333333334,10.399999999999999,months,Channel Inventory (months) 1.6 1.6 2.4
+nxp,2022-02-01,2021Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344722000004/nxp4q21exhibit991.htm,6.5,6.933333333333334,6.933333333333334,months,Channel Inventory (months) 1.5 1.6 1.6
+nxp,2022-05-03,2022Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344722000015/nxp1q22exhibit991.htm,6.5,6.5,6.933333333333334,months,Channel Inventory (months) 1.5 1.5 1.6
+nxp,2022-07-26,2022Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344722000048/nxp2q22exhibit991.htm,6.933333333333334,6.5,6.933333333333334,months,Channel Inventory (months) 1.6 1.5 1.6
+nxp,2022-11-01,2022Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344722000066/nxp3q22exhibit991.htm,6.933333333333334,6.933333333333334,6.933333333333334,months,Channel Inventory (months) 1.6 1.6 1.6
+nxp,2023-01-31,2022Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344723000002/nxp4q22exhibit991.htm,6.933333333333334,6.933333333333334,6.5,months,Channel Inventory (months) 1.6 1.6 1.5
+nxp,2023-05-02,2023Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344723000022/nxp1q23exhibit991.htm,6.933333333333334,6.933333333333334,6.5,months,Channel Inventory (months) 1.6 1.6 1.5
+nxp,2023-07-25,2023Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344723000057/nxp2q23exhibit991.htm,6.933333333333334,6.933333333333334,6.933333333333334,months,Channel Inventory (months) 1.6 1.6 1.6
+nxp,2023-11-07,2023Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344723000105/nxp3q23exhibit991.htm,6.5,6.933333333333334,6.933333333333334,months,Channel Inventory (months) 1.5 1.6 1.6
+nxp,2024-02-06,2023Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344724000008/nxp4q23exhibit991.htm,6.5,6.5,6.933333333333334,months,Channel Inventory (months) 1.5 1.5 1.6
+nxp,2024-04-30,2024Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344724000040/nxp1q24exhibit991.htm,6.933333333333334,6.5,6.933333333333334,months,Channel Inventory (months) 1.6 1.5 1.6
+nxp,2024-07-23,2024Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344724000074/s4nxp2q24exhibit991.htm,7.366666666666666,6.933333333333334,6.933333333333334,months,Channel Inventory (months) 1.7 1.6 1.6
+nxp,2025-02-04,2024Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344725000009/nxp4q24exhibit991.htm,8.0,8.0,7.0,weeks,Channel Inventory (weeks) 8 8 7
+nxp,2025-04-28,2025Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344725000027/nxp1q25exhibit991.htm,9.0,8.0,7.0,weeks,Channel Inventory (weeks) 9 8 7
+nxp,2025-07-22,2025Q2,https://www.sec.gov/Archives/edgar/data/1413447/000141344725000103/nxp2q25exhibit991.htm,9.0,9.0,7.0,weeks,Channel Inventory (weeks) 9 9 7
+nxp,2025-10-28,2025Q3,https://www.sec.gov/Archives/edgar/data/1413447/000141344725000118/nxp3q25exhibit991.htm,9.0,9.0,8.0,weeks,Channel Inventory (weeks) 9 9 8
+nxp,2026-02-03,2025Q4,https://www.sec.gov/Archives/edgar/data/1413447/000141344726000003/nxp4q25exhibit991.htm,10.0,9.0,8.0,weeks,Channel Inventory (weeks) 10 9 8
+nxp,2026-04-28,2026Q1,https://www.sec.gov/Archives/edgar/data/1413447/000141344726000032/nxp1q26exhibit991.htm,11.0,10.0,9.0,weeks,Channel Inventory (weeks) 11 10 9

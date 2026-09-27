@@ -1,0 +1,17 @@
+company,quarter,segment,csv_column,original_value,restated_value,original_key,restated_key,approx,reason
+gn,2024Q1,Enterprise,enterprise_rev_dkkm,1751.0,1811.0,2024Q1,2025Q1,0,2025: BlueParrott moved from Gaming & Consumer into Enterprise; 2024 comparatives restated
+gn,2024Q3,Enterprise,enterprise_rev_dkkm,1680.0,1740.0,2024Q3,2025Q3,0,2025: BlueParrott moved into Enterprise; 2024 comparatives restated
+logitech,2022Q2,Gaming,gaming_usdm,282.8,297.9,2022Q2,2023Q2,0,FY24 category recast: Streamlabs into Gaming; Webcams / Headsets split out of Video Collaboration
+logitech,2022Q2,Video Collaboration,video_collab_usdm,246.2,181.6,2022Q2,2023Q2,0,FY24 category recast
+logitech,2022Q3,Gaming,gaming_usdm,297.7,322.0,2022Q3,2023Q3,0,FY24 category recast
+logitech,2022Q3,Video Collaboration,video_collab_usdm,236.2,179.2,2022Q3,2023Q3,0,FY24 category recast
+logitech,2022Q4,Gaming,gaming_usdm,392.0,411.9,2022Q4,2023Q4,0,FY24 category recast
+logitech,2022Q4,Video Collaboration,video_collab_usdm,226.4,173.5,2022Q4,2023Q4,0,FY24 category recast
+nordic,2024Q1,Consumer,consumer_usdm,50.8,54.2,2024Q1,2025Q1,0,2025 taxonomy (Consumer / Industrial & Healthcare / Other) restated 2024 comparatives
+nordic,2024Q1,Industrial & Healthcare,ind_health_usdm,20.3,17.3,2024Q1,2025Q1,1,2025 taxonomy restated 2024 comparatives; original = Industrial + Healthcare lines summed (not printed as one figure)
+nordic,2024Q2,Consumer,consumer_usdm,83.0,87.5,2024Q2,2025Q2,0,2025 taxonomy restated 2024 comparatives
+nordic,2024Q2,Industrial & Healthcare,ind_health_usdm,41.5,37.0,2024Q2,2025Q2,1,2025 taxonomy restated 2024 comparatives; original = Industrial + Healthcare lines summed (not printed as one figure)
+nordic,2024Q3,Consumer,consumer_usdm,109.0,111.3,2024Q3,2025Q3,1,2025 taxonomy; original read as ~109 (approx)
+nordic,2024Q3,Industrial & Healthcare,ind_health_usdm,47.0,44.3,2024Q3,2025Q3,1,2025 taxonomy; original read as ~47 (approx)
+nordic,2024Q4,Consumer,consumer_usdm,94.3,96.6,2024Q4,2025Q4,0,2025 taxonomy restated 2024 comparatives
+nordic,2024Q4,Industrial & Healthcare,ind_health_usdm,50.5,48.2,2024Q4,2025Q4,1,2025 taxonomy restated 2024 comparatives; original = Industrial + Healthcare lines summed (not printed as one figure)

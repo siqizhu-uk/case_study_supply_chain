@@ -1,0 +1,14 @@
+node,row,grade,2026Q2,2026Q3,2026Q4,2027Q1,2027Q2,total
+customers,Amazon + Ingram + TD Synnex sell-in from Logitech,A share (10-K) x C loss (verbal),0.0,-8.8,-88.0,0.0,0.0,-96.8
+logitech,Logitech sales lost,"C (Logitech, verbal; Q3 FY27 'up to')",0.0,-20.0,-200.0,0.0,0.0,-220.0
+build,Logitech builds / component call-offs lost (at Logitech sales value),C (edge lags E05 / E08),-2.762,-134.931,-82.308,0.0,0.0,-220.0
+nordic,Nordic shipments: orders pushed out / cancelled,B/C content x C lead,0.0,-4.779,0.0,0.0,0.0,-4.779
+nordic,Nordic shipments: chips already at the holder used first at restart,"D frozen window, C restart date",0.0,-2.339,-0.868,0.0,0.0,-3.207
+nordic,Nordic shipments: channel restock (scenario only),D,0.0,0.0,0.0,0.0,0.0,0.0
+nordic,Nordic shipments to the Logitech slice: total,C,0.0,-7.118,-0.868,0.0,0.0,-7.986
+nordic,band low (edge lags x frozen window x content),,-0.609,-10.166,-6.002,0.0,0.0,
+nordic,band high (edge lags x frozen window x content),,0.0,-2.559,0.0,0.0,0.0,
+nordic,scenario: downside,,0.0,-4.851,-2.992,-0.868,0.0,
+nordic,scenario: upside,,0.0,-3.432,1.62,0.0,0.0,
+nordic,already in Nordic's 6 Aug guide (guided quarter only),D,0.0,-5.338,0.0,0.0,0.0,-5.338
+nordic,Nordic: not yet in any guide (total - already in guide),D,0.0,-1.779,-0.868,0.0,0.0,-2.648

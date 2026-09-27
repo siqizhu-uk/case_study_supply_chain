@@ -1,0 +1,6 @@
+window,from,to,who,reason,firm_quarters,firms,quarters,b_pooled,se_clustered,quarters_q_level,b_quarter_level,se_quarter_level,x_rho1,n_eff,se_q_level_neff,top3_share,top3_quarters,x_sd_in_window
+gfc_2008_10,2008Q3,2010Q4,peers,"Lehman crash (2008Q4), destock, 2009-10 restock",75,8,10,-0.1463,1.619,10,-0.2152,1.6521,-0.0922,10.0,1.6521,,"2008Q4, 2009Q2, 2009Q4",1.2608
+normal_2011_19,2011Q1,2019Q4,peers,"ordinary corrections: 2011-12, 2015-16, 2019",319,12,36,0.2077,0.2405,36,0.1922,0.2793,0.1386,27.2343,0.3211,1.9816,"2012Q1, 2011Q3, 2011Q4",0.9953
+covid_2020_26,2020Q1,2026Q2,peers,"shortage, double-ordering, 2023-24 destock, recovery",294,12,26,0.5923,0.3201,26,0.5938,0.4326,0.637,5.766,0.9186,0.9183,"2023Q4, 2023Q3, 2021Q1",0.9671
+nordic_window,2021Q2,2026Q2,peers,the quarters Nordic's own slope is estimated on,235,12,21,0.7599,0.1953,21,0.7731,0.2336,0.6534,4.402,0.5103,0.608,"2023Q4, 2023Q3, 2024Q2",1.0239
+nordic_window,2021Q2,2026Q2,NORDIC,the quarters Nordic's own slope is estimated on,21,1,21,3.5133,0.9599,21,3.5133,0.8127,0.6534,4.402,1.7752,0.7019,"2023Q3, 2023Q4, 2025Q2",1.0239

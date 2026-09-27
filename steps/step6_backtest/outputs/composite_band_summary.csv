@@ -1,0 +1,3 @@
+band,n,coverage,mean_width,interval_score,target_coverage
+constant,11,0.909,12.65,12.675,0.8
+scaled by |C|,11,0.818,9.734,11.155,0.8

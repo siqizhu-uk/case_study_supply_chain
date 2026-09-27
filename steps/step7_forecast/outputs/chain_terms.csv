@@ -1,0 +1,18 @@
+print,decision,term,value,evidence,source
+Nordic Q3 2026,Lag,graph kernel (share of the demand signal by quarters back),"1 q back 54%, 2 q back 46%",mean 1.46 q; the demand that sets Q3 is mostly already reported,config/supply_graph.csv
+Nordic Q3 2026,Lag,"end demand fed through the kernel (Logitech sell-out proxy, YoY %)",9.3,Logitech sell-in YoY + disclosed sell-through gap; unreported quarter by persistence,step 5 / step 6 GR
+Nordic Q3 2026,Mechanism,slice multiplier m (end demand -> Nordic slice),1.09,"step 3 slice_multiplier.csv mid: Logitech 1.00, GN 2.46",steps/step3_inventory_mechanism
+Nordic Q3 2026,Attribution,Logitech + GN share of Nordic revenue s,16.8,step 2 share path p50 (%); p10-p90 in attribution_path.csv,steps/step2_attribution
+Nordic Q3 2026,Structural breaks,"channel state of t−1 (step 3b, data-dated) and its term (pts)",lean: +0.00,"Nordic's own record by the state of t−1 (F20, F30): habit +4.24% on 7 quarters neither building nor short; building -7.39 pts (7 q), supply shortage -2.32 pts (7 q). Config regimes only for GR training and lag fits",steps/step7_forecast/outputs/guide_error_model.csv
+Nordic Q3 2026,Chain,"CH (as reasoned, nothing fitted): guide + s x [rev(t-4)(1+m x demand) - guide]",224.5,tilt -5.5; GR (fitted slope) 233.6,chain_forecast.py
+Nordic Q3 2026,Limitations,"weight on the chain (encompassing test, h=1)",0.0,"CH beta -0.66 (t -2.0), GR beta -0.05 (t -0.8): no information beyond the guide",chain_weight_tests.csv
+Nordic Q3 2026,Chain,chain contribution to the forecast (USDm),0.0,weight x (chain - guide-anchored),
+Nordic Q3 2026,Lag + Attribution,Logitech supplier incident through the graph (USDm),-1.8,"step 5d event study (forward from 25 Jun; lead 14 wk, content 3.63%): gross -7.1, 75% assumed already in the 6 Aug guide (grade D): range 0 to -7.1; Q4 -0.9",steps/step5_supply_graph/outputs/event_study_supplier_incident.csv
+Nordic Q4 2026 (h=2),Chain,GRi / GR / CH forecast (USDm),208.9 / 222.4 / 212.2,point GRi (F26); GR and CH pre-registered (F22); each includes the incident's Q4 term -0.9. Encompassing: CH beta +3.16 t +2.6; GR beta +1.31 t +3.6,outputs/forecast_next_quarter.csv; steps/step7_forecast/outputs/q4_prereg_log.csv
+Logitech Q2 FY27,Mechanism,tier identity: sell-in = sell-through + d(channel inventory); channel at target,10.9,Q1 FY27 sell-through YoY (%) carried to Q2,logitech_quarterly.csv sellthrough gap
+Logitech Q2 FY27,Chain,chain forecast (USDm),1315.7,vs guide-anchored 1221.9,chain_forecast.py
+Logitech Q2 FY27,Limitations,weight on the chain (F29: guide only at h1; inverse-MSE 0.23 is a diagnostic),0.0,same 5 guided quarters: chain RMSE 23m vs guide 13m (chain over all 14 quarters incl. the 2023-24 turn: 51m),chain_logitech_walkforward.csv
+Logitech Q2 FY27,Chain,chain contribution to the forecast (USDm),0.0,0 (F29); the three hand-set lines were removed (F5),
+GN Q3 2026,Chain,Gaming organic vs Logitech Gaming YoY (same quarter; Logitech reports first),-0.17,n 17; below the 0.5 bar: not used,chain_gn_readacross.csv
+GN Q3 2026,Chain,Enterprise organic vs TD Synnex Endpoint billings YoY (same quarter),0.21,n 15; below the 0.5 bar: not used,chain_gn_readacross.csv
+GN Q3 2026,Mechanism,Enterprise distributor drain (step 3 channel call),in the organic assumption,"H2 'positive organic' needs the drain to end; kept in the bottom-up, not a separate term",steps/step3_inventory_mechanism/outputs/channel_call.csv

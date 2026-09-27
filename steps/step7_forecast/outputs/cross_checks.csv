@@ -1,0 +1,41 @@
+print,metric,point,low,high,check,kind,value,gap_vs_point,inside_band,tests,source
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"distributed-lag regression on Logitech (consumer only, no guide)",method,229.8,-8.2,True,Lag,step 6 regression.json
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"chain as reasoned, nothing fitted (CH)",method,224.5,-13.5,False,Lag + Mechanism + Attribution,chain_terms.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,point + step 3 channel call (mid),method,242.2,4.2,True,Mechanism,step 3 channel_call.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,distributors turn to building (channel state),scenario,221.0,-17.0,False,Mechanism,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,supply shortage (D24: lead time > 26 weeks),scenario,232.7,-5.3,True,Mechanism,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,F16 pooled with peers (pre-registered challenger),challenger,232.6,-5.4,True,Limitations,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,rule before F30: supply-shortage quarters counted as lean (pre-registered challenger),challenger,235.3,-2.7,True,Structural breaks,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"state from Nordic's own words (F31, pre-registered)",scenario,237.0,-1.0,True,Structural breaks,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"rule before F20 (F14): Nordic's own normal-regime beat, unpooled",scenario,236.2,-1.8,True,Structural breaks,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,small customers pull in beyond the guide (+1.0; F19 keeps the line at 0),scenario,239.0,1.0,True,Mechanism,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,supplier incident not in Nordic's guide (net -> gross),scenario,232.7,-5.3,True,Lag + Attribution,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,supplier incident all in Nordic's guide (net -> 0),scenario,239.8,1.8,True,Lag + Attribution,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,distributors restock at step 3's high,scenario,252.6,14.6,False,Mechanism,scenarios.csv
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,rule 'last quarter' (walk-forward RMSE 2.06 pts),method,53.1,0.0,True,Model limitations,margin_model.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,rule '4-quarter mean' (walk-forward RMSE 2.63 pts),method,52.3,-0.8,True,Model limitations,margin_model.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,rule 'same quarter last year' (walk-forward RMSE 4.33 pts),method,51.9,-1.2,True,Model limitations,margin_model.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,rule 'guide + mean past error (last 4)' (walk-forward RMSE 2.08 pts),method,52.3,-0.8,True,Model limitations,margin_model.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,rule 'guide + mean past error (all)' (walk-forward RMSE 2.31 pts),method,51.3,-1.8,False,Model limitations,margin_model.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,"channel-excess term applied (F25, not adopted)",challenger,52.8,-0.3,True,Mechanism,margin_excess.py
+Nordic Q3 2026,Gross margin (%),53.1,51.9,54.3,company guide: a floor of 50% (the point is above it),guide,50.0,-3.1,,guide,Nordic Q2 report
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,company guide midpoint,guide,1202.5,-23.8,True,guide,Q1 FY27 release
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,"tier identity: sell-in = sell-through (chain forecast, weight 0.0 in the point)",method,1315.7,89.4,False,Mechanism,chain_terms.csv
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,post-guide FX term applied (F27; not applied: fails walk-forward),challenger,1227.7,1.4,True,FX rule,fx_update.py
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,chain at its inverse-MSE weight (diagnostic since F29),scenario,1248.2,21.9,True,Limitations,scenarios.csv
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,chain weight incl. implied guides at the 2023-25 turns,scenario,1271.2,44.9,True,Limitations,scenarios.csv
+Logitech Q2 FY27,Gross margin non-GAAP (%),45.3,44.1,46.5,company guide on the call,guide,44.0,-1.3,False,guide,Q1 FY27 call
+Logitech Q2 FY27,Gross margin non-GAAP (%),45.3,44.1,46.5,rule 'guide + mean past error' (walk-forward RMSE 0.93 pts),method,45.3,0.0,True,Model limitations,margin_model.py
+Logitech Q2 FY27,Gross margin non-GAAP (%),45.3,44.1,46.5,rule 'last quarter' (walk-forward RMSE 1.29 pts),method,44.8,-0.5,True,Model limitations,margin_model.py
+Logitech Q2 FY27,Gross margin non-GAAP (%),45.3,44.1,46.5,rule '4-quarter mean' (walk-forward RMSE 1.11 pts),method,44.2,-1.1,True,Model limitations,margin_model.py
+GN cont. ops Q3 2026,Revenue (DKKm),2247.0,2023.0,2471.0,division view (management's Enterprise / Gaming organic),method,2348.0,101.0,True,Mechanism,forecast.py
+GN cont. ops Q3 2026,Revenue (DKKm),2247.0,2023.0,2471.0,bias: no bias (guide as given),scenario,2389.0,142.0,True,Structural breaks / Model limitations,guidance_record
+GN cont. ops Q3 2026,Revenue (DKKm),2247.0,2023.0,2471.0,bias: pooled with the semiconductor peers' habit,scenario,2476.0,229.0,False,Structural breaks / Model limitations,guidance_record
+GN cont. ops Q3 2026,Revenue (DKKm),2247.0,2023.0,2471.0,"old hand-typed FX -1.5 pts (superseded, F27)",scenario,2181.2,-65.8,True,FX rule,fx_update.py
+GN cont. ops Q3 2026,Adj. EBITA margin (%),13.5,9.3,17.8,Q2 bridge (drop-through + savings + refund),method,11.6,-1.9,True,Mechanism,forecast.py
+GN cont. ops Q3 2026,Adj. EBITA margin (%),13.5,9.3,17.8,ex tariff refund,scenario,10.9,-2.6,True,one-off rule,forecast.py
+GN cont. ops Q3 2026,Adj. EBITA margin (%),13.5,9.3,17.8,Q3 share at its 2021-25 mean,scenario,14.9,1.4,True,Limitations,scenarios.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"channel composite (step 6c, pre-registered)",challenger,239.8,1.8,True,pre-registered: scored after the print,steps/step6_backtest/outputs/composite_prereg_log.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"composite with the supply-graph factor (step 6c-g, pre-registered)",challenger,238.6,0.6,True,pre-registered: scored after the print,steps/step6_backtest/outputs/composite_graph_prereg_log.csv
+Nordic Q3 2026,Revenue (USDm),238.0,224.6,251.3,"Nordic's own words as the channel state (D25, F31, pre-registered challenger)",challenger,237.0,-1.0,True,pre-registered: scored after the print,steps/step7_forecast/outputs/challenger_prereg_log.csv
+Logitech Q2 FY27,Net sales (USDm),1226.3,1172.9,1279.6,"supply-side ODM nowcast, Merry + Chicony (step 7f, F28, pre-registered)",challenger,1220.4,-5.9,True,pre-registered: scored after the print,steps/step7_forecast/outputs/logitech_odm_prereg_log.csv

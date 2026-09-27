@@ -1,0 +1,5 @@
+model,firm_quarters,downturn_quarters,oos_r2_vs_firm_mean,oos_r2_in_downturns,oos_r2_in_upturns
+pooled (no phase),443,35,-0.0088,0.0012,-0.0127
+phase intercept,443,35,-0.0059,0.0189,-0.0156
+phase-specific slopes,443,35,-0.0255,-0.0665,-0.0094
+phase intercept + slopes,443,35,-0.0253,-0.066,-0.0094

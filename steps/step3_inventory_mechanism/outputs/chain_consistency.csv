@@ -1,0 +1,6 @@
+link,elasticity,ci90
+channel: Logitech sell-in on sell-through (lag 0),0.99,
+Logitech own: purchases on sell-in (lag 0),1.56,
+Nordic consumer on Logitech purchases (lag 1),1.28,
+PRODUCT of the three links,1.97,
+DIRECT: Nordic consumer on Logitech sell-through (lag 2),1.9,"(1.160976311107358, 3.355683731994461)"

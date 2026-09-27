@@ -1,0 +1,4 @@
+slice,in_top10_evidence,mult_low,mult_mid,mult_high,basis
+logitech,step-2 attribution p10 USD 62m/yr > top-10 average USD 27.6m -> top-10 customer,0.27,1.0,1.24,low = top-10 Bluetooth YoY / Logitech sell-in YoY (2023); mid = pass-through of Logitech builds; high = Logitech purchases sd ratio (link A')
+gn,step-2 p50 USD 9m/yr < top-10 average USD 27.6m -> likely broad market or a small key account,1.0,2.46,3.92,low = pass-through (key account); high = broad-market Bluetooth YoY / Logitech sell-in YoY (2023); mid = equal odds of the two
+nordic_whole_company,n/a,2.05,2.72,6.52,"link B sd ratio, all quarters: the number the regime amplitude_multiplier describes"

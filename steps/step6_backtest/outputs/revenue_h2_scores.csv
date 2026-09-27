@@ -1,0 +1,4 @@
+window,firm_quarters,quarters,firms,rmse_model,rmse_seasonal,rmse_flat,oos_r2_vs_seasonal,quarters_won_share,top3_gain_share,top3_quarters,b_last
+all,479,49,12,10.5536,10.6399,11.5369,0.0162,0.4898,1.017,"2023Q3, 2023Q4, 2025Q4",1.8005
+2014-2019,206,24,11,7.8232,7.8128,8.2949,-0.0027,0.4167,,"2016Q2, 2015Q1, 2018Q3",0.8479
+2020-2026,273,25,12,12.2164,12.3521,13.4765,0.0218,0.56,0.9796,"2023Q3, 2023Q4, 2025Q4",1.8005

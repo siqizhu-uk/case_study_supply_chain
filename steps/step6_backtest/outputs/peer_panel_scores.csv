@@ -1,0 +1,6 @@
+model,firm_quarters,quarters,firms,rmse_pts,oos_r2_vs_firm_mean,oos_r2_vs_past4,dm_p_by_quarter,quarters_won_share,top3_quarters_gain_share,top3_quarters
+benchmark_firm_mean,511,50,12,3.7559,0.0,0.0811,,0.0,,"2014Q1, 2014Q2, 2014Q3"
+benchmark_past4,511,50,12,3.9181,-0.0882,0.0,0.1173,0.36,,"2020Q3, 2021Q1, 2020Q4"
+FE + industry channel,452,43,12,3.8166,-0.0059,0.0672,0.7157,0.5349,,"2020Q3, 2023Q4, 2024Q2"
+FE + own forward DIO,442,42,12,3.8129,-0.0052,0.0622,0.5198,0.4524,,"2017Q1, 2017Q3, 2018Q4"
+FE + both,442,42,12,3.8201,-0.009,0.0587,0.5693,0.5238,,"2023Q4, 2017Q1, 2023Q3"

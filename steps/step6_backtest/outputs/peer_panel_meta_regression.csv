@@ -1,0 +1,8 @@
+sample,covariate,n_firms,gamma0,gamma1,gamma1_se,gamma1_t,tau_resid,peer_range,nordic_scenario,nordic_x,nordic_slope_pred,pi90_low,pi90_high,extrapolated
+all peers,distribution_share,12,0.5768,-0.5302,1.062,-0.4993,0.0,0.20-0.84,low,0.42,0.3541,-0.0611,0.7694,False
+all peers,distribution_share,12,0.5768,-0.5302,1.062,-0.4993,0.0,0.20-0.84,mid,0.47,0.3276,-0.0262,0.6815,False
+all peers,distribution_share,12,0.5768,-0.5302,1.062,-0.4993,0.0,0.20-0.84,high,0.55,0.2852,-0.0001,0.5705,False
+Nordic-like peers,distribution_share,11,0.0108,0.327,1.3816,0.2367,0.0,0.37-0.84,low,0.42,0.1482,-0.3945,0.6908,False
+Nordic-like peers,distribution_share,11,0.0108,0.327,1.3816,0.2367,0.0,0.37-0.84,mid,0.47,0.1645,-0.2846,0.6137,False
+Nordic-like peers,distribution_share,11,0.0108,0.327,1.3816,0.2367,0.0,0.37-0.84,high,0.55,0.1907,-0.1366,0.518,False
+Nordic-like peers (exploratory),consumer_share,9,0.2663,-0.6267,1.3673,-0.4584,0.0,0.09-0.44,nordic,0.6,-0.1097,-0.9145,0.695,True

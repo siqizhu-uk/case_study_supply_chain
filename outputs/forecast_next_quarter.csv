@@ -1,0 +1,6 @@
+quarter,horizon,model,role,is_point,point,low,high,yoy_pct,lag_low_point,lag_high_point,wf_rmse_usdm,wf_n,rmse_ratio_vs_GB,guide_prev_q_mid,event_usdm
+2026Q4,2,G,benchmark: Q3 guide x last year's Q3->Q4 step,False,216.93,162.27,271.59,27.98,,,42.65,14,0.97,230.0,-0.87
+2026Q4,2,GB,benchmark + real-time beat,False,221.14,164.63,277.64,30.46,,,44.09,14,1.0,230.0,-0.87
+2026Q4,2,GR,"challenger (was the point until F26): sell-through proxy through the whole graph, unreported quarter by persistence (F24)",False,222.41,186.46,258.36,31.22,222.41,219.78,28.03,9,0.59,230.0,-0.87
+2026Q4,2,GRg,"sensitivity only: GR with Logitech's raw guide for the unreported quarter (F24; GRi uses guide x (1+past beat), F26)",False,216.27,179.59,252.94,27.59,211.54,219.67,28.44,9,0.6,230.0,-0.87
+2026Q4,2,GRi,point (F26): Logitech sell-in through the Nordic -> ODM -> Logitech segment; unreported quarter = our bias-corrected sell-in forecast,True,208.9,176.2,241.6,23.24,208.02,213.69,25.42,9,0.54,230.0,-0.87

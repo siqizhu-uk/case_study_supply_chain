@@ -1,0 +1,269 @@
+<svg viewBox="0 0 900 600" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial" font-size="12"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs><path class="sg-edge" d="M450.0 80 L558.0 132" fill="none" stroke="#BA7517" stroke-width="3.62" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M450.0 80 L558.0 132" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E01  nordic → nordic_distributors  (all)  ·  edge grade C
+share: dist — grade B (collected) · flow 47.0% of the Nordic slice
+  source: Nordic AR2025 IFRS 8.34 (two distributors 30% + 12% = audited floor 42%); NCR Sep-2025 ~40% broad market
+lag: 4-8 weeks (mid 6) — grade C (collected)
+  source: Arrow 61 d / Avnet 75 d inventory (2026Q2 XBRL) = 8.7-10.6 weeks cover &gt;= high 8 (Little&#x27;s law bound; all-vendor proxy)
+inventory: Nordic&#x27;s distributors (Arrow / Avnet / Future / Digi-Key) (disclosed: verbal)
+note: Nordic books revenue when the distributor restocks"><title>E01  nordic → nordic_distributors  (all)  ·  edge grade C
+share: dist — grade B (collected) · flow 47.0% of the Nordic slice
+  source: Nordic AR2025 IFRS 8.34 (two distributors 30% + 12% = audited floor 42%); NCR Sep-2025 ~40% broad market
+lag: 4-8 weeks (mid 6) — grade C (collected)
+  source: Arrow 61 d / Avnet 75 d inventory (2026Q2 XBRL) = 8.7-10.6 weeks cover &gt;= high 8 (Little&#x27;s law bound; all-vendor proxy)
+inventory: Nordic&#x27;s distributors (Arrow / Avnet / Future / Digi-Key) (disclosed: verbal)
+note: Nordic books revenue when the distributor restocks</title></path><path class="sg-edge" d="M450.0 80 L198.0 132" fill="none" stroke="#BA7517" stroke-width="2.73" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M450.0 80 L198.0 132" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E02  nordic → odm  (logitech)  ·  edge grade C
+share: (1-dist)*(1-suzhou) — grade B (collected) · flow 32.2% of the Nordic slice
+  source: dist (B) x Logitech 10-K FY26 in-house ~35% (A)
+lag: 4-10 weeks (mid 7) — grade C (collected)
+  source: nRF54 / nRF5340 factory lead time 16 weeks (Future / Avnet via findchips 2026-09-22) &gt;= high 10: upper bound on the wait for a direct order
+inventory: ODM / EMS component kit (disclosed: no)
+note: direct shipment to Logitech&#x27;s contract manufacturers"><title>E02  nordic → odm  (logitech)  ·  edge grade C
+share: (1-dist)*(1-suzhou) — grade B (collected) · flow 32.2% of the Nordic slice
+  source: dist (B) x Logitech 10-K FY26 in-house ~35% (A)
+lag: 4-10 weeks (mid 7) — grade C (collected)
+  source: nRF54 / nRF5340 factory lead time 16 weeks (Future / Avnet via findchips 2026-09-22) &gt;= high 10: upper bound on the wait for a direct order
+inventory: ODM / EMS component kit (disclosed: no)
+note: direct shipment to Logitech&#x27;s contract manufacturers</title></path><path class="sg-edge" d="M450.0 80 L297.0 224" fill="none" stroke="#BA7517" stroke-width="1.84" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M450.0 80 L297.0 224" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E03  nordic → logitech  (logitech)  ·  edge grade C
+share: (1-dist)*suzhou — grade B (collected) · flow 17.3% of the Nordic slice
+  source: dist (B) x Logitech 10-K FY26 in-house ~35% (A)
+lag: 8-19.5 weeks (mid 13) — grade C (collected)
+  source: bounded: nRF54 factory lead time 16 wk (findchips) + Logitech inventory cover 9.5 wk (XBRL; raw materials alone ~ logi_rm_weeks) = 25.5 wk &gt;= high
+inventory: Logitech Suzhou raw materials + finished goods (inside Logitech&#x27;s inventory) (disclosed: yes)
+note: direct shipment to Logitech&#x27;s own plant (Suzhou builds ~35% by value): Nordic invoices Logitech itself, which matters for attribution (IFRS 8.34 ceiling)"><title>E03  nordic → logitech  (logitech)  ·  edge grade C
+share: (1-dist)*suzhou — grade B (collected) · flow 17.3% of the Nordic slice
+  source: dist (B) x Logitech 10-K FY26 in-house ~35% (A)
+lag: 8-19.5 weeks (mid 13) — grade C (collected)
+  source: bounded: nRF54 factory lead time 16 wk (findchips) + Logitech inventory cover 9.5 wk (XBRL; raw materials alone ~ logi_rm_weeks) = 25.5 wk &gt;= high
+inventory: Logitech Suzhou raw materials + finished goods (inside Logitech&#x27;s inventory) (disclosed: yes)
+note: direct shipment to Logitech&#x27;s own plant (Suzhou builds ~35% by value): Nordic invoices Logitech itself, which matters for attribution (IFRS 8.34 ceiling)</title></path><path class="sg-edge" d="M473.0 152.0 L283.0 152.0" fill="none" stroke="#BA7517" stroke-width="2.51" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M473.0 152.0 L283.0 152.0" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E04  nordic_distributors → odm  (logitech)  ·  edge grade C
+share: 1-suzhou — grade A (collected) · flow 28.6% of the Nordic slice
+  source: Logitech 10-K FY26: &#x27;approximately 35% of our total production of products based on value&#x27;
+lag: 0-2 weeks (mid 1) — grade C (collected)
+  source: authorized-distributor stock on nRF52 deep (42k units Digi-Key 2026-09-22): orders filled from stock within 0-2 weeks
+inventory: ODM / EMS component kit (disclosed: no)
+note: ODM buys from distributor stock"><title>E04  nordic_distributors → odm  (logitech)  ·  edge grade C
+share: 1-suzhou — grade A (collected) · flow 28.6% of the Nordic slice
+  source: Logitech 10-K FY26: &#x27;approximately 35% of our total production of products based on value&#x27;
+lag: 0-2 weeks (mid 1) — grade C (collected)
+  source: authorized-distributor stock on nRF52 deep (42k units Digi-Key 2026-09-22): orders filled from stock within 0-2 weeks
+inventory: ODM / EMS component kit (disclosed: no)
+note: ODM buys from distributor stock</title></path><path class="sg-edge" d="M558.0 172 L297.0 224" fill="none" stroke="#BA7517" stroke-width="1.72" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M558.0 172 L297.0 224" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E05  nordic_distributors → logitech  (logitech)  ·  edge grade C
+share: suzhou — grade A (collected) · flow 15.4% of the Nordic slice
+  source: Logitech 10-K FY26 (35% in-house)
+lag: 4-11.5 weeks (mid 7) — grade C (collected)
+  source: bounded: distributor stock 0-2 wk + Logitech inventory cover 9.5 wk (XBRL) = 11.5 wk &gt;= high
+inventory: Logitech Suzhou raw materials + finished goods (disclosed: yes)"><title>E05  nordic_distributors → logitech  (logitech)  ·  edge grade C
+share: suzhou — grade A (collected) · flow 15.4% of the Nordic slice
+  source: Logitech 10-K FY26 (35% in-house)
+lag: 4-11.5 weeks (mid 7) — grade C (collected)
+  source: bounded: distributor stock 0-2 wk + Logitech inventory cover 9.5 wk (XBRL) = 11.5 wk &gt;= high
+inventory: Logitech Suzhou raw materials + finished goods (disclosed: yes)</title></path><path class="sg-edge" d="M450.0 80 L198.0 132" fill="none" stroke="#BA7517" stroke-width="1.01" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M450.0 80 L198.0 132" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E06  nordic → odm  (gn)  ·  edge grade C
+share: 1-dist — grade B (collected) · flow 3.4% of the Nordic slice
+  source: dist (B); GN AR2025: &#x27;in-house as well as outsourced manufacturing&#x27;
+lag: 4-10 weeks (mid 7) — grade C (collected)
+  source: as E02
+inventory: GN&#x27;s ODMs (disclosed: no)"><title>E06  nordic → odm  (gn)  ·  edge grade C
+share: 1-dist — grade B (collected) · flow 3.4% of the Nordic slice
+  source: dist (B); GN AR2025: &#x27;in-house as well as outsourced manufacturing&#x27;
+lag: 4-10 weeks (mid 7) — grade C (collected)
+  source: as E02
+inventory: GN&#x27;s ODMs (disclosed: no)</title></path><path class="sg-edge" d="M473.0 152.0 L283.0 152.0" fill="none" stroke="#BA7517" stroke-width="0.98" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M473.0 152.0 L283.0 152.0" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E07  nordic_distributors → odm  (gn)  ·  edge grade C
+share: 1 — grade C (collected) · flow 3.1% of the Nordic slice
+  source: GN AR2025 names outsourced manufacturing (share of GN built outside not quantified)
+lag: 0-2 weeks (mid 1) — grade C (collected)
+  source: as E04
+inventory: GN&#x27;s ODMs (disclosed: no)"><title>E07  nordic_distributors → odm  (gn)  ·  edge grade C
+share: 1 — grade C (collected) · flow 3.1% of the Nordic slice
+  source: GN AR2025 names outsourced manufacturing (share of GN built outside not quantified)
+lag: 0-2 weeks (mid 1) — grade C (collected)
+  source: as E04
+inventory: GN&#x27;s ODMs (disclosed: no)</title></path><path class="sg-edge" d="M198.0 172 L297.0 224" fill="none" stroke="#BA7517" stroke-width="4.45" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M198.0 172 L297.0 224" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E08  odm → logitech  (logitech)  ·  edge grade C
+share: 1 — grade A (collected) · flow 60.8% of the Nordic slice
+  source: identity: every ODM-built Logitech unit is sold by Logitech
+lag: 6-9.5 weeks (mid 8) — grade C (collected)
+  source: Logitech inventory 66 d (2026Q2) = 9.5 weeks cover: high capped from 12 to 9.5 (Little&#x27;s law bound); cross-check: Merry (ODM, grade C identity) monthly revenue leads Logitech sales by 0-3 months, peak at 2 (corr 0.74, n~20; step 5c, G18)
+inventory: Logitech finished goods (disclosed: yes)
+note: OEM S&amp;OP cycle 4-8 weeks plus finished-goods buffer"><title>E08  odm → logitech  (logitech)  ·  edge grade C
+share: 1 — grade A (collected) · flow 60.8% of the Nordic slice
+  source: identity: every ODM-built Logitech unit is sold by Logitech
+lag: 6-9.5 weeks (mid 8) — grade C (collected)
+  source: Logitech inventory 66 d (2026Q2) = 9.5 weeks cover: high capped from 12 to 9.5 (Little&#x27;s law bound); cross-check: Merry (ODM, grade C identity) monthly revenue leads Logitech sales by 0-3 months, peak at 2 (corr 0.74, n~20; step 5c, G18)
+inventory: Logitech finished goods (disclosed: yes)
+note: OEM S&amp;OP cycle 4-8 weeks plus finished-goods buffer</title></path><path class="sg-edge" d="M198.0 172 L576.0 224" fill="none" stroke="#BA7517" stroke-width="1.19" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M198.0 172 L576.0 224" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E10  odm → gn  (gn)  ·  edge grade C
+share: 1 — grade A (collected) · flow 6.5% of the Nordic slice
+  source: identity
+lag: 6-12 weeks (mid 8) — grade C (collected)
+  source: bounded: GN continuing-ops inventory ~161 d = 23 wk (Q2 2026; Hearing in assets held for sale); Audio segment 2021-2023
+inventory: GN finished goods (disclosed: yes)"><title>E10  odm → gn  (gn)  ·  edge grade C
+share: 1 — grade A (collected) · flow 6.5% of the Nordic slice
+  source: identity
+lag: 6-12 weeks (mid 8) — grade C (collected)
+  source: bounded: GN continuing-ops inventory ~161 d = 23 wk (Q2 2026; Hearing in assets held for sale); Audio segment 2021-2023
+inventory: GN finished goods (disclosed: yes)</title></path><path class="sg-edge" d="M297.0 264 L405.0 408" fill="none" stroke="#BA7517" stroke-width="1.81" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M297.0 264 L405.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E11  logitech → amazon  (logitech)  ·  edge grade C
+share: amazon — grade A (collected) · flow 16.8% of the Nordic slice
+  source: Logitech 10-K customer concentration (config/supply_graph_weights.csv)
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (weeks on hand not disclosed) (disclosed: no)
+note: direct: retailer reorders weekly against a 2-6 week target"><title>E11  logitech → amazon  (logitech)  ·  edge grade C
+share: amazon — grade A (collected) · flow 16.8% of the Nordic slice
+  source: Logitech 10-K customer concentration (config/supply_graph_weights.csv)
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (weeks on hand not disclosed) (disclosed: no)
+note: direct: retailer reorders weekly against a 2-6 week target</title></path><path class="sg-edge" d="M297.0 264 L612.0 316" fill="none" stroke="#BA7517" stroke-width="1.59" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M297.0 264 L612.0 316" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E12  logitech → ingram  (logitech)  ·  edge grade C
+share: ingram — grade A (collected) · flow 13.1% of the Nordic slice
+  source: Logitech 10-K customer concentration
+lag: 3-5.8 weeks (mid 4) — grade C (collected)
+  source: Ingram inventory 40.5 d (2026Q2) = 5.8 weeks cover: high capped from 6 (Little&#x27;s law bound; all-vendor proxy)
+inventory: Ingram Micro (total DIO only; no vendor split) (disclosed: partial)"><title>E12  logitech → ingram  (logitech)  ·  edge grade C
+share: ingram — grade A (collected) · flow 13.1% of the Nordic slice
+  source: Logitech 10-K customer concentration
+lag: 3-5.8 weeks (mid 4) — grade C (collected)
+  source: Ingram inventory 40.5 d (2026Q2) = 5.8 weeks cover: high capped from 6 (Little&#x27;s law bound; all-vendor proxy)
+inventory: Ingram Micro (total DIO only; no vendor split) (disclosed: partial)</title></path><path class="sg-edge" d="M297.0 264 L810.0 316" fill="none" stroke="#BA7517" stroke-width="1.47" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M297.0 264 L810.0 316" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E13  logitech → tdsynnex  (logitech)  ·  edge grade C
+share: tdsynnex — grade A (collected) · flow 11.2% of the Nordic slice
+  source: Logitech 10-K customer concentration
+lag: 3-6 weeks (mid 4) — grade C (collected)
+  source: TD Synnex inventory 69.5 d (2026Q2) = 9.9 weeks cover &gt;= high 6 (all-vendor proxy)
+inventory: TD Synnex (total DIO only) (disclosed: partial)"><title>E13  logitech → tdsynnex  (logitech)  ·  edge grade C
+share: tdsynnex — grade A (collected) · flow 11.2% of the Nordic slice
+  source: Logitech 10-K customer concentration
+lag: 3-6 weeks (mid 4) — grade C (collected)
+  source: TD Synnex inventory 69.5 d (2026Q2) = 9.9 weeks cover &gt;= high 6 (all-vendor proxy)
+inventory: TD Synnex (total DIO only) (disclosed: partial)</title></path><path class="sg-edge" d="M297.0 264 L135.0 408" fill="none" stroke="#BA7517" stroke-width="3.94" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M297.0 264 L135.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E14  logitech → other_retail  (logitech)  ·  edge grade C
+share: 1-amazon-ingram-tdsynnex — grade A (collected) · flow 52.4% of the Nordic slice
+  source: residual of the 10-K customer shares
+lag: 4.5 weeks at p = 0.5 (3.75 at p = 0.25, 5.25 at p = 0.75; mid lags), p-mixed (G20): (1 − p) × direct retail 2-4 (mid 3) + p × the Ingram / TD Synnex route; p = share of the unnamed 10-K residual sold through smaller distributors — grade C (collected)
+  source: bounded: Best Buy inventory 77 d = 11 wk (XBRL 10-Q, all categories; Walmart 41 d, Target 69 d as context). Lag = (1-p) x this direct-retail lag + p x the Ingram / TD Synnex downstream lag, p = logi_residual_via_dist (share of the unnamed 10-K residual sold through smaller distributors; evidence steps/step5_supply_graph/config/logi_residual_evidence.csv, G20)
+inventory: other retailers / e-tailers / logitech.com (disclosed: no)
+note: big-box retail and direct-to-consumer"><title>E14  logitech → other_retail  (logitech)  ·  edge grade C
+share: 1-amazon-ingram-tdsynnex — grade A (collected) · flow 52.4% of the Nordic slice
+  source: residual of the 10-K customer shares
+lag: 4.5 weeks at p = 0.5 (3.75 at p = 0.25, 5.25 at p = 0.75; mid lags), p-mixed (G20): (1 − p) × direct retail 2-4 (mid 3) + p × the Ingram / TD Synnex route; p = share of the unnamed 10-K residual sold through smaller distributors — grade C (collected)
+  source: bounded: Best Buy inventory 77 d = 11 wk (XBRL 10-Q, all categories; Walmart 41 d, Target 69 d as context). Lag = (1-p) x this direct-retail lag + p x the Ingram / TD Synnex downstream lag, p = logi_residual_via_dist (share of the unnamed 10-K residual sold through smaller distributors; evidence steps/step5_supply_graph/config/logi_residual_evidence.csv, G20)
+inventory: other retailers / e-tailers / logitech.com (disclosed: no)
+note: big-box retail and direct-to-consumer</title></path><path class="sg-edge" d="M612.0 356 L135.0 408" fill="none" stroke="#BA7517" stroke-width="1.57" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M612.0 356 L135.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E15  ingram → other_retail  (all)  ·  edge grade D
+share: 1-dist_to_amazon — grade D (not_public) · flow 12.8% of the Nordic slice
+  source: Ingram and TD Synnex report no customer above 10%; Amazon does not name suppliers
+lag: 1-2.5 weeks (mid 2) — grade C (collected)
+  source: bounded: CDW inventory 17 d = 2.4 wk (XBRL; IT resellers ship largely from distributor stock): the assumed 2-4 wk was cut to 1-2.5
+inventory: resellers and e-tailers (disclosed: no)
+note: IT distributor sells on to resellers"><title>E15  ingram → other_retail  (all)  ·  edge grade D
+share: 1-dist_to_amazon — grade D (not_public) · flow 12.8% of the Nordic slice
+  source: Ingram and TD Synnex report no customer above 10%; Amazon does not name suppliers
+lag: 1-2.5 weeks (mid 2) — grade C (collected)
+  source: bounded: CDW inventory 17 d = 2.4 wk (XBRL; IT resellers ship largely from distributor stock): the assumed 2-4 wk was cut to 1-2.5
+inventory: resellers and e-tailers (disclosed: no)
+note: IT distributor sells on to resellers</title></path><path class="sg-edge" d="M612.0 356 L405.0 408" fill="none" stroke="#BA7517" stroke-width="0.89" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M612.0 356 L405.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E16  ingram → amazon  (all)  ·  edge grade D
+share: dist_to_amazon — grade D (not_public) · flow 1.4% of the Nordic slice
+  source: not public: Ingram and TD Synnex each state no customer above 10% of net sales (Amazon &lt; 10% of their total, which does not bound peripherals); Amazon names no suppliers
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)
+note: the cross link the brief implies; size unknown"><title>E16  ingram → amazon  (all)  ·  edge grade D
+share: dist_to_amazon — grade D (not_public) · flow 1.4% of the Nordic slice
+  source: not public: Ingram and TD Synnex each state no customer above 10% of net sales (Amazon &lt; 10% of their total, which does not bound peripherals); Amazon names no suppliers
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)
+note: the cross link the brief implies; size unknown</title></path><path class="sg-edge" d="M810.0 356 L135.0 408" fill="none" stroke="#BA7517" stroke-width="1.47" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M810.0 356 L135.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E17  tdsynnex → other_retail  (all)  ·  edge grade D
+share: 1-dist_to_amazon — grade D (not_public) · flow 11.1% of the Nordic slice
+  source: as E15
+lag: 1-2.5 weeks (mid 2) — grade C (collected)
+  source: bounded: CDW inventory 17 d = 2.4 wk (XBRL; IT resellers ship largely from distributor stock): the assumed 2-4 wk was cut to 1-2.5
+inventory: resellers and e-tailers (disclosed: no)"><title>E17  tdsynnex → other_retail  (all)  ·  edge grade D
+share: 1-dist_to_amazon — grade D (not_public) · flow 11.1% of the Nordic slice
+  source: as E15
+lag: 1-2.5 weeks (mid 2) — grade C (collected)
+  source: bounded: CDW inventory 17 d = 2.4 wk (XBRL; IT resellers ship largely from distributor stock): the assumed 2-4 wk was cut to 1-2.5
+inventory: resellers and e-tailers (disclosed: no)</title></path><path class="sg-edge" d="M810.0 356 L405.0 408" fill="none" stroke="#BA7517" stroke-width="0.87" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M810.0 356 L405.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E18  tdsynnex → amazon  (all)  ·  edge grade D
+share: dist_to_amazon — grade D (not_public) · flow 1.2% of the Nordic slice
+  source: as E16
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)"><title>E18  tdsynnex → amazon  (all)  ·  edge grade D
+share: dist_to_amazon — grade D (not_public) · flow 1.2% of the Nordic slice
+  source: as E16
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)</title></path><path class="sg-edge" d="M576.0 264 L405.0 408" fill="none" stroke="#BA7517" stroke-width="0.84" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M576.0 264 L405.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E19  gn → amazon  (gn)  ·  edge grade C
+share: gn_amazon — grade C (collected) · flow 0.7% of the Nordic slice
+  source: bounded by filing: GN AR2025 names only one customer above 10% (a distributor), so Amazon &lt; 10% of group revenue = &lt; DKK 1,678m = &lt; 17.5% of continuing ops (cap on gn_amazon); the value itself is assumed
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)
+note: SteelSeries / Jabra consumer"><title>E19  gn → amazon  (gn)  ·  edge grade C
+share: gn_amazon — grade C (collected) · flow 0.7% of the Nordic slice
+  source: bounded by filing: GN AR2025 names only one customer above 10% (a distributor), so Amazon &lt; 10% of group revenue = &lt; DKK 1,678m = &lt; 17.5% of continuing ops (cap on gn_amazon); the value itself is assumed
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Amazon inventory 36 d = 5.2 wk (XBRL 10-Q, all categories)
+inventory: Amazon (disclosed: no)
+note: SteelSeries / Jabra consumer</title></path><path class="sg-edge" d="M576.0 264 L612.0 316" fill="none" stroke="#BA7517" stroke-width="0.87" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M576.0 264 L612.0 316" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E20  gn → ingram  (gn)  ·  edge grade C
+share: gn_distrib/2 — grade C (collected) · flow 1.1% of the Nordic slice
+  source: GN AR2025: &#x27;One distributor mainly in Enterprise comprises more than 10% of the group&#x27;s total revenue amounting to DKK 2001 million&#x27; = 21% of continuing ops (floor for gn_distrib); which distributor and the Ingram / TD split are not disclosed
+lag: 3-5.8 weeks (mid 4) — grade C (collected)
+  source: as E12
+inventory: Ingram Micro (disclosed: partial)
+note: Jabra Enterprise"><title>E20  gn → ingram  (gn)  ·  edge grade C
+share: gn_distrib/2 — grade C (collected) · flow 1.1% of the Nordic slice
+  source: GN AR2025: &#x27;One distributor mainly in Enterprise comprises more than 10% of the group&#x27;s total revenue amounting to DKK 2001 million&#x27; = 21% of continuing ops (floor for gn_distrib); which distributor and the Ingram / TD split are not disclosed
+lag: 3-5.8 weeks (mid 4) — grade C (collected)
+  source: as E12
+inventory: Ingram Micro (disclosed: partial)
+note: Jabra Enterprise</title></path><path class="sg-edge" d="M576.0 264 L810.0 316" fill="none" stroke="#BA7517" stroke-width="0.87" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M576.0 264 L810.0 316" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E21  gn → tdsynnex  (gn)  ·  edge grade C
+share: gn_distrib/2 — grade C (collected) · flow 1.1% of the Nordic slice
+  source: as E20
+lag: 3-6 weeks (mid 4) — grade C (collected)
+  source: as E13
+inventory: TD Synnex (disclosed: partial)"><title>E21  gn → tdsynnex  (gn)  ·  edge grade C
+share: gn_distrib/2 — grade C (collected) · flow 1.1% of the Nordic slice
+  source: as E20
+lag: 3-6 weeks (mid 4) — grade C (collected)
+  source: as E13
+inventory: TD Synnex (disclosed: partial)</title></path><path class="sg-edge" d="M576.0 264 L135.0 408" fill="none" stroke="#BA7517" stroke-width="1.01" stroke-opacity="0.85" stroke-dasharray="7 3" marker-end="url(#ah)"/><path class="sg-hit" d="M576.0 264 L135.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E22  gn → other_retail  (gn)  ·  edge grade C
+share: 1-gn_amazon-gn_distrib — grade C (collected) · flow 3.6% of the Nordic slice
+  source: residual of E19-E21
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Best Buy inventory 77 d = 11 wk (XBRL 10-Q, all categories; Walmart 41 d, Target 69 d as context)
+inventory: resellers and retailers (disclosed: no)
+note: GN reports sell-in vs sell-out verbally"><title>E22  gn → other_retail  (gn)  ·  edge grade C
+share: 1-gn_amazon-gn_distrib — grade C (collected) · flow 3.6% of the Nordic slice
+  source: residual of E19-E21
+lag: 2-4 weeks (mid 3) — grade C (collected)
+  source: bounded: Best Buy inventory 77 d = 11 wk (XBRL 10-Q, all categories; Walmart 41 d, Target 69 d as context)
+inventory: resellers and retailers (disclosed: no)
+note: GN reports sell-in vs sell-out verbally</title></path><path class="sg-edge" d="M405.0 448 L270.0 500" fill="none" stroke="#185FA5" stroke-width="2.01" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M405.0 448 L270.0 500" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E23  amazon → consumers  (all)  ·  edge grade A
+share: 1 — grade A (collected) · flow 20.1% of the Nordic slice
+  source: identity (sell-out)
+lag: 0-0 weeks (mid 0) — grade A (collected)
+  source: identity
+inventory: none (end demand) (disclosed: no)
+note: sell-out: the demand change enters here"><title>E23  amazon → consumers  (all)  ·  edge grade A
+share: 1 — grade A (collected) · flow 20.1% of the Nordic slice
+  source: identity (sell-out)
+lag: 0-0 weeks (mid 0) — grade A (collected)
+  source: identity
+inventory: none (end demand) (disclosed: no)
+note: sell-out: the demand change enters here</title></path><path class="sg-edge" d="M135.0 448 L270.0 500" fill="none" stroke="#185FA5" stroke-width="5.59" stroke-opacity="0.85" marker-end="url(#ah)"/><path class="sg-hit" d="M135.0 448 L270.0 500" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E24  other_retail → consumers  (all)  ·  edge grade A
+share: 1 — grade A (collected) · flow 79.9% of the Nordic slice
+  source: identity (sell-out)
+lag: 0-0 weeks (mid 0) — grade A (collected)
+  source: identity
+inventory: none (end demand) (disclosed: no)"><title>E24  other_retail → consumers  (all)  ·  edge grade A
+share: 1 — grade A (collected) · flow 79.9% of the Nordic slice
+  source: identity (sell-out)
+lag: 0-0 weeks (mid 0) — grade A (collected)
+  source: identity
+inventory: none (end demand) (disclosed: no)</title></path><path d="M450.0 80 L405.0 408" fill="none" stroke="#7F77DD" stroke-width="1" stroke-dasharray="2 3" marker-end="url(#ah)"/><path class="sg-hit" d="M450.0 80 L405.0 408" fill="none" stroke="transparent" stroke-width="14" pointer-events="stroke" style="cursor:pointer" data-tip="E25  nordic → amazon  (amazon_devices)  ·  edge grade D
+share: n/a — grade C (collected)
+  source: NCR Sep-2025 names Amazon among Nordic&#x27;s major customers (Echo / Kindle / remotes): Amazon&#x27;s second role, as a device OEM
+lag: n/a — grade D
+  source: no demand series for Amazon&#x27;s devices
+inventory: Amazon&#x27;s device EMS (disclosed: no)
+note: same entity as the retailer: a consumer-electronics shock reaches Nordic through Amazon twice; not propagated (no device demand series)"><title>E25  nordic → amazon  (amazon_devices)  ·  edge grade D
+share: n/a — grade C (collected)
+  source: NCR Sep-2025 names Amazon among Nordic&#x27;s major customers (Echo / Kindle / remotes): Amazon&#x27;s second role, as a device OEM
+lag: n/a — grade D
+  source: no demand series for Amazon&#x27;s devices
+inventory: Amazon&#x27;s device EMS (disclosed: no)
+note: same entity as the retailer: a consumer-electronics shock reaches Nordic through Amazon twice; not propagated (no device demand series)</title></path><rect x="365.0" y="40" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="450.0" y="64.0" text-anchor="middle" fill="#222">Nordic Semiconductor</text><rect x="113.0" y="132" width="170" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 3"/><text x="198.0" y="156.0" text-anchor="middle" fill="#222">ODMs / EMS</text><rect x="473.0" y="132" width="170" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 3"/><text x="558.0" y="156.0" text-anchor="middle" fill="#222">Component distributors</text><rect x="212.0" y="224" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="297.0" y="248.0" text-anchor="middle" fill="#222">Logitech (incl. own Suzhou plant)</text><rect x="491.0" y="224" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="576.0" y="248.0" text-anchor="middle" fill="#222">GN Store Nord</text><rect x="527.0" y="316" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="612.0" y="340.0" text-anchor="middle" fill="#222">Ingram Micro</text><rect x="725.0" y="316" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="810.0" y="340.0" text-anchor="middle" fill="#222">TD Synnex</text><rect x="50.0" y="408" width="170" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 3"/><text x="135.0" y="432.0" text-anchor="middle" fill="#222">Other retail / DTC</text><rect x="320.0" y="408" width="170" height="40" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/><text x="405.0" y="432.0" text-anchor="middle" fill="#222">Amazon (retailer; device OEM)</text><rect x="185.0" y="500" width="170" height="40" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 3"/><text x="270.0" y="524.0" text-anchor="middle" fill="#222">End demand (sell-out)</text><text x="20" y="580" fill="#444">lag support (colour):</text><line x1="140" y1="576" x2="165" y2="576" stroke="#185FA5" stroke-width="3"/><text x="170" y="580" fill="#444">A/B</text><line x1="200" y1="576" x2="225" y2="576" stroke="#BA7517" stroke-width="3"/><text x="230" y="580" fill="#444">C bound only</text><line x1="310" y1="576" x2="335" y2="576" stroke="#888780" stroke-width="3"/><text x="340" y="580" fill="#444">D none</text><text x="410" y="580" fill="#444">share support (line):</text><line x1="530" y1="576" x2="555" y2="576" stroke="#444" stroke-width="2"/><text x="560" y="580" fill="#444">A/B</text><line x1="590" y1="576" x2="615" y2="576" stroke="#444" stroke-width="2" stroke-dasharray="7 3"/><text x="620" y="580" fill="#444">C/D</text><text x="680" y="580" fill="#444">width = flow</text></svg>

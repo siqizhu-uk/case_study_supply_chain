@@ -1,0 +1,13 @@
+basis,route,p5,p50,p95
+info delay (signal - physical),Amazon direct,4.27,6.97,9.4
+info delay (signal - physical),all routes (flow-weighted),4.82,7.8,10.48
+info delay (signal - physical),other retail direct,4.78,7.69,10.43
+info delay (signal - physical),via Ingram / TD Synnex,5.19,8.44,11.45
+physical,Amazon direct,14.63,17.11,19.39
+physical,all routes (flow-weighted),16.34,18.82,20.98
+physical,other retail direct,16.17,18.66,21.1
+physical,via Ingram / TD Synnex,17.88,20.14,22.34
+signal,Amazon direct,20.76,23.98,27.32
+signal,all routes (flow-weighted),22.73,26.25,29.93
+signal,other retail direct,22.4,26.09,30.13
+signal,via Ingram / TD Synnex,24.53,28.51,32.5

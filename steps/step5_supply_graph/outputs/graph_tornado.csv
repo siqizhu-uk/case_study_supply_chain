@@ -1,0 +1,28 @@
+input,grade,low_weeks,high_weeks,swing_weeks,base_weeks
+lag: E08 odm→logitech,C,16.52,20.42,3.9,18.96
+lag: E14 logitech→other_retail,C,17.58,20.59,3.01,18.96
+lag: E01 nordic→nordic_distributors,C,17.55,20.37,2.82,18.96
+lag: E02 nordic→odm,C,17.83,20.08,2.25,18.96
+lag: E03 nordic→logitech,C,17.83,20.08,2.25,18.96
+lag: E05 nordic_distributors→logitech,C,18.42,19.65,1.23,18.96
+share: logi_residual_via_dist,D,18.56,19.35,0.79,18.96
+lag: E04 nordic_distributors→odm,C,18.67,19.24,0.57,18.96
+lag: E12 logitech→ingram,C,18.69,19.22,0.52,18.96
+lag: E10 odm→gn,C,18.7,19.22,0.52,18.96
+lag: E11 logitech→amazon,C,18.7,19.21,0.5,18.96
+lag: E13 logitech→tdsynnex,C,18.73,19.18,0.45,18.96
+lag: E06 nordic→odm,C,18.83,19.08,0.24,18.96
+lag: E15 ingram→other_retail,C,18.83,19.04,0.22,18.96
+share: suzhou,A,19.05,18.86,0.19,18.96
+lag: E17 tdsynnex→other_retail,C,18.84,19.03,0.19,18.96
+lag: E22 gn→other_retail,C,18.9,19.01,0.11,18.96
+share: dist_to_amazon,D,18.93,18.99,0.07,18.96
+share: gn_distrib,C,18.93,18.99,0.06,18.96
+lag: E07 nordic_distributors→odm,C,18.92,18.99,0.06,18.96
+lag: E20 gn→ingram,C,18.93,18.98,0.05,18.96
+lag: E21 gn→tdsynnex,C,18.93,18.98,0.05,18.96
+lag: E16 ingram→amazon,C,18.93,18.98,0.04,18.96
+lag: E18 tdsynnex→amazon,C,18.94,18.97,0.04,18.96
+lag: E19 gn→amazon,C,18.95,18.96,0.02,18.96
+share: dist,B,18.96,18.96,0.0,18.96
+share: gn_amazon,C,18.96,18.96,0.0,18.96

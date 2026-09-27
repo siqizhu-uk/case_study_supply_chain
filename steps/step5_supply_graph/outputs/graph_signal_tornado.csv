@@ -1,0 +1,26 @@
+input,grade,low_weeks,high_weeks,base_weeks,swing_weeks
+info delay: oem_sop (4 edges),D,23.26,29.76,26.51,6.5
+info delay: weekly_replenishment (12 edges),D,24.22,28.8,26.51,4.58
+physical lag: E08 odm→logitech,C,24.08,27.98,26.51,3.9
+physical lag: E14 logitech→other_retail,C,25.14,28.15,26.51,3.01
+physical lag: E01 nordic→nordic_distributors,C,25.1,27.92,26.51,2.82
+physical lag: E02 nordic→odm,C,25.38,27.64,26.51,2.25
+physical lag: E03 nordic→logitech,C,25.38,27.64,26.51,2.25
+info delay: nordic_dist_reorder (1 edges),D,25.49,27.53,26.51,2.04
+info delay: odm_mrp (6 edges),D,25.51,27.51,26.51,2.0
+physical lag: E05 nordic_distributors→logitech,C,25.97,27.2,26.51,1.23
+physical lag: E04 nordic_distributors→odm,C,26.23,26.8,26.51,0.57
+physical lag: E12 logitech→ingram,C,26.25,26.77,26.51,0.52
+physical lag: E10 odm→gn,C,26.25,26.77,26.51,0.52
+physical lag: E11 logitech→amazon,C,26.26,26.76,26.51,0.5
+physical lag: E13 logitech→tdsynnex,C,26.29,26.74,26.51,0.45
+physical lag: E06 nordic→odm,C,26.39,26.63,26.51,0.24
+physical lag: E15 ingram→other_retail,C,26.38,26.6,26.51,0.22
+physical lag: E17 tdsynnex→other_retail,C,26.4,26.59,26.51,0.19
+physical lag: E22 gn→other_retail,C,26.46,26.57,26.51,0.11
+physical lag: E07 nordic_distributors→odm,C,26.48,26.54,26.51,0.06
+physical lag: E20 gn→ingram,C,26.49,26.53,26.51,0.05
+physical lag: E21 gn→tdsynnex,C,26.49,26.53,26.51,0.05
+physical lag: E16 ingram→amazon,C,26.49,26.53,26.51,0.04
+physical lag: E18 tdsynnex→amazon,C,26.49,26.53,26.51,0.04
+physical lag: E19 gn→amazon,C,26.5,26.52,26.51,0.02

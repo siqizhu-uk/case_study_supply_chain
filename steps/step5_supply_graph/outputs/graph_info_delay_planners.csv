@@ -1,0 +1,5 @@
+planner,review_weeks_mid,alpha_mid,formula_low,formula_mid,formula_high,range_low,range_high,grade,smoothing_only_mid,source
+weekly_replenishment,1.0,0.5,0.993,1.5,2.53,0.0,3.0,D,1.0,"retailers (Amazon, big-box, resellers) and IT distributors reorder weekly against a weeks-on-hand target from a POS-driven forecast; weekly alpha 0.33-0.67 (textbook 0.1-0.3 is for slow, noisy items)"
+oem_sop,4.33,0.8,2.165,3.247,5.052,0.0,6.495,D,1.082,"brand's monthly S&OP (consensus demand plan -> build plan to the ODM / own plant); the monthly plan re-anchors on the latest sell-in, alpha 0.6-1.0 per month"
+odm_mrp,2.0,1.0,0.5,1.0,1.0,0.0,2.0,D,0.0,"ODM / EMS (and the brand's own plant) run MRP on the brand's build plan, weekly to bi-weekly buckets; no own smoothing (alpha 1: it explodes the plan)"
+nordic_dist_reorder,4.33,1.0,1.0,2.165,3.247,0.0,4.33,D,0.0,Nordic's distributors (Arrow / Avnet / Future / Digi-Key) reorder monthly (bi-weekly at the low end) on POS / backlog

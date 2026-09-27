@@ -1,0 +1,21 @@
+train_window,factor,lag,prior_sign,why,n,corr_full_sample,slope_full_sample,sign_matches_prior,wf_n,wf_first,wf_rmse,naive_rmse,mean_rmse,oos_r2_vs_naive,guided_n,guided_rmse_model,guided_rmse_guide
+all (2021Q1-),pc_shipments_idc_yoy,0,1,mice / keyboards / webcams are bought with PCs,21,0.893,1.63,True,10,2024Q1,12.887,4.488,2.81,-7.246,5,14.244,1.787
+all (2021Q1-),pc_shipments_gartner_yoy,0,1,"same, second source",20,0.783,1.78,True,8,2024Q2,20.253,4.459,3.117,-19.629,4,21.07,1.683
+all (2021Q1-),bestbuy_computing_comp,1,1,US retail sell-out of the category Logitech sits in,21,0.861,1.557,True,10,2024Q1,8.063,4.488,2.81,-2.228,5,5.217,1.787
+all (2021Q1-),bestbuy_ce_comp,1,1,headsets / speakers sell-out,21,0.728,0.949,True,10,2024Q1,13.35,4.488,2.81,-7.848,5,9.6,1.787
+all (2021Q1-),census_electronics_retail_yoy,0,1,US electronics store sales (broad),22,0.506,0.822,True,10,2024Q1,6.199,4.488,2.81,-0.908,5,3.483,1.787
+all (2021Q1-),tdsynnex_endpoint_billings_yoy,0,1,enterprise endpoint demand at the IT distributor,15,0.623,0.818,True,7,2024Q4,4.911,3.432,2.528,-1.048,5,2.843,1.787
+all (2021Q1-),tdsynnex_inventory_days_change,0,-1,distributor already full -> fewer orders,22,0.107,0.573,False,10,2024Q1,4.176,4.488,2.81,0.134,5,2.603,1.787
+all (2021Q1-),ingram_inventory_days_change,1,-1,"same, Ingram (reports after Logitech)",15,0.191,0.515,False,7,2024Q4,11.083,3.432,2.528,-9.432,5,10.335,1.787
+all (2021Q1-),logitech_sellthrough_minus_sellin,1,1,channel draining -> sell-in catches up,20,-0.163,-0.586,False,10,2024Q1,14.872,4.488,2.81,-9.981,5,11.325,1.787
+all (2021Q1-),logitech_sales_yoy_last_quarter,1,1,persistence (this is also the naive benchmark),21,0.853,0.501,True,10,2024Q1,8.838,4.488,2.81,-2.878,5,7.313,1.787
+post-COVID (2022Q3-),pc_shipments_idc_yoy,0,1,mice / keyboards / webcams are bought with PCs,21,0.893,1.63,True,8,2024Q3,5.702,3.864,10.325,-1.177,5,5.508,1.787
+post-COVID (2022Q3-),pc_shipments_gartner_yoy,0,1,"same, second source",20,0.783,1.78,True,6,2024Q4,4.332,3.701,9.927,-0.37,4,2.788,1.683
+post-COVID (2022Q3-),bestbuy_computing_comp,1,1,US retail sell-out of the category Logitech sits in,21,0.861,1.557,True,8,2024Q3,6.775,3.864,10.325,-2.074,5,2.2,1.787
+post-COVID (2022Q3-),bestbuy_ce_comp,1,1,headsets / speakers sell-out,21,0.728,0.949,True,8,2024Q3,6.503,3.864,10.325,-1.832,5,4.587,1.787
+post-COVID (2022Q3-),census_electronics_retail_yoy,0,1,US electronics store sales (broad),22,0.506,0.822,True,8,2024Q3,7.502,3.864,10.325,-2.768,5,6.12,1.787
+post-COVID (2022Q3-),tdsynnex_endpoint_billings_yoy,0,1,enterprise endpoint demand at the IT distributor,15,0.623,0.818,True,7,2024Q4,4.911,3.432,9.763,-1.048,5,2.843,1.787
+post-COVID (2022Q3-),tdsynnex_inventory_days_change,0,-1,distributor already full -> fewer orders,22,0.107,0.573,False,8,2024Q3,9.605,3.864,10.325,-5.178,5,8.953,1.787
+post-COVID (2022Q3-),ingram_inventory_days_change,1,-1,"same, Ingram (reports after Logitech)",15,0.191,0.515,False,7,2024Q4,11.083,3.432,9.763,-9.432,5,10.335,1.787
+post-COVID (2022Q3-),logitech_sellthrough_minus_sellin,1,1,channel draining -> sell-in catches up,20,-0.163,-0.586,False,8,2024Q3,10.54,3.864,10.325,-6.44,5,10.813,1.787
+post-COVID (2022Q3-),logitech_sales_yoy_last_quarter,1,1,persistence (this is also the naive benchmark),21,0.853,0.501,True,8,2024Q3,5.436,3.864,10.325,-0.979,5,2.503,1.787
