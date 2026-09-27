@@ -1,4 +1,5 @@
 from __future__ import annotations
+import os
 from pathlib import Path
 import yaml
 
@@ -24,7 +25,9 @@ def step_outputs(name: str) -> Path:
 
 
 def load_config(path: Path | str | None = None) -> dict:
-    p = Path(path) if path else CONFIG_PATH
+    """The assumptions: `path`, else the variant run_all was given (--config sets CASE_STUDY_CONFIG, so every module in
+    the run reads the same file), else config/model.yaml."""
+    p = Path(path) if path else Path(os.environ.get("CASE_STUDY_CONFIG") or CONFIG_PATH)
     with open(p) as f:
         return yaml.safe_load(f)
 

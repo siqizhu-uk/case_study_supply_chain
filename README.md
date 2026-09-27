@@ -18,7 +18,7 @@ python scripts/serve.py       # dashboard with the live sandbox: http://127.0.0.
 ```
 
 Python 3.10+. `./run.sh` is `pip install -r requirements.txt`, then `python scripts/run_all.py`, then `pytest -q`
-(300 tests). The model reads only committed CSVs, so nothing is downloaded: the data collection is done once and its
+(301 tests). The model reads only committed CSVs, so nothing is downloaded: the data collection is done once and its
 results are in `pipelines/*/data/`. The source documents behind the quote checks (~1 GB of filings and PDFs) are not
 in the repo; each check's result is recorded in `audit/verification_ledger.csv` and shown as "recorded, document not
 cached". `./run.sh --refresh-data` re-downloads and re-validates every source (slow the first time).

@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from datetime import datetime
 import sys
 from pathlib import Path
@@ -55,6 +56,8 @@ def main(argv=None) -> int:
     ap.add_argument("--config", default=None, help="alternative YAML (default config/model.yaml)")
     ap.add_argument("--no-dashboard", action="store_true")
     a = ap.parse_args(argv)
+    if a.config:                                    # every module that loads the config in this run reads the variant
+        os.environ["CASE_STUDY_CONFIG"] = str(Path(a.config).resolve())
     cfg = load_config(a.config)
     _progress("step 1 · filing confidence; data and the tier panel")
     step1 = run_step1()                       # filing confidence table (steps/step1_filing_confidence/outputs)

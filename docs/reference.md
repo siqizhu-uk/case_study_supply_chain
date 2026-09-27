@@ -17,7 +17,7 @@ pip install -r requirements.txt                          # pandas, numpy, pyyaml
 python scripts/run_all.py                                # ~10 seconds: steps 1-7 → outputs/ and steps/*/outputs/
 open deliverables/dashboard.html                              # monitoring view (single self-contained file)
 python scripts/serve.py                                  # results page, one tab per step: http://127.0.0.1:8765 (updates itself after each re-run)
-pytest -q                                                # 300 tests, ~2 min
+pytest -q                                                # 301 tests, ~2 min
 ```
 
 `./run.sh` does all three. Python ≥ 3.10; the model itself needs no network (it reads `pipelines/A_company_financials/data/raw/*.csv`).

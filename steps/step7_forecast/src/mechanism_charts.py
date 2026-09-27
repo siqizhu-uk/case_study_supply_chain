@@ -203,14 +203,23 @@ def logitech_bridge(d: dict) -> None:
 
 
 def gn_bridge(d: dict) -> None:
+    """GN's build-up for either method in config forecast.gn_2026Q3.method: the guide-error model (FY guide + own August
+    miss -> H2 organic) or the division view (Enterprise and Gaming organic growth from config)."""
     g = d["gn"]
-    base = float(g["base_q3_2025"]["total"])
-    h2 = float(g["guidance_anchor"]["h2_organic_pct"])
+    b = g["base_q3_2025"]
+    base = float(b["total"])
     fx = float(g["organic_assumptions"]["fx_pts"])
-    org = base * h2 / 100
-    fxv = base * (1 + h2 / 100) * fx / 100
-    steps = [("Q3 2025 revenue (continuing ops)", base, True), (f"H2 organic {h2:+.2f}% (FY guide + own August miss, less H1)", org, False),
-             (f"FX {fx:+.2f} pts (ECB rates since the guide, F27)", fxv, False), ("point forecast", float(g["point"]), True)]
+    if g.get("guidance_anchor"):
+        h2 = float(g["guidance_anchor"]["h2_organic_pct"])
+        organic = [(f"H2 organic {h2:+.2f}% (FY guide + own August miss, less H1)", base * h2 / 100, False)]
+    else:
+        oa = g["organic_assumptions"]
+        e, gm = float(oa["enterprise"]["mid"]), float(oa["gaming"]["mid"])
+        organic = [(f"Enterprise organic {e:+.1f}% (division view)", float(b["enterprise"]) * e / 100, False),
+                   (f"Gaming organic {gm:+.1f}% (division view)", float(b["gaming"]) * gm / 100, False)]
+    grown = base + sum(v for _, v, _ in organic)
+    steps = [("Q3 2025 revenue (continuing ops)", base, True), *organic,
+             (f"FX {fx:+.2f} pts (ECB rates since the guide, F27)", grown * fx / 100, False), ("point forecast", float(g["point"]), True)]
     _bridge(steps, (float(g["low"]), float(g["high"])), None, "GN Q3 2026 revenue build-up (DKK m)", "DKK m", "gn_revenue_bridge", 0)
 
 
