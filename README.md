@@ -1,9 +1,7 @@
 # Supply-chain signal model — Nordic Semiconductor ← Logitech / GN ← Ingram / TD Synnex / Amazon
 
 **Start here:** [Investment note (2 pages)](deliverables/investment_note.md) ·
-[Dashboard](deliverables/dashboard.html): one self-contained HTML file. On its GitHub page click **Download raw file**
-(the ⬇ icon), then double-click the saved file: it opens in any browser, no install. GitHub cannot display it as a page
-([screenshots of every tab](#the-dashboard)) ·
+**[Dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)**: opens in the browser, no install ([what each tab shows](#the-dashboard)) ·
 [Source documents](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing) (optional, 413 MB, only to re-check quotes offline)
 
 A runnable model of the wireless-peripherals chain. It ingests public data for the five companies, builds the
@@ -14,7 +12,7 @@ Nordic Q3 2026, Logitech Q2 FY27 and GN Q3 2026. Public data only.
 ## Run it (about 4 minutes, no network)
 
 ```bash
-git clone <this repo> && cd case_study
+git clone https://github.com/siqizhu-uk/case_study_supply_chain.git && cd case_study_supply_chain
 ./run.sh                      # installs requirements, runs the model from the committed data, runs the tests
 python scripts/serve.py       # dashboard with the live sandbox: http://127.0.0.1:8765/dashboard
 ```
@@ -46,11 +44,12 @@ The quote checks then re-read the source text instead of showing "recorded, docu
 
 ## The dashboard
 
-No install needed to look at it: `deliverables/dashboard.html` is one self-contained file (charts embedded). Download it
-(Download raw file on its GitHub page) and open it in any browser, or see the screenshots below. The Analysis tab
+No install needed to look at it: **[open the dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)** (GitHub Pages serves `deliverables/dashboard.html`, one
+self-contained file with every chart embedded), or see the screenshots below. The Analysis tab
 answers the brief question by question; the investment note gives the forecasts and a short version of each answer. Every number on it is rewritten by each run. To use the **sandbox** in
 Predict (edit an assumption, re-run the model, see the six forecasts move), serve it: `python scripts/serve.py`, then
-http://127.0.0.1:8765/dashboard. A tab opens directly with its name after `#`, e.g. `dashboard.html#predict`.
+http://127.0.0.1:8765/dashboard (the hosted page cannot run the model). A tab opens directly with its name after `#`,
+e.g. `dashboard.html#predict`.
 
 | Tab | What it answers |
 |---|---|
