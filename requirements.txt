@@ -1,4 +1,4 @@
-pandas>=2.0
+pandas>=2.0,<3        # pandas 3 reads text columns as a strict string type; the model is tested on 2.x
 numpy>=1.24
 scipy>=1.10         # walk-forward tests (step 6)
 pyyaml>=6.0

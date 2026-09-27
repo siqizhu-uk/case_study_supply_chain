@@ -137,6 +137,8 @@ def mix_lags(e: pd.DataFrame, params: dict) -> pd.DataFrame:
         if f"{col}_mid" not in e:
             continue
         lag = {sc: dict(zip(e["edge_id"], pd.to_numeric(e[f"{col}_{sc}"], errors="coerce"))) for sc in ("low", "mid", "high")}
+        for sc in ("low", "mid", "high"):                               # pandas 3 reads these as str: allow the float written below
+            out[f"{col}_{sc}"] = out[f"{col}_{sc}"].astype(object)
         for i, r in e[e["lag_mix"].astype(str).str.len() > 0].iterrows():
             name, routes = r["lag_mix"].split(":")
             for sc in ("low", "mid", "high"):

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-shot run from the committed data (no network, ~2 min): install deps, run the model, run the tests.
+# One-shot run from the committed data (no network for the model; about 4-5 min with the tests): install deps, run the model, run the tests.
 #   ./run.sh                 model + tests
 #   ./run.sh --refresh-data  first re-fetch and re-validate every data pipeline (SEC / company sites; ~1 GB, slow on first run)
 #   ./run.sh --live          take a fresh distributor-stock reading for the live gauge (Nordic channel tightness), then run
