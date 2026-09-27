@@ -89,10 +89,6 @@ Screenshots of the committed run (`python scripts/screenshot_dashboard.py` retak
 
 ![Data & time series tab](docs/screenshots/data.png)
 
-**Audit**: every piece of evidence as a closed box.
-
-![Audit tab](docs/screenshots/audit.png)
-
 ## Change an assumption
 
 All numbers live in `config/model.yaml`; the Python contains none. Edit, re-run `python scripts/run_all.py`, and
