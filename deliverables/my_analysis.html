@@ -135,7 +135,7 @@ tr.hl td{background:var(--accent-soft)}
 
 <main>
 <h1>Nordic chain analysis</h1>
-<p class="lede">Nordic ← Logitech / GN ← Ingram / TD Synnex / Amazon. Every section runs in the same order: reasoning → formula → data used → data support → assumption / limit → future work → figures, and names the file behind each number. Numbers are those of the 27 September 2026 run; the headline numbers are checked against the outputs by <code>tests/test_analysis_page.py</code>. Evidence grades: <span class="g gA">A</span>audited <span class="g gB">B</span>company-reported, unaudited <span class="g gC">C</span>verbal or proxy (quote-checked) <span class="g gD">D</span>estimate or undisclosed.</p>
+<p class="lede">Nordic ← Logitech / GN ← Ingram / TD Synnex / Amazon. Every section runs in the same order: reasoning → formula → data used → data support → assumption / limit → future work → figures, and names the file behind each number. Numbers are those of the 28 September 2026 run (Nordic's record extended to 2019Q1, F32); the headline numbers are checked against the outputs by <code>tests/test_analysis_page.py</code>. Evidence grades: <span class="g gA">A</span>audited <span class="g gB">B</span>company-reported, unaudited <span class="g gC">C</span>verbal or proxy (quote-checked) <span class="g gD">D</span>estimate or undisclosed.</p>
 
 <!-- ======================================================= LAG -->
 <section class="mod" id="lag">
@@ -269,7 +269,7 @@ tr.hl td{background:var(--accent-soft)}
 <tr><td>Backlog</td><td>orders placed but not delivered pile up</td><td>few orders; the backlog falls</td></tr>
 <tr><td>Lead time</td><td>lengthens</td><td>short</td></tr>
 <tr><td>Price</td><td>rises; Nordic's GM reached 60%</td><td>—</td></tr>
-<tr><td>What sets revenue</td><td>supply: Nordic knows how many wafers it will get, so its guide is accurate (+1.9% beat on average)</td><td>demand: rush orders still arrive inside the quarter, so it beats by more (+4.2% on average over the quarters that were neither building nor short)</td></tr>
+<tr><td>What sets revenue</td><td>supply: Nordic knows how many wafers it will get, so its guide is accurate (+2.4% beat on average, n 8)</td><td>demand: rush orders still arrive inside the quarter, so it beats by more (+5.2% on average over the 15 quarters since 2019 that were neither building nor short; +3.1% without the two 2020 quarters whose guide was raised before the print, P130)</td></tr>
 </table></div>
 <p>Own inventory was tried as a second signal; at the industry level it cannot separate the two, so it is only supporting evidence.</p>
 <p class="use"><b>In the forecast:</b> one term only, last quarter's state adjusting the expected guide error (F16, F20, F30). No restocking amount is added: management had seen the refill orders when it guided.</p>
@@ -329,7 +329,7 @@ tr.hl td{background:var(--accent-soft)}
 <tr><td>The channel <b>level</b> is unobservable</td><td>Logitech's channel weeks are anchored on "at target" statements, ±0.7 weeks; GN has a gap but no anchor, so direction only; ODM kitting is not disclosed at all (<span class="g gD">D</span> assumption 2–8 weeks)</td></tr>
 <tr><td>Retail and distributor inventories cover all categories</td><td>peripherals are a small part, so cover is only a cap</td></tr>
 <tr><td>State thresholds were set after seeing 2020–26 (disclosed, D22)</td><td>and a building channel is flagged a quarter late</td></tr>
-<tr><td>The shortage split was decided after seeing the data (F30)</td><td>Nordic uses the 7 quarters that were neither building nor short (+4.24%) instead of 14 (+3.08%); point 235.3 → 238.0; the walk-forward is no better (5.31 vs 5.20 pts); the rule before it is pre-registered and scored on 22 Oct</td></tr>
+<tr><td>The shortage split was decided after seeing the data (F30)</td><td>Nordic uses the 15 quarters that were neither building nor short (+5.23%) instead of 23 (+4.26%); point 238.0 → 240.2; the walk-forward is no better (5.54 vs 5.24 pts); the rule before it is pre-registered and scored on 22 Oct</td></tr>
 <tr><td>One shortage and one destock</td><td>every state effect rests on one cycle</td></tr>
 </table></div></div></div>
 
@@ -499,7 +499,7 @@ tr.hl td{background:var(--accent-soft)}
 <div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
 <tr><th>Assumption / limit</th><th>Consequence</th></tr>
 <tr><td>Four years hold one full cycle</td><td>most tests have low power (3 quarters since the tariffs)</td></tr>
-<tr><td>State thresholds set after seeing 2020–26 (D22)</td><td>a build-up is flagged a quarter late; the shortage split was decided after seeing the data and the back-test does not support it (5.31 vs 5.20)</td></tr>
+<tr><td>State thresholds set after seeing 2020–26 (D22)</td><td>a build-up is flagged a quarter late; the shortage split was decided after seeing the data and the back-test does not support it (5.54 vs 5.24)</td></tr>
 <tr><td>75% of the supplier incident assumed in the guide (<span class="g gD">D</span> judgment)</td><td>range 0 to −7.1m</td></tr>
 </table></div></div></div>
 
@@ -582,7 +582,7 @@ tr.hl td{background:var(--accent-soft)}
 <div class="blk"><div class="lbl">data support</div><div class="body"><div class="tbl"><table>
 <tr><th>Test (out of sample)</th><th>Best</th><th>Against</th><th>Reading</th></tr>
 <tr><td>Guided quarter (h=1), Nordic revenue</td><td>guide × beat 7.4m</td><td>lag models 3.9–5.9× worse; chain weight 0</td><td>the guide holds the order book</td></tr>
-<tr><td>Nordic guide error (h=1)</td><td>pooled with peers 5.05 pts</td><td>rule in use 5.31, before the shortage split 5.20, past-4 beat 5.41, guide midpoint 5.55, Nordic's own words as the state (F31) 5.66</td><td>the rule in use is not the best out of sample: the shortage split was decided after seeing the data, and its habit rests on 7 quarters</td></tr>
+<tr><td>Nordic guide error (h=1)</td><td>pooled with peers 5.06 pts</td><td>rule in use 5.54, before the shortage split 5.24, past-4 beat 5.41, guide midpoint 5.55, Nordic's own words as the state (F31) 5.66</td><td>the rule in use is not the best out of sample and, with the record extended to 2019 (F32), no better than the guide midpoint: its base group now holds the two 2020 demand-shock quarters (+10.6%, +19.4% against guides raised before the print, P130), which the channel state cannot see</td></tr>
 <tr class="hl"><td>The quarter after the guide (h=2)</td><td>GRi 25.4m</td><td>0.54× the guide extrapolation (n 9; post-hoc against GR 28.0m); reasoned chain 39.4m</td><td>where the chain earns its place</td></tr>
 <tr><td>Nowcast of Logitech's unreported quarter</td><td>persistence 4.96 pts</td><td>proxy composite 5.60 (n 13); TD Synnex alone 4.49 vs 4.22 (n 8)</td><td>not adopted</td></tr>
 <tr><td>Guide-setting factor (relative optimism)</td><td>—</td><td>671 peer firm-quarters: t 0.3, out-of-sample R² −0.005</td><td>no factor predicts the misses</td></tr>
@@ -612,10 +612,10 @@ tr.hl td{background:var(--accent-soft)}
 
 <!-- ======================================================= NORDIC -->
 <section class="mod" id="nordic">
-<h2><span class="en">Nordic Semiconductor Q3 2026 · reports 22 Oct</span>Revenue 238.0m, gross margin 53.1%</h2>
+<h2><span class="en">Nordic Semiconductor Q3 2026 · reports 22 Oct</span>Revenue 240.2m, gross margin 53.1%</h2>
 <div class="kv">
-  <div><div class="k">Revenue (≈80% range)</div><div class="v">238.0m</div><div class="s">224.6–251.3 · YoY +32.9%</div></div>
-  <div><div class="k">Gross margin (ex one-offs)</div><div class="v">53.1%</div><div class="s">51.9–54.3%</div></div>
+  <div><div class="k">Revenue (≈80% range)</div><div class="v">240.2m</div><div class="s">225.2–255.3 · YoY +34.2%</div></div>
+  <div><div class="k">Gross margin (ex one-offs)</div><div class="v">53.1%</div><div class="s">52.0–54.2%</div></div>
   <div><div class="k">Company guide</div><div class="v">220–240m</div><div class="s">GM &gt; 50% (6 Aug)</div></div>
 </div>
 
@@ -626,7 +626,7 @@ tr.hl td{background:var(--accent-soft)}
     <div class="node"><b>Guide midpoint 230</b><small>220–240 (Q2 report, 6 Aug)</small></div>
   </div>
   <div class="lane"><h4>How far management will be off</h4>
-    <div class="node"><b>× (1 + 4.24%)</b><small>Nordic's <b>own</b> record (+4.2% vs the peers' +2.0%, only t 1.4, so using its own record is a judgment; F20), from the 7 quarters after a channel that was neither building nor short (F30)</small></div>
+    <div class="node"><b>× (1 + 5.23%)</b><small>Nordic's <b>own</b> record (+5.2% vs the peers' +2.0%, t 2.5; F20), from the 15 quarters since 2019 after a channel that was neither building nor short (F30, F32); +3.1% without the two 2020 quarters whose guide was raised before the print (P130)</small></div>
     <div class="node"><b>Lean now, not a shortage</b><small>lead time 16 weeks → no building or shortage effect</small></div>
   </div>
   <div class="lane"><h4>Not in the guide</h4>
@@ -634,32 +634,32 @@ tr.hl td{background:var(--accent-soft)}
     <div class="node"><b>Chain term × 0</b><small>encompassing test: the chain has no information beyond the guide</small></div>
   </div>
   <div class="lane out"><h4>Point</h4>
-    <div class="node"><b>238.0m</b><small>224.6–251.3 (≈80%)</small></div>
+    <div class="node"><b>240.2m</b><small>225.2–255.3 (≈80%)</small></div>
     <div class="node"><b>GM 53.1%</b><small>only a floor is guided → the simple rule with the lowest back-test error (F18)</small></div>
   </div>
 </div></div>
-<p class="concl"><b>Conclusion:</b> revenue 238.0m (224.6–251.3, ≈80%), +32.9% YoY; gross margin 53.1% (51.9–54.3%).</p>
+<p class="concl"><b>Conclusion:</b> revenue 240.2m (225.2–255.3, ≈80%), +34.2% YoY; gross margin 53.1% (52.0–54.2%).</p>
 </div></div>
 
 <div class="blk"><div class="lbl">formula</div><div class="body"><div class="fxs">
   <div class="fx"><h5>Revenue</h5>
-    <div class="f">230 × (1 + 4.24%) − 1.78 + 0 = 238.0</div></div>
+    <div class="f">230 × (1 + 5.23%) − 1.78 + 0 = 240.2</div></div>
   <div class="fx"><h5>Range</h5>
-    <div class="f">± 1.2816 × σ × 230, σ = √(s² + s²/n) = √(4.23² + 4.23²/7) = 4.52% → ± 13.3</div></div>
+    <div class="f">± 1.2816 × σ × 230, σ = √(s² + s²/n) = √(4.95² + 4.95²/15) = 5.11% → ± 15.1</div></div>
   <div class="fx"><h5>Expected error e</h5>
-    <div class="f">e = Nordic's mean guide error after quarters that were neither building nor short = +4.24% (n 7)</div>
-    <div class="w">guide error = actual ÷ guide midpoint − 1; after a building quarter add −7.39 pts (n 7), after a shortage quarter −2.32 pts (n 7)</div></div>
+    <div class="f">e = Nordic's mean guide error after quarters that were neither building nor short = +5.23% (n 15, 2019Q1–2026Q2)</div>
+    <div class="w">guide error = actual ÷ guide midpoint − 1; after a building quarter add −8.39 pts (n 7), after a shortage quarter −2.79 pts (n 8)</div></div>
   <div class="fx"><h5>Supplier incident, net</h5>
     <div class="f">event-study gross effect −7.1m × (1 − 75% already in the guide) = −1.78m</div></div>
   <div class="fx"><h5>Gross margin</h5>
     <div class="f">last quarter's GM ex one-offs = 53.1%</div>
-    <div class="w">range ± 1.2816 × 0.92: the rule's error over the 9 quarters of the current, hand-dated 'normal' regime (2.06 over all quarters, shown below)</div></div>
+    <div class="w">range ± 1.2816 × 0.87: the rule's error over the 10 quarters of the current, hand-dated 'normal' regime (2.36 over all quarters, shown below)</div></div>
 </div></div></div>
 
 <div class="blk"><div class="lbl">data used</div><div class="body"><div class="tbl"><table>
 <tr><th>Data</th><th>Value</th><th>Source</th><th>Grade</th></tr>
 <tr><td>Q3 guide</td><td>revenue 220–240m; GM &gt; 50%</td><td>Nordic Q2 2026 report (6 Aug)</td><td class="g-col"><span class="g gB">B</span></td></tr>
-<tr><td>Guides and actuals</td><td>21 quarters, 2021Q2–2026Q2</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
+<tr><td>Guides and actuals</td><td>30 quarters, 2019Q1–2026Q2 (2019Q1–2021Q1 added 28 Sep from the Oslo Børs reports, F32; the 2017–18 half-year guides are a separate record, P133)</td><td>quarterly reports</td><td class="g-col"><span class="g gB">B</span></td></tr>
 <tr><td>Channel state</td><td>Microchip distributor days; Nordic backlog 2020Q4–2023Q1; live lead time 16 weeks</td><td>10-Q / 10-K; quarterly reports; findchips</td><td class="g-col"><span class="g gA">A</span> <span class="g gB">B</span> <span class="g gD">D</span></td></tr>
 <tr><td>Supplier incident</td><td>≈20m in Q2 FY27, up to 200m in Oct–Dec</td><td>Logitech call</td><td class="g-col"><span class="g gC">C</span></td></tr>
 <tr><td>Incident propagation</td><td>lead time 14 weeks; Nordic content 3.63%</td><td>supply graph (step 5d)</td><td></td></tr>
@@ -668,40 +668,42 @@ tr.hl td{background:var(--accent-soft)}
 
 <div class="blk"><div class="lbl">data support</div><div class="body">
 <div class="tbl"><table>
-<tr><th>Cross-check (10 of 13 inside the range)</th><th>Type</th><th class="num">Revenue</th><th>vs range</th></tr>
-<tr class="hl"><td>Point</td><td>main model</td><td class="num">238.0</td><td>224.6–251.3</td></tr>
-<tr><td>Rule before the shortage split</td><td>challenger (pre-registered)</td><td class="num">235.3</td><td><span class="pill p-ok">inside</span></td></tr>
-<tr><td>Habit pooled with the peers (F16)</td><td>challenger (pre-registered)</td><td class="num">232.6</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><th>Cross-check (14 of 16 inside the range)</th><th>Type</th><th class="num">Revenue</th><th>vs range</th></tr>
+<tr class="hl"><td>Point</td><td>main model</td><td class="num">240.2</td><td>225.2–255.3</td></tr>
+<tr><td>Rule before the shortage split</td><td>challenger (pre-registered)</td><td class="num">238.0</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Habit pooled with the peers (F16)</td><td>challenger (pre-registered)</td><td class="num">233.4</td><td><span class="pill p-ok">inside</span></td></tr>
 <tr><td>Nordic's own words as the state (F31)</td><td>challenger (pre-registered)</td><td class="num">237.0</td><td><span class="pill p-ok">inside</span></td></tr>
-<tr><td>Channel composite</td><td>challenger (pre-registered)</td><td class="num">239.8</td><td><span class="pill p-ok">inside</span></td></tr>
-<tr><td>Composite + graph</td><td>challenger (pre-registered)</td><td class="num">238.6</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Channel composite</td><td>challenger (pre-registered)</td><td class="num">237.8</td><td><span class="pill p-ok">inside</span></td></tr>
+<tr><td>Composite + graph</td><td>challenger (pre-registered)</td><td class="num">237.6</td><td><span class="pill p-ok">inside</span></td></tr>
 <tr><td>Reasoned chain (CH)</td><td>independent method</td><td class="num">224.5</td><td><span class="pill p-bad">outside</span></td></tr>
-<tr><td>Distributors turn to building</td><td>scenario</td><td class="num">221.0</td><td><span class="pill p-bad">outside</span></td></tr>
-<tr><td>Distributors restock to step 3's high</td><td>scenario</td><td class="num">252.6</td><td><span class="pill p-bad">outside</span></td></tr>
+<tr><td>Distributors turn to building</td><td>scenario</td><td class="num">220.9</td><td><span class="pill p-bad">outside</span></td></tr>
+<tr><td>Distributors restock to step 3's high</td><td>scenario</td><td class="num">254.8</td><td><span class="pill p-ok">inside</span></td></tr>
 </table></div>
 <p class="flowcap">cross_checks.csv · challenger_prereg_log.csv · composite_prereg_log.csv (scored on 22 Oct)</p>
 <div class="tbl"><table>
 <tr><th>Gross-margin rule</th><th class="num">Walk-forward RMSE (pts)</th><th>Result</th></tr>
-<tr class="hl"><td>Last quarter</td><td class="num">2.06</td><td><span class="pill p-acc">adopted</span></td></tr>
-<tr><td>Guide + last 4 errors</td><td class="num">2.08</td><td></td></tr>
-<tr><td>Guide + all errors</td><td class="num">2.31</td><td></td></tr>
-<tr><td>4-quarter mean</td><td class="num">2.63</td><td></td></tr>
-<tr><td>Same quarter last year</td><td class="num">4.33</td><td></td></tr>
+<tr class="hl"><td>Last quarter</td><td class="num">2.36</td><td><span class="pill p-acc">adopted</span></td></tr>
+<tr><td>Guide + last 4 errors</td><td class="num">2.45</td><td></td></tr>
+<tr><td>Guide + all errors</td><td class="num">2.37</td><td></td></tr>
+<tr><td>4-quarter mean</td><td class="num">2.90</td><td></td></tr>
+<tr><td>Same quarter last year</td><td class="num">4.15</td><td></td></tr>
 <tr><td>Channel-excess term (F25)</td><td class="num">2.35 vs 2.34</td><td>not adopted: peers −0.25 pts, t −1.18</td></tr>
 </table></div>
-<p>The &gt; 50% floor has been met in 77% of quarters.</p>
+<p>The &gt; 50% floor has been met in 70% of quarters (n 30).</p>
 </div></div>
 
 <div class="blk"><div class="lbl">assumption / limit</div><div class="body"><div class="tbl"><table>
 <tr><th>Assumption / limit</th><th>Consequence</th></tr>
-<tr><td>The shortage split was decided after seeing the data (F30)</td><td>walk-forward over 14 quarters: 5.31 pts, against 5.20 before the split and 5.05 for the pooled model (best); the new habit rests on 7 quarters</td></tr>
-<tr><td>75% of the incident already in the guide (<span class="g gD">D</span> judgment)</td><td>all of it in the guide: 239.8; none: 232.7</td></tr>
-<tr><td>A turn to building</td><td>Nordic's own building effect comes from 7 quarters of one cycle; if it happens, revenue 221.0</td></tr>
+<tr><td>The shortage split was decided after seeing the data (F30)</td><td>walk-forward over 14 quarters: 5.54 pts, against 5.24 before the split and 5.06 for the pooled model (best); the habit rests on 15 quarters, 8 of them 2019–2020 (F32)</td></tr>
+<tr><td>75% of the incident already in the guide (<span class="g gD">D</span> judgment)</td><td>all of it in the guide: 242.0; none: 234.9</td></tr>
+<tr><td>A turn to building</td><td>Nordic's own building effect comes from 7 quarters of one cycle; if it happens, revenue 220.9</td></tr>
+<tr><td>Record extended to 2019Q1 (F32), rule kept as pre-stated (F33)</td><td>two limitations shown as risk flags R7–R8 on the dashboard: the channel state cannot see an end-demand shock (2020Q2–Q3 sit in the habit: +5.23% with them, +3.72% without), and the state split has no walk-forward edge over the guide midpoint (5.54 vs 5.55); no new challenger was added after seeing this</td></tr>
 <tr><td>The GM range covers GM ex one-offs only</td><td>2 of the last 9 quarters had one-offs, so a reported figure can land outside the range (P117)</td></tr>
 </table></div></div></div>
 
 <div class="blk"><div class="lbl">future work</div><div class="body"><div class="tbl"><table>
 <tr><th>What</th><th>When</th></tr>
+<tr><td>Demand-side data (the next input to build)</td><td>2020 is the case for it (R7): in Q2 and Q3 2020 end demand surged (home-office peripherals, health devices) while distributor stock read lean or normal; the channel state, a supply-chain stock, could not see it and the two quarters landed in the habit (+10.6%, +19.4%). Only an end-demand signal with public history (sell-out, retail point-of-sale) could separate a demand shock from an ordinary quarter before the print; the free proxies tried (step 5f, not_built.md section 2) have no such history</td></tr>
 <tr><td>Fill in the actual; score the new and old rules and every challenger; keep or drop the shortage split</td><td>after the 22 Oct print</td></tr>
 <tr><td>Distributor-inventory wording (W2) and lead time (W4) as pre-print signals</td><td>before the print</td></tr>
 </table></div></div></div>

@@ -1,4 +1,4 @@
 company,n,own_mean,weight_own,alpha,alpha_sd,resid_sd,pred_sd,pooled,state_adjusted,pred_expected_error,pred_state,pred_state_nordic,pred_alpha,pred_gamma_applied,pred_building_effect,pred_shortage_effect,alpha_if_state_lag_plus_1,n_not_building,n_building,n_shortage,own_state,own_building_effect,own_shortage_effect
 GN,5,-3.3,1.0,-3.3,1.655,3.701,4.055,False,False,-3.3,lean,lean,-3.3,0.0,0.0,0.0,-3.3,,,,,,
 Logitech,5,1.615,0.114,1.976,0.516,3.423,3.462,True,,1.976,lean,lean,1.976,0.0,-1.644,0.0,1.945,,,,,,
-Nordic,21,4.238,1.0,4.238,1.598,4.228,4.52,False,,4.238,lean,lean,4.238,-0.0,-7.395,-2.318,3.73,7.0,7.0,7.0,True,-7.395,-2.318
+Nordic,30,5.229,1.0,5.229,1.278,4.951,5.114,False,,5.229,lean,lean,5.229,-0.0,-8.386,-2.79,5.148,15.0,7.0,8.0,True,-8.386,-2.79

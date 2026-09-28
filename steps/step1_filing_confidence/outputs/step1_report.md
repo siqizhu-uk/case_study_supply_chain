@@ -1,4 +1,4 @@
-# Step 1 — filing confidence — 2026-09-27
+# Step 1 — filing confidence — 2026-09-28
 
 Three separate tests, every row logged in `outputs/test1_sum4q_vs_fy.csv`, `test2_restatements.csv`, `test3_adjusted_vs_reported.csv`; the fold is `outputs/confidence.csv`. Grade of the step itself: **A** (arithmetic on filings; every number verified in the cited filing text).
 
@@ -18,7 +18,7 @@ Reading: A = quarterly totals are audited-equivalent and segments unchanged; B =
 
 | company   | metric_class                     | interval       | basis                                                        | grade   | rule                                                                           | final_grade   |
 |:----------|:---------------------------------|:---------------|:-------------------------------------------------------------|:--------|:-------------------------------------------------------------------------------|:--------------|
-| nordic    | total revenue (quarterly)        | ±0.02%         | Σ4Q vs audited FY, 5 years, max |diff|                       | A       | Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent          | C             |
+| nordic    | total revenue (quarterly)        | ±0.02%         | Σ4Q vs audited FY, 7 years, max |diff|                       | A       | Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent          | C             |
 | nordic    | segment: Consumer                | ±7%            | 4 restated quarters, max |change| (CSV uses restated values) | B       | use restated values where they exist; treat pre-restatement quarters as ±this  | C             |
 | nordic    | segment: Industrial & Healthcare | ±15%           | 4 restated quarters, max |change| (CSV uses restated values) | B       | use restated values where they exist; treat pre-restatement quarters as ±this  | C             |
 | nordic    | margins (reported vs adjusted)   | up to 7.8 pts  | 2 quarters compared, max |adjusted − reported|               | C       | model the adjusted series and show the reported one beside it; widen Q4 ranges | C             |
@@ -38,6 +38,8 @@ Reading: A = quarterly totals are audited-equivalent and segments unchanged; B =
 
 | company   |   fiscal_year |   sum_4q |   audited_fy |   diff_pct | audited_basis                                        | verification                    | pass   |
 |:----------|--------------:|---------:|-------------:|-----------:|:-----------------------------------------------------|:--------------------------------|:-------|
+| nordic    |          2019 |    288.4 |        288.4 |      0     | typed from AR2019                                    | found in AR text                | True   |
+| nordic    |          2020 |    405.2 |        405.2 |      0     | typed from AR2020                                    | found in AR text                | True   |
 | nordic    |          2021 |    610.5 |        610.5 |      0     | typed from AR2022                                    | found in AR text                | True   |
 | nordic    |          2022 |    776.8 |        776.7 |      0.013 | typed from AR2022                                    | found in AR text                | True   |
 | nordic    |          2023 |    542.8 |        542.9 |     -0.018 | typed from AR2023                                    | found in AR text                | True   |

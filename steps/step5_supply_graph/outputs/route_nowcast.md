@@ -108,4 +108,4 @@ N2c components for 2026Q3 (change since the previous quarter, pts): snx_sales +6
 
 **Dated check (2026-10-27, Logitech reports 2026Q3):** fill `logitech_st_yoy_actual` (sales YoY + disclosed sell-through gap) in `route_nowcast_prereg_log.csv`; Nordic's actual for the h=2 target after its February report. The last row logged before the print is the record.
 
-Replication checks (0 = identical to step 6's own design): graph_demand_N0_vs_step6_GR_max_abs 0, graph_demand_N1_vs_step6_GRg_max_abs 0. Spec hash 18567fc427, data hash 4c34ad9eb0.
+Replication checks (0 = identical to step 6's own design): graph_demand_N0_vs_step6_GR_max_abs 0, graph_demand_N1_vs_step6_GRg_max_abs 0. Spec hash 18567fc427, data hash 24d063c9ab.

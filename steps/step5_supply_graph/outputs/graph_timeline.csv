@@ -1,5 +1,5 @@
 quarter,node,metric,value
-2020Q1,nordic,cover_weeks,
+2020Q1,nordic,cover_weeks,22.159733698195236
 2020Q1,nordic_distributors,cover_weeks,8.564285714285715
 2020Q1,logitech,cover_weeks,
 2020Q1,ingram,cover_weeks,
@@ -17,10 +17,10 @@ quarter,node,metric,value
 2020Q1,gn,channel_weeks,
 2020Q1,nordic_distributors,state,
 2020Q1,logitech,st_gap,
-2020Q1,nordic,backlog_cover,
+2020Q1,nordic,backlog_cover,1.7521367521367521
 2020Q1,all,regime,normal
 2020Q1,all,cycle_state,lean
-2020Q2,nordic,cover_weeks,
+2020Q2,nordic,cover_weeks,19.200565810735302
 2020Q2,nordic_distributors,cover_weeks,8.639999999999999
 2020Q2,logitech,cover_weeks,
 2020Q2,ingram,cover_weeks,
@@ -38,10 +38,10 @@ quarter,node,metric,value
 2020Q2,gn,channel_weeks,
 2020Q2,nordic_distributors,state,
 2020Q2,logitech,st_gap,
-2020Q2,nordic,backlog_cover,
+2020Q2,nordic,backlog_cover,2.28135593220339
 2020Q2,all,regime,normal
 2020Q2,all,cycle_state,normal
-2020Q3,nordic,cover_weeks,
+2020Q3,nordic,cover_weeks,15.199128227505406
 2020Q3,nordic_distributors,cover_weeks,7.835714285714286
 2020Q3,logitech,cover_weeks,
 2020Q3,ingram,cover_weeks,
@@ -59,10 +59,10 @@ quarter,node,metric,value
 2020Q3,gn,channel_weeks,
 2020Q3,nordic_distributors,state,
 2020Q3,logitech,st_gap,
-2020Q3,nordic,backlog_cover,
+2020Q3,nordic,backlog_cover,2.4120603015075375
 2020Q3,all,regime,supply_constrained
 2020Q3,all,cycle_state,normal
-2020Q4,nordic,cover_weeks,
+2020Q4,nordic,cover_weeks,13.472214019961024
 2020Q4,nordic_distributors,cover_weeks,7.261428571428572
 2020Q4,logitech,cover_weeks,
 2020Q4,ingram,cover_weeks,
@@ -80,7 +80,7 @@ quarter,node,metric,value
 2020Q4,gn,channel_weeks,
 2020Q4,nordic_distributors,state,
 2020Q4,logitech,st_gap,
-2020Q4,nordic,backlog_cover,
+2020Q4,nordic,backlog_cover,3.870967741935484
 2020Q4,all,regime,supply_constrained
 2020Q4,all,cycle_state,shortage
 2021Q1,nordic,cover_weeks,11.113888915598547

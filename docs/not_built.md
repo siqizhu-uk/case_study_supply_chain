@@ -26,7 +26,10 @@ One place for every build-or-buy decision. Per-source detail (URL, grade, valida
 | GN sell-out (distributors' point-of-sale by vendor from Context / GfK / Circana; Amazon rank for SteelSeries) | paid data (free-only rule), and GN's channel is mostly invisible anyway: ~35% through IT distributors, which do not report by vendor, ~10% Amazon (capped at 17.5% by GN's filing), ~55% other resellers and retail (graph edges E19-E22). With 5 August guides the gain could not be back-tested. Expected value is modest: Logitech's own disclosed sell-through gap, the same kind of data, earns only an inverse-MSE weight of 0.23 against its guide (chain RMSE 23m vs guide 13m on the same 5 quarters, step 7c), shown as a diagnostic; the forecast uses the guide method (weight 0, F29), and on 12 peers the channel adds +1.7% out-of-sample R-squared beyond the guided quarter (K4). It would matter most for GN: the guide is annual (set in August), so Aug-Oct sell-out is news the guide does not hold, and it would show whether the 8-quarter Enterprise distributor drain has ended, which GN's 'positive H2 organic' needs | GN's own record on its August guides (F17); the Enterprise distributor-drain index (step 3, verbal) in the division-view scenario |
 
 Deciding factor for all of them: none has public history, so none could be tested in the walk-forward back-test, and step 6
-shows that even the channel signals we *can* test add little to a guided quarter. They are monitoring tools, not model
+shows that even the channel signals we *can* test add little to a guided quarter. What they would add is the one thing the
+channel state cannot see: an end-demand shock. In Q2 and Q3 2020 end demand surged (home-office peripherals, health devices)
+while distributor stock read lean or normal, and the two quarters landed in Nordic's guide-error habit (+10.6%, +19.4%; risk flag
+R7, F32). A demand-side series with public history is therefore the first input to build after this case, not another channel factor. They are monitoring tools, not model
 inputs. Digi-Key / Mouser is kept as a live gauge read on demand (dashboard tab 1), not as a series.
 
 Also rejected: IPC supply-chain sentiment (report behind a form), Norwegian / Eurostat export statistics (Nordic is
@@ -34,6 +37,7 @@ fabless — its chips never cross Norwegian customs), sell-side research (paywal
 
 ## 3. Where we deliberately stopped
 
+- **Nordic's own record extended to 2019, not further, and not every series (F32, 28 Sep).** Nordic guided by half-year in 2017–18 and by quarter from the Q4 2018 report, so its quarterly record now runs 2019Q1–2026Q2 (30 guides, covering the 2018–19 destock and the 2020 demand shock) and the four half-year guides sit in a separate record (P133). Not extended: the Consumer end market before 2022 (a different taxonomy, P134; the Consumer-based lag work keeps its 2021Q2 start), Ingram Micro (private 2016–2024), TD Synnex before the Tech Data merger (SYNNEX standalone, a different business), GN's August guides before 2021 (GN Audio scope without SteelSeries; not typed), and the Q4 2016 / Q1 2017 reports (image-only PDFs; the H1 2017 guide comes from the June 2017 mid-quarter update). Intra-quarter guidance raises in 2020 are logged, not scored (P130).
 - **FCC photo census:** 38 of 81 public Logitech grants read, enough to bound Nordic's socket share (23 Nordic / 5 Telink / 2 other among legible peripherals); the rest would narrow a range that is dominated by the unknown invoicing route anyway.
 - **Transcripts:** verbal data points are hand-quoted and quote-checked (41 of 41), not mined with NLP.
 - **Factor search:** stopped after about a dozen candidates on Nordic's ~4 independent observations (step 6 decision B40); new factors should be tested on the peer panel first.

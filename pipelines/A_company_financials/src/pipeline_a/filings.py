@@ -133,7 +133,10 @@ def _in(text: str, v: float) -> bool:
         return True
     nd = 0 if v.is_integer() else 1
     target = round(v, nd)
-    return any(round(n / 1000, nd) == target for n in _numbers(text) if n >= 1000)
+    nums = _numbers(text)
+    if any(n == v for n in nums if n >= 1000):                       # printed with a space separator and decimals: '1 252.6' (P132)
+        return True
+    return any(round(n / 1000, nd) == target for n in nums if n >= 1000)
 
 
 def _later_filings(c: str, q: str) -> list[Path]:
@@ -147,13 +150,32 @@ def _later_filings(c: str, q: str) -> list[Path]:
     return [p for p in (_doc(c, k) for k in keys) if p]
 
 
+GUIDE_COLS = ("guide_low_usdm", "guide_high_usdm", "guide_gm_pct")   # published with the PREVIOUS quarter's report
+
+
 def _derived(c: str, k: str, q: str, r) -> bool:
     """Cells that are our own arithmetic or estimates, not reported figures: skipped (they cannot be 'found')."""
     if int(r.get("is_estimate", 0) or 0) == 1 and k in ("short_range_usdm", "consumer_usdm", "ind_health_usdm"):
         return True
     if c == "nordic" and k == "ind_health_usdm" and q < "2025Q1":   # Industrial + Healthcare summed by us pre-2025
         return True
+    if c == "nordic" and k == "other_tech_usdm":                    # ASIC + consulting summed by us
+        return True
     return False
+
+
+def _prev_quarter(q: str) -> str:
+    p = pd.Period(q, "Q") - 1
+    return str(p)
+
+
+def _guide_in(text: str, k: str, v: float) -> bool:
+    """A guide range bound as printed ('130-140', 'MUSD 50-55'); a margin guide typed as the midpoint of a stated range
+    ('50%-51%' -> 50.5) counts when both bounds are printed."""
+    if k == "guide_gm_pct":
+        pct = lambda x: re.search(r"(?<![\d.])" + re.escape(f"{x:g}") + r"\s?%", text) is not None   # noqa: E731  '50%', '50.5 %'
+        return pct(v) if float(v).is_integer() else (pct(v - 0.5) and pct(v + 0.5))
+    return _in(text, v)
 
 
 def verify(companies=("nordic", "gn", "logitech", "ingram", "tdsynnex")) -> pd.DataFrame:
@@ -165,13 +187,21 @@ def verify(companies=("nordic", "gn", "logitech", "ingram", "tdsynnex")) -> pd.D
             q = str(r["quarter"])
             # quarter's own document; else the annual report carrying the quarterly table (GN 2021-22, Q4s)
             pdf = _doc(c, q) or _doc(c, f"AR{q[:4]}") or _doc(c, f"AR{int(q[:4]) + 1}")
+            for k in [k for k in cols if k in GUIDE_COLS]:       # the guide for q is published with the report of q-1
+                v = r.get(k)
+                if pd.isna(v):
+                    continue
+                prev = _doc(c, _prev_quarter(q))
+                rows.append({"company": c, "quarter": q, "column": k, "value": v, "filing": prev.name if prev else None,
+                             "result": "no_filing" if prev is None else ("found" if _guide_in(extract_text(prev), k, float(v)) else "not_found")})
+            cols_here = [k for k in cols if k not in GUIDE_COLS]
             if pdf is None:
-                for k in cols:
+                for k in cols_here:
                     if pd.notna(r.get(k)):
                         rows.append({"company": c, "quarter": q, "column": k, "value": r[k], "result": "no_filing"})
                 continue
             text = extract_text(pdf)
-            for k in cols:
+            for k in cols_here:
                 v = r.get(k)
                 if pd.isna(v) or _derived(c, k, q, r):
                     continue

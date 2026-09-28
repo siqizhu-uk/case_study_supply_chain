@@ -31,7 +31,7 @@ def analysis_tab_html() -> str:
         return "<p class=meta>No analysis page (deliverables/my_analysis.html).</p>"
     body = IMG.sub(_embed, PAGE.read_text(encoding="utf-8"))
     doc = f'<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"></head><body>{body}{ANCHORS}</body></html>'
-    return ("<p class=meta>The analyst's reading of the 27 Sep run, question by question (deliverables/my_analysis.html). "
+    return ("<p class=meta>The analyst's reading of the 28 Sep run, question by question (deliverables/my_analysis.html). "
             "Hand-written; tests/test_analysis_page.py flags any headline number a later run changes.</p>"
             f'<iframe title="Analysis" srcdoc="{html.escape(doc, quote=True)}" '
             'style="width:100%;height:calc(100vh - 150px);min-height:640px;border:1px solid #e3e3e3;border-radius:6px"></iframe>')

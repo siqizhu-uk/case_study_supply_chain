@@ -1,9 +1,9 @@
 signs,is_economic_prior,rmse_beat_pts,oos_r2_vs_bench,rank
-+logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio,False,2.955,0.599,1
-+logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio,False,3.0,0.586,2
-+logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio,True,3.348,0.485,3
-+logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio,False,3.478,0.444,4
-+logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio,False,4.836,-0.075,5
-+logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio,False,5.028,-0.162,6
-+logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio,False,5.059,-0.176,7
-+logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio,False,5.14,-0.214,8
++logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio,False,3.341,0.487,1
++logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio,False,3.536,0.425,2
++logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio,True,3.622,0.397,3
++logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio,False,4.151,0.208,4
++logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio,False,5.452,-0.366,5
++logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio,False,5.679,-0.483,6
++logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio,False,5.74,-0.514,7
++logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio,False,5.813,-0.553,8

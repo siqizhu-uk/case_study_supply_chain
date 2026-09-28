@@ -61,7 +61,7 @@ def guidance_bias(p: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 
     window("nordic_beat_vs_guide_pct", *gb["nordic_window_normal"], "normal channel (2024Q2-2026Q2)", "Nordic")
     window("nordic_beat_vs_guide_pct", *gb["nordic_window_destock"], "destock (2022Q4-2024Q1)", "Nordic")
-    window("nordic_beat_vs_guide_pct", "2021Q2", "2026Q2", "all quarters", "Nordic")
+    window("nordic_beat_vs_guide_pct", str(p.index.min()), "2026Q2", "all quarters", "Nordic")     # panel-wide (2020Q1+ once F32 rows exist)
     window("logi_beat_vs_guide_pct", *gb["logitech_window"], "quarterly guides (2025Q2-2026Q2)", "Logitech")
     return pd.DataFrame(rows).round(2)
 

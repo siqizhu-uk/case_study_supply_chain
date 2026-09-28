@@ -46,8 +46,8 @@ Where inventory actually sits at each tier, who bears it, and how each company d
       In a shortage: orders are placed but cannot be delivered, so the backlog piles up; lead times lengthen; prices rise (Nordic's GM reached 60%).
       In caution: few orders, the backlog falls, lead times are short.
     * In the forecast: one term only, last quarter's state adjusting the expected guide error (F16, F20, F30). No restocking amount is added: management had seen the refill orders when it guided.
-      In a shortage revenue is set by supply: Nordic knows how many wafers it will get, so its guide is accurate (+1.9% beat on average).
-      In caution revenue is set by demand: rush orders still arrive inside the quarter, so it beats by more (+4.2% on average over the quarters that were neither building nor short).
+      In a shortage revenue is set by supply: Nordic knows how many wafers it will get, so its guide is accurate (+2.4% beat on average, n 8).
+      In caution revenue is set by demand: rush orders still arrive inside the quarter, so it beats by more (+5.2% on average over the 15 quarters since 2019 that were neither building nor short; +3.1% without the two 2020 quarters whose guide was raised before the print, P130).
  - formula:
     * Cover (weeks) = ending inventory ÷ weekly COGS = inventory ÷ (quarterly COGS ÷ 13); inventory days = inventory ÷ quarterly COGS × 91 (`core/tiers.py`, step 3 `inventory_factors.dio`)
     * Channel stock added (Logitech): F(t) = F(t−4) × (1 + sell-through YoY) − gap × sell-in(t−4), gap = sell-through YoY − sell-in YoY; cumulate F, set the level at the quarters management calls "at target", divide by weekly sell-through to get weeks (`channel_index.py`)
@@ -73,7 +73,7 @@ Where inventory actually sits at each tier, who bears it, and how each company d
     * The channel **level** is unobservable: Logitech's channel weeks are anchored on "at target" statements, ±0.7 weeks; GN has a gap but no anchor, so direction only; ODM kitting is not disclosed at all (D assumption 2–8 weeks)
     * Retail and distributor inventories cover all categories; peripherals are a small part, so cover is only a cap
     * State thresholds were set after seeing 2020–26 (disclosed, D22), and a building channel is flagged a quarter late
-    * The shortage split was decided after seeing the data: Nordic uses the 7 quarters that were neither building nor short (+4.24%) instead of 14 (+3.08%); point 235.3 → 238.0; the walk-forward is no better (5.31 vs 5.20 pts); the rule before it is pre-registered and scored on 22 Oct (F30)
+    * The shortage split was decided after seeing the data: Nordic uses the 15 quarters that were neither building nor short (+5.23%) instead of 23 (+4.26%); point 238.0 → 240.2; the walk-forward is no better (5.54 vs 5.24 pts); the rule before it is pre-registered and scored on 22 Oct (F30)
     * One shortage and one destock: every state effect rests on one cycle
  - future work:
     * After 22 Oct, score F30, the rule before it, the F16 pooled model and the own-words rule (F31); keep or drop the shortage split
@@ -152,7 +152,7 @@ Anything in the past four years that changes the relationships and how you handl
     * Stable: Logitech's 10-K customer shares (Amazon 17–19%, Ingram 13–15%, TD Synnex 12–15%); lag-kernel weight at 1 quarter 0.54 → the graph uses them point in time
  - assumption/limit:
     * Four years hold one full cycle, so most tests have low power (3 quarters since the tariffs)
-    * State thresholds were set after seeing 2020–26 (D22); a build-up is flagged a quarter late; the shortage split was decided after seeing the data and the back-test does not support it (5.31 vs 5.20)
+    * State thresholds were set after seeing 2020–26 (D22); a build-up is flagged a quarter late; the shortage split was decided after seeing the data and the back-test does not support it (5.54 vs 5.24)
     * 75% of the supplier incident assumed in the guide is a D judgment; range 0 to −7.1m
  - future work:
     * More quarters after the tariffs, to re-test the price break
@@ -198,13 +198,13 @@ Does it work, where and why, and where it doesn't.
     * `walkforward_metrics_h1.csv`, `walkforward_metrics_h2.csv`, `guide_error_walkforward_nordic.csv`, `key_insights.csv`, `composite_risks.csv`
  - data support:
     * Guided quarter (h=1), Nordic revenue: guide × beat errs 7.4m (best); lag models 3.9–5.9× worse; chain weight 0 → the guide holds the order book
-    * Nordic guide error (h=1): pooled with peers 5.05 pts (best); rule in use 5.31, before the shortage split 5.20, past-4 beat 5.41, guide midpoint 5.55, Nordic's own words as the state (F31) 5.66 → the rule in use is not the best out of sample: the shortage split was decided after seeing the data, and its habit rests on 7 quarters
+    * Nordic guide error (h=1): pooled with peers 5.06 pts (best); rule in use 5.54, before the shortage split 5.24, past-4 beat 5.41, guide midpoint 5.55, Nordic's own words as the state (F31) 5.66 → the rule in use is not the best out of sample and, with the record extended to 2019 (F32), no better than the guide midpoint: its base group now holds the two 2020 demand-shock quarters (+10.6%, +19.4% against guides raised before the print, P130), which the channel state cannot see
     * The quarter after the guide (h=2): GRi 25.4m, 0.54× the guide extrapolation (n 9; post-hoc against GR 28.0m); reasoned chain 39.4m → where the chain earns its place
     * Nowcast of Logitech's unreported quarter: persistence 4.96 pts (best); proxy composite 5.60 (n 13); TD Synnex alone 4.49 vs 4.22 (n 8) → not adopted
     * No guide-setting factor predicts the misses: 671 peer firm-quarters, relative optimism t 0.3, out-of-sample R² −0.005
     * The channel factor adds little one quarter after the guide: 479 peer firm-quarters, out-of-sample R² +1.6% (t 1.4), 102% of the gain from 2023Q3, 2023Q4 and 2025Q4
  - assumption/limit:
-    * Risks the tests cannot rule out (flags of the composite channel factor, a challenger not in the point): R1 the gain comes from one cycle turn; R2 factors chosen after seeing the data; R3 the composite and its ridge variant disagree this quarter; R4 very few independent observations; R5 the mechanism fails external validation on 12 peers; R6 it rests on one cycle turn
+    * Risks the tests cannot rule out (flags R1–R6 of the composite channel factor, a challenger not in the point; R7–R8 what Nordic's own record extended to 2019Q1 shows about the guide-error rule in force, F32): R1 the gain comes from one cycle turn; R2 factors chosen after seeing the data; R3 the composite and its ridge variant disagree this quarter; R4 very few independent observations; R5 the mechanism fails external validation on 12 peers; R6 it rests on one cycle turn
     * Weakest links: the channel level (no company discloses weeks on hand in numbers); the invoicing route behind attribution; ~4 independent observations behind any Nordic-only estimate; the channel state flags a build-up a quarter late, with thresholds set after seeing 2020–26
     * The chain does not help GN: read-across correlation −0.17 / +0.21 against a 0.5 bar; GN is ≈1% of Nordic
  - future work:
@@ -217,33 +217,35 @@ Does it work, where and why, and where it doesn't.
 ## Nordic Semiconductor Q3 2026 revenue and gross margin (reports late October)
  - reasoning:
     * In a guided quarter the guide already holds the orders Nordic can see, so the forecast is how far management will be off this time. No chain or lag model beat the guide in the back-test (see Lag).
-    * The expected error uses Nordic's **own** record (+4.2% against the peers' +2.0%, only t 1.4, so using its own record is a judgment; F20), split by last quarter's channel state: only the quarters that were neither building nor short (F30). The state now is lean (lead time 16 weeks, not a shortage), so no building or shortage effect is added.
+    * The expected error uses Nordic's **own** record (+5.2% against the peers' +2.0%, t 2.5 on 15 quarters; F20), split by last quarter's channel state: only the quarters that were neither building nor short (F30). The state now is lean (lead time 16 weeks, not a shortage), so no building or shortage effect is added.
     * Not in the guide: Logitech's 25 June supplier incident, pushed through the supply graph to Nordic's shipments, 75% assumed already in the 6 August guide; the chain term has weight 0 (the encompassing test finds no information beyond the guide).
     * Gross margin: only a floor is guided (> 50%), no point, so the simple rule with the lowest walk-forward error is used (F18).
-    * **Conclusion: revenue 238.0m (224.6–251.3, ≈80%), +32.9% YoY; gross margin 53.1% (51.9–54.3%).**
+    * **Conclusion: revenue 240.2m (225.2–255.3, ≈80%), +34.2% YoY; gross margin 53.1% (52.0–54.2%).**
  - formula:
-    * Revenue = 230 × (1 + 4.24%) − 1.78 + 0 = 238.0; range = ± 1.2816 × σ × 230, σ = √(s² + s²/n) = √(4.23² + 4.23²/7) = 4.52% → ± 13.3
-    * Expected error e = Nordic's mean guide error (actual ÷ guide midpoint − 1) after quarters that were neither building nor short = +4.24% (n 7); after a building quarter add −7.39 pts (n 7), after a shortage quarter −2.32 pts (n 7)
+    * Revenue = 230 × (1 + 5.23%) − 1.78 + 0 = 240.2; range = ± 1.2816 × σ × 230, σ = √(s² + s²/n) = √(4.95² + 4.95²/15) = 5.11% → ± 15.1
+    * Expected error e = Nordic's mean guide error (actual ÷ guide midpoint − 1) after quarters that were neither building nor short = +5.23% (n 15, 2019Q1–2026Q2); after a building quarter add −8.39 pts (n 7), after a shortage quarter −2.79 pts (n 8)
     * Supplier incident, net = event-study gross effect −7.1m × (1 − 75% already in the guide) = −1.78m
-    * Gross margin = last quarter's GM ex one-offs = 53.1%; range = ± 1.2816 × 0.92, the rule's error over the 9 quarters of the current, hand-dated "normal" regime (2.06 over all quarters)
+    * Gross margin = last quarter's GM ex one-offs = 53.1%; range = ± 1.2816 × 0.87, the rule's error over the 10 quarters of the current, hand-dated "normal" regime (2.36 over all quarters)
  - data used:
     * Q3 guide 220–240m, GM > 50% (Nordic Q2 2026 report, 6 Aug, B)
-    * 21 quarters of guides and actuals, 2021Q2–2026Q2 (quarterly reports, B)
+    * 30 quarters of guides and actuals, 2019Q1–2026Q2 (quarterly reports, B; 2019Q1–2021Q1 added 28 Sep from the Oslo Børs reports, F32; the 2017–18 half-year guides are a separate record, P133)
     * Channel state: Microchip distributor days (A), Nordic backlog 2020Q4–2023Q1 (B), live lead time 16 weeks (findchips, D)
     * Supplier incident: Logitech call (C; ≈20m in Q2 FY27, up to 200m in Oct–Dec); supply-graph lead time 14 weeks and Nordic content 3.63% (step 5d)
     * GM 2021–2026 (quarterly reports, B); one-offs in 2024Q2 (write-down) and 2025Q4 (A)
  - data support:
-    * Cross-checks: 10 of 13 independent methods, challengers and scenarios land inside the range (`cross_checks.csv`); outside: distributors turn to building 221.0, restock to step 3's high 252.6, reasoned chain CH 224.5
-    * Pre-registered challengers (scored on 22 Oct): the rule before the shortage split 235.3, pooled with peers 232.6, Nordic's own words as the state (F31) 237.0, channel composite 239.8, composite + graph 238.6 (`challenger_prereg_log.csv`, `composite_prereg_log.csv`)
-    * GM rules by walk-forward RMSE (pts): last quarter 2.06, guide + last 4 errors 2.08, guide + all errors 2.31, 4-quarter mean 2.63, same quarter last year 4.33; channel-excess term not adopted (peers −0.25 pts, t −1.18; Nordic back-test 2.35 vs 2.34, F25); the > 50% floor was met in 77% of quarters
+    * Cross-checks: 14 of 16 independent methods, challengers and scenarios land inside the range (`cross_checks.csv`); outside: distributors turn to building 220.9, reasoned chain CH 224.5
+    * Pre-registered challengers (scored on 22 Oct): the rule before the shortage split 238.0, pooled with peers 233.4, Nordic's own words as the state (F31) 237.0, channel composite 237.8, composite + graph 237.6 (`challenger_prereg_log.csv`, `composite_prereg_log.csv`)
+    * GM rules by walk-forward RMSE (pts): last quarter 2.36, guide + last 4 errors 2.45, guide + all errors 2.37, 4-quarter mean 2.90, same quarter last year 4.15; channel-excess term not adopted (peers −0.25 pts, t −1.18; Nordic back-test 2.35 vs 2.34, F25); the > 50% floor was met in 70% of quarters (n 30)
  - assumption/limit:
-    * The shortage split was decided after seeing the data (F30): walk-forward over 14 quarters 5.31 pts, against 5.20 before the split and 5.05 for the pooled model (best); the new habit rests on 7 quarters
-    * 75% of the incident already in the guide is a D judgment: all of it in the guide 239.8, none 232.7
-    * A turn to building: Nordic's own building effect comes from 7 quarters of one cycle; if it happens, revenue 221.0
+    * The shortage split was decided after seeing the data (F30): walk-forward over 14 quarters 5.54 pts, against 5.24 before the split and 5.06 for the pooled model (best); the habit rests on 15 quarters, 8 of them 2019–2020 (F32)
+    * 75% of the incident already in the guide is a D judgment: all of it in the guide 242.0, none 234.9
+    * A turn to building: Nordic's own building effect comes from 7 quarters of one cycle; if it happens, revenue 220.9
+    * Record extended to 2019Q1 (F32) and the rule kept as pre-stated (F33): two limitations shown as risk flags R7–R8 on the dashboard — the channel state cannot see an end-demand shock (2020Q2–Q3 sit in the habit: +5.23% with them, +3.72% without), and the state split has no walk-forward edge over the guide midpoint (5.54 vs 5.55); no new challenger was added after seeing this
     * The GM range covers GM ex one-offs only; 2 of the last 9 quarters had one-offs, so a reported figure can land outside the range (P117)
  - future work:
     * After the 22 Oct print: fill in the actual, score the new and old rules and every challenger, keep or drop the shortage split
     * Before the print: distributor-inventory wording (W2) and lead time (W4) as signals
+    * Demand-side data are the next input to build, and 2020 is the case for it (R7): in Q2 and Q3 2020 end demand surged (home-office peripherals, health devices) while distributor stock read lean or normal; the channel state, a supply-chain stock, could not see it and the two quarters landed in the habit (+10.6%, +19.4%). Only an end-demand signal with public history (sell-out, retail point-of-sale) could separate a demand shock from an ordinary quarter before the print; the free proxies tried (section 2 of not_built.md, step 5f) have no such history, so this stays future work
  - figures:
 
    ![](figures/nordic_revenue_bridge.svg)

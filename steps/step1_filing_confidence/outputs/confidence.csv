@@ -1,5 +1,5 @@
 company,metric_class,interval,basis,grade,rule,final_grade
-nordic,total revenue (quarterly),±0.02%,"Σ4Q vs audited FY, 5 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",C
+nordic,total revenue (quarterly),±0.02%,"Σ4Q vs audited FY, 7 years, max |diff|",A,"Q4 absorbs audit true-ups, so quarterly totals are audited-equivalent",C
 nordic,segment: Consumer,±7%,"4 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,C
 nordic,segment: Industrial & Healthcare,±15%,"4 restated quarters, max |change| (CSV uses restated values)",B,use restated values where they exist; treat pre-restatement quarters as ±this,C
 nordic,margins (reported vs adjusted),up to 7.8 pts,"2 quarters compared, max |adjusted − reported|",C,model the adjusted series and show the reported one beside it; widen Q4 ranges,C

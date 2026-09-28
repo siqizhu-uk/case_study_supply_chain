@@ -6,23 +6,23 @@
 >
 > **K2. Nordic's 2023Q3 miss was not set up by a guide more optimistic than the peers'.** For 2023Q3 Nordic guided +0.5% q/q against a peer median of +0.4% (relative optimism +0.1 pts), then missed by 12.9%: the shortfall arose inside the quarter. Against the consumer-heavy peers only (exploratory, chosen after seeing the data) the gap was +18.8 pts. *So what:* Which comparator is 'the market' decides the reading; the pre-registered peer median does not flag the episode.
 >
-> **K3. No guide-setting factor predicts misses.** Relative guidance optimism on 671 peer firm-quarters (70 quarters): +0.005 per pt (t 0.3); walk-forward OOS R2 -0.005 vs each firm's mean; the most optimistic fifth of guides misses in 15% of quarters, the least optimistic in 24%. On Nordic without 2023Q3, 2023Q4: none of relative optimism, guided growth, guide width or last quarter's beat has |t| >= 2; the channel factor keeps +1.77 (t 2.3, naive). *So what:* The large Nordic misses are rare intra-quarter surprises; about a dozen candidate factors have now been tried on 21 quarters, so any one that 'works' on Nordic alone is expected by chance.
+> **K3. No guide-setting factor predicts misses.** Relative guidance optimism on 671 peer firm-quarters (70 quarters): +0.005 per pt (t 0.3); walk-forward OOS R2 -0.005 vs each firm's mean; the most optimistic fifth of guides misses in 15% of quarters, the least optimistic in 24%. On Nordic without 2023Q3, 2023Q4: last_beat keep |t| >= 2; the channel factor keeps +0.86 (t 0.7, naive). *So what:* The large Nordic misses are rare intra-quarter surprises; about a dozen candidate factors have now been tried on 21 quarters, so any one that 'works' on Nordic alone is expected by chance.
 >
 > **K4. Beyond the guided quarter the channel factor adds little to revenue forecasts.** Forecasting revenue one quarter past the guide (g2 = actual t+1 / guide t) on 479 peer firm-quarters: seasonal benchmark + channel factor gives OOS R2 +1.6% vs the seasonal benchmark alone (t 1.4; RMSE 10.55 with the channel vs 10.64 seasonal vs 11.54 flat, pts); 102% of the gain comes from 2023Q3, 2023Q4, 2025Q4; without 2023Q3, 2023Q4 +0.3%. *So what:* Where the channel belongs (revenue beyond the guide, not the beat) is consistent with (not confirmed by) the data: its value there is small and turn-dependent: seasonality does more than the channel.
 
-> ### ⚠ Risks the tests cannot rule out (composite channel factor — pre-registered challenger)
+> ### ⚠ Risks the tests cannot rule out (R1-R6 the composite channel factor, a pre-registered challenger; R7-R8 Nordic's own guide-error record, F32)
 >
-> **R1. Against the 4-quarter benchmark the gain comes from one cycle turn.** (a) vs the past-4-quarter beat (the gate's benchmark): the three best quarters (2024Q4, 2024Q2, 2024Q1) carry 120% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters; over the last six quarters the composite is WORSE (RMSE 1.91 vs 1.67 pts). (b) vs the intercept-only model (mean of all past beats, no factors): the three best quarters (2024Q4, 2025Q2, 2023Q4) carry 86% of the gain; the composite wins 8 of 11 quarters (out-of-sample R² +0.54; last six quarters 1.91 vs 3.98). Reading: the composite wins more quarters against the intercept-only model (8 vs 7 of 11) and its top-3 share is lower (86% vs 120%), but against both baselines three quarters still carry most of the gain — the concentration is only partly an artefact of the slow 4-quarter benchmark. Either way the sample holds one cycle.
+> **R1. Against the 4-quarter benchmark the gain comes from one cycle turn.** (a) vs the past-4-quarter beat (the gate's benchmark): the three best quarters (2024Q4, 2024Q2, 2024Q3) carry 111% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters; over the last six quarters the composite is WORSE (RMSE 1.71 vs 1.67 pts). (b) vs the intercept-only model (mean of all past beats, no factors): the three best quarters (2023Q4, 2024Q4, 2025Q2) carry 106% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters (out-of-sample R² +0.46; last six quarters 1.71 vs 3.98). Reading: the composite wins more quarters against the intercept-only model (7 vs 7 of 11) and its top-3 share is lower (106% vs 111%), but against both baselines three quarters still carry most of the gain — the concentration is only partly an artefact of the slow 4-quarter benchmark. Either way the sample holds one cycle.
 >
 > **R2. Factors chosen after seeing the data.** The four factors were chosen after step 3 had already shown the 2021-2026 data (researcher degrees of freedom). No back-test removes this. The only clean test: Nordic Q3 2026 print, 22 Oct 2026 (pre-registered in steps/step6_backtest/outputs/composite_prereg_log.csv; the last row logged before the print is the forecast of record) — none scored yet.
 >
-> **R3. The composite and its ridge variant disagree on this quarter.** 2026Q3: composite (equal weights) beat +4.26% vs ridge challenger +1.76% (+2.50 pts = USD 5.7m on the USD 230m midpoint). Which specification is right is unknown until the print.
+> **R3. The composite and its ridge variant disagree on this quarter.** 2026Q3: composite (equal weights) beat +3.39% vs ridge challenger +1.69% (+1.71 pts = USD 3.9m on the USD 230m midpoint). Which specification is right is unknown until the print.
 >
-> **R4. Very few independent observations.** The composite has 20 quarterly values but lag-1 autocorrelation 0.83, so it holds about 1.9 independent observations (Bartlett n(1-ρ)/(1+ρ)); the beat itself holds about 8.0 of 19. Every cycle-dependent conclusion rests on roughly one downturn and one upturn; each extra fitted parameter (absolute value, separate +/- slopes, regime switches) would be fitted to those. More independent evidence has to come from more cycles or more companies (peer panel), not from the model's form.
+> **R4. Very few independent observations.** The composite has 20 quarterly values but lag-1 autocorrelation 0.75, so it holds about 2.8 independent observations (Bartlett n(1-ρ)/(1+ρ)); the beat itself holds about 8.0 of 19. Every cycle-dependent conclusion rests on roughly one downturn and one upturn; each extra fitted parameter (absolute value, separate +/- slopes, regime switches) would be fitted to those. More independent evidence has to come from more cycles or more companies (peer panel), not from the model's form.
 >
 > **R5. The channel mechanism itself fails external validation on 12 peers.** Pooled over 442 peer firm-quarters and several cycles, the same channel factors do not beat each firm's own mean beat out of sample (OOS R² -0.009, better in 52% of quarters). On the industry factor Nordic's slope is +2.99 pts per sd vs +0.39 for the peers. A Nordic-like peer set (11 firms, distribution share >= 35%) predicts Nordic's slope from its distribution share at +0.16 (90% PI -0.28 to +0.61); distribution share itself explains nothing (t = 0.2). The composite's Nordic result is most likely specific to one cycle of one company.
 >
-> **R6. The channel mechanism rests on one cycle turn, for Nordic and for the peers.** Peers' slope by window: 2008-10 -0.22, 2011-19 +0.19, Nordic's window +0.77 (se 0.51). Three quarters carry 61% of the peers' and 70% of Nordic's slope; 2023Q3, 2023Q4 are in both. Nordic vs peers in the same window: t = 1.5 after autocorrelation.
+> **R6. The channel mechanism rests on one cycle turn, for Nordic and for the peers.** Peers' slope by window: 2008-10 -0.22, 2011-19 +0.19, Nordic's window +0.59 (se 0.92). Three quarters carry 92% of the peers' and 82% of Nordic's slope; 2023Q3, 2023Q4 are in both. Nordic vs peers in the same window: t = 0.9 after autocorrelation.
 
 **Question.** Would the lag model have improved the forecast, using only what was known on each forecast date? Leave-one-out cannot answer that: it trains on later quarters, and the old regression used the distributor state of the quarter being predicted. Design, benchmark and reasons: `config/decisions.csv` (B1–B11).
 
@@ -206,24 +206,24 @@ Factors, signs and lags (fixed in `config/model.yaml` → `composite` before the
 | mchp_disti_days_change | mchp_disti_days      | diff        |     1 |     -1 | MCU channel days falling -> lean channel -> replenishment orders          |
 | nordic_fwd_dio         | nordic_fwd_dio       | level       |     1 |     -1 | own stock low vs guided cost of sales -> demand pulling ahead of the plan |
 
-**Result.** Walk-forward RMSE 3.35 pts vs 4.66 for the past-beat benchmark on the same 11 quarters (out-of-sample R² +0.48; in revenue USD 4.6m vs 6.2m); beat direction right 91%. Diebold-Mariano p = 0.23 — not significant on its own with 11 points.
+**Result.** Walk-forward RMSE 3.62 pts vs 4.66 for the past-beat benchmark on the same 11 quarters (out-of-sample R² +0.40; in revenue USD 4.4m vs 6.2m); beat direction right 82%. Diebold-Mariano p = 0.19 — not significant on its own with 11 points.
 
 **Where the gain comes from** (walk-forward squared errors split by regime; reported, not part of the gate):
 
 | regime   |   n |   sse_composite |   sse_benchmark |   rmse_composite |   rmse_benchmark |   share_of_total_gain |
 |:---------|----:|----------------:|----------------:|-----------------:|-----------------:|----------------------:|
-| destock  |   2 |          61.759 |          55.724 |            5.557 |            5.278 |                -0.052 |
-| normal   |   9 |          61.515 |         183.59  |            2.614 |            4.517 |                 1.052 |
+| destock  |   2 |          65.608 |          55.724 |            5.727 |            5.278 |                -0.104 |
+| normal   |   9 |          78.718 |         183.59  |            2.957 |            4.517 |                 1.104 |
 
-Where the gain comes from — (a) vs the past-4-quarter beat (the gate's benchmark): the three best quarters (2024Q4, 2024Q2, 2024Q1) carry 120% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters; over the last six quarters the composite is WORSE (RMSE 1.91 vs 1.67 pts). (b) vs the intercept-only model (mean of all past beats, no factors): the three best quarters (2024Q4, 2025Q2, 2023Q4) carry 86% of the gain; the composite wins 8 of 11 quarters (out-of-sample R² +0.54; last six quarters 1.91 vs 3.98). Reading: the composite wins more quarters against the intercept-only model (8 vs 7 of 11) and its top-3 share is lower (86% vs 120%), but against both baselines three quarters still carry most of the gain — the concentration is only partly an artefact of the slow 4-quarter benchmark. Either way the sample holds one cycle.
+Where the gain comes from — (a) vs the past-4-quarter beat (the gate's benchmark): the three best quarters (2024Q4, 2024Q2, 2024Q3) carry 111% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters; over the last six quarters the composite is WORSE (RMSE 1.71 vs 1.67 pts). (b) vs the intercept-only model (mean of all past beats, no factors): the three best quarters (2023Q4, 2024Q4, 2025Q2) carry 106% of the gain — above 100% because the other quarters together lose; the composite wins 7 of 11 quarters (out-of-sample R² +0.46; last six quarters 1.71 vs 3.98). Reading: the composite wins more quarters against the intercept-only model (7 vs 7 of 11) and its top-3 share is lower (106% vs 111%), but against both baselines three quarters still carry most of the gain — the concentration is only partly an artefact of the slow 4-quarter benchmark. Either way the sample holds one cycle.
 
 ### Is it over-fit?
 
 1. **Chance (placebo).** 1000 composites of random AR(1) noise through the identical pipeline: only 0.7% do as well. The pipeline does not manufacture this result.
-2. **One factor carrying it (leave-one-out).** Dropping any single factor, 4 of 4 composites still beat the benchmark (OOS R² +0.23 to +0.55); dropping mchp_disti_days_change or nordic_fwd_dio hurts most.
-3. **Weights.** Estimated weights did *not* over-fit here: OLS 2.99, ridge 2.48 vs equal 3.35 pts. Equal weights stay primary because they were fixed before the run; switching now, after seeing the result on 11 points, would be the look-ahead the test exists to prevent. Ridge is logged as the challenger.
-4. **Signs.** Of the 8 distinct sign combinations the economic prior ranks 3; the best one flips mchp_disti_days_change, nordic_fwd_dio relative to the prior. The prior signs are kept — choosing the back-test's best would be data-mining.
-5. **Stability.** The slope b stays between 4.0 and 5.0 across origins; its standard error falls from 3.0 to 1.2.
+2. **One factor carrying it (leave-one-out).** Dropping any single factor, 3 of 4 composites still beat the benchmark (OOS R² -0.13 to +0.45); dropping mchp_disti_days_change or nordic_fwd_dio hurts most.
+3. **Weights.** Estimated weights did *not* over-fit here: OLS 8.68, ridge 2.66 vs equal 3.62 pts. Equal weights stay primary because they were fixed before the run; switching now, after seeing the result on 11 points, would be the look-ahead the test exists to prevent. Ridge is logged as the challenger.
+4. **Signs.** Of the 8 distinct sign combinations the economic prior ranks 3; the best one flips nordic_dist_state, mchp_disti_days_change, nordic_fwd_dio relative to the prior. The prior signs are kept — choosing the back-test's best would be data-mining.
+5. **Stability.** The slope b stays between 3.8 and 5.0 across origins; its standard error falls from 2.5 to 1.3.
 6. **What no test can remove.** The four factors were chosen after step 3 had shown the data (researcher degrees of freedom). None was dropped after seeing the back-test (logi_sellthrough_accel stays although its signed correlation with the miss is negative). The honest test is the pre-registered forecast below, scored after 22 Oct.
 
 ### Uncertainty band: does |C| predict the size of the error?
@@ -232,31 +232,32 @@ Where the gain comes from — (a) vs the past-4-quarter beat (the gate's benchma
 
 | band          |   n |   coverage |   mean_width |   interval_score |   target_coverage |
 |:--------------|----:|-----------:|-------------:|-----------------:|------------------:|
-| constant      |  11 |      0.909 |       12.65  |           12.675 |               0.8 |
-| scaled by |C| |  11 |      0.818 |        9.734 |           11.155 |               0.8 |
+| constant      |  11 |      0.909 |       12.333 |           12.746 |               0.8 |
+| scaled by |C| |  11 |      0.909 |       10.915 |           13.418 |               0.8 |
 
-**Caveat.** Coverage differs by 1 of 11 quarters (10 vs 9 covered). The scaled band is narrower here partly because |C| in these test quarters (mean 0.51) is small next to the destock quarters that dominate the training mean — the same one-cycle composition behind R1 and R4.
+**Caveat.** Coverage differs by 0 of 11 quarters (10 vs 10 covered). The scaled band is narrower here partly because |C| in these test quarters (mean 0.53) is small next to the destock quarters that dominate the training mean — the same one-cycle composition behind R1 and R4.
 
-Step 7 uses the **scaled** band (rule in config: scaled only if its interval score is lower). Live scale factor for 2026Q3: 0.86.
+Step 7 uses the **constant** band (rule in config: scaled only if its interval score is lower). Live scale factor for 2026Q3: 1.00.
 
 ### Adoption gate (stated in config before the run)
 
 | check                                 |   value | passed   |
 |:--------------------------------------|--------:|:---------|
-| oos_r2_vs_benchmark                   |   0.485 | True     |
+| oos_r2_vs_benchmark                   |   0.397 | True     |
 | placebo_p                             |   0.007 | True     |
 | n_forecasts                           |  11     | True     |
-| leave_one_out_share_beating_benchmark |   1     | True     |
+| leave_one_out_share_beating_benchmark |   0.75  | True     |
 
 **Gate passed; used in the forecast: NO.** Analyst decision B26: the peer panel (section 8, risk R5) shows the mechanism does not generalise, so the composite stays a pre-registered challenger and step 7 keeps the regime-conditioned historical beat.
 
 ### Live forecast, pre-registered (`outputs/composite_prereg_log.csv`)
 
-Q3 2026: C = +0.30 → beat +4.26% (benchmark +3.28%) → revenue USD 239.8m on the USD 230m midpoint. Factor contributions (signed z): logi_sellthrough_accel +0.42, nordic_dist_state +0.75, mchp_disti_days_change +0.29, nordic_fwd_dio -0.29.
+Q3 2026: C = +0.27 → beat +3.39% (benchmark +3.28%) → revenue USD 237.8m on the USD 230m midpoint. Factor contributions (signed z): logi_sellthrough_accel +0.42, nordic_dist_state +0.75, mchp_disti_days_change +0.29, nordic_fwd_dio -0.40.
 
 | target   | spec_hash   | data_hash   | logged_on   |   guide_mid_usdm |   beat_hat_pct |   revenue_hat_usdm |   benchmark_beat_pct |   ridge_challenger_beat_pct | status                      |   actual_usdm |   scored_on |
 |:---------|:------------|:------------|:------------|-----------------:|---------------:|-------------------:|---------------------:|----------------------------:|:----------------------------|--------------:|------------:|
 | 2026Q3   | 6fe85357a5  | e2df927e89  | 2026-09-25  |              230 |           4.26 |              239.8 |                 3.28 |                        1.76 | gate passed; not used (B26) |           nan |         nan |
+| 2026Q3   | 6fe85357a5  | ce5f518f80  | 2026-09-28  |              230 |           3.39 |              237.8 |                 3.28 |                        1.69 | gate passed; not used (B26) |           nan |         nan |
 
 ![composite](composite.png)
 
@@ -264,17 +265,17 @@ Q3 2026: C = +0.30 → beat +4.26% (benchmark +3.28%) → revenue USD 239.8m on 
 
 | model                                  |   n | first   | last   |   rmse_beat_pts |   bench_rmse_same_quarters |   oos_r2_vs_bench |   rmse_usdm |   direction_hit |   dm_hln |    dm_p |
 |:---------------------------------------|----:|:--------|:-------|----------------:|---------------------------:|------------------:|------------:|----------------:|---------:|--------:|
-| composite (equal weights)              |  11 | 2023Q4  | 2026Q2 |           3.348 |                      4.664 |             0.485 |       4.572 |           0.909 |   -1.271 |   0.233 |
-| OLS on all factors (estimated weights) |  11 | 2023Q4  | 2026Q2 |           2.99  |                      4.664 |             0.589 |       4.582 |           0.818 |   -1.649 |   0.13  |
-| ridge on all factors                   |  11 | 2023Q4  | 2026Q2 |           2.477 |                      4.664 |             0.718 |       3.427 |           0.818 |   -1.838 |   0.096 |
+| composite (equal weights)              |  11 | 2023Q4  | 2026Q2 |           3.622 |                      4.664 |             0.397 |       4.448 |           0.818 |   -1.401 |   0.191 |
+| OLS on all factors (estimated weights) |  11 | 2023Q4  | 2026Q2 |           8.679 |                      4.664 |            -2.462 |       9.783 |           0.818 |    1.096 |   0.299 |
+| ridge on all factors                   |  11 | 2023Q4  | 2026Q2 |           2.664 |                      4.664 |             0.674 |       3.46  |           0.909 |   -1.798 |   0.102 |
 | zero beat (guide midpoint)             |  14 | 2023Q1  | 2026Q2 |           5.551 |                      5.413 |            -0.052 |       8.306 |           0     |    0.191 |   0.851 |
 | single factor: logi_sellthrough_accel  |   7 | 2024Q4  | 2026Q2 |           4.302 |                      3.916 |            -0.207 |       6.47  |           0.571 |    0.591 |   0.576 |
 | single factor: nordic_dist_state       |   6 | 2025Q1  | 2026Q2 |           1.668 |                      1.67  |             0.003 |       2.698 |           1     |   -0.008 |   0.994 |
 | single factor: mchp_disti_days_change  |  11 | 2023Q4  | 2026Q2 |           2.972 |                      4.664 |             0.594 |       4.411 |           0.727 |   -1.424 |   0.185 |
-| single factor: nordic_fwd_dio          |   9 | 2024Q2  | 2026Q2 |           3.834 |                      4.517 |             0.28  |       5.512 |           0.778 |   -1.181 |   0.272 |
-| leave out: logi_sellthrough_accel      |  11 | 2023Q4  | 2026Q2 |           3.128 |                      4.664 |             0.55  |       4.188 |           0.818 |   -1.481 |   0.169 |
-| leave out: nordic_dist_state           |  11 | 2023Q4  | 2026Q2 |           3.377 |                      4.664 |             0.476 |       4.627 |           0.909 |   -1.212 |   0.253 |
-| leave out: mchp_disti_days_change      |   9 | 2024Q2  | 2026Q2 |           3.953 |                      4.517 |             0.234 |       5.688 |           0.778 |   -1.004 |   0.345 |
+| single factor: nordic_fwd_dio          |  11 | 2023Q4  | 2026Q2 |           5.28  |                      4.664 |            -0.281 |       6.063 |           0.818 |    0.443 |   0.667 |
+| leave out: logi_sellthrough_accel      |  11 | 2023Q4  | 2026Q2 |           3.447 |                      4.664 |             0.454 |       4.151 |           0.818 |   -1.529 |   0.157 |
+| leave out: nordic_dist_state           |  11 | 2023Q4  | 2026Q2 |           3.841 |                      4.664 |             0.322 |       4.467 |           0.818 |   -0.815 |   0.434 |
+| leave out: mchp_disti_days_change      |  11 | 2023Q4  | 2026Q2 |           4.967 |                      4.664 |            -0.134 |       6.381 |           0.727 |    0.408 |   0.692 |
 | leave out: nordic_fwd_dio              |  11 | 2023Q4  | 2026Q2 |           3.87  |                      4.664 |             0.312 |       5.225 |           0.909 |   -0.926 |   0.376 |
 | benchmark: past-4-quarter beat         |  11 | 2023Q4  | 2026Q2 |           4.664 |                      4.664 |             0     |       6.166 |           0.818 |  nan     | nan     |
 
@@ -282,14 +283,14 @@ Sign combinations:
 
 | signs                                                                              | is_economic_prior   |   rmse_beat_pts |   oos_r2_vs_bench |   rank |
 |:-----------------------------------------------------------------------------------|:--------------------|----------------:|------------------:|-------:|
-| +logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio | False               |           2.955 |             0.599 |      1 |
-| +logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio | False               |           3     |             0.586 |      2 |
-| +logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio | True                |           3.348 |             0.485 |      3 |
-| +logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio | False               |           3.478 |             0.444 |      4 |
-| +logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio | False               |           4.836 |            -0.075 |      5 |
-| +logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio | False               |           5.028 |            -0.162 |      6 |
-| +logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio | False               |           5.059 |            -0.176 |      7 |
-| +logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio | False               |           5.14  |            -0.214 |      8 |
+| +logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio | False               |           3.341 |             0.487 |      1 |
+| +logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change +nordic_fwd_dio | False               |           3.536 |             0.425 |      2 |
+| +logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio | True                |           3.622 |             0.397 |      3 |
+| +logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change -nordic_fwd_dio | False               |           4.151 |             0.208 |      4 |
+| +logi_sellthrough_accel -nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio | False               |           5.452 |            -0.366 |      5 |
+| +logi_sellthrough_accel +nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio | False               |           5.679 |            -0.483 |      6 |
+| +logi_sellthrough_accel -nordic_dist_state +mchp_disti_days_change -nordic_fwd_dio | False               |           5.74  |            -0.514 |      7 |
+| +logi_sellthrough_accel +nordic_dist_state -mchp_disti_days_change +nordic_fwd_dio | False               |           5.813 |            -0.553 |      8 |
 
 ### Graph challenger (step 6c-g, decision B44)
 
@@ -297,8 +298,8 @@ One factor swapped: **logi_sellthrough_accel** (Logitech sell-through accelerati
 
 | composite                            |   n |   rmse_beat_pts |   benchmark_rmse |   oos_r2_vs_bench |   rmse_usdm |   placebo_p | leave_one_out_beating_bench   | gate_passed   |   q3_2026_beat_pct |   q3_2026_revenue_usdm |
 |:-------------------------------------|----:|----------------:|-----------------:|------------------:|------------:|------------:|:------------------------------|:--------------|-------------------:|-----------------------:|
-| primary: logi_sellthrough_accel      |  11 |           3.348 |            4.664 |             0.485 |       4.572 |       0.007 | 4/4                           | True          |              4.256 |                239.788 |
-| graph challenger: graph_demand_accel |  11 |           3.382 |            4.664 |             0.474 |       4.478 |       0.006 | 4/4                           | True          |              3.75  |                238.626 |
+| primary: logi_sellthrough_accel      |  11 |           3.622 |            4.664 |             0.397 |       4.448 |       0.007 | 3/4                           | True          |              3.394 |                237.807 |
+| graph challenger: graph_demand_accel |  11 |           3.545 |            4.664 |             0.422 |       4.284 |       0.004 | 3/4                           | True          |              3.314 |                237.623 |
 
 The swapped factor on its own:
 
@@ -307,12 +308,13 @@ The swapped factor on its own:
 | single factor: logi_sellthrough_accel |   7 |           4.302 |                      3.916 |            -0.207 |
 | single factor: graph_demand_accel     |   6 |           2.483 |                      1.67  |            -1.21  |
 
-**Q3 2026, pre-registered** (`outputs/composite_graph_prereg_log.csv`): beat +3.75% → revenue USD 238.6m on the USD 230m midpoint. Signed z: graph_demand_accel +0.24, nordic_dist_state +0.75, mchp_disti_days_change +0.29, nordic_fwd_dio -0.29.
+**Q3 2026, pre-registered** (`outputs/composite_graph_prereg_log.csv`): beat +3.31% → revenue USD 237.6m on the USD 230m midpoint. Signed z: graph_demand_accel +0.24, nordic_dist_state +0.75, mchp_disti_days_change +0.29, nordic_fwd_dio -0.40.
 
 | target   | spec_hash   | data_hash   | logged_on   |   guide_mid_usdm |   beat_hat_pct |   revenue_hat_usdm |   benchmark_beat_pct |   ridge_challenger_beat_pct | status                                       |   actual_usdm |   scored_on |
 |:---------|:------------|:------------|:------------|-----------------:|---------------:|-------------------:|---------------------:|----------------------------:|:---------------------------------------------|--------------:|------------:|
 | 2026Q3   | 6f2b514d6e  | 9a61403735  | 2026-09-26  |              230 |           3.77 |              238.7 |                 3.28 |                        1.95 | gate passed; not used (challenger only, B44) |           nan |         nan |
 | 2026Q3   | 6f2b514d6e  | 6271b977d3  | 2026-09-26  |              230 |           3.75 |              238.6 |                 3.28 |                        2.09 | gate passed; not used (challenger only, B44) |           nan |         nan |
+| 2026Q3   | 6f2b514d6e  | 83d06ce7f6  | 2026-09-28  |              230 |           3.31 |              237.6 |                 3.28 |                        2.38 | gate passed; not used (challenger only, B44) |           nan |         nan |
 
 **Status.** Challenger only (config `composite.graph_challenger.use_in_forecast: false`): it was added after the factor search was stopped (B40), so its back-test is not a clean test and the peer panel cannot test it (the graph is Nordic's). It is scored on the 22 Oct print next to the primary composite and the benchmark.
 
@@ -341,7 +343,7 @@ The Nordic composite rests on ~2 independent observations. 12 peers (Pipeline D:
 
 **Answer.** Across 442 firm-quarters the channel factors do not beat each firm's own mean beat out of sample (OOS R² -0.009; better in 52% of quarters). Full sample: own forward DIO t = 0.6, industry channel t = 1.9. On the same industry factor Nordic's own slope is +2.99 pts per sd against +0.39 for the peers (8x).
 
-**External test on Nordic** (same 11 quarters as the composite): peer coefficients RMSE 4.39 pts; past-4 benchmark 4.66; Nordic's own firm mean 4.72; Nordic-fitted composite 3.35.
+**External test on Nordic** (same 11 quarters as the composite): peer coefficients RMSE 4.21 pts; past-4 benchmark 4.66; Nordic's own firm mean 4.59; Nordic-fitted composite 3.62.
 
 **Reading.** The mechanism the composite encodes (lean channel → beat) does not generalise across companies and cycles. Nordic's strong in-sample relation is specific to one cycle of one company — the pattern the R1/R2/R4 flags warned about, now confirmed by independent data.
 
@@ -370,7 +372,7 @@ Each firm's slope on the industry factor = peer mean + its own deviation. Nordic
 
 | company            |   n |      b |    se |   x_rho1 |   n_eff_x |
 |:-------------------|----:|-------:|------:|---------:|----------:|
-| NORDIC             |  20 |  3.673 | 0.889 |    0.643 |     4.348 |
+| NORDIC             |  25 |  2.742 | 1.253 |    0.655 |     5.209 |
 | adi                |  51 |  0.758 | 1.075 |    0.52  |    16.118 |
 | alpha_omega        |  32 |  0.53  | 0.634 |    0.409 |    13.411 |
 | lattice            |  47 |  0.804 | 0.722 |    0.499 |    15.693 |
@@ -384,7 +386,7 @@ Each firm's slope on the industry factor = peer mean + its own deviation. Nordic
 | silabs             |  49 | -0.169 | 0.353 |    0.5   |    16.312 |
 | ti                 |  54 |  0.966 | 0.684 |    0.501 |    17.942 |
 
-Peer mean slope +0.26 (se 0.17); between-firm sd τ = 0.00 (Q = 8.3 on 11 df). Nordic's own slope +3.67 gets weight 0.00 (naive se) to 0.00 (se for its effective n) → shrunk slope +0.26 to +0.26. Nordic may differ from the peers, but its data hold too few independent observations to show by how much; firm-specific structure should come from observable characteristics (distribution share, end-market mix, lead times) rather than from a free slope.
+Peer mean slope +0.26 (se 0.17); between-firm sd τ = 0.00 (Q = 8.3 on 11 df). Nordic's own slope +2.74 gets weight 0.00 (naive se) to 0.00 (se for its effective n) → shrunk slope +0.26 to +0.26. Nordic may differ from the peers, but its data hold too few independent observations to show by how much; firm-specific structure should come from observable characteristics (distribution share, end-market mix, lead times) rather than from a free slope.
 
 ### Is Nordic different because of what it is? Nordic-like peers and meta-regression (step 6e)
 
@@ -415,7 +417,7 @@ Peers chosen by a criterion fixed before any slope was seen (distribution share 
 | Nordic-like peers               | distribution_share |        11 |    0.011 |    0.327 |       1.382 |      0.237 |           0 | 0.37-0.84    | high              |       0.55 |               0.191 |     -0.137 |       0.518 | False          |
 | Nordic-like peers (exploratory) | consumer_share     |         9 |    0.266 |   -0.627 |       1.367 |     -0.458 |           0 | 0.09-0.44    | nordic            |       0.6  |              -0.11  |     -0.915 |       0.695 | True           |
 
-Among 11 Nordic-like peers the slope moves +0.33 per unit of distribution share (se 1.38, t = 0.2); at Nordic's share (0.47) the predicted slope is +0.16 (90% PI -0.28 to +0.61) against Nordic's own +3.67. With all 12 peers (incl. TI, share <= 20%) the coefficient is -0.53 (t = -0.5). Shrinkage within the Nordic-like peers: peer mean +0.22, τ = 0.00 (Q = 7.2 on 10 df), weight on Nordic 0.00 to 0.00 → slope +0.22 to +0.22. Exploratory only (B30): consumer share gives -0.63 (t = -0.5) on 9 firms whose shares span 0.09-0.44; Nordic's 0.60 lies outside that range, so any prediction is an extrapolation. **Reading.** Being Nordic-like on distribution share does not produce a Nordic-sized slope: Nordic's own slope lies above the 90% prediction interval of similar peers, and distribution share does not explain the between-firm spread (|t| < 2). The characteristic cannot account for Nordic's slope; the most likely explanation remains that it is fitted to one cycle.
+Among 11 Nordic-like peers the slope moves +0.33 per unit of distribution share (se 1.38, t = 0.2); at Nordic's share (0.47) the predicted slope is +0.16 (90% PI -0.28 to +0.61) against Nordic's own +2.74. With all 12 peers (incl. TI, share <= 20%) the coefficient is -0.53 (t = -0.5). Shrinkage within the Nordic-like peers: peer mean +0.22, τ = 0.00 (Q = 7.2 on 10 df), weight on Nordic 0.00 to 0.00 → slope +0.22 to +0.22. Exploratory only (B30): consumer share gives -0.63 (t = -0.5) on 9 firms whose shares span 0.09-0.44; Nordic's 0.60 lies outside that range, so any prediction is an extrapolation. **Reading.** Being Nordic-like on distribution share does not produce a Nordic-sized slope: Nordic's own slope lies above the 90% prediction interval of similar peers, and distribution share does not explain the between-firm spread (|t| < 2). The characteristic cannot account for Nordic's slope; the most likely explanation remains that it is fitted to one cycle.
 
 ### More cycles: is the slope a property of Nordic or of the cycle? (step 6f)
 
@@ -426,10 +428,10 @@ Same factor on one fixed scale (1 sd of the Microchip days change over 2008-2026
 | gfc_2008_10    | 2008Q3 | 2010Q4 | peers  |              75 |       8 |         10 |     -0.146 |          1.619 |                 10 |            -0.215 |              1.652 |   -0.092 |  10     |             1.652 |      nan     | 2008Q4, 2009Q2, 2009Q4 |            1.261 |
 | normal_2011_19 | 2011Q1 | 2019Q4 | peers  |             319 |      12 |         36 |      0.208 |          0.241 |                 36 |             0.192 |              0.279 |    0.139 |  27.234 |             0.321 |        1.982 | 2012Q1, 2011Q3, 2011Q4 |            0.995 |
 | covid_2020_26  | 2020Q1 | 2026Q2 | peers  |             294 |      12 |         26 |      0.592 |          0.32  |                 26 |             0.594 |              0.433 |    0.637 |   5.766 |             0.919 |        0.918 | 2023Q4, 2023Q3, 2021Q1 |            0.967 |
-| nordic_window  | 2021Q2 | 2026Q2 | peers  |             235 |      12 |         21 |      0.76  |          0.195 |                 21 |             0.773 |              0.234 |    0.653 |   4.402 |             0.51  |        0.608 | 2023Q4, 2023Q3, 2024Q2 |            1.024 |
-| nordic_window  | 2021Q2 | 2026Q2 | NORDIC |              21 |       1 |         21 |      3.513 |          0.96  |                 21 |             3.513 |              0.813 |    0.653 |   4.402 |             1.775 |        0.702 | 2023Q3, 2023Q4, 2025Q2 |            1.024 |
+| nordic_window  | 2020Q1 | 2026Q2 | peers  |             294 |      12 |         26 |      0.592 |          0.32  |                 26 |             0.594 |              0.433 |    0.637 |   5.766 |             0.919 |        0.918 | 2023Q4, 2023Q3, 2021Q1 |            0.967 |
+| nordic_window  | 2020Q1 | 2026Q2 | NORDIC |              26 |       1 |         26 |      3.027 |          1.108 |                 26 |             3.036 |              1.142 |    0.637 |   5.766 |             2.425 |        0.823 | 2023Q3, 2023Q4, 2023Q1 |            0.967 |
 
-Peers by cycle window: gfc_2008_10 -0.22 (se 1.65, 10 quarters); normal_2011_19 +0.19 (se 0.32, 36 quarters); covid_2020_26 +0.59 (se 0.92, 26 quarters). Inside Nordic's own window (2021Q2-2026Q2) the peers' slope is +0.77 (se 0.51 on n_eff 4.4), i.e. 22% of Nordic's +3.51. Nordic minus peers = +2.74: t = 3.2 naive, 1.5 with the factor's autocorrelation. The same quarters carry both slopes (2023Q3, 2023Q4: top-3 share 61% for the peers, 70% for Nordic). **Reading.** The slope is not a stable parameter: it is indistinguishable from zero in 2011-19 and not detectable in the 2008-10 crash; it appears only around the 2023 destock turn. Nordic's excess over the peers in the same window cannot be told apart from noise once autocorrelation is counted. More cycles did not add independent confirmation: the evidence for the mechanism, for Nordic and for the peers, is one turn.
+Peers by cycle window: gfc_2008_10 -0.22 (se 1.65, 10 quarters); normal_2011_19 +0.19 (se 0.32, 36 quarters); covid_2020_26 +0.59 (se 0.92, 26 quarters). Inside Nordic's own window (2020Q1-2026Q2) the peers' slope is +0.59 (se 0.92 on n_eff 5.8), i.e. 20% of Nordic's +3.04. Nordic minus peers = +2.44: t = 2.0 naive, 0.9 with the factor's autocorrelation. The same quarters carry both slopes (2023Q3, 2023Q4: top-3 share 92% for the peers, 82% for Nordic). **Reading.** The slope is not a stable parameter: it is indistinguishable from zero in 2011-19 and not detectable in the 2008-10 crash; it appears only around the 2023 destock turn. Nordic's excess over the peers in the same window cannot be told apart from noise once autocorrelation is counted. More cycles did not add independent confirmation: the evidence for the mechanism, for Nordic and for the peers, is one turn.
 
 ### Should each cycle phase get its own model? (phase = sign of the firm's own revenue YoY at t−1, known in real time)
 
@@ -452,7 +454,7 @@ The beat is (actual / guide mid - 1): management's forecast error. Candidates th
 >
 > **K2. Nordic's 2023Q3 miss was not set up by a guide more optimistic than the peers'.** For 2023Q3 Nordic guided +0.5% q/q against a peer median of +0.4% (relative optimism +0.1 pts), then missed by 12.9%: the shortfall arose inside the quarter. Against the consumer-heavy peers only (exploratory, chosen after seeing the data) the gap was +18.8 pts. *So what:* Which comparator is 'the market' decides the reading; the pre-registered peer median does not flag the episode.
 >
-> **K3. No guide-setting factor predicts misses.** Relative guidance optimism on 671 peer firm-quarters (70 quarters): +0.005 per pt (t 0.3); walk-forward OOS R2 -0.005 vs each firm's mean; the most optimistic fifth of guides misses in 15% of quarters, the least optimistic in 24%. On Nordic without 2023Q3, 2023Q4: none of relative optimism, guided growth, guide width or last quarter's beat has |t| >= 2; the channel factor keeps +1.77 (t 2.3, naive). *So what:* The large Nordic misses are rare intra-quarter surprises; about a dozen candidate factors have now been tried on 21 quarters, so any one that 'works' on Nordic alone is expected by chance.
+> **K3. No guide-setting factor predicts misses.** Relative guidance optimism on 671 peer firm-quarters (70 quarters): +0.005 per pt (t 0.3); walk-forward OOS R2 -0.005 vs each firm's mean; the most optimistic fifth of guides misses in 15% of quarters, the least optimistic in 24%. On Nordic without 2023Q3, 2023Q4: last_beat keep |t| >= 2; the channel factor keeps +0.86 (t 0.7, naive). *So what:* The large Nordic misses are rare intra-quarter surprises; about a dozen candidate factors have now been tried on 21 quarters, so any one that 'works' on Nordic alone is expected by chance.
 >
 > **K4. Beyond the guided quarter the channel factor adds little to revenue forecasts.** Forecasting revenue one quarter past the guide (g2 = actual t+1 / guide t) on 479 peer firm-quarters: seasonal benchmark + channel factor gives OOS R2 +1.6% vs the seasonal benchmark alone (t 1.4; RMSE 10.55 with the channel vs 10.64 seasonal vs 11.54 flat, pts); 102% of the gain comes from 2023Q3, 2023Q4, 2025Q4; without 2023Q3, 2023Q4 +0.3%. *So what:* Where the channel belongs (revenue beyond the guide, not the beat) is consistent with (not confirmed by) the data: its value there is small and turn-dependent: seasonality does more than the channel.
 
@@ -485,69 +487,78 @@ By quintile of relative optimism:
 
 | spec                  | sample          |   n |   r2 |   b_x_channel |   t_x_channel |   b_rel_raw |   t_rel_raw |   b_rel_seasonal |   t_rel_seasonal |   b_rel_consumer_heavy |   t_rel_consumer_heavy |    b_g |    t_g |   b_guide_width_pct |   t_guide_width_pct |   b_last_beat |   t_last_beat |
 |:----------------------|:----------------|----:|-----:|--------------:|--------------:|------------:|------------:|-----------------:|-----------------:|-----------------------:|-----------------------:|-------:|-------:|--------------------:|--------------------:|--------------:|--------------:|
-| x_channel             | all             |  21 | 0.5  |          3.51 |          4.32 |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| x_channel             | without episode |  19 | 0.23 |          1.77 |          2.28 |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_raw               | all             |  21 | 0    |        nan    |        nan    |        0.02 |        0.25 |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_raw               | without episode |  19 | 0    |        nan    |        nan    |        0    |        0.04 |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_seasonal          | all             |  17 | 0    |        nan    |        nan    |      nan    |      nan    |            -0.01 |            -0.27 |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_seasonal          | without episode |  15 | 0.02 |        nan    |        nan    |      nan    |      nan    |            -0.02 |            -0.51 |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_consumer_heavy    | all             |  19 | 0.09 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                  -0.09 |                  -1.27 | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| rel_consumer_heavy    | without episode |  17 | 0    |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                  -0.01 |                  -0.23 | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| g                     | all             |  21 | 0.02 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    |   0.04 |   0.68 |              nan    |              nan    |        nan    |        nan    |
-| g                     | without episode |  19 | 0.01 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    |   0.01 |   0.38 |              nan    |              nan    |        nan    |        nan    |
-| guide_width_pct       | all             |  21 | 0.02 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |               -0.31 |               -0.6  |        nan    |        nan    |
-| guide_width_pct       | without episode |  19 | 0.07 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |                0.39 |                1.13 |        nan    |        nan    |
-| last_beat             | all             |  20 | 0.2  |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |          0.45 |          2.11 |
-| last_beat             | without episode |  18 | 0.15 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |          0.3  |          1.7  |
-| x_channel + rel_raw   | all             |  21 | 0.55 |          3.8  |          4.68 |        0.07 |        1.48 |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| x_channel + rel_raw   | without episode |  19 | 0.27 |          2.04 |          2.44 |        0.04 |        0.91 |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
-| x_channel + last_beat | all             |  20 | 0.53 |          3.84 |          3.46 |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |         -0.01 |         -0.06 |
-| x_channel + last_beat | without episode |  18 | 0.29 |          1.74 |          1.68 |      nan    |      nan    |           nan    |           nan    |                 nan    |                 nan    | nan    | nan    |              nan    |              nan    |          0.1  |          0.49 |
+| x_channel             | all             |  30 | 0.21 |          2.92 |          2.74 |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| x_channel             | without episode |  28 | 0.02 |          0.86 |          0.74 |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_raw               | all             |  29 | 0    |        nan    |        nan    |        0.02 |        0.25 |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_raw               | without episode |  27 | 0    |        nan    |        nan    |       -0    |       -0.01 |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_seasonal          | all             |  25 | 0.01 |        nan    |        nan    |      nan    |      nan    |            -0.03 |            -0.58 |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_seasonal          | without episode |  23 | 0.02 |        nan    |        nan    |      nan    |      nan    |            -0.03 |            -0.64 |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_consumer_heavy    | all             |  27 | 0.03 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                  -0.07 |                   -0.9 | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| rel_consumer_heavy    | without episode |  25 | 0    |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                  -0    |                   -0   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| g                     | all             |  29 | 0.01 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   |   0.04 |   0.61 |              nan    |              nan    |        nan    |        nan    |
+| g                     | without episode |  27 | 0    |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   |   0.01 |   0.21 |              nan    |              nan    |        nan    |        nan    |
+| guide_width_pct       | all             |  30 | 0.05 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |               -0.47 |               -1.23 |        nan    |        nan    |
+| guide_width_pct       | without episode |  28 | 0    |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |               -0.03 |               -0.09 |        nan    |        nan    |
+| last_beat             | all             |  29 | 0.27 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |          0.52 |          3.14 |
+| last_beat             | without episode |  27 | 0.23 |        nan    |        nan    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |          0.42 |          2.73 |
+| x_channel + rel_raw   | all             |  29 | 0.24 |          3.14 |          2.83 |        0.06 |        0.85 |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| x_channel + rel_raw   | without episode |  27 | 0.02 |          0.96 |          0.77 |        0.01 |        0.22 |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |        nan    |        nan    |
+| x_channel + last_beat | all             |  29 | 0.34 |          1.87 |          1.66 |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |          0.39 |          2.19 |
+| x_channel + last_beat | without episode |  27 | 0.23 |         -0    |         -0    |      nan    |      nan    |           nan    |           nan    |                 nan    |                  nan   | nan    | nan    |              nan    |              nan    |          0.42 |          2.54 |
 
-Same-quarter peer mean beat vs Nordic's beat: correlation 0.58 (21 quarters), 0.33 without the episode; not usable as a nowcast in any case, since Nordic reports before most peers.
+Same-quarter peer mean beat vs Nordic's beat: correlation 0.66 (30 quarters), 0.64 without the episode; not usable as a nowcast in any case, since Nordic reports before most peers.
 
 Nordic, quarter by quarter:
 
 | quarter   |   guide_mid_usdm |      g |   peer_median_g |   rel_raw |   rel_seasonal |   rel_consumer_heavy |   guide_width_pct |   last_beat |   x_channel |   beat |
 |:----------|-----------------:|-------:|----------------:|----------:|---------------:|---------------------:|------------------:|------------:|------------:|-------:|
-| 2021Q2    |              145 |   1.26 |            2.32 |     -1.07 |         nan    |                 2.3  |              6.9  |      nan    |        1.34 |   1.79 |
-| 2021Q3    |              140 |  -5.15 |            2.4  |     -7.55 |         nan    |                -7.21 |             14.29 |        1.79 |        0.67 |   6.07 |
-| 2021Q4    |              160 |   7.74 |            1.05 |      6.69 |         nan    |                 6.35 |             12.5  |        6.07 |        0.34 |   7    |
-| 2022Q1    |              180 |   5.14 |            3.88 |      1.26 |         nan    |                 0.25 |             11.11 |        7    |       -0    |   1.72 |
-| 2022Q2    |              200 |   9.23 |            4.37 |      4.86 |           8.49 |                 3.14 |             10    |        1.72 |        0.67 |   0.1  |
-| 2022Q3    |              200 |  -0.1  |            2.19 |     -2.29 |           4.52 |                -2.29 |             10    |        0.1  |       -0.67 |   1.05 |
-| 2022Q4    |              200 |  -1.04 |           -5.91 |      4.87 |          -5.53 |                 6.31 |             10    |        1.05 |       -0    |  -4.3  |
-| 2023Q1    |              150 | -21.63 |           -5.43 |    -16.2  |         -15.23 |                -7.66 |             13.33 |       -4.3  |       -1.01 |  -3.07 |
-| 2023Q2    |              150 |   3.16 |            1.31 |      1.85 |          -1.58 |                 4.7  |             13.33 |       -3.07 |       -0.67 |   2.8  |
-| 2023Q3    |              155 |   0.52 |            0.42 |      0.1  |           2.31 |                18.84 |             12.9  |        2.8  |       -1.68 | -12.9  |
-| 2023Q4    |              120 | -11.11 |           -8.35 |     -2.76 |          -0.62 |                17.18 |             16.67 |      -12.9  |       -2.01 |  -9.83 |
-| 2024Q1    |               75 | -30.68 |           -8.96 |    -21.72 |          -2.46 |               -31.23 |             13.33 |       -9.83 |       -0.67 |  -0.67 |
-| 2024Q2    |              125 |  67.79 |            4.38 |     63.4  |          62.27 |                53.27 |             16    |       -0.67 |       -1.34 |   2.32 |
-| 2024Q3    |              160 |  25.1  |            3.93 |     21.16 |          30.3  |                16.81 |             12.5  |        2.32 |       -0.67 |  -0.75 |
-| 2024Q4    |              140 | -11.84 |           -4.22 |     -7.62 |           2.49 |               -11.6  |             14.29 |       -0.75 |        1.01 |   7.29 |
-| 2025Q1    |              150 |  -0.13 |           -0.33 |      0.2  |          31.84 |                -3.21 |             13.33 |        7.29 |        1.01 |   3.4  |
-| 2025Q2    |              155 |  -0.06 |            3.71 |     -3.78 |         -71.61 |                -9.04 |             12.9  |        3.4  |        1.34 |   5.87 |
-| 2025Q3    |              175 |   6.64 |            5.07 |      1.57 |         -16.01 |                 0.34 |             11.43 |        5.87 |        1.34 |   2.29 |
-| 2025Q4    |              165 |  -7.82 |            0.56 |     -8.38 |          -2.88 |                -8.55 |             12.12 |        2.29 |        0.67 |   2.73 |
-| 2026Q1    |              185 |   9.14 |            2.45 |      6.7  |           2.66 |               nan    |             10.81 |        2.73 |       -0.34 |   4    |
-| 2026Q2    |              210 |   9.15 |            8.35 |      0.79 |           1.68 |               nan    |              9.52 |        4    |        0.67 |   4.1  |
-| 2026Q3    |              230 |   5.22 |            8    |     -2.79 |          -6.49 |               -11.42 |              8.7  |        4.1  |      nan    | nan    |
+| 2019Q1    |             52.5 | nan    |           -3.57 |    nan    |         nan    |               nan    |              9.52 |      nan    |        0.34 |   0.19 |
+| 2019Q2    |             71.5 |  35.93 |            2.32 |     33.61 |         nan    |                25.89 |              6.99 |        0.19 |        0.34 |  -1.4  |
+| 2019Q3    |             80.5 |  14.18 |            2.4  |     11.79 |         nan    |                 8.72 |              6.21 |       -1.4  |        1.01 |   2.11 |
+| 2019Q4    |             77   |  -6.33 |           -3.4  |     -2.93 |         nan    |                -5.75 |              5.19 |        2.11 |        0.67 |   7.92 |
+| 2020Q1    |             67.5 | -18.77 |           -2.73 |    -16.04 |         nan    |               -15.18 |             10.37 |        7.92 |        0.67 |   4    |
+| 2020Q2    |             80   |  13.96 |           -1.69 |     15.65 |         -15.5  |                17.3  |             12.5  |        4    |       -0.34 |  10.62 |
+| 2020Q3    |            100   |  12.99 |            4.41 |      8.58 |          -4.99 |                 7.85 |             10    |       10.62 |       -0.34 |  19.4  |
+| 2020Q4    |            120   |   0.5  |            2.29 |     -1.79 |          -5.02 |                -6.82 |              8.33 |       19.4  |       -0    |   5.92 |
+| 2021Q1    |            135   |   6.22 |            1.87 |      4.35 |          16.73 |                 6.22 |              7.41 |        5.92 |        1.34 |   6.07 |
+| 2021Q2    |            145   |   1.26 |            2.32 |     -1.07 |         -25.15 |                 2.3  |              6.9  |        6.07 |        1.34 |   1.79 |
+| 2021Q3    |            140   |  -5.15 |            2.4  |     -7.55 |         -25.08 |                -7.21 |             14.29 |        1.79 |        0.67 |   6.07 |
+| 2021Q4    |            160   |   7.74 |            1.05 |      6.69 |           7.68 |                 6.35 |             12.5  |        6.07 |        0.34 |   7    |
+| 2022Q1    |            180   |   5.14 |            3.88 |      1.26 |          -5.06 |                 0.25 |             11.11 |        7    |       -0    |   1.72 |
+| 2022Q2    |            200   |   9.23 |            4.37 |      4.86 |           8.49 |                 3.14 |             10    |        1.72 |        0.67 |   0.1  |
+| 2022Q3    |            200   |  -0.1  |            2.19 |     -2.29 |           4.52 |                -2.29 |             10    |        0.1  |       -0.67 |   1.05 |
+| 2022Q4    |            200   |  -1.04 |           -5.91 |      4.87 |          -5.53 |                 6.31 |             10    |        1.05 |       -0    |  -4.3  |
+| 2023Q1    |            150   | -21.63 |           -5.43 |    -16.2  |         -15.23 |                -7.66 |             13.33 |       -4.3  |       -1.01 |  -3.07 |
+| 2023Q2    |            150   |   3.16 |            1.31 |      1.85 |          -1.58 |                 4.7  |             13.33 |       -3.07 |       -0.67 |   2.8  |
+| 2023Q3    |            155   |   0.52 |            0.42 |      0.1  |           2.31 |                18.84 |             12.9  |        2.8  |       -1.68 | -12.9  |
+| 2023Q4    |            120   | -11.11 |           -8.35 |     -2.76 |          -0.62 |                17.18 |             16.67 |      -12.9  |       -2.01 |  -9.83 |
+| 2024Q1    |             75   | -30.68 |           -8.96 |    -21.72 |          -2.46 |               -31.23 |             13.33 |       -9.83 |       -0.67 |  -0.67 |
+| 2024Q2    |            125   |  67.79 |            4.38 |     63.4  |          62.27 |                53.27 |             16    |       -0.67 |       -1.34 |   2.32 |
+| 2024Q3    |            160   |  25.1  |            3.93 |     21.16 |          30.3  |                16.81 |             12.5  |        2.32 |       -0.67 |  -0.75 |
+| 2024Q4    |            140   | -11.84 |           -4.22 |     -7.62 |           2.49 |               -11.6  |             14.29 |       -0.75 |        1.01 |   7.29 |
+| 2025Q1    |            150   |  -0.13 |           -0.33 |      0.2  |          31.84 |                -3.21 |             13.33 |        7.29 |        1.01 |   3.4  |
+| 2025Q2    |            155   |  -0.06 |            3.71 |     -3.78 |         -71.61 |                -9.04 |             12.9  |        3.4  |        1.34 |   5.87 |
+| 2025Q3    |            175   |   6.64 |            5.07 |      1.57 |         -16.01 |                 0.34 |             11.43 |        5.87 |        1.34 |   2.29 |
+| 2025Q4    |            165   |  -7.82 |            0.56 |     -8.38 |          -2.88 |                -8.55 |             12.12 |        2.29 |        0.67 |   2.73 |
+| 2026Q1    |            185   |   9.14 |            2.45 |      6.7  |           2.66 |               nan    |             10.81 |        2.73 |       -0.34 |   4    |
+| 2026Q2    |            210   |   9.15 |            8.35 |      0.79 |           1.68 |               nan    |              9.52 |        4    |        0.67 |   4.1  |
+| 2026Q3    |            230   |   5.22 |            8    |     -2.79 |          -6.49 |               -11.42 |              8.7  |        4.1  |      nan    | nan    |
 
 Correlations (Nordic):
 
 |                        |   beat |   rel_raw |   rel_consumer_heavy |     g |   guide_width_pct |   last_beat |   x_channel |   logi_sellthrough_accel |   nordic_dist_state |   mchp_disti_days_change |   nordic_fwd_dio |
 |:-----------------------|-------:|----------:|---------------------:|------:|------------------:|------------:|------------:|-------------------------:|--------------------:|-------------------------:|-----------------:|
-| beat                   |   1    |      0.06 |                -0.29 |  0.16 |             -0.14 |        0.44 |        0.7  |                    -0.58 |                0.57 |                     0.7  |             0.55 |
-| rel_raw                |   0.06 |      1    |                 0.89 |  0.97 |              0.19 |        0.19 |       -0.24 |                     0.31 |                0.03 |                    -0.12 |             0.24 |
-| rel_consumer_heavy     |  -0.29 |      0.89 |                 1    |  0.84 |              0.29 |        0.04 |       -0.47 |                     0.51 |               -0.23 |                    -0.41 |             0.07 |
-| g                      |   0.16 |      0.97 |                 0.84 |  1    |              0.05 |        0.35 |       -0.11 |                     0.24 |                0.18 |                    -0.01 |             0.4  |
-| guide_width_pct        |  -0.14 |      0.19 |                 0.29 |  0.05 |              1    |       -0.53 |       -0.47 |                     0.17 |               -0.63 |                    -0.24 |            -0.34 |
-| last_beat              |   0.44 |      0.19 |                 0.04 |  0.35 |             -0.53 |        1    |        0.62 |                    -0.14 |                0.62 |                     0.52 |             0.68 |
-| x_channel              |   0.7  |     -0.24 |                -0.47 | -0.11 |             -0.47 |        0.62 |        1    |                    -0.61 |                0.73 |                     0.94 |             0.54 |
-| logi_sellthrough_accel |  -0.58 |      0.31 |                 0.51 |  0.24 |              0.17 |       -0.14 |       -0.61 |                     1    |               -0.41 |                    -0.6  |            -0.33 |
-| nordic_dist_state      |   0.57 |      0.03 |                -0.23 |  0.18 |             -0.63 |        0.62 |        0.73 |                    -0.41 |                1    |                     0.77 |             0.89 |
-| mchp_disti_days_change |   0.7  |     -0.12 |                -0.41 | -0.01 |             -0.24 |        0.52 |        0.94 |                    -0.6  |                0.77 |                     1    |             0.56 |
-| nordic_fwd_dio         |   0.55 |      0.24 |                 0.07 |  0.4  |             -0.34 |        0.68 |        0.54 |                    -0.33 |                0.89 |                     0.56 |             1    |
+| beat                   |   1    |      0.05 |                -0.18 |  0.12 |             -0.23 |        0.52 |        0.46 |                    -0.58 |                0.57 |                     0.7  |             0.51 |
+| rel_raw                |   0.05 |      1    |                 0.91 |  0.97 |              0.02 |        0.05 |       -0.2  |                     0.31 |                0.03 |                    -0.12 |             0.11 |
+| rel_consumer_heavy     |  -0.18 |      0.91 |                 1    |  0.86 |              0.13 |       -0.06 |       -0.4  |                     0.51 |               -0.23 |                    -0.41 |             0.02 |
+| g                      |   0.12 |      0.97 |                 0.86 |  1    |             -0.06 |        0.17 |       -0.1  |                     0.24 |                0.18 |                    -0.01 |             0.25 |
+| guide_width_pct        |  -0.23 |      0.02 |                 0.13 | -0.06 |              1    |       -0.42 |       -0.51 |                     0.17 |               -0.63 |                    -0.24 |            -0.52 |
+| last_beat              |   0.52 |      0.05 |                -0.06 |  0.17 |             -0.42 |        1    |        0.44 |                    -0.14 |                0.62 |                     0.52 |             0.77 |
+| x_channel              |   0.46 |     -0.2  |                -0.4  | -0.1  |             -0.51 |        0.44 |        1    |                    -0.61 |                0.73 |                     0.94 |             0.62 |
+| logi_sellthrough_accel |  -0.58 |      0.31 |                 0.51 |  0.24 |              0.17 |       -0.14 |       -0.61 |                     1    |               -0.41 |                    -0.6  |            -0.32 |
+| nordic_dist_state      |   0.57 |      0.03 |                -0.23 |  0.18 |             -0.63 |        0.62 |        0.73 |                    -0.41 |                1    |                     0.77 |             0.67 |
+| mchp_disti_days_change |   0.7  |     -0.12 |                -0.41 | -0.01 |             -0.24 |        0.52 |        0.94 |                    -0.6  |                0.77 |                     1    |             0.39 |
+| nordic_fwd_dio         |   0.51 |      0.11 |                 0.02 |  0.25 |             -0.52 |        0.77 |        0.62 |                    -0.32 |                0.67 |                     0.39 |             1    |
 
 ## 10. Where the channel belongs: revenue beyond the guided quarter (step 6h)
 

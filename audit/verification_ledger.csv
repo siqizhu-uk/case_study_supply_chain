@@ -72,10 +72,47 @@ pipeline_a,logitech_guidance:2026-05-05:FY2026:op_income_usdm:actual,found,,2026
 pipeline_a,logitech_guidance:2026-05-05:FY2026:sales_usdm:actual,found,,2026-09-26
 pipeline_a,logitech_guidance:2026-05-05:Q1FY2027:sales_usdm:initial,found,,2026-09-26
 pipeline_a,logitech_guidance:2026-07-28:Q2FY2027:sales_usdm:initial,found,,2026-09-26
+pipeline_a,nordic_guidance:2017-06-09:H1 2017:revenue_usdm:reiterated,found,,2026-09-28
+pipeline_a,nordic_guidance:2017-07-13:H2 2017:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2017-10-17:H2 2017:revenue_usdm:reiterated,found,,2026-09-28
+pipeline_a,nordic_guidance:2018-02-15:H1 2018:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2018-04-17:H1 2018:revenue_usdm:reiterated,found,,2026-09-28
+pipeline_a,nordic_guidance:2018-07-12:H2 2018:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2018-12-03:H2 2018:revenue_usdm:lowered,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-02-05:2019Q1:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-02-05:2019Q1:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-04-24:2019Q2:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-04-24:2019Q2:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-07-11:2019Q3:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-07-11:2019Q3:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-10-22:2019Q4:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2019-10-22:2019Q4:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-02-07:2020Q1:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-02-07:2020Q1:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-04-21:2020Q2:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-04-21:2020Q2:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-07-03:2020Q2:revenue_usdm:raised,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-07-13:2020Q3:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-07-13:2020Q3:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-09-04:2020Q3:revenue_usdm:raised,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-10-20:2020Q4:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2020-10-20:2020Q4:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2021-02-04:2021Q1:gm_pct:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:2021-02-04:2021Q1:revenue_usdm:initial,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H1 2017:2017Q2,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H1 2017:msg:425330,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H1 2018:2018Q1,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H1 2018:2018Q2,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H2 2017:2017Q3,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H2 2017:2017Q4,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H2 2018:2018Q3,found,,2026-09-28
+pipeline_a,nordic_guidance:actual:H2 2018:2018Q4,found,,2026-09-28
 step1_t1,gn|2022,"figure 18,687 present in AR2022",18687.0,2026-09-26
 step1_t1,gn|2023,"figure 18,120 present in AR2023",18120.0,2026-09-26
 step1_t1,gn|2024,"figure 17,985 present in AR2024",17985.0,2026-09-26
 step1_t1,gn|2025,"figure 16,782 present in AR2025",16782.0,2026-09-26
+step1_t1,nordic|2019,found in AR text,,2026-09-28
+step1_t1,nordic|2020,found in AR text,,2026-09-28
 step1_t1,nordic|2021,found in AR text,,2026-09-26
 step1_t1,nordic|2022,found in AR text,,2026-09-26
 step1_t1,nordic|2023,found in AR text,,2026-09-26

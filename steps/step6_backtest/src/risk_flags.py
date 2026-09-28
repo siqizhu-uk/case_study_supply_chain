@@ -105,16 +105,53 @@ def _prereg_scored() -> int:
     return int((log["actual_usdm"] != "").sum())
 
 
+def extension_flags(cfg: dict | None = None) -> pd.DataFrame:
+    """R7-R8: what Nordic's own record extended to 2019Q1 (F32) shows about the guide-error rule in force; the rule is
+    kept (F33) and these are disclosed. Read from steps/step7_forecast/outputs/guide_error_record_extension.csv."""
+    f = step_outputs("step7_forecast") / "guide_error_record_extension.csv"
+    if not f.exists():
+        return pd.DataFrame()
+    e = pd.read_csv(f, dtype=str, keep_default_na=False).iloc[0]
+    e = e.map(lambda v: v if str(v).strip() else "nan")                 # an empty cell (no group, no walk-forward) reads as NaN
+    shocks = "" if e["shock_quarters"] == "nan" else e["shock_quarters"].strip()
+    lift = float(e["base_mean_pct"]) - float(e["base_mean_ex_shocks_pct"]) if shocks else 0.0
+    r7 = {"id": "R7", "risk": "The channel state cannot see an end-demand shock",
+          "evidence": (f"Nordic's record runs {e['first_quarter']}-{e['last_quarter']} ({e['n_guides']} guides, F32). Of the {e['n_base']} quarters "
+                       f"that set the habit (channel neither building nor short), "
+                       + (f"{shocks} had the guide raised before the print: errors {e['shock_errors_vs_initial_pct']} against the guide the model scores, "
+                          f"{e['shock_errors_vs_last_guide_pct']} against the last guide, with the state reading '{e['shock_states']}'. "
+                          if shocks else "none had the guide raised before the print. ")
+                       + "The state variable is a channel stock (distributor days); it explains misses when "
+                       f"distributors build (2023) and is blind to a demand shock (2020). Habit {float(e['base_mean_pct']):+.2f}% with those quarters, "
+                       f"{float(e['base_mean_ex_shocks_pct']):+.2f}% without (n {e['n_base_ex_shocks']}); before 2021 {float(e['base_mean_before_2021_pct']):+.2f}% "
+                       f"(n {e['n_base_before_2021']}), from 2021 {float(e['base_mean_from_2021_pct']):+.2f}% (n {e['n_base_from_2021']}). "
+                       "The rule is kept as pre-stated (F33); the shock sits in the range, not in a new term."),
+          "triggered": bool(shocks) and lift > 0.5}
+    r8 = {"id": "R8", "risk": "The state split has no walk-forward edge on the longer record",
+          "evidence": (f"Walk-forward over {e['wf_n']} quarters from 2023Q1: rule in force {float(e['wf_rmse_rule']):.2f} pts, guide midpoint (zero error) "
+                       f"{float(e['wf_rmse_guide_mid']):.2f}, past-4-quarter beat {float(e['wf_rmse_past4']):.2f}, pooled with the peers {float(e['wf_rmse_pooled']):.2f} (F16 challenger). "
+                       "The habit's sign replicates out of sample (Nordic guided below the outcome in 8 of the 9 quarters 2019Q1-2021Q1), the "
+                       "claim that splitting it by channel state improves the forecast does not; the split is kept for its mechanism (F20, F30), "
+                       "and every challenger is scored at the print."),
+          "triggered": bool(float(e["wf_rmse_rule"]) >= float(e["wf_rmse_guide_mid"]) - 0.1 or float(e["wf_rmse_pooled"]) < float(e["wf_rmse_rule"]))}
+    return pd.DataFrame([r7, r8])
+
+
 def load_flags() -> pd.DataFrame | None:
+    """Step-6 flags (R1-R6) plus the step-7 record-extension flags (R7-R8) when that file exists."""
     f = step_outputs("step6_backtest") / FILE
-    return pd.read_csv(f) if f.exists() else None
+    base = pd.read_csv(f) if f.exists() else None
+    ext = extension_flags()
+    if base is None:
+        return ext if len(ext) else None
+    return pd.concat([base, ext], ignore_index=True) if len(ext) else base
 
 
 def risk_box_md(flags: pd.DataFrame | None) -> str:
     """A blockquote the results page styles as a red warning box."""
     if flags is None or not flags["triggered"].any():
         return ""
-    lines = ["> ### ⚠ Risks the tests cannot rule out (composite channel factor — pre-registered challenger)", ">"]
+    lines = ["> ### ⚠ Risks the tests cannot rule out (R1-R6 the composite channel factor, a pre-registered challenger; R7-R8 Nordic's own guide-error record, F32)", ">"]
     for _, f in flags[flags["triggered"]].iterrows():
         lines.append(f"> **{f['id']}. {f['risk']}.** {f['evidence']}")
         lines.append(">")
@@ -126,5 +163,5 @@ def risk_box_html(flags: pd.DataFrame | None) -> str:
         return ""
     items = "".join(f"<li><b>{f['id']}. {f['risk']}.</b> {f['evidence']}</li>" for _, f in flags[flags["triggered"]].iterrows())
     return ('<div style="border:2px solid #c0392b;background:#fdecea;border-radius:8px;padding:10px 16px;margin:16px 0">'
-            '<div style="font-weight:700;color:#c0392b;font-size:15px">⚠ Risks the tests cannot rule out — composite channel factor (pre-registered challenger, not in the forecast)</div>'
+            '<div style="font-weight:700;color:#c0392b;font-size:15px">⚠ Risks the tests cannot rule out — R1-R6 the composite channel factor (pre-registered challenger, not in the forecast); R7-R8 Nordic&#39;s own guide-error record (F32)</div>'
             f'<ol style="margin:8px 0 0 0;padding-left:20px;font-size:13px;line-height:1.5">{items}</ol></div>')

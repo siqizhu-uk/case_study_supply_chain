@@ -1,7 +1,7 @@
 check,value,passed
-oos_r2_vs_benchmark,0.48488274389067876,True
+oos_r2_vs_benchmark,0.396914416102751,True
 placebo_p,0.007,True
 n_forecasts,11.0,True
-leave_one_out_share_beating_benchmark,1.0,True
+leave_one_out_share_beating_benchmark,0.75,True
 GATE PASSED,,True
 "USED IN FORECAST (analyst: config composite.use_in_forecast, B26)",,False

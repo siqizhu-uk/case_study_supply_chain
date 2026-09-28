@@ -5,3 +5,4 @@ target,model,role,origin,point,low,high,event_usdm,wf_rmse_usdm,regressor,regres
 2026Q4,CYC,challenger (pre-registered; not in the Q4 forecast),2026-10-21,208.3,158.6,258.0,-0.87,38.8,rseas,2026Q2,7.47,3.067,2.248,18,222.4,212.2,221.1,False,9be8d17f69,4eecfc373d,2026-09-27,2027-02-05,,,,
 2026Q4,CYC,challenger (pre-registered; not in the Q4 forecast),2026-10-21,208.3,158.6,258.0,-0.87,38.8,rseas,2026Q2,7.47,3.067,2.248,18,222.4,212.2,221.1,False,5f5b3ffc2b,4eecfc373d,2026-09-27,2027-02-05,,,,
 2026Q4,CYC,challenger (pre-registered; not in the Q4 forecast),2026-10-21,208.3,158.6,258.0,-0.87,38.8,rseas,2026Q2,7.47,3.067,2.248,18,222.4,212.2,221.1,False,3f98fa80be,4eecfc373d,2026-09-27,2027-02-05,,,,
+2026Q4,CYC,challenger (pre-registered; not in the Q4 forecast),2026-10-21,208.3,158.6,258.0,-0.87,38.8,rseas,2026Q2,7.47,3.067,2.248,18,222.4,212.2,221.1,False,3f98fa80be,b184bf7c25,2026-09-28,2027-02-05,,,,

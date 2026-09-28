@@ -16,7 +16,8 @@ import sys
 from .sec import build_sec_quarterly
 from .reconcile import reconcile
 from .filings import download_all, verify
-from .newsweb import download_nordic_reports
+from .newsweb import download_nordic_reports, download_announcements
+from .nordic_guidance import announcement_ids
 from .extend import extend_from_xbrl
 from . import inventory_detail, nordic_balance
 
@@ -52,6 +53,8 @@ def main(argv=None) -> int:
         try:
             nw = download_nordic_reports(refresh=a.refresh)
             print(f"{len(nw)} Nordic filings ({nw['status'].eq('downloaded').sum()} downloaded, rest cached); index in data/processed/newsweb_nordic_index.csv")
+            an = download_announcements(announcement_ids(), refresh=a.refresh)      # guidance updates without a report (F32)
+            print(f"{len(an)} Nordic announcements ({an['status'].eq('downloaded').sum()} downloaded, rest cached)")
         except Exception as e:
             print(f"NewsWeb fetch failed ({e}); falling back to nordicsemi.com URLs", file=sys.stderr)
         print("\n== 3b. Filing PDFs from company IR sites (GN; Nordic only where NewsWeb missed) ==")

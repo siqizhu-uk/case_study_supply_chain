@@ -247,6 +247,50 @@ def scores(w: pd.DataFrame) -> dict:
             "rmse_past4_pts": r("past4_beat"), "rmse_guide_mid_pts": r("guide_mid")}
 
 
+# ------------------------------------------------------------------ record extension (F32, F33)
+HISTORY = ROOT / "pipelines" / "A_company_financials" / "data" / "raw" / "nordic_guidance_history.csv"
+EXT_FILE = "guide_error_record_extension.csv"
+
+
+def record_extension(p: pd.DataFrame, cfg: dict, m: dict, wf: pd.DataFrame) -> dict:
+    """What extending Nordic's record to 2019Q1 (F32) shows about the rule, computed each run (analyst decision F33: the
+    rule stays; the two limitations it exposes are disclosed as risk flags R7-R8, not fixed by a new rule):
+      1. the channel state cannot see an end-demand shock: base-group quarters whose guide was raised before the print
+         (nordic_guidance_history.csv, action 'raised') carry the largest errors, and the habit with and without them;
+      2. the state split has no walk-forward edge on the longer record: RMSE of the rule vs the guide midpoint and the
+         pooled challenger."""
+    from guidance_record import nordic_quarters
+    n = nordic_quarters(p).dropna(subset=["revenue_usdm"])
+    lag = m["lag"]
+    sn = states("state_nordic")
+    st = pd.Series([sn.get(q - lag, np.nan) for q in n.index], index=n.index)
+    base = n[~st.isin(["building", "shortage"])]
+    split = pd.Period("2021Q1", "Q")
+    raised = {}
+    if HISTORY.exists():
+        h = pd.read_csv(HISTORY, dtype=str)
+        h = h[(h["metric"] == "revenue_usdm") & h["period"].str.match(r"^\d{4}Q\d$")].sort_values("statement_date")
+        for q, g in h.groupby("period"):
+            if (g["action"] == "raised").any():
+                last = g.iloc[-1]
+                raised[pd.Period(q, "Q")] = (float(last["low"]) + float(last["high"])) / 2
+    shocks = [q for q in base.index if q in raised]
+    ex = base.drop(shocks)
+    sc = scores(wf) if len(wf) else {}
+    out = {"first_quarter": str(n.index.min()), "last_quarter": str(n.index.max()), "n_guides": len(n),
+           "n_base": len(base), "base_mean_pct": float(base["error_pct"].mean()),
+           "n_base_before_2021": int((base.index < split).sum()), "base_mean_before_2021_pct": float(base.loc[base.index < split, "error_pct"].mean()),
+           "n_base_from_2021": int((base.index >= split).sum()), "base_mean_from_2021_pct": float(base.loc[base.index >= split, "error_pct"].mean()),
+           "shock_quarters": ", ".join(str(q) for q in shocks),
+           "shock_errors_vs_initial_pct": ", ".join(f"{base.loc[q, 'error_pct']:+.1f}" for q in shocks),
+           "shock_errors_vs_last_guide_pct": ", ".join(f"{(n.loc[q, 'revenue_usdm'] / raised[q] - 1) * 100:+.1f}" for q in shocks),
+           "shock_states": ", ".join(str(st.get(q)) for q in shocks),
+           "base_mean_ex_shocks_pct": float(ex["error_pct"].mean()) if len(ex) else float("nan"), "n_base_ex_shocks": len(ex),
+           "wf_n": int(sc.get("n", 0)), "wf_rmse_rule": sc.get("rmse_model_pts", float("nan")), "wf_rmse_guide_mid": sc.get("rmse_guide_mid_pts", float("nan")),
+           "wf_rmse_pooled": sc.get("rmse_pooled_challenger_pts", float("nan")), "wf_rmse_past4": sc.get("rmse_past4_pts", float("nan"))}
+    return out
+
+
 # ------------------------------------------------------------------ outputs
 def run_guide_error_model(p: pd.DataFrame, cfg: dict, target: str = "2026Q3", write: bool = True) -> dict:
     from core.config import step_outputs
@@ -261,9 +305,11 @@ def run_guide_error_model(p: pd.DataFrame, cfg: dict, target: str = "2026Q3", wr
     word_pred = predict(word, "Nordic", t) if "Nordic" in word["habits"] else None
     wf = walk_forward_nordic(p, cfg)
     out = {"model": m, "robust_lag": m2, "predictions": preds, "challenger_predictions": ch_preds, "walk_forward": wf, "scores": scores(wf),
-           "previous_rule": prev, "previous_rule_prediction": prev_pred, "wording_rule": word, "wording_rule_prediction": word_pred}
+           "previous_rule": prev, "previous_rule_prediction": prev_pred, "wording_rule": word, "wording_rule_prediction": word_pred,
+           "extension": record_extension(p, cfg, m, wf)}
     if write:
         d = step_outputs("step7_forecast")
+        pd.DataFrame([out["extension"]]).round(3).to_csv(d / EXT_FILE, index=False)
         rows = [{"company": co, **{k: v for k, v in h.items()}, **{f"pred_{k}": v for k, v in preds[co].items()},
                  "alpha_if_state_lag_plus_1": m2["habits"][co]["alpha"]} for co, h in m["habits"].items()]
         pd.DataFrame(rows).round(3).to_csv(d / "guide_error_model.csv", index=False)

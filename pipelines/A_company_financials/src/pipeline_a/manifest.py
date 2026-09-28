@@ -74,7 +74,8 @@ FILINGS = filings_from_config()
 
 # Which raw-CSV columns to look for in which filing (quarter row -> its own report; annual figures -> AR).
 VERIFY_COLUMNS = {
-    "nordic":   ["revenue_usdm", "consumer_usdm", "ind_health_usdm", "inventory_usdm", "short_range_usdm", "long_range_usdm"],
+    "nordic":   ["revenue_usdm", "gm_pct", "consumer_usdm", "ind_health_usdm", "inventory_usdm", "short_range_usdm", "proprietary_usdm",
+                 "long_range_usdm", "backlog_usdm", "guide_low_usdm", "guide_high_usdm", "guide_gm_pct"],   # guides: previous quarter's report
     "gn":       ["group_rev_dkkm", "hearing_rev_dkkm", "enterprise_rev_dkkm", "gaming_div_rev_dkkm", "cont_ops_rev_dkkm", "inventory_dkkm"],
     "logitech": ["net_sales_usdm", "gaming_usdm", "keyboards_usdm", "pointing_usdm", "video_collab_usdm", "webcams_usdm",
                  "tablet_usdm", "headsets_usdm", "inventory_usdm"],   # regions come from 10-Q segment notes (not in the 8-K)

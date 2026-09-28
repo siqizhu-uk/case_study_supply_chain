@@ -23,6 +23,15 @@ CONFIG = STEP / "config"
 WINDOWS = {"all": ("2021Q2", "2026Q2"), "destock": ("2022Q3", "2024Q1"), "normal": ("2024Q2", "2026Q2")}
 
 
+def nordic_beats() -> pd.Series:
+    """Nordic's guide error (actual / guide mid - 1, %) for every guided quarter in the raw series - the same series the
+    guide-error model (step 7e) reads, so the state table and the model see the same record (F32)."""
+    n = pd.read_csv(DATA_RAW / "nordic_quarterly.csv")
+    n.index = pd.PeriodIndex(n["quarter"], freq="Q")
+    mid = (n["guide_low_usdm"] + n["guide_high_usdm"]) / 2
+    return ((n["revenue_usdm"] / mid - 1) * 100).dropna()
+
+
 def derived_series(p: pd.DataFrame, f: pd.DataFrame) -> pd.DataFrame:
     """Panel plus the three series step 3 adds: Logitech sell-through YoY, Logitech purchases YoY, Nordic Bluetooth."""
     nordic = pd.read_csv(DATA_RAW / "nordic_quarterly.csv")
@@ -76,7 +85,7 @@ def run_step3(p: pd.DataFrame, cfg: dict, write: bool = True) -> dict:
         from step3_report import write_step3
         out["paths"] = write_step3(out, p, cfg)
         from cycle_state import run_cycle_state            # step 3b (D22): cycle state read from the mechanism data
-        out["cycle"] = run_cycle_state(cfg, p["nordic_beat_vs_guide_pct"])
+        out["cycle"] = run_cycle_state(cfg, nordic_beats())        # every guided quarter (from 2019Q1), not only the panel's
         from nordic_channel import run_nordic_channel       # D25: Nordic's own channel size and wording vs the proxy
         out["nordic_channel"] = run_nordic_channel(conc, f, p, out["cycle"]["states"])
     return out

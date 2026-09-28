@@ -1,7 +1,7 @@
 company,window,n,mean_beat_pct,median_beat_pct,std_pct,min_pct,max_pct,unit,rule
-Nordic,normal channel (2024Q2-2026Q2),9,3.47,3.4,2.29,-0.75,7.29,%,"quarterly revenue guide, quarters of that regime (config regimes)"
+Nordic,normal channel (2020Q1-2026Q2),11,4.17,4.0,2.97,-0.75,10.62,%,"quarterly revenue guide, quarters of that regime (config regimes)"
 Nordic,destock channel (2022Q3-2024Q1),7,-3.85,-3.07,5.73,-12.9,2.8,%,"quarterly revenue guide, quarters of that regime (config regimes)"
-Nordic,supply-constrained channel (2021Q2-2022Q2),5,3.34,1.79,3.02,0.1,7.0,%,"quarterly revenue guide, quarters of that regime (config regimes)"
-Nordic,all quarters (2021Q2-2026Q2),21,1.0,2.29,5.11,-12.9,7.29,%,"quarterly revenue guide, every quarter"
+Nordic,supply-constrained channel (2020Q3-2022Q2),8,6.01,5.99,5.99,0.1,19.4,%,"quarterly revenue guide, quarters of that regime (config regimes)"
+Nordic,all quarters (2019Q1-2026Q2),30,2.53,2.52,5.87,-12.9,19.4,%,"quarterly revenue guide, every quarter"
 Logitech,quarterly guides (2025Q2-2026Q2),5,1.61,1.9,0.64,0.51,2.05,%,explicit quarterly sales guide
 GN,"august annual organic guides, all years (2021-2025)",5,-3.3,-3.0,3.7,-9.5,0.0,pts,full-year organic growth outcome minus the August guide midpoint; every year (F14; spread used for the range)

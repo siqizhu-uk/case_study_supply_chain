@@ -31,13 +31,14 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))          # core.verify_ledger (nordic_guidance excerpt checks)
 
 from pipeline_a.paths import DATA_RAW, DATA_PROC  # noqa: E402
 from pipeline_a.manifest import COMPANIES, DATA_CONFIG  # noqa: E402
 from pipeline_a.reconcile import reconcile  # noqa: E402
 from pipeline_a.filings import verify  # noqa: E402
 from pipeline_a.verbal import verify_verbal, check_consistency, uncited_cells  # noqa: E402
-from pipeline_a import inventory_detail, nordic_balance  # noqa: E402
+from pipeline_a import inventory_detail, nordic_balance, nordic_guidance  # noqa: E402
 
 NEEDED = pd.period_range("2022Q3", "2026Q2", freq="Q")   # four years
 HEADLINE = {"nordic": "revenue_usdm", "logitech": "net_sales_usdm", "gn": "group_rev_dkkm",
@@ -86,7 +87,8 @@ METHODS = {
     "sec_8k_exhibit":    ("script: EDGAR document download", "each CSV cell searched in exhibit text (thousands-table rounding); restatements in next 4 quarterly / 2 annual filings"),
     "sec_10k":           ("script: EDGAR document download", "as sec_8k_exhibit (annual figures / restated comparatives)"),
     "sec_s1":            ("script: EDGAR document download", "as sec_8k_exhibit (pre-IPO quarters)"),
-    "newsweb_attachment":("script: Oslo Børs NewsWeb API attachment (message id cited)", "each CSV cell searched in PDF text (pdfplumber); restatements in later reports"),
+    "newsweb_attachment":("script: Oslo Børs NewsWeb API attachment (message id cited)", "each CSV cell searched in PDF text (pdfplumber); restatements in later reports; guidance excerpts (nordic_guidance.py) word for word"),
+    "newsweb_message":   ("script: Oslo Børs NewsWeb API message body (no attachment; cached as newsweb_<id>.txt)", "guidance excerpt searched word for word in the announcement text (nordic_guidance.py); ledger on a fresh clone"),
     "ir_pdf":            ("script: company IR PDF download", "each CSV cell searched in PDF text (pdfplumber); restatements in later reports"),
     "ir_pdf_fallback":   ("not downloaded — NewsWeb copy used instead", "none (fallback URL only)"),
     "transcript":        ("script fetch of transcript page, else quarter's cached report, else hand-saved excerpt in data/manual/ (see RETRIEVAL_LOG.md)", "quoted phrase searched in source text + coded value must equal the company-CSV cell"),
@@ -134,6 +136,8 @@ def main(argv=None) -> int:
     vb = verify_verbal(fetch=not a.no_fetch_verbal)
     vc = check_consistency()
     vu = uncited_cells()
+    ng = nordic_guidance.build()                       # F32: every pre-2021 guidance excerpt vs its cached document
+    ngc = nordic_guidance.consistency(ng)
     today = date.today().isoformat()
 
     # ---- fill data_config.csv -------------------------------------------------------------
@@ -150,12 +154,16 @@ def main(argv=None) -> int:
                 cfg.loc[i, "validation_detail"] = f"{len(sub)} cells vs XBRL, {int(sub['flag'].sum())} flagged, max diff {sub['diff_pct'].abs().max():.2f}%"
             else:
                 cfg.loc[i, "validated"] = "n/a"; cfg.loc[i, "validation_detail"] = "no XBRL comparison (context only)"
-        elif st in ("newsweb_attachment", "ir_pdf", "ir_pdf_fallback", "sec_8k_exhibit"):
+        elif st in ("newsweb_attachment", "ir_pdf", "ir_pdf_fallback", "sec_8k_exhibit", "newsweb_message"):
             sub = ver[(ver["company"] == c) & (ver["key"] == k) & ver["result"].str.startswith("found")]
             bad = ver[(ver["company"] == c) & (ver["key"] == k) & (ver["result"] == "not_found")]
-            if len(sub) or len(bad):
-                cfg.loc[i, "validated"] = "no" if len(bad) else "yes"
-                cfg.loc[i, "validation_detail"] = f"{len(sub)} CSV cells found in this document" + (f", {len(bad)} NOT found" if len(bad) else "")
+            gq = ng[(c == "nordic") & ng["source_key"].str.split("|").map(lambda ks: k in ks)] if c == "nordic" else ng.iloc[0:0]
+            gq_found = gq["quote_check"].astype(str).str.startswith("found")          # 'found' or 'found (recorded ...; document not cached)'
+            gq_ok, gq_bad = int(gq_found.sum()), int((~gq_found).sum())
+            if len(sub) or len(bad) or len(gq):
+                cfg.loc[i, "validated"] = "no" if (len(bad) or gq_bad) else "yes"
+                cfg.loc[i, "validation_detail"] = (f"{len(sub)} CSV cells found in this document" + (f", {len(bad)} NOT found" if len(bad) else "")
+                                                   + (f"; {gq_ok} guidance excerpts found" + (f", {gq_bad} NOT found" if gq_bad else "") if len(gq) else ""))
             else:
                 cfg.loc[i, "validated"] = "unused" if st == "ir_pdf_fallback" else "no_cells"
                 cfg.loc[i, "validation_detail"] = "document downloaded but no CSV cell cites this key" if st != "ir_pdf_fallback" else "NewsWeb copy used instead"
@@ -194,6 +202,9 @@ def main(argv=None) -> int:
           "`no_filing` = no document cached for that quarter (Ingram pre-IPO quarters come from XBRL-derived aggregator data, flagged `is_estimate`).", ""]
     nf = ver[ver["result"] == "not_found"]
     md += ["### Cells NOT found — check these by hand\n", nf.to_markdown(index=False) if len(nf) else "none", ""]
+    md += ["## 3b. Nordic guidance history 2017-2021 (`data/raw/nordic_guidance_history.csv`, F32)\n",
+           f"{int(ng['quote_check'].astype(str).str.startswith('found').sum())}/{len(ng)} excerpts found word for word in the cited cached document (or recorded in the ledger); "
+           f"{int(ngc['consistent'].sum())}/{len(ngc)} quarterly initial guides equal the guide cells of nordic_quarterly.csv.", ""]
     md += ["## 4. Grade-C verbal metrics (`data/raw/verbal_metrics.csv`)\n",
            "Each coded value carries the phrase it rests on and its source. `found` = phrase in the cited page; `found_in_filing` = cited page "
            "blocks bots but the quarter's report (already cached for check 3) contains the phrase; `fetch_failed` = open the url and search the phrase by hand. "

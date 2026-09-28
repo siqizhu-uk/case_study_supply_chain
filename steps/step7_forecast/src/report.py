@@ -58,8 +58,10 @@ def _fig_xcorr(lag: dict, path: Path) -> None:
 
 
 def _fig_guidance(p: pd.DataFrame, path: Path) -> None:
+    """Every guided quarter from the raw series (2019Q1+, F32), not only the panel's 2020Q1+."""
+    from guidance_record import nordic_quarters
     fig, ax = plt.subplots(figsize=(10, 3.6))
-    s = p["nordic_beat_vs_guide_pct"].dropna()
+    s = nordic_quarters(p).dropna(subset=["revenue_usdm"])["error_pct"]
     colors = ["#E45756" if v < 0 else "#54A24B" for v in s]
     ax.bar(s.index.to_timestamp(), s.values, width=70, color=colors)
     ax.axhline(0, color="#888", lw=0.8)

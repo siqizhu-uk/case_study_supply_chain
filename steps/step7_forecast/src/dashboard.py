@@ -149,7 +149,7 @@ def _nordic_beat_row(p: pd.DataFrame) -> dict:
     miss = f"Last quarter below the midpoint: {neg.index[-1]} ({neg.iloc[-1]:+.2f}%)." if len(neg) else "No quarter below the midpoint on record."
     return {"tier": "3 Component", "indicator": "Nordic beat vs guidance midpoint, last 4 quarters", "latest": ", ".join(f"{v:+.1f}%" for v in b.tail(4)),
             "read": (f"Nordic's own record when the channel was neither building nor short of supply: {r['alpha']:+.2f}% (n {int(r['n_not_building'])}; "
-                     f"F20/F30); the forecast anchors on it. {miss}"),
+                     f"F20/F30; record from 2019Q1, F32, limits R7-R8); the forecast anchors on it. {miss}"),
             "level": "green" if (b.tail(4) > 0).all() else "amber", "source": "computed from quarterly reports; steps/step7_forecast/outputs/guide_error_model.csv"}
 
 
@@ -214,10 +214,12 @@ def _risks_compact(f: pd.DataFrame | None) -> str:
         return ""
     items = "".join(f"<li>{'<b style=\"color:#c0392b\">●</b> ' if bool(r.triggered) else '○ '}<b>{r.id}. {r.risk}.</b>"
                     f"<details><summary class=src>evidence</summary>{r.evidence}</details></li>" for r in f.itertuples())
-    return ('<h2>Risks the tests cannot rule out: the composite channel factor (a pre-registered challenger, not in the forecast; B26)</h2>'
+    return ('<h2>Risks the tests cannot rule out: the composite channel factor (a pre-registered challenger, not in the forecast; B26) and Nordic&#39;s own guide-error record (F32)</h2>'
             f'<ul class=box style="border-left-color:#c0392b;list-style:none">{items}</ul>'
             '<p class=src>R1-R4 concern the composite; R5-R6 concern the channel mechanism in general, so they also bound how much weight any '
-            'channel signal in the forecasts can carry. ● triggered by the current data · full text: steps/step6_backtest/outputs/step6_report.md</p>')
+            'channel signal in the forecasts can carry; R7-R8 are what Nordic&#39;s own record extended to 2019Q1 shows about the guide-error rule in '
+            'force (F32; rule kept, F33). ● triggered by the current data · full text: steps/step6_backtest/outputs/step6_report.md, '
+            'steps/step7_forecast/outputs/guide_error_record_extension.csv</p>')
 
 
 def graph_lags(d: Path | None = None) -> dict:

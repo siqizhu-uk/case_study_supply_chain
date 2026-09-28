@@ -118,4 +118,4 @@ Every line carries Logitech's supplier-incident term for Q4 (step 5d / F21). Ban
 | CYCw    |            379.7 |         -0.9 |   378.8 | 345.6 |  412.1 |      25.9 |      166.6 |      157.7 |
 | CYCg    |            226.7 |         -0.9 |   225.8 | 178.8 |  272.9 |      36.7 |       13.6 |        4.7 |
 
-Pre-registered in `cycle_challenger_prereg_log.csv` (spec 3f98fa80be, data 4eecfc373d); check on 2027-02-05 (Nordic Q4 report). Nordic's Q3 report on 22 Oct adds one training row for later h=2 lines; the Q4 record is the last row logged before the print.
+Pre-registered in `cycle_challenger_prereg_log.csv` (spec 3f98fa80be, data b184bf7c25); check on 2027-02-05 (Nordic Q4 report). Nordic's Q3 report on 22 Oct adds one training row for later h=2 lines; the Q4 record is the last row logged before the print.

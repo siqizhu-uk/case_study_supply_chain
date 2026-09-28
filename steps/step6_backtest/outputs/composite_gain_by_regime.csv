@@ -1,3 +1,3 @@
 regime,n,sse_composite,sse_benchmark,rmse_composite,rmse_benchmark,share_of_total_gain
-destock,2,61.759,55.724,5.557,5.278,-0.052
-normal,9,61.515,183.59,2.614,4.517,1.052
+destock,2,65.608,55.724,5.727,5.278,-0.104
+normal,9,78.718,183.59,2.957,4.517,1.104

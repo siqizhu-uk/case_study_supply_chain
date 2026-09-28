@@ -1,19 +1,19 @@
 spec,sample,n,r2,b_x_channel,t_x_channel,b_rel_raw,t_rel_raw,b_rel_seasonal,t_rel_seasonal,b_rel_consumer_heavy,t_rel_consumer_heavy,b_g,t_g,b_guide_width_pct,t_guide_width_pct,b_last_beat,t_last_beat
-x_channel,all,21,0.4958,3.5133,4.3227,,,,,,,,,,,,
-x_channel,without episode,19,0.2344,1.7718,2.2813,,,,,,,,,,,,
-rel_raw,all,21,0.0033,,,0.0176,0.2491,,,,,,,,,,
-rel_raw,without episode,19,0.0001,,,0.0018,0.0403,,,,,,,,,,
-rel_seasonal,all,17,0.0048,,,,,-0.0137,-0.2687,,,,,,,,
-rel_seasonal,without episode,15,0.0199,,,,,-0.0155,-0.5137,,,,,,,,
-rel_consumer_heavy,all,19,0.0861,,,,,,,-0.0915,-1.2655,,,,,,
-rel_consumer_heavy,without episode,17,0.0035,,,,,,,-0.0115,-0.231,,,,,,
-g,all,21,0.0241,,,,,,,,,0.0417,0.6845,,,,
-g,without episode,19,0.0084,,,,,,,,,0.0146,0.3784,,,,
-guide_width_pct,all,21,0.0185,,,,,,,,,,,-0.3066,-0.5989,,
-guide_width_pct,without episode,19,0.0699,,,,,,,,,,,0.3917,1.1303,,
-last_beat,all,20,0.1979,,,,,,,,,,,,,0.4489,2.1071
-last_beat,without episode,18,0.1531,,,,,,,,,,,,,0.2966,1.7008
-x_channel + rel_raw,all,21,0.5503,3.8019,4.6793,0.0742,1.4763,,,,,,,,,,
-x_channel + rel_raw,without episode,19,0.272,2.0407,2.4444,0.0376,0.909,,,,,,,,,,
-x_channel + last_beat,all,20,0.5294,3.8431,3.4608,,,,,,,,,,,-0.0123,-0.0574
-x_channel + last_beat,without episode,18,0.2871,1.7372,1.6788,,,,,,,,,,,0.0986,0.4859
+x_channel,all,30,0.2113,2.9222,2.7389,,,,,,,,,,,,
+x_channel,without episode,28,0.0207,0.8579,0.7419,,,,,,,,,,,,
+rel_raw,all,29,0.0024,,,0.0181,0.2524,,,,,,,,,,
+rel_raw,without episode,27,0.0,,,-0.0007,-0.0131,,,,,,,,,,
+rel_seasonal,all,25,0.0143,,,,,-0.0317,-0.5774,,,,,,,,
+rel_seasonal,without episode,23,0.019,,,,,-0.0271,-0.6383,,,,,,,,
+rel_consumer_heavy,all,27,0.0313,,,,,,,-0.0692,-0.8986,,,,,,
+rel_consumer_heavy,without episode,25,0.0,,,,,,,-0.0001,-0.0022,,,,,,
+g,all,29,0.0138,,,,,,,,,0.0385,0.6143,,,,
+g,without episode,27,0.0018,,,,,,,,,0.0107,0.2127,,,,
+guide_width_pct,all,30,0.0512,,,,,,,,,,,-0.4673,-1.2288,,
+guide_width_pct,without episode,28,0.0003,,,,,,,,,,,-0.0308,-0.0917,,
+last_beat,all,29,0.268,,,,,,,,,,,,,0.5168,3.1438
+last_beat,without episode,27,0.2293,,,,,,,,,,,,,0.4165,2.7271
+x_channel + rel_raw,all,29,0.237,3.1383,2.828,0.0553,0.8476,,,,,,,,,,
+x_channel + rel_raw,without episode,27,0.0239,0.9593,0.7673,0.0134,0.2235,,,,,,,,,,
+x_channel + last_beat,all,29,0.3381,1.8686,1.6592,,,,,,,,,,,0.3881,2.1899
+x_channel + last_beat,without episode,27,0.2293,-0.0005,-0.0004,,,,,,,,,,,0.4165,2.5411

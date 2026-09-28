@@ -39,7 +39,8 @@ def _model_beat(gem: dict, company: str) -> tuple[float, float, str]:
             f"own record by channel state (F20, F30): {pr['alpha']:+.2f}% when neither building nor short of supply (n {h['n_not_building']}), "
             f"{h['own_building_effect']:+.2f} pts when building (n {h['n_building']}), {h.get('own_shortage_effect', 0.0):+.2f} pts in a supply "
             f"shortage (n {h.get('n_shortage', 0)}); state now '{pr.get('state_nordic', pr['state'])}' ({pr['gamma_applied'] + 0.0:+.2f}); "
-            "the shortage split was adopted after seeing the data and its walk-forward does not beat the rule before it")
+            "the shortage split was adopted after seeing the data and its walk-forward does not beat the rule before it; record from 2019Q1 "
+            "(F32): the state cannot see a demand shock and the split has no walk-forward edge (R7-R8), rule kept (F33)")
     pool = f"pooled with 12 peers, own record {h['weight_own']:.0%}" if h["pooled"] else "own record, no comparable peer population"
     src = (f"guide-error model (F16): habit {pr['alpha']:+.2f}% ({pool}) + channel state '{pr['state']}' ({pr['gamma_applied'] + 0.0:+.2f})")
     return pr["expected_error"] / 100, pr["sd"] / 100, src

@@ -1,5 +1,5 @@
 spec,role,delta,se,t,n,n_quarters,n_firms,n_excess_quarters,n_dropped_accounting,first_quarter,last_quarter,adopted,wf_rmse_last_quarter,wf_rmse_with_term,wf_n
-pre-registered (F25),adoption,-0.252,0.214,-1.18,672,63,12,27,18,2010Q4,2026Q2,False,2.344,2.347,21.0
+pre-registered (F25),adoption,-0.252,0.214,-1.18,672,63,12,27,18,2010Q4,2026Q2,False,2.269,2.271,25.0
 excluding Microchip (the state's own source),diagnostic,-0.163,0.216,-0.756,610,63,11,27,17,2010Q4,2026Q2,,,,
 building only (drawdown rows dropped),diagnostic,-0.432,0.25,-1.725,562,53,12,17,15,2010Q4,2026Q2,,,,
 drawdown only (building rows dropped),diagnostic,0.054,0.235,0.229,490,46,12,10,13,2010Q4,2026Q2,,,,

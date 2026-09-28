@@ -1,7 +1,7 @@
 days,z_point_in_time,change_days,state,backlog_x_rev,lead_time_weeks,state_nordic,arrow_dio,avnet_dio,comp_dist_dio_avg,comp_change_days,quarter
-29.0,-1.12,-1.0,lean,,,lean,53.82,66.08,59.95,,2020Q1
-30.0,-0.9,2.0,normal,,,normal,53.31,67.66,60.48,,2020Q2
-30.0,-0.79,1.0,normal,,,normal,45.83,63.87,54.85,-5.1,2020Q3
+29.0,-1.12,-1.0,lean,1.75,,lean,53.82,66.08,59.95,,2020Q1
+30.0,-0.9,2.0,normal,2.28,,normal,53.31,67.66,60.48,,2020Q2
+30.0,-0.79,1.0,normal,2.41,,normal,45.83,63.87,54.85,-5.1,2020Q3
 26.0,-1.57,-4.0,lean,3.87,,shortage,39.83,61.82,50.83,-9.65,2020Q4
 22.0,-2.47,-8.0,lean,5.6,,shortage,40.09,57.92,49.0,-5.85,2021Q1
 20.0,-2.92,-6.0,lean,8.49,,shortage,43.87,64.46,54.17,3.34,2021Q2

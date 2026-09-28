@@ -1,0 +1,2 @@
+first_quarter,last_quarter,n_guides,n_base,base_mean_pct,n_base_before_2021,base_mean_before_2021_pct,n_base_from_2021,base_mean_from_2021_pct,shock_quarters,shock_errors_vs_initial_pct,shock_errors_vs_last_guide_pct,shock_states,base_mean_ex_shocks_pct,n_base_ex_shocks,wf_n,wf_rmse_rule,wf_rmse_guide_mid,wf_rmse_pooled,wf_rmse_past4
+2019Q1,2026Q2,30,15,5.229,8,6.096,7,4.238,"2020Q2, 2020Q3","+10.6, +19.4","+1.7, +3.8","lean, normal",3.724,13,14,5.537,5.551,5.062,5.413

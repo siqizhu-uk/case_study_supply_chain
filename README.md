@@ -1,15 +1,49 @@
 # Supply-chain signal model — Nordic Semiconductor ← Logitech / GN ← Ingram / TD Synnex / Amazon
 
-**Start here:** [Investment note (2 pages)](deliverables/investment_note.md) ·
-**[Dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)**: opens in the browser, no install ([what each tab shows](#the-dashboard)) ·
-[Source documents](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing) (optional, 413 MB, only to re-check quotes offline)
+**[Investment note (2 pages)](deliverables/investment_note.md)** ·
+**[Dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)**: opens in the browser ([what each tab shows](#the-dashboard)) ·
+**[Source documents](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing)** (optional, 497 MB, only to re-check quotes offline)
+
+**The answer in three lines.** Nordic's guide already contains the orders behind the quarter it guides, so the Q3
+forecast is the guide adjusted for management's usual guide error; no supply-chain model beat that in back-tests.
+The chain matters one quarter later: a change in Amazon sell-out reaches Nordic's revenue after about 24 weeks, so
+it drives the Q4 view and the risk skew (a restocking beat in Q3 would be borrowed from Q4). Logitech + GN are
+about 16% of Nordic's revenue (13–20%), yet Nordic swings about 3× more than that share implies, because its other
+consumer customers ride the same cycle.
 
 A runnable model of the wireless-peripherals chain. It ingests public data for the five companies, builds the
 tier-by-tier series (sell-out proxy → distributor sell-through → OEM sell-in → Nordic revenue), keeps every lag and
 mechanism assumption in one editable YAML file, tests those assumptions out of sample, and forecasts three prints:
 Nordic Q3 2026, Logitech Q2 FY27 and GN Q3 2026. Public data only.
 
-## Run it (about 4 minutes, no network)
+## What carries over to a broad coverage list
+
+The supply chain is specific to this case; the way of working is not:
+
+- **One place for everything.** Data with its sources, editable assumptions, forecasts and the AI tasks' progress
+  sit in one dashboard.
+- **Test before believing.** Each hypothesis is reasoned first, tested out of sample and kept either way; most
+  failed (on 12 peers no channel or guidance factor beat a company's own average guide error). Forecasts are logged
+  before each print.
+- **AI output that can be checked.** 3,417 source documents; every input carries a source and an A–D evidence
+  grade, and filing and transcript numbers are quote-checked against the document.
+
+The piece that scales directly: start from the company's own guide and add its usual guide error. The guide carries
+most of the information (across 632 peer quarters the beat varies 3.9% against 29% for revenue growth), and the
+method needs only each release's guide and actual.
+
+## How this was built
+
+This was my first case study, and I spent more than the brief's 8–10 hours: the extra time went into first
+understanding, from the top down, what each tier does and why, before modelling it. The code and first drafts were
+written with Claude under my direction, and it proofread the text; the modelling choices and their
+reasons are mine and are logged in each step's `config/decisions.csv`. AI output is held to the same checks as
+everything else: every input has a source and an evidence grade (A audited to D estimate), filing and transcript
+numbers are quote-checked against the source document (`audit/verification_ledger.csv`), judgements are labelled as
+judgements, and 301 tests run on every build. The dashboard grew beyond the light monitoring view the brief asks for
+because I used it throughout: to inspect the data during development and to follow the AI's tasks.
+
+## Run it (about 5 minutes, no network)
 
 ```bash
 git clone https://github.com/siqizhu-uk/case_study_supply_chain.git && cd case_study_supply_chain
@@ -24,14 +58,15 @@ in the repo; each check's result is recorded in `audit/verification_ledger.csv` 
 cached". `./run.sh --refresh-data` re-downloads and re-validates every source (slow the first time).
 
 Then read `deliverables/investment_note.md` (2 pages) and open `deliverables/dashboard.html` (below).
-`python scripts/build_note.py` renders the note to `.docx` (not committed).
+`python scripts/build_note.py` renders the note to `.docx` (not committed). The 2-page PDF (not committed; needs a LaTeX install):
+`pandoc deliverables/investment_note.md -o deliverables/investment_note.pdf --pdf-engine=xelatex -V documentclass=extarticle -V fontsize=9pt -V geometry:margin=1.2cm -V mainfont="Helvetica Neue" -H scripts/note_pdf.tex`.
 
 ### Optional: the source documents, for re-checking every quote offline
 
 Not needed to run the model or reproduce any number. The filings, company PDFs and announcements the pipelines
-downloaded (the quote checks' source text) are one archive, `case_study_cache.tar.gz` (413 MB; 3,379 files,
-1.15 GB unpacked): **[download from Google Drive](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing)**. SHA-256
-`e83b9b81cbba81819387e80e674e089edff615d20eef8b051930af8acfa15526`. It holds `pipelines/{A,B,C,D}_*/data/cache/`
+downloaded (the quote checks' source text) are one archive, `case_study_cache.tar.gz` (497 MB; 3,417 files,
+1.25 GB unpacked; rebuilt 28 Sep 2026 with Nordic's 2017–2020 reports and announcements): **[download from Google Drive](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing)**. SHA-256
+`0d322c7252647b7bb0a90664e4264ec859547238e66c96d31a39923f106252fb`. It holds `pipelines/{A,B,C,D}_*/data/cache/`
 and `steps/step2_attribution/cache/`. Download it into the repository root, then:
 
 ```bash
@@ -53,7 +88,7 @@ e.g. `dashboard.html#predict`.
 
 | Tab | What it answers |
 |---|---|
-| **Charts** | The analysis in pictures etc. chain as a graph (route shares from 10-Ks, lags bounded by inventory cover). |
+| **Charts** | The supply chain as a graph (who buys from whom, route shares from 10-Ks, lags bounded by inventory cover), then the analysis in charts. |
 | **Analysis** | The brief question by question (lag, mechanism, attribution, structural breaks, not built, limitations, then the three forecasts), each as reasoning → formula → data used → data support → assumptions and limits → future work → figures. Hand-written. |
 | **Chain over time** | The chain quarter by quarter: each tier's growth and inventory on the graph, and how a change reached Nordic. |
 | **Predict** | The six forecasts with their ranges, and the assumptions sandbox rerun. |
@@ -77,7 +112,7 @@ Screenshots of the committed run (`python scripts/screenshot_dashboard.py` retak
 
 ![Chain over time tab](docs/screenshots/time.png)
 
-**Predict**: the six forecasts with what each range is and the channel-state risk; below, the sandbox shows the six forecasts, committed vs scenario.
+**Predict**: the six forecasts with what each range is and the channel-state risk; below, the sandbox (served locally with `python scripts/serve.py`, it re-runs the model on your edits and shows the six forecasts, committed vs scenario).
 
 ![Predict tab](docs/screenshots/predict.png)
 
