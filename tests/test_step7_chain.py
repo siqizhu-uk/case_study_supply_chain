@@ -92,21 +92,21 @@ def test_gn_readacross_is_only_used_above_the_bar(run):
 
 def test_note_quotes_the_scenarios_and_q4_as_computed():
     """Every base and every scenario that moves the print by 2m or more must appear in the note exactly as
-    outputs/scenarios.csv holds it (smaller ones stay in the CSV and on the dashboard)."""
+    outputs/scenarios.csv holds it, to one decimal like the dashboard (smaller ones stay in the CSV and on the dashboard)."""
     note = (ROOT / "deliverables" / "investment_note.md").read_text()
     sc = pd.read_csv(ROOT / "outputs" / "scenarios.csv")
     for r in sc[(sc["vs_base"].abs() >= 2) | (sc["scenario"].str.startswith("base"))].itertuples():
-        v = re.escape(f"{r.point:,.0f}")
+        v = re.escape(f"{r.point:,.1f}")
         assert re.search(rf"(\| |/ |\*\*){v}( \||\*\*| /)", note), (r.scenario, r.point)     # own cell, bold, or one side of 'a / b'
         if abs(r.vs_base) >= 0.5:
-            assert f"{r.vs_base:+.0f}".replace("-", "−") in note, (r.scenario, r.vs_base)
+            assert f"{r.vs_base:+.1f}".replace("-", "−") in note, (r.scenario, r.vs_base)
     q4 = sc[(sc["print"] == "Nordic Q4 2026")].iloc[0]
-    assert f"{q4.low:.0f} – {q4.high:.0f}" in note or f"{q4.low:.0f}–{q4.high:.0f}" in note
+    assert f"{q4.low:.1f} – {q4.high:.1f}" in note or f"{q4.low:.1f}–{q4.high:.1f}" in note
 
 
 def test_note_forecast_table_is_the_run_all_output():
-    """The note's forecast table is hand-written: every point and range must be outputs/forecasts.csv rounded as printed
-    (revenue to the unit, margins to 0.1 pt), so the note and the dashboard's Predict tab always show the same run."""
+    """The note's forecast table is hand-written: every point, range and YoY must be outputs/forecasts.csv to one decimal,
+    as the dashboard's Predict tab shows it, so the two always show the same run."""
     note = (ROOT / "deliverables" / "investment_note.md").read_text()
     table = note.split("## Forecasts")[1].split("\n## ")[0]
     rows = [[c.strip() for c in line.strip().strip("|").split("|")] for line in table.splitlines()
@@ -115,9 +115,9 @@ def test_note_forecast_table_is_the_run_all_output():
     assert len(rows) == len(fc)
     num = lambda s: float(re.sub(r"[^0-9.]", "", s))                                        # noqa: E731
     for r, cells in zip(fc.itertuples(), rows):
-        dec = 1 if "%" in cells[2] else 0
         low, high = cells[3].split("–")
-        assert (num(cells[2]), num(low), num(high)) == tuple(round(v, dec) for v in (r.point, r.low, r.high)), (r.print, r.metric)
+        assert [c.strip("*% ") for c in (cells[2], low, high)] == [f"{v:,.1f}" for v in (r.point, r.low, r.high)], (r.print, r.metric)
+        assert cells[5] == ("" if pd.isna(r.yoy_pct) else f"{r.yoy_pct:+.1f}%"), (r.print, r.metric)
 
 
 def test_logitech_weight_compares_the_same_quarters(run):
