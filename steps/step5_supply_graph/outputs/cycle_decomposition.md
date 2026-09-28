@@ -12,13 +12,13 @@ Levels differ by each model's own bias, so the live gap is also read against the
 ("anomaly"): two models agree on THIS quarter only if their anomalies agree, not just their levels. Kept outside the
 pre-registered CYC files so their spec hash does not move.
 
-- Live Q4 gap to CH: GRi -3.3, GR +10.2, CYC -3.9 USD m. In level, GRi is closer to CYC than GR was.
-- Against each model's own history (9 quarters): mean gaps GRi +13.2, GR +8.3, CYC -15.6; the actual was +15.1 above CH on average. Live anomalies: GRi -16.5, CYC +11.7 - opposite directions: the level agreement is a coincidence of two biases, not a shared reading of this quarter.
+- Live Q4 gap to CH: GRi -0.2, GR +10.2, CYC -3.9 USD m. In level, GRi is closer to CYC than GR was.
+- Against each model's own history (9 quarters): mean gaps GRi +13.2, GR +8.3, CYC -15.6; the actual was +15.1 above CH on average. Live anomalies: GRi -13.4, CYC +11.7 - opposite directions: the level agreement is a coincidence of two biases, not a shared reading of this quarter.
 - Which gap tracks what CH missed (correlation with actual - CH): GRi 0.73, GR 0.69, CYC 0.78; RMSE GRi 25.4, GR 28.0, CYC 38.8.
 
 | model   |   n |   hist_mean_gap |   corr_with_actual_gap |   rmse_usdm |   live_gap |   live_anomaly |
 |:--------|----:|----------------:|-----------------------:|------------:|-----------:|---------------:|
-| GRi     |   9 |           13.15 |                   0.73 |       25.42 |      -3.32 |         -16.48 |
+| GRi     |   9 |           13.15 |                   0.73 |       25.42 |      -0.25 |         -13.4  |
 | GR      |   9 |            8.29 |                   0.69 |       28.03 |      10.19 |           1.9  |
 | CYC     |   9 |          -15.6  |                   0.78 |       38.79 |      -3.93 |          11.67 |
 | actual  |   9 |           15.14 |                 nan    |      nan    |     nan    |         nan    |

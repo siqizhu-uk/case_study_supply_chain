@@ -125,8 +125,8 @@ def run_walkforward(p: pd.DataFrame, cfg: dict, tv: pd.Series | None, reg: dict 
             met[h].to_csv(d / f"walkforward_metrics_h{h}.csv", index=False)
             enc[h].to_csv(d / f"walkforward_encompassing_h{h}.csv", index=False)
         live.round(2).to_csv(d / "walkforward_live.csv", index=False)
-        from walkforward import gri_fill_check                     # F26: the evidence for GRi's fill, as a computed table
-        gri_fill_check(p).round(2).to_csv(d / "gri_fill_check.csv", index=False)
+        from walkforward import gri_fill_check, incident_addback   # F26: the evidence for GRi's fill, as a computed table (F34 add-back in the live row)
+        gri_fill_check(p, incident_addback(p, cfg)).round(2).to_csv(d / "gri_fill_check.csv", index=False)
         from logitech_explore import explore          # step 6i exploration (B46): every specification tried is logged
         explore(p).round(3).to_csv(d / "logitech_factor_exploration.csv", index=False)
         _figure(wf, d)

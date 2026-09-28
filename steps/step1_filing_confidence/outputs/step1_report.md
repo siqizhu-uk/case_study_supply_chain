@@ -1,4 +1,4 @@
-# Step 1 — filing confidence — 2026-09-28
+# Step 1 — filing confidence — 2026-09-29
 
 Three separate tests, every row logged in `outputs/test1_sum4q_vs_fy.csv`, `test2_restatements.csv`, `test3_adjusted_vs_reported.csv`; the fold is `outputs/confidence.csv`. Grade of the step itself: **A** (arithmetic on filings; every number verified in the cited filing text).
 

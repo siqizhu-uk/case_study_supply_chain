@@ -77,6 +77,36 @@ def _incident_row(cfg: dict) -> dict:
             "level": "judgment", "source": "Logitech Q1 FY27 release (8-K), 28 Jul 2026; step 5d event study"}
 
 
+def _fcc_vendor_row(cfg: dict) -> dict:
+    """Would Logitech re-source after the supplier incident? The first public sign is a new mouse / keyboard certified with a
+    non-Nordic radio: the FCC internal-photo census (step 2's grants and reading rules), read by hand, grant by grant."""
+    from attribution import FCC, PERIPHERAL_CODES                            # steps/step2_attribution/src
+    from attribution_path import COHORT_YEARS, _readable_peripheral_grants
+    since = pd.Timestamp(cfg["event_study"]["incident_date"])
+    th = float(cfg["dashboard_rules"]["fcc_nordic_share_amber_below"])
+    grants = pd.read_csv(FCC, dtype=str).fillna("")
+    grants = grants[grants["fcc_id"].str[3:5].isin(PERIPHERAL_CODES)]
+    new = pd.to_datetime(grants["grant_date"])
+    new = new[new >= since]
+    read = _readable_peripheral_grants()
+    read_new = read[pd.to_datetime(read["grant_date"]) >= since]
+    y = int(read["year"].max())
+    cohort = read[read["year"] >= y - COHORT_YEARS + 1]
+    k, n = int(cohort["nordic"].sum()), len(cohort)
+    other_new = int((~read_new["nordic"]).sum())
+    level = "amber" if other_new or (n and k / n < th) else "green" if len(read_new) else "judgment"
+    latest = (f"{len(new)} peripheral grants since the {since:%d %b %Y} incident (latest {new.max():%d %b %Y}); {len(read_new)} read"
+              if len(new) else f"no peripheral grant since the {since:%d %b %Y} incident")
+    read_txt = (f"; {other_new} of the {len(read_new)} read since the incident carry a non-Nordic radio." if len(read_new) else
+                "; none of the grants since the incident has been read yet (internal photos on fccid.io, read by hand).")
+    return {"tier": "2 OEM", "indicator": "Logitech new FCC grants: radio chip vendor (mice, keyboards, receivers)", "latest": latest,
+            "read": (f"A lasting re-sourcing after the supplier incident would first show as new Logitech peripherals certified with a "
+                     f"non-Nordic radio. Nordic holds {k} of {n} readable designs certified {y - COHORT_YEARS + 1}-{y}{read_txt}"),
+            "level": level,
+            "source": (f"FCC internal photos (Pipeline C census, step 2); rule: a non-Nordic radio in any grant since the incident, or Nordic "
+                       f"below {th:.0%} of the latest {COHORT_YEARS}-year cohort -> amber; nothing read since the incident -> judgment")}
+
+
 def _distributor_days_row(p: pd.DataFrame, cfg: dict) -> dict:
     """Ingram and TD Synnex inventory days: the larger quarter-on-quarter move against one threshold (shared with W12)."""
     th = float(cfg["dashboard_rules"]["distributor_inv_days_amber_change"])
@@ -191,6 +221,7 @@ def indicators(p: pd.DataFrame, data: dict, fn: dict, cfg: dict) -> list[dict]:
                   ": low - lean, little pre-build." if li_pct < 0.2 else ": no pre-build signal either way."),
          "level": "amber" if li_pct > 0.8 else "green", "source": "Logitech balance sheet"},
         _incident_row(cfg),
+        _fcc_vendor_row(cfg),
         _gn_enterprise_row(p, cfg),
         _nordic_state_row(p, cfg),
         _nordic_lead_row(cfg),

@@ -1,6 +1,6 @@
 # Nordic / Logitech / GN: Q3 2026 print previews
 
-*28 September 2026 · Public data only · Model and sources: `README.md`; the brief answered in full: the dashboard's Analysis tab (`deliverables/my_analysis.md`)*
+*29 September 2026 · Public data only · Model and sources: `README.md`; the brief answered in full: the dashboard's Analysis tab (`deliverables/my_analysis.md`)*
 
 ## Bottom line
 
@@ -54,10 +54,10 @@ Each scenario moves one named input; no probabilities (one full cycle cannot cal
 | | Distributors restock by 1.5 weeks (high end of our estimate) | 254.8 | +14.6 | Mechanism |
 | | Supplier incident none / all already in Nordic's guide | 234.9 / 242.0 | −5.3 / +1.8 | Lag + Attribution |
 | | Other rules, logged in advance: blended with peers / before the shortage split / channel read from Nordic's own words / own record in hand-dated normal quarters | 233.3 / 238.0 / 236.9 / 237.8 | −6.9 / −2.2 / −3.3 / −2.4 | Limitations + Structural breaks |
-| Nordic Q4 | Base: supply graph + incident (−0.9) | **208.9** (176.2–241.6) | | Lag |
-| | Q3 restock pays back in Q4 | 194.3 | −14.6 | Mechanism |
-| | Graph lags and shares at the low / high end of their ranges | 208.0 / 213.7 | −0.9 / +4.8 | Lag + Attribution |
-| | Earlier Q4 model (sell-through proxy) | 222.4 | +13.5 | Limitations |
+| Nordic Q4 | Base: supply graph + incident (−0.9) | **212.0** (179.3–244.6) | | Lag |
+| | Q3 restock pays back in Q4 | 197.4 | −14.6 | Mechanism |
+| | Graph lags and shares at the low / high end of their ranges | 211.4 / 215.1 | −0.5 / +3.1 | Lag + Attribution |
+| | Earlier Q4 model (sell-through proxy) | 222.4 | +10.4 | Limitations |
 | Logitech Q2 | Base | **1,226.3** | | |
 | | Chain given the weight its back-test earns: 23% / 48% with guides implied for 2023–25 | 1,248.2 / 1,271.2 | +21.9 / +44.9 | Limitations |
 | GN Q3 | Base | **2,247.0** | | |
@@ -73,7 +73,7 @@ Each scenario moves one named input; no probabilities (one full cycle cannot cal
 
 **3. Attribution: Logitech + GN ≈ 16% of Nordic's revenue (13–20%), ≈ 27% of Nordic Consumer.** Nordic names no customers, so five independent estimates bracket the share: a bottom-up count from FCC teardown photos (units × radios per unit × Nordic's share of sockets × chip price); a cap if Nordic invoices Logitech directly (it discloses no customer above 10% of revenue except two distributors); the PC-peripheral share of Nordic's revenue; a floor from Nordic's proprietary-radio revenue; and the 2022–24 downturn, when Nordic Consumer fell far more than Logitech could explain. The 16% assumes Logitech buys through ODMs; ≈ 11% if Nordic invoices it directly. GN is ≈ $8m. *In the forecast:* no weight in the guided quarter, so the share does not move the point. One quarter out Nordic moves ≈ 3× what the share implies, because its other consumer customers ride the same cycle.
 
-**4. Structural breaks: the shortage broke the Nordic–Logitech link; the customer mix and the lags held.** Each event was tested before and after its date. The 2021–22 shortage: the link breaks at its end (2022Q4, statistically significant); those quarters are excluded from the lag fits. The 2022–24 distributor build and destock: in 2023 Nordic's top-10 customers fell 3%, its broad market 46%. The 2025 US price step (2.8% of Logitech's sales) means dollars stop tracking units; three quarters cannot test the link. Post-COVID normalisation moved the input, not the link. The AI / memory cycle breaks only the proxies, and not significantly.
+**4. Structural breaks: the shortage broke the Nordic–Logitech link; the customer mix and the lags held.** Each event was tested before and after its date. The 2021–22 shortage: the link breaks at its end (2022Q4, statistically significant); those quarters are excluded from the lag fits. The 2022–24 distributor build and destock: in 2023 Nordic's top-10 customers fell 3%, its broad market 46%. The 2025 US price step (2.8% of Logitech's sales) means dollars stop tracking units; three quarters cannot test the link. Post-COVID normalisation moved the input, not the link. The AI / memory cycle breaks only the proxies, and not significantly. Logitech's 2026 supplier incident is a one-off shock, not a break: it removes Logitech builds for one or two quarters, and nothing suggests it changes the lags or route shares (one quarter cannot test it; Logitech's new FCC grants, on the Monitor tab, would show a lasting re-sourcing first). It enters as an event term: −1.8m on Q3 after the 75% assumed in the guide, −0.9m on Q4. While it lasts, Logitech stops being a proxy for Nordic's wider consumer cycle, and the Q4 graph model counted the incident twice (in its Logitech fill, amplified as a cycle turn, and again as the event term). Corrected on 29 Sep by adding Logitech's disclosed loss back to what the model reads, which moves Q4 from 208.9 to 212.0; the pre-fix 208.9 stays in the pre-registration log and is scored with it.
 
 **5. Not built: no Amazon rank, price or promotion scrapes.** There is no free history to test them (Keepa is paid). Existing sources and libraries instead: SEC XBRL, ECB rates, findchips, FCC filings. Deliberately stopped: the FCC count at 38 of 81 public grants, the factor search after about a dozen candidates.
 

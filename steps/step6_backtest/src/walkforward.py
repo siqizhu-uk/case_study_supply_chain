@@ -59,19 +59,52 @@ def logitech_guided_demand(p: pd.DataFrame) -> pd.Series:
     return ((p["logi_guide_mid"] / p["logi_sales"].shift(4) - 1) * 100 + p["logi_st_gap"].shift(1)).dropna()
 
 
-def logitech_sellin_forecast(p: pd.DataFrame) -> pd.Series:
+def incident_addback(p: pd.DataFrame, cfg: dict) -> pd.Series:
+    """Decision F34: Logitech's disclosed supplier-incident loss (USD m) by calendar quarter of its sell-in, 0 elsewhere.
+    GRi reads Logitech's sell-in as a proxy for Nordic's whole consumer cycle; a supply loss at Logitech alone is not that
+    cycle, so it is added back to what GRi reads and reaches Nordic once, through the event term (chain_forecast.supplier_incident)."""
+    add = pd.Series(0.0, index=p.index)
+    rule = cfg.get("forecast_next_quarter", {}).get("gri_ex_incident", {})
+    loss = cfg.get("structural_breaks", {}).get("logitech_supplier_incident_2026", {})
+    if rule.get("apply") and loss.get("apply"):
+        for key, quarter in rule["lost_sales"].items():
+            q = pd.Period(quarter, "Q")
+            if q in add.index:
+                add[q] += float(loss[key])
+    return add
+
+
+def logitech_sellin_yoy_ex(p: pd.DataFrame, add: pd.Series) -> pd.Series:
+    """Logitech's reported sell-in YoY with `add` (USD m) put back into every quarter it touches, as the level or as the
+    year-ago base; all other quarters are the reported series, untouched."""
+    a = add.reindex(p.index).fillna(0.0)
+    a4 = a.shift(4).fillna(0.0)
+    touched = (a != 0) | (a4 != 0)
+    if not touched.any():
+        return p["logi_sales_yoy"]
+    adj = ((p["logi_sales"] + a) / (p["logi_sales"].shift(4) + a4) - 1) * 100
+    return p["logi_sales_yoy"].where(~touched, adj)
+
+
+def logitech_sellin_forecast(p: pd.DataFrame, add: pd.Series | None = None) -> pd.Series:
     """OUR forecast of Logitech's sell-in YoY for a guided quarter not yet reported: guide mid x (1 + Logitech's mean beat
     over the guided quarters reported before it). Point in time at the Nordic origin one quarter later (decision F26).
-    No sell-through gap is needed: GRi's driver is sell-in (the gap is unforecastable, ~3 pts on every rule tried)."""
+    No sell-through gap is needed: GRi's driver is sell-in (the gap is unforecastable, ~3 pts on every rule tried).
+    `add` (F34): a disclosed one-off loss already inside the guide, put back (after the beat) so the fill is Logitech's
+    sell-in without it."""
+    a = (add if add is not None else pd.Series(0.0, index=p.index)).reindex(p.index).fillna(0.0)
     beat = (p["logi_sales"] / p["logi_guide_mid"] - 1) * 100
     habit = beat.shift(1).expanding().mean().fillna(0.0)
-    return ((p["logi_guide_mid"] * (1 + habit / 100) / p["logi_sales"].shift(4) - 1) * 100).dropna()
+    level = p["logi_guide_mid"] * (1 + habit / 100) + a                       # + 0.0 outside the incident: bit-identical to F26
+    base = p["logi_sales"].shift(4) + a.shift(4).fillna(0.0)
+    return ((level / base - 1) * 100).dropna()
 
 
-def gri_fill_check(p: pd.DataFrame) -> pd.DataFrame:
-    """F26 evidence: our sell-in forecast vs persistence for each guided Logitech quarter, and the live (unreported) quarter."""
+def gri_fill_check(p: pd.DataFrame, add: pd.Series | None = None) -> pd.DataFrame:
+    """F26 evidence: our sell-in forecast vs persistence for each guided Logitech quarter, and the live (unreported) quarter
+    (the live fill as GRi reads it, with any F34 add-back)."""
     si = p["logi_sales_yoy"]
-    fc = logitech_sellin_forecast(p)
+    fc = logitech_sellin_forecast(p, add)
     d = pd.DataFrame({"actual_yoy": si, "our_forecast_yoy": fc, "persistence_yoy": si.shift(1)}).loc[fc.index]
     d["err_our_forecast"] = d["our_forecast_yoy"] - d["actual_yoy"]
     d["err_persistence"] = d["persistence_yoy"] - d["actual_yoy"]
@@ -94,8 +127,9 @@ def design(p: pd.DataFrame, model: str, cfg: dict, tv: pd.Series | None, h: int 
         from supply_graph import propagate
         origin = lambda t: (t - h + 1).start_time + pd.Timedelta(days=20)   # noqa: E731
         fill = cfg.get("forecast_next_quarter", {}).get("gri_fill", "our_forecast")
-        ahead = logitech_sellin_forecast(p) if fill == "our_forecast" else None          # None -> persistence of sell-in (F24's rule)
-        x = propagate(p["logi_sales_yoy"], cfg, h, origin, scenario=scenario, ahead=ahead, stop_at="logitech")
+        add = incident_addback(p, cfg)                    # F34: Logitech's own incident loss is not the common cycle; it enters once, as the event term
+        ahead = logitech_sellin_forecast(p, add) if fill == "our_forecast" else None     # None -> persistence of sell-in (F24's rule)
+        x = propagate(logitech_sellin_yoy_ex(p, add), cfg, h, origin, scenario=scenario, ahead=ahead, stop_at="logitech")
         return pd.DataFrame({"graph_sellin": x}, index=p.index)
     if model in ("GR", "GRg"):
         from supply_graph import propagate          # steps/step5_supply_graph/src

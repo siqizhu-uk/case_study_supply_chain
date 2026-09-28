@@ -27,7 +27,7 @@ written with Claude under my direction, and it proofread the text; the modelling
 reasons are mine and are logged in each step's `config/decisions.csv`. AI output is held to the same checks as
 everything else: every input has a source and an evidence grade (A audited to D estimate), filing and transcript
 numbers are quote-checked against the source document (`audit/verification_ledger.csv`), judgements are labelled as
-judgements, and 306 tests run on every build. The dashboard grew beyond the light monitoring view the brief asks for
+judgements, and 311 tests run on every build. The dashboard grew beyond the light monitoring view the brief asks for
 because I used it throughout: to inspect the data during development and to follow the AI's tasks.
 
 ## Run it (about 5–6 minutes from a fresh install; the model needs no network)
@@ -39,7 +39,7 @@ python scripts/serve.py       # dashboard with the live sandbox: http://127.0.0.
 ```
 
 Python 3.10+. `./run.sh` is `pip install -r requirements.txt`, then `python scripts/run_all.py`, then `pytest -q`
-(306 tests). The model reads only committed CSVs, so nothing is downloaded: the data collection is done once and its
+(311 tests). The model reads only committed CSVs, so nothing is downloaded: the data collection is done once and its
 results are in `pipelines/*/data/`. The source documents behind the quote checks (~1 GB of filings and PDFs) are not
 in the repo; each check's result is recorded in `audit/verification_ledger.csv` and shown as "recorded, document not
 cached". `./run.sh --refresh-data` re-downloads and re-validates every source (slow the first time).

@@ -231,6 +231,11 @@ forecast_next_quarter:
                                     # 99% of the gain from 2025Q2). Kept by analyst decision (683fda): the company has announced a Q3 slowdown
                                     # (bias-corrected guide +3.0% vs persistence +6.9%) and its bias-corrected guide tracked every later quarter
                                     # within 1.5 pts; ignoring it would carry forward a growth rate Logitech says will not recur. Persistence -> Q4 218.6
+  gri_ex_incident:                  # F34 (2026-09-29, fixes a double count): GRi reads Logitech's sell-in as a proxy for Nordic's whole
+    apply: true                     # consumer cycle, and its fill (Logitech's guide) already carried the supplier incident, which the event
+    lost_sales:                     # term adds again. The loss is added back to what GRi reads; the incident reaches Nordic once (event term).
+      q2fy27_sales_hit_usdm: "2026Q3"   # key in structural_breaks.logitech_supplier_incident_2026 -> calendar quarter of Logitech's sell-in
+      q3fy27_sales_hit_usdm: "2026Q4"   # 'up to $200m' (grade C), an upper bound; it matters only once GRi reads 2026Q4 (Nordic 2027Q1)
   band_z: 1.2816                    # 80% band = point +/- z x walk-forward h=2 RMSE (USD m), widened by the lag scenario
   role:
     G: "benchmark: Q3 guide x last year's Q3->Q4 step"
@@ -291,6 +296,8 @@ dashboard_rules:
   nordic_dist_state_amber_abs: 0.5            # |coded distributor state| at or above this -> amber (restock / pull-in, or destock)
   nordic_inv_days_amber_above: 200            # Nordic's own inventory days above this -> amber (nRF54 build outrunning demand; W3)
   distributor_inv_days_amber_change: 5        # Ingram or TD Synnex inventory days up this much on the quarter -> amber (W12)
+  fcc_nordic_share_amber_below: 0.60          # Nordic share of readable Logitech peripheral designs (latest 3-year cohort) below this -> amber;
+                                              # step 2 works with the Wilson low end (~0.62) of the census, so a cohort below 0.60 is news
   nordic_lead_time_amber_weeks: 20           # live factory lead time on Nordic's parts above this -> amber; above cycle_state.shortage.lead_time_min_weeks -> red (D24, W4)
 
 # Channel-cycle state from the mechanism data (step 3b, decision D22): which phase of the inventory cycle a quarter is in,

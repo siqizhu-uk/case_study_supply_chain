@@ -23,8 +23,10 @@ def _band(point: float, rmse: float, lo_pt: float, hi_pt: float, z: float) -> tu
 
 def forecast_next_quarter(p: pd.DataFrame, cfg: dict, tv: pd.Series | None, met_h2: pd.DataFrame | None = None,
                           event_usdm: float = 0.0) -> pd.DataFrame:
-    """`event_usdm`: a dated event pushed forward through the graph (F21: Logitech's incident, step 5d). GR reads end
-    demand, not dated supply events, so the two do not double-count; the term is added to every model's point and band."""
+    """`event_usdm`: a dated event pushed forward through the graph (F21: Logitech's incident, step 5d), added to every model's
+    point and band. GR's unreported quarter is filled by persistence, so it does not carry the incident; GRi's fill is Logitech's
+    guide, which does, so GRi reads Logitech's sell-in with the disclosed loss added back (F34) and the incident enters once.
+    GRg (sensitivity: the raw guide by definition) and the guide-carried benchmarks G / GB keep part of it in their inputs."""
     c = cfg["forecast_next_quarter"]
     t, h = c["target"], int(c["horizon"])
     if met_h2 is None:
