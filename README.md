@@ -1,7 +1,9 @@
 # Supply-chain signal model — Nordic Semiconductor ← Logitech / GN ← Ingram / TD Synnex / Amazon
 
-**[Investment note (2 pages)](deliverables/investment_note.md)** ·
+**[Investment note (2 pages)](deliverables/investment_note.md)** 
+
 **[Dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)**: opens in the browser ([what each tab shows](#the-dashboard)) ·
+
 **[Source documents](https://drive.google.com/file/d/1sAl9ZGzpMfOYQKcnfl0er8G6ftFhH4kl/view?usp=sharing)** (optional, 521 MB, only to re-check quotes offline)
 
 **The answer in three lines.** Nordic's guide already contains the orders behind the quarter it guides, so the Q3
