@@ -35,7 +35,7 @@ def test_every_forecast_row_names_its_range_basis(ctx):
     import json
     g = json.loads((OUTPUTS / "forecast_details.json").read_text())["nordic"]["gm_model"]
     cell = fd.basis_cell({"print": "Nordic Q3 2026", "metric": "Gross margin (%)"}, cfg)
-    assert f"σ {g['sd_pts']:.2f} pts on n {g['n_regime']}" in cell and f"{min(g['scores'].values()):.2f}" in cell
+    assert f"{g['sd_pts']:.2f} pts over {g['n_regime']} quarters" in cell and f"{min(g['scores'].values()):.2f}" in cell
 
 
 def test_beat_footnote_shows_what_the_expected_guide_error_is_made_of(ctx):
@@ -46,9 +46,9 @@ def test_beat_footnote_shows_what_the_expected_guide_error_is_made_of(ctx):
         gem = pd.read_csv(fd.GEM).set_index("company")
         for name in ("Nordic", "Logitech"):
             r = gem.loc[name]
-            assert f"{name} expected guide error" in txt and f"{r['pred_sd']:.2f}" in txt
+            assert f"{name} usual guide error" in txt and f"{r['pred_sd']:.2f}" in txt
             n = int(r["n_not_building"]) if pd.notna(r.get("n_not_building", float("nan"))) else int(r["n"])
-            assert f"n {n}" in txt
+            assert f"{n} quarters" in txt
         assert "channel" in txt
     else:                                                              # fallback: the historical-beat method
         assert "historical σ" in txt and "model uncertainty" in txt
@@ -95,7 +95,7 @@ def test_judgment_status_renders_distinctly():
 def test_method_line_names_the_method_in_force(ctx):
     _, fn, *_ = ctx
     line = fd.method_line(fn)
-    assert ("expected guide error" in line) == fd._model_on(fn)
+    assert ("usual guide error" in line) == fd._model_on(fn)
 
 
 def test_nordic_own_record_method_is_recognised_and_priced_with_its_own_building_effect(ctx):
@@ -105,7 +105,7 @@ def test_nordic_own_record_method_is_recognised_and_priced_with_its_own_building
     if not str(fn.get("beat_source", "")).startswith("own record by channel state"):
         pytest.skip("F20 not in force")
     assert fd._model_on(fn)
-    assert "F20" in fd.method_line(fn)
+    assert "its own record in the current channel state" in fd.method_line(fn)
     st = fd.state_sensitivity(fn)
     gem = pd.read_csv(fd.GEM).set_index("company").loc["Nordic"]
     assert st["own_effect"] and st["building_effect"] == pytest.approx(gem["pred_building_effect"])

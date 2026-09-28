@@ -19,13 +19,13 @@ GES = ROOT / "steps" / "step7_forecast" / "outputs" / "guide_error_state_effect.
 CYCLE_NOW = ROOT / "steps" / "step3_inventory_mechanism" / "outputs" / "cycle_state_now.csv"
 
 BASIS_LABEL = {
-    "statistical": "statistical ≈80%: ±1.28 × σ × guide midpoint",
+    "statistical": "statistical ≈80%: ±1.28 × the typical guide error × guide midpoint",
     "scenario": "scenario: low / high organic growth (not a probability band)",
     "config": "set in config/model.yaml (judgment)",
-    "margin_walkforward": "statistical ≈80%: ±1.28 × the margin rule's walk-forward error (F18)",
-    "margin_regime": "statistical ≈80%: ±1.28 × the margin rule's error in current-regime quarters (F18)",
-    "gn_organic": "statistical ≈80%: ±1.28 × σ of the implied H2 organic growth, from GN's own August-guide errors (F23)",
-    "gn_ebita": "statistical ≈80%: ±1.28 × √(FY-margin error² + Q3-share spread²) (F18, F23)",
+    "margin_walkforward": "statistical ≈80%: ±1.28 × the margin rule's typical error on past quarters, tested as if in real time",
+    "margin_regime": "statistical ≈80%: ±1.28 × the margin rule's typical error in the current calm quarters",
+    "gn_organic": "statistical ≈80%: ±1.28 × the spread of H2 organic growth implied by GN's past August-guide errors",
+    "gn_ebita": "statistical ≈80%: ±1.28 × √(full-year margin error² + spread of Q3's share of H2²)",
     "graph": "statistical + graph scenario: ±√((1.28 × h=2 RMSE)² + (½ lag-scenario spread)²)",
 }
 STATUS_COL = {"green": "#2e8b57", "amber": "#d99a00", "red": "#c0392b", "judgment": "#8a8f98", "context": "#9a9a94"}
@@ -58,12 +58,13 @@ def _model_on(f: dict) -> bool:
 def method_line(fn: dict) -> str:
     """One line under the forecast table saying how the points are built (follows the method in force)."""
     if _model_on(fn):
-        return ("Guide midpoint × (1 + expected guide error) + supply-chain terms and graph-propagated events (7c, 5d). Expected error: "
-                "Nordic = its own record by the data-dated channel state, supply-shortage quarters split out (F20, D24; F30 post-hoc); "
-                "the F16 pooled model, the rule before F30 and Nordic's own words (F31) are pre-registered challengers; "
-                "Logitech = habit pooled with 12 peers + channel state (F16), guide method only (F29); GN = plain mean of its own "
-                "August-guide misses (F17, F23) + FX at ECB rates since the guide (F27); margins = guide + own past error where a "
-                "point guide exists, else the rule with the lowest walk-forward error (F18)")
+        return ("Point = guide midpoint × (1 + usual guide error) + supply-chain terms and known events pushed through the supply graph. "
+                "Usual guide error: Nordic = its own record in the current channel state, with chip-shortage quarters kept apart (a choice "
+                "made after seeing the data); three alternatives are logged in advance and scored after the print (blended with the peers, "
+                "the rule before the shortage split, the channel read from Nordic's own words). Logitech = its record blended with 12 "
+                "peers' plus the channel state; the chain gets no weight. GN = plain average of its own August-guide misses, plus FX at "
+                "ECB rates since the guide. Margins = guide + own past error where a point guide exists, else the simple rule with the "
+                "lowest error on past quarters")
     return "Guide midpoint × (1 + historical beat in the current channel regime) + named adjustments; GN bottom-up (no quarterly guide)"
 
 
@@ -77,18 +78,18 @@ def beat_footnote(fn: dict, fl: dict, gb: pd.DataFrame, cfg: dict) -> str:
         for name in ("Nordic", "Logitech"):
             r = gem.loc[name]
             if "own_building_effect" in r and pd.notna(r["own_building_effect"]):
-                sh = f"; shortage {r['own_shortage_effect']:+.2f} pts, n {int(r['n_shortage'])}" if "n_shortage" in r and pd.notna(r.get("n_shortage")) else ""
-                parts.append(f"{name} expected guide error {r['pred_expected_error'] + 0.0:+.2f}% = own record when the channel was neither building "
-                             f"nor short of supply ({r['alpha']:+.2f}%, n {int(r['n_not_building'])}; building {r['own_building_effect']:+.2f} pts, "
-                             f"n {int(r['n_building'])}{sh}; F30, adopted after seeing the data, walk-forward not better than the rule before) "
-                             f"with the state now '{r.get('pred_state_nordic', r['pred_state'])}' ({r['pred_gamma_applied'] + 0.0:+.2f}); "
-                             f"predictive σ {r['pred_sd']:.2f} in the band")
+                sh = f"; shortage {r['own_shortage_effect']:+.2f} pts, {int(r['n_shortage'])} quarters" if "n_shortage" in r and pd.notna(r.get("n_shortage")) else ""
+                parts.append(f"{name} usual guide error {r['pred_expected_error'] + 0.0:+.2f}% = own record when the channel was neither building "
+                             f"nor short of supply ({r['alpha']:+.2f}%, {int(r['n_not_building'])} quarters; building {r['own_building_effect']:+.2f} pts, "
+                             f"{int(r['n_building'])} quarters{sh}; the shortage split was adopted after seeing the data and tests no better than "
+                             f"the rule before it), with the channel now '{r.get('pred_state_nordic', r['pred_state'])}' ({r['pred_gamma_applied'] + 0.0:+.2f}); "
+                             f"band: typical error {r['pred_sd']:.2f}%")
                 continue
             small = " — small sample" if int(r["n"]) < cfg["dashboard_rules"]["min_n_beat"] else ""
-            pool = ", pooled with the 12 peers" if bool(r["pooled"]) else ""
-            parts.append(f"{name} expected guide error {r['pred_expected_error'] + 0.0:+.2f}% = habit {r['alpha']:+.2f}% (own record "
-                         f"{r['own_mean']:+.2f}% on n {int(r['n'])}{small}, own weight {r['weight_own']:.0%}{pool}) + channel state "
-                         f"'{r['pred_state']}' ({r['pred_gamma_applied'] + 0.0:+.2f}); predictive σ {r['pred_sd']:.2f} in the band")
+            pool = ", blended with the 12 peers" if bool(r["pooled"]) else ""
+            parts.append(f"{name} usual guide error {r['pred_expected_error'] + 0.0:+.2f}% = its record {r['alpha']:+.2f}% (own "
+                         f"{r['own_mean']:+.2f}% on {int(r['n'])} quarters{small}, own weight {r['weight_own']:.0%}{pool}) + channel state "
+                         f"'{r['pred_state']}' ({r['pred_gamma_applied'] + 0.0:+.2f}); band: typical error {r['pred_sd']:.2f}%")
         return "; ".join(parts)
     parts = []
     for name, f, window, key in (("Nordic", fn, fn.get("regime_window", "normal"), "nordic_2026Q3"), ("Logitech", fl, "quarterly", "logitech_2026Q3")):
@@ -146,9 +147,9 @@ def _shortage_sentence(st: dict) -> str:
     if st.get("shortage_point") is None:
         return ""
     if st.get("state_nordic") == "shortage":
-        return f"Nordic's supply is short (D24): its own shortage effect ({st['shortage_effect']:+.2f} pts) is already in the point. "
-    return (f"If Nordic's supply turns short (live lead time above {st['shortage_weeks']:.0f} weeks, D24), its own shortage effect "
-            f"({st['shortage_effect']:+.2f} pts, n {st['n_shortage']}) takes it to <b>{st['shortage_point']:.1f}</b>. ")
+        return f"Nordic's supply is short: its own shortage effect ({st['shortage_effect']:+.2f} pts) is already in the point. "
+    return (f"If Nordic's supply turns short (live lead time above {st['shortage_weeks']:.0f} weeks), its own shortage effect "
+            f"({st['shortage_effect']:+.2f} pts, {st['n_shortage']} quarters) takes it to <b>{st['shortage_point']:.1f}</b>. ")
 
 
 def regime_html(fn: dict, gb: pd.DataFrame) -> str:
@@ -156,9 +157,9 @@ def regime_html(fn: dict, gb: pd.DataFrame) -> str:
     if st is not None:
         lo = fn["guide"][0]
         below = " <span style='color:#c0392b'>below the guide</span>" if st["building_point"] < lo else ""
-        effect = (f"Nordic's own building effect ({st['building_effect']:+.2f} pts; peers {st['gamma']:+.2f}, t {st['gamma_t']:.1f}, {st['gamma_n']} firm-quarters)"
+        effect = (f"Nordic's own building effect ({st['building_effect']:+.2f} pts; peers {st['gamma']:+.2f} over {st['gamma_n']} peer quarters, t {st['gamma_t']:.1f})"
                   if st.get("own_effect") else
-                  f"the peers' building effect ({st['gamma']:+.2f} pts, t {st['gamma_t']:.1f}, {st['gamma_n']} firm-quarters; "
+                  f"the peers' building effect ({st['gamma']:+.2f} pts over {st['gamma_n']} peer quarters, t {st['gamma_t']:.1f}; "
                   f"{st['gamma_alt']:+.2f} with the state lagged {st['alt_lag']})")
         if st["state"] == "building":
             body = (f"the channel is building ({st['latest_quarter']}): {effect} is already in the point <b>{st['base_point']:.1f}</b>. ")
@@ -166,15 +167,15 @@ def regime_html(fn: dict, gb: pd.DataFrame) -> str:
             body = (f"the channel is '{st['state']}' ({st['latest_quarter']}), so the state adds {st['applied']:+.2f} pts. If distributors turn to building, "
                     f"{effect} takes Nordic from <b>{st['base_point']:.1f}</b> to <b>{st['building_point']:.1f}</b>{below}; building followed "
                     f"'{st['state']}' in {st['p_building_next']:.0%} of past quarters. ")
-        return (f"<p class=src><b>Channel-state sensitivity</b> (Nordic's own record by the data-dated channel state, F20/F30; state from "
-                f"distributor days, step 3b; supply shortage D24): {body}{_shortage_sentence(st)}"
-                "Monitoring plan: W10 (state), W11 (Arrow / Avnet days), W4 (lead time, D24), W2 (Nordic's words, F31).</p>")
+        return (f"<p class=src><b>Channel-state sensitivity</b> (Nordic's own record by channel state; the state is read from "
+                f"distributor inventory days, a supply shortage from live lead times): {body}{_shortage_sentence(st)}"
+                "To watch (Monitor tab): the channel state, Arrow / Avnet inventory days, Nordic's lead times and Nordic's own words.</p>")
     s = regime_sensitivity(fn, gb)
     lo, hi = fn["guide"]
     cells = " · ".join(f"{r.regime} ({r.beat_pct:+.1f}%, n {r.n}): <b>{r.point:.0f}</b>" + (" <span style='color:#c0392b'>below the guide</span>" if r.point < lo else "")
                        for r in s.itertuples())
     return (f"<p class=src><b>Nordic depends on the regime call</b> (config forecast.nordic_2026Q3.regime = normal; guide {lo}–{hi}). "
-            f"Point with the same adjustments under each regime's historical beat: {cells}. W2 (Nordic's words), W10 (state) and W11 (Arrow / Avnet days) of the monitoring plan test the call.</p>")
+            f"Point with the same adjustments under each regime's historical beat: {cells}. Nordic's own words, the channel state and Arrow / Avnet inventory days (Monitor tab) test the call.</p>")
 
 
 def next_quarter_rows(path=None) -> list[dict]:
@@ -255,7 +256,7 @@ def _margin_regime_detail(row: dict) -> str:
     if not {"n_regime", "sd_pts", "scores"} <= set(g):
         return ""
     rule, rmse = min(g["scores"].items(), key=lambda kv: kv[1])
-    return f": σ {g['sd_pts']:.2f} pts on n {g['n_regime']}; walk-forward RMSE on all quarters {rmse:.2f} ({rule})"
+    return f": {g['sd_pts']:.2f} pts over {g['n_regime']} quarters; over all quarters, tested as if in real time, {rmse:.2f} (rule: {rule})"
 
 
 def basis_cell(row: dict, cfg: dict) -> str:
