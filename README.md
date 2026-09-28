@@ -2,7 +2,7 @@
 
 **[Investment note (2 pages)](deliverables/investment_note.md)** ·
 **[Dashboard](https://siqizhu-uk.github.io/case_study_supply_chain/deliverables/dashboard.html)**: opens in the browser ([what each tab shows](#the-dashboard)) ·
-**[Source documents](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing)** (optional, 497 MB, only to re-check quotes offline)
+**[Source documents](https://drive.google.com/file/d/1sAl9ZGzpMfOYQKcnfl0er8G6ftFhH4kl/view?usp=sharing)** (optional, 521 MB, only to re-check quotes offline)
 
 **The answer in three lines.** Nordic's guide already contains the orders behind the quarter it guides, so the Q3
 forecast is the guide adjusted for management's usual guide error; no supply-chain model beat that in back-tests.
@@ -16,21 +16,6 @@ tier-by-tier series (sell-out proxy → distributor sell-through → OEM sell-in
 mechanism assumption in one editable YAML file, tests those assumptions out of sample, and forecasts three prints:
 Nordic Q3 2026, Logitech Q2 FY27 and GN Q3 2026. Public data only.
 
-## What carries over to a broad coverage list
-
-The supply chain is specific to this case; the way of working is not:
-
-- **One place for everything.** Data with its sources, editable assumptions, forecasts and the AI tasks' progress
-  sit in one dashboard.
-- **Test before believing.** Each hypothesis is reasoned first, tested out of sample and kept either way; most
-  failed (on 12 peers no channel or guidance factor beat a company's own average guide error). Forecasts are logged
-  before each print.
-- **AI output that can be checked.** 3,417 source documents; every input carries a source and an A–D evidence
-  grade, and filing and transcript numbers are quote-checked against the document.
-
-The piece that scales directly: start from the company's own guide and add its usual guide error. The guide carries
-most of the information (across 632 peer quarters the beat varies 3.9% against 29% for revenue growth), and the
-method needs only each release's guide and actual.
 
 ## How this was built
 
@@ -64,18 +49,35 @@ Then read `deliverables/investment_note.md` (2 pages) and open `deliverables/das
 ### Optional: the source documents, for re-checking every quote offline
 
 Not needed to run the model or reproduce any number. The filings, company PDFs and announcements the pipelines
-downloaded (the quote checks' source text) are one archive, `case_study_cache.tar.gz` (497 MB; 3,417 files,
-1.25 GB unpacked; rebuilt 28 Sep 2026 with Nordic's 2017–2020 reports and announcements): **[download from Google Drive](https://drive.google.com/file/d/173NfXBflNvX0W5I2aDe_-ElU-2cQ27Kq/view?usp=sharing)**. SHA-256
+downloaded (the quote checks' source text) are one archive, `case_study_cache_2026-09-28.tar.gz` (521 MB; 3,417 files,
+1.3 GB unpacked; rebuilt 28 Sep 2026 with Nordic's 2017–2020 reports and announcements): **[download from Google Drive](https://drive.google.com/file/d/1sAl9ZGzpMfOYQKcnfl0er8G6ftFhH4kl/view?usp=sharing)**. SHA-256
 `0d322c7252647b7bb0a90664e4264ec859547238e66c96d31a39923f106252fb`. It holds `pipelines/{A,B,C,D}_*/data/cache/`
 and `steps/step2_attribution/cache/`. Download it into the repository root, then:
 
 ```bash
-shasum -a 256 case_study_cache.tar.gz        # should print the hash above
-tar -xzf case_study_cache.tar.gz             # run from the repository root; restores the cache folders in place
+shasum -a 256 case_study_cache_2026-09-28.tar.gz   # should print the hash above
+tar -xzf case_study_cache_2026-09-28.tar.gz        # run from the repository root; restores the cache folders in place
 ./run.sh
 ```
 
 The quote checks then re-read the source text instead of showing "recorded, document not cached".
+
+## What carries over to a broad coverage list
+
+The supply chain is specific to this case; the way of working is not:
+
+- **One place for everything.** Data with its sources, editable assumptions, forecasts and the AI tasks' progress
+  sit in one dashboard.
+- **Test before believing.** Each hypothesis is reasoned first, tested out of sample and kept either way; most
+  failed (on 12 peers no channel or guidance factor beat a company's own average guide error). Forecasts are logged
+  before each print.
+- **AI output that can be checked.** 3,417 source documents; every input carries a source and an A–D evidence
+  grade, and filing and transcript numbers are quote-checked against the document.
+
+The piece that scales directly: start from the company's own guide and add its usual guide error. The guide carries
+most of the information (across 632 peer quarters the beat varies 3.9% against 29% for revenue growth), and the
+method needs only each release's guide and actual.
+
 
 ## The dashboard
 
