@@ -1,0 +1,14 @@
+check,n,max_abs_diff_pct,passed
+logitech RM + FG == InventoryNet,26,0.044,True
+logitech XBRL InventoryNet == hand-typed inventory_usdm,26,0.0,True
+"arrow revenue > COGS > 0, inventory > 0; GM 10.8-13.3%",26,,True
+"avnet revenue > COGS > 0, inventory > 0; GM 10.4-12.5%",26,,True
+"amazon revenue > cost of sales > 0, inventory > 0; GM 36.9-52.3% within 30-60%",26,,True
+"bestbuy revenue > cost of sales > 0, inventory > 0; GM 20.0-23.7% within 15-30%",21,,True
+"walmart revenue > cost of sales > 0, inventory > 0; GM 22.9-25.4% within 18-30%",26,,True
+"target revenue > cost of sales > 0, inventory > 0; GM 22.6-33.7% within 20-35%",19,,True
+"cdw revenue > cost of sales > 0, inventory > 0; GM 16.4-23.0% within 15-28%",26,,True
+microchip sentence found in >= 80% of 10-Q/10-K since 2010 (65 of 65; unparsed listed in data/processed/mchp_unparsed_filings.csv),65,,True
+microchip chain: 'compared to MM days' == prior filing's NN (documented filing errors: config/known_filing_issues.csv),61,,True
+microchip long history (2008+): chain check,73,,True
+microchip: no quarter missing between the first and last parsed quarter (a gap blanks the change on both sides),65,,True

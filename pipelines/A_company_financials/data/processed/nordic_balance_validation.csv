@@ -1,0 +1,6 @@
+check,n,passed
+nordic AR + inventory line found in every quarterly report,23,True
+nordic chain: year-ago column (t) == current column (t-4),28,True
+nordic extracted inventory == hand-typed (max diff 0.08%),23,True
+nordic AR-note stages: sum and prior-year chain,9,True
+nordic customer-concentration quotes found in cited report,7,True

@@ -1,5 +1,5 @@
 pandas>=2.0,<3        # pandas 3 reads text columns as a strict string type; the model is tested on 2.x
-numpy>=1.24
+numpy>=1.24,<2.6    # tested on 1.26 and 2.5; 2.5 warns that generic timedelta units will become errors
 scipy>=1.10         # walk-forward tests (step 6)
 pyyaml>=6.0
 matplotlib>=3.7

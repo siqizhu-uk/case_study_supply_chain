@@ -131,9 +131,9 @@ Route deviations in the live vintage (YoY pts of Logitech sell-through; origin 2
 |         1 | 2026Q2    |                       0.1  |           -13.6  |         -13.7  | True                 | tdsynnex       |         2    |
 |         1 | 2025Q4    |                       0.07 |            -5.16 |          -5.23 | True                 | other_retail   |        -2.54 |
 |         2 | 2023Q1    |                       0    |            60.93 |          60.93 | False                | amazon         |         0.32 |
-|         2 | 2023Q2    |                       0    |             7.57 |           7.57 | False                | other_retail   |        -1.66 |
-|         2 | 2023Q3    |                       0    |            18.33 |          18.33 | False                | other_retail   |        -1.96 |
-|         2 | 2023Q4    |                       0    |            42.91 |          42.91 | False                | other_retail   |        -1.25 |
+|         2 | 2023Q2    |                       0    |             7.57 |           7.57 | False                | amazon         |         1.66 |
+|         2 | 2023Q3    |                       0    |            18.33 |          18.33 | False                | amazon         |         1.96 |
+|         2 | 2023Q4    |                       0    |            42.91 |          42.91 | False                | amazon         |         1.25 |
 |         2 | 2024Q1    |                       0    |            26.08 |          26.08 | False                | amazon         |         1.61 |
 
 ## What this cannot tell

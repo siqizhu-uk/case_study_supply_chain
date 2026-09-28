@@ -96,7 +96,7 @@ def divergence(runs: dict, cfg: dict) -> pd.DataFrame:
         diff_cols = [c for c in w if c.startswith("diff_pts_")]
         for q in gap.abs().sort_values(ascending=False).index[:n]:
             r = w.loc[q]
-            drv = max(diff_cols, key=lambda c: abs(r[c]))
+            drv = max(diff_cols, key=lambda c: round(abs(r[c]), 9))     # rounded: a re-allocation between two routes is an exact tie up to float noise, so column order decides in every numpy version
             rows.append({"horizon": h, "quarter": q, "gap_route_minus_agg_usdm": gap[q], "err_route_usdm": r["CH_route_total"] - r["actual_total"],
                          "err_agg_usdm": r["CH_agg_total"] - r["actual_total"],
                          "route_split_helped": bool(abs(r["CH_route_total"] - r["actual_total"]) < abs(r["CH_agg_total"] - r["actual_total"])),
