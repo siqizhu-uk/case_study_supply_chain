@@ -104,6 +104,22 @@ def test_note_quotes_the_scenarios_and_q4_as_computed():
     assert f"{q4.low:.0f} – {q4.high:.0f}" in note or f"{q4.low:.0f}–{q4.high:.0f}" in note
 
 
+def test_note_forecast_table_is_the_run_all_output():
+    """The note's forecast table is hand-written: every point and range must be outputs/forecasts.csv rounded as printed
+    (revenue to the unit, margins to 0.1 pt), so the note and the dashboard's Predict tab always show the same run."""
+    note = (ROOT / "deliverables" / "investment_note.md").read_text()
+    table = note.split("## Forecasts")[1].split("\n## ")[0]
+    rows = [[c.strip() for c in line.strip().strip("|").split("|")] for line in table.splitlines()
+            if line.startswith("| ") and "Print" not in line]
+    fc = pd.read_csv(ROOT / "outputs" / "forecasts.csv")
+    assert len(rows) == len(fc)
+    num = lambda s: float(re.sub(r"[^0-9.]", "", s))                                        # noqa: E731
+    for r, cells in zip(fc.itertuples(), rows):
+        dec = 1 if "%" in cells[2] else 0
+        low, high = cells[3].split("–")
+        assert (num(cells[2]), num(low), num(high)) == tuple(round(v, dec) for v in (r.point, r.low, r.high)), (r.print, r.metric)
+
+
 def test_logitech_weight_compares_the_same_quarters(run):
     lg = run[3]["logitech"]
     assert lg["n_chain"] == lg["n_gb"]                                       # P84: same quarters for both forecasters
