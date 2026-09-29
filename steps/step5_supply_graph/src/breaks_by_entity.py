@@ -1,7 +1,8 @@
 """Step 5c: structural breaks by entity, the table under the chain-over-time graph (decision G31).
 
-Only breaks and candidate breaks: a LINK that changed (its lag, its weight, its slope, or what a series measures). Inputs
-that moved and one-off shocks stay on the graph and in the forecast terms. Each row is named in config
+A relationship counts as broken when a test finds the change, or when a documented event changes it by construction (a
+price step, a new perimeter); a coefficient that moved without either is not a break, nor is an input that moved or a
+one-off shock (those stay on the graph and in the forecast terms). Candidates are listed only when watched. Each row is named in config
 relationship_breaks.by_entity; every number is computed here, each run, from graph_timeline.csv, relationship_breaks.csv /
 event_breaks.csv, the 10-K weights and the FCC census. Before / after windows are the data-dated cycle states (step 3b).
 """
@@ -109,8 +110,8 @@ def table(cfg: dict) -> pd.DataFrame:
     return pd.DataFrame(rows, columns=COLUMNS)
 
 
-def checked_no_break() -> str:
-    """One line under the table: the links read or tested that did not change."""
+def checked_no_break(cfg: dict | None = None) -> str:
+    """One line under the table: the links read or tested that did not change, and what moved without a break."""
     w = pd.read_csv(ROOT / "config" / "supply_graph_weights.csv")
     shares = ", ".join(f"{NAMES[c]} {w[c].min() * 100:.0f}-{w[c].max() * 100:.0f}%" for c in ("amazon", "ingram", "tdsynnex"))
     from attribution_path import COHORT_YEARS, _readable_peripheral_grants    # steps/step2_attribution/src
@@ -118,13 +119,18 @@ def checked_no_break() -> str:
     ends = sorted(g["year"].unique())[-3:]
     cohorts = ", ".join(f"{int(g[(g['year'] > y - COHORT_YEARS) & (g['year'] <= y)]['nordic'].sum())}/"
                         f"{len(g[(g['year'] > y - COHORT_YEARS) & (g['year'] <= y)])}" for y in ends)
-    t = pd.read_csv(step_outputs("step5_supply_graph") / "graph_timeline.csv")
+    s5 = step_outputs("step5_supply_graph")
+    t, rb = pd.read_csv(s5 / "graph_timeline.csv"), pd.read_csv(s5 / "relationship_breaks.csv")
     a = _series(t, "amazon", "cover_weeks")
+    slope = _row(rb, relationship="Nordic consumer on Logitech sell-through (t-2)", **{"break": "2024Q3"})
+    moved = re.search(r"slope [^;]*after", str(slope["evidence"]))
     return (f"Checked, no break: Logitech's customer shares (10-K FY{w['fiscal_year'].min()}-FY{w['fiscal_year'].max()}: {shares}); "
             f"Nordic's share of Logitech radio designs (FCC photos, {COHORT_YEARS}-year cohorts ending {ends[0]}-{ends[-1]}: {cohorts}); "
-            f"Amazon's inventory cover ({a.min():.1f}-{a.max():.1f} weeks, {a.index[0]}-{a.index[-1]}). Inputs that moved without "
-            "a break (channel states, Nordic's destock and restock) and one-off shocks (Logitech's 2026 supplier incident) are on "
-            "the graph above and in the forecast terms.")
+            f"Amazon's inventory cover ({a.min():.1f}-{a.max():.1f} weeks, {a.index[0]}-{a.index[-1]}); the Nordic-Logitech slope "
+            f"after the 2024 restock ({moved.group(0) if moved else 'slope'}, {slope['test']} p {slope['p']:.3f}: a coefficient that "
+            "moved, not a break). Inputs that moved without a break (channel states including GN's Enterprise channel drain, "
+            "Nordic's destock and restock, and with them the Logitech + GN share of Nordic) and one-off shocks (Logitech's 2026 "
+            "supplier incident) are on the graph above and in the forecast terms.")
 
 
 def html_section(cfg: dict) -> str:
@@ -134,8 +140,9 @@ def html_section(cfg: dict) -> str:
     head = "".join(f"<th>{h}</th>" for h in ("Entity / link", "Status", "What changed", "Test", "In the model"))
     body = "".join("<tr>" + "".join(f"<td>{html.escape(str(r[c]))}</td>" for c in COLUMNS) + "</tr>" for _, r in df.iterrows())
     return ("<h2>Structural breaks by entity</h2>"
-            "<p class=src>Only links that changed (a lag, a weight, a slope, or what a series measures). A node's value moving is "
-            "an input moving, not a break. Every number is computed each run from the timeline above, the break tests "
+            "<p class=src>A relationship counts as broken when a test finds the change, or when a documented event changes it by "
+            "construction (a price step, a new perimeter); a coefficient that moved without either is not a break, and a node's "
+            "value moving is an input moving. Every number is computed each run from the timeline above, the break tests "
             "(steps/step5_supply_graph/outputs/relationship_breaks.csv, event_breaks.csv), the 10-K weights and the FCC census; "
             "before / after windows are the data-dated cycle states. Table: outputs/breaks_by_entity.csv.</p>"
             f"<table><tr>{head}</tr>{body}</table><p class=src>{html.escape(checked_no_break())}</p>")
