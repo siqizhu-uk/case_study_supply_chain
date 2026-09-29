@@ -30,6 +30,7 @@ from guidance_record import section_html as guidance_section_html  # guidance tr
 from charts import charts_tab  # noqa: E402   the analysis in charts (tab 'Charts')
 from cross_checks_view import html_section as cross_checks_html  # noqa: E402   every check beside each forecast
 from event_study_svg import dashboard_section as event_study_section  # noqa: E402   steps/step5 (5d, G23)
+from breaks_by_entity import html_section as breaks_by_entity_html  # noqa: E402   steps/step5 (5c, G31): the table under the timeline
 from analysis_tab import analysis_tab_html  # noqa: E402   the analyst's write-up (deliverables/my_analysis.html)
 from mechanism_charts import write_all as write_figures  # noqa: E402   deliverables/figures/
 
@@ -566,7 +567,7 @@ def build_dashboard(p, data, lag, reg, gb, attr, fn, fl, fg, ftab, cfg, inv: pd.
                  f"delays {_wk(gl['signal'])} flow-weighted, Amazon route {_wk(gl['signal_amazon'])} (G25)." if gl else "")
     cat = catalogue(p)
     write_catalogue(cat, OUTPUTS / "metric_catalogue.csv")
-    data_html, time_html = data_tab(cat) + fiscal_calendar_html(), timeline_tab(p, cfg)
+    data_html, time_html = data_tab(cat) + fiscal_calendar_html(), timeline_tab(p, cfg) + breaks_by_entity_html(cfg)
     charts_html = charts_tab(p)                     # writes outputs/figures/story/*.svg
     write_figures()                                 # deliverables/figures/: the story charts + the write-up's charts, before embedding
     html = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>Supply Chain Signal — Nordic / Logitech / GN</title>

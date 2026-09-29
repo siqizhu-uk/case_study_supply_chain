@@ -352,6 +352,67 @@ relationship_breaks:
     ai_cycle_quarter: "2023Q3"                 # first full quarter after the May 2023 data-centre guidance shock; chosen with the data in view (disclosed)
     memory_cycle_quarter: "2025Q4"             # memory price surge visible in WSTS and distributor dollars; dated with the data in view (disclosed)
     gap_compare_from: "2023Q1"                 # distributor-vs-Logitech gap before the memory cycle: after the SYNNEX merger mask and the COVID base
+  # Structural breaks by entity (decision G31; steps/step5_supply_graph/src/breaks_by_entity.py): the table under the
+  # chain-over-time graph. Only breaks and candidate breaks, i.e. a LINK that changed (lag, weight, slope, what a series
+  # measures); inputs that moved and one-off shocks stay on the graph and in the forecast terms. Every number is computed
+  # each run from graph_timeline.csv, relationship_breaks.csv / event_breaks.csv, the 10-K weights and the FCC census;
+  # before / after windows are the data-dated cycle states (step 3b), never picked by eye.
+  by_entity:                                   # what changed = lead + the computed measure + '; ' + tail
+    - entity: "Nordic → Logitech"
+      status: "Break (tested)"
+      lead: "Order backlog (x quarterly revenue)"
+      measure: {kind: peak_then_last, node: nordic, metric: backlog_cover, fmt: "{:.1f}x"}
+      tail: "Nordic's revenue was set by wafer supply, not by demand"
+      test: {relationship: "Nordic consumer on Logitech sell-through (t-2)", break: "2022Q4"}
+      treatment: "Shortage quarters excluded from the lag fits; kept apart in Nordic's usual guide error"
+    - entity: "Nordic → Logitech"
+      status: "Candidate (not significant)"
+      lead: "Nordic consumer revenue on Logitech sell-through two quarters earlier, around the data-dated end of the destock (2024Q3)"
+      measure: {kind: evidence, relationship: "Nordic consumer on Logitech sell-through (t-2)", break: "2024Q3", pick: "slope [^;]*after"}
+      tail: "the link may have weakened after the 2024 restock"
+      test: {relationship: "Nordic consumer on Logitech sell-through (t-2)", break: "2024Q3"}
+      treatment: "No effect on the Q3 forecasts (the chain has weight 0 there); the Q4 graph model may overstate the chain"
+    - entity: "Nordic → Logitech"
+      status: "Break (link weight)"
+      lead: "Logitech + GN share of Nordic revenue"
+      measure: {kind: evidence, relationship: "Logitech + GN share of Nordic revenue", pick: "^[^:]*"}
+      tail: "Nordic's broad market fell and recovered, its key accounts did not"
+      test: {untested: "a share, not a regression"}
+      treatment: "Attribution is a time path, not a constant"
+    - entity: "Logitech"
+      status: "Candidate (untested)"
+      lead: "Logitech's own inventory cover"
+      measure: {kind: state_windows, node: logitech, metric: cover_weeks, fmt: "{:.1f} weeks"}
+      tail: "goods sit less long at Logitech, so the lag through it shortened"
+      test: {untested: "inferred from inventory cover (Little's law); no before / after regression"}
+      treatment: "The ODM → Logitech edge lag ({edge:E08}) is set for today's cover; the end-to-end lag was longer in the shortage"
+    - entity: "Logitech"
+      status: "Break (untestable: too few quarters)"
+      lead: "2025 US price step"
+      measure: {kind: event_evidence, event: "tariff 2025", relationship: "Logitech dollar sales as the unit driver of Nordic's chips", clip: ";"}
+      tail: "Logitech's dollars stop tracking units"
+      test: {event: "tariff 2025", relationship: "Nordic consumer on Logitech sell-through (t-2), across the price step"}
+      treatment: "The driver is units (the price step removed)"
+    - entity: "GN → distributors"
+      status: "Candidate (untested)"
+      lead: "GN Enterprise channel stock against sell-through"
+      measure: {kind: first_last, node: gn, metric: channel_weeks, fmt: "{:+.1f} weeks"}
+      tail: "distributors hold less GN stock; cyclical or lasting is not yet known"
+      test: {untested: "no before / after test"}
+      treatment: "Monitor tab (amber); enters the GN forecast through its usual guide error, not as a break"
+    - entity: "Ingram, TD Synnex"
+      status: "Break (proxy)"
+      lead: "Average revenue YoY"
+      measure: {kind: vs_node, nodes: [ingram, tdsynnex], other: logitech, from_key: memory_cycle_quarter, fmt: "{:+.1f}%"}
+      tail: "distributor dollars stopped tracking peripherals demand (memory prices, PC refresh)"
+      test: {event: "AI / memory cycle", relationship: "distributor dollars as a proxy for peripherals demand"}
+      treatment: "Context only, never a driver"
+    - entity: "GN"
+      status: "Break (reporting basis)"
+      lead: "What 'GN' measures changed three times"
+      measure: {kind: text, text: "SteelSeries consolidated (Jan 2022); consumer earbuds wound down (Jun 2024); Hearing sold (Mar 2026)"}
+      test: {untested: "a change of perimeter, not a relationship"}
+      treatment: "GN series = Enterprise + Gaming; forecast target = continuing operations"
 
 # One model of the guide error for all three forecasts (step 7e, steps/step7_forecast/src/guide_error_model.py, F16-F17).
 #   expected error = company habit alpha (partially pooled with the 12 peers' quarterly guides) + gamma x channel BUILDING
